@@ -1,0 +1,24 @@
+.es-popup-button-product[role='button'],
+.es-popup-button-drawer[role='button'] {
+  cursor: pointer;
+}
+
+.es-popup-button-product[role='button']:focus-visible,
+.es-popup-button-drawer[role='button']:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+/*
+.wt-product__info.kairali-easysell-ready [data-block-id='variant_picker'],
+.wt-product__info.kairali-easysell-ready [data-block-id='buy_buttons'] > product-form.wt-product__add-to-cart {
+  display: none !important;
+}
+*/
+body.kairali-easysell-ready #es-sticky.es-sticky-product {
+  display: none !important;
+}
+
+.shopify-app-block.kairali-easysell-unavailable,
+body.kairali-easysell-unavailable #es-sticky.es-sticky-product {
+  display: none !important;
+}

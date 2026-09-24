@@ -1,0 +1,340 @@
+.kairali-exit-offer__dialog,
+.kairali-exit-offer__dialog * { box-sizing: border-box; }
+
+.kairali-exit-offer__dialog {
+  position: relative;
+  width: min(900px, calc(100% - 32px));
+  max-height: min(720px, calc(100dvh - 32px));
+  padding: 0;
+  border: 0;
+  border-radius: 22px;
+  overflow: auto;
+  background: #fbf8ef;
+  color: #182218;
+  box-shadow: 0 32px 90px rgba(15, 28, 17, .34);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: none;
+}
+
+.kairali-exit-offer__dialog::backdrop {
+  background: rgba(13, 24, 15, .68);
+  backdrop-filter: blur(5px);
+}
+
+.kairali-exit-offer__dialog[open] {
+  display: grid;
+  grid-template-columns: minmax(320px, .88fr) minmax(0, 1.12fr);
+  animation: kairali-exit-offer-in .28s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.kairali-exit-offer__visual {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+  background: #173722;
+  isolation: isolate;
+}
+
+.kairali-exit-offer__visual::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 32, 18, .08) 28%, rgba(9, 29, 16, .76) 100%);
+  content: "";
+}
+
+.kairali-exit-offer__scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 65%;
+  filter: saturate(.88) contrast(1.04);
+  transform: scale(1.015);
+}
+
+.kairali-exit-offer__brand-card {
+  position: absolute;
+  z-index: 2;
+  top: 28px;
+  left: 28px;
+  width: 144px;
+  padding: 14px 16px 12px;
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 15px;
+  background: rgba(255, 253, 247, .94);
+  box-shadow: 0 12px 34px rgba(9, 24, 13, .18);
+  backdrop-filter: blur(10px);
+}
+
+.kairali-exit-offer__logo { display: block; width: 100%; height: auto; }
+
+.kairali-exit-offer__heritage {
+  position: absolute;
+  z-index: 2;
+  right: 28px;
+  bottom: 24px;
+  left: 28px;
+  margin: 0 !important;
+  color: #fffdf7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-style: italic;
+  letter-spacing: .01em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .42);
+}
+
+.kairali-exit-offer__content { align-self: center; padding: 48px 48px 42px; }
+
+.kairali-exit-offer__content h2 {
+  max-width: 13ch;
+  margin: 6px 0 14px;
+  color: #18351f;
+  font-family: Iowan Old Style, Baskerville, Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 52px);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: .98;
+  text-wrap: balance;
+  text-transform: none;
+}
+
+.kairali-exit-offer__content p { margin: 0 0 18px; font-size: 15px; line-height: 1.55; }
+
+.kairali-exit-offer__eyebrow {
+  color: #96671d;
+  font-size: 11px !important;
+  font-weight: 700;
+  letter-spacing: .16em;
+  line-height: 1.3 !important;
+  text-transform: uppercase;
+}
+
+.kairali-exit-offer__label {
+  display: block;
+  margin-bottom: 6px;
+  color: #233126;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+.kairali-exit-offer__email {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  border: 1px solid #96a58f;
+  border-radius: 9px;
+  background: #fff;
+  color: #182218;
+  font: 400 16px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.kairali-exit-offer__email:hover { border-color: #63775f; }
+
+.kairali-exit-offer__email:focus-visible,
+.kairali-exit-offer__primary:focus-visible,
+.kairali-exit-offer__support:focus-visible,
+.kairali-exit-offer__close:focus-visible,
+.kairali-exit-offer__code-row button:focus-visible { outline: 3px solid #c08a32; outline-offset: 3px; }
+
+.kairali-exit-offer__consent {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  align-items: start;
+  margin: 13px 0 16px;
+  color: #4f5c50;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.kairali-exit-offer__consent input { width: 18px; height: 18px; margin: 0; accent-color: #254c2d; }
+
+.kairali-exit-offer__primary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 18px;
+  border: 1px solid #21452a;
+  border-radius: 9px;
+  background: #21452a;
+  box-shadow: 0 9px 22px rgba(23, 58, 30, .16);
+  color: #fffdf7;
+  font: 650 15px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.kairali-exit-offer__primary:hover {
+  background: #173820;
+  box-shadow: 0 12px 26px rgba(23, 58, 30, .22);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.kairali-exit-offer__primary:active { transform: translateY(1px); }
+
+.kairali-exit-offer__support {
+  display: block;
+  margin-top: 17px;
+  color: #274f2e;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: none;
+  text-underline-offset: 3px;
+}
+
+.kairali-exit-offer__fine-print {
+  margin: 11px 0 0 !important;
+  color: #69726a;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  text-align: center;
+}
+
+.kairali-exit-offer__close {
+  position: absolute;
+  z-index: 4;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(151, 103, 29, .34);
+  border-radius: 50%;
+  background: rgba(255, 253, 247, .96);
+  box-shadow: 0 6px 18px rgba(20, 35, 22, .12);
+  color: #1d3521;
+  font: 400 26px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color .2s ease, transform .2s ease;
+}
+
+.kairali-exit-offer__close:hover { background: #fff; color: #122617; transform: rotate(4deg); }
+
+.kairali-exit-offer__code-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 8px;
+  border: 1px dashed #a87930;
+  border-radius: 10px;
+  background: #fff4dc;
+}
+
+.kairali-exit-offer__code-row strong {
+  align-self: center;
+  padding-left: 8px;
+  color: #18351f;
+  font: 700 19px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .12em;
+}
+
+.kairali-exit-offer__code-row button {
+  min-height: 42px;
+  padding: 8px 13px;
+  border: 0;
+  border-radius: 7px;
+  background: #e7c982;
+  color: #203c25;
+  font: 700 12px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: .03em;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.kairali-exit-offer__error {
+  margin-bottom: 16px;
+  padding: 11px 13px;
+  border-left: 3px solid #a83535;
+  background: #fff0ef;
+  color: #7a2020;
+  font-size: 13px;
+}
+
+@keyframes kairali-exit-offer-in {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 760px) {
+  html.kairali-exit-offer-open #es-sticky,
+  html.kairali-exit-offer-open .es-sticky-bottom {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .kairali-exit-offer__dialog {
+    width: min(480px, calc(100% - 12px));
+    max-height: calc(100dvh - 12px);
+    margin-block: 6px max(6px, env(safe-area-inset-bottom));
+    border-radius: 18px;
+  }
+  .kairali-exit-offer__dialog[open] { grid-template-columns: 1fr; }
+  .kairali-exit-offer__visual { min-height: 154px; }
+  .kairali-exit-offer__scene { object-position: 50% 70%; }
+  .kairali-exit-offer__brand-card {
+    top: 16px;
+    left: 16px;
+    width: 92px;
+    padding: 8px 10px 7px;
+    border-radius: 11px;
+  }
+  .kairali-exit-offer__heritage { right: 16px; bottom: 13px; left: auto; font-size: 14px; }
+  .kairali-exit-offer__content { padding: 26px 22px 24px; }
+  .kairali-exit-offer__content h2 {
+    max-width: 15ch;
+    margin-bottom: 10px;
+    font-size: clamp(31px, 9vw, 39px);
+    line-height: 1;
+  }
+  .kairali-exit-offer__content p { margin-bottom: 14px; font-size: 14px; }
+  .kairali-exit-offer__close { top: 12px; right: 12px; width: 40px; height: 40px; }
+  .kairali-exit-offer__email,
+  .kairali-exit-offer__primary { min-height: 49px; }
+}
+
+@media (max-width: 390px) {
+  .kairali-exit-offer__visual { min-height: 132px; }
+  .kairali-exit-offer__content { padding: 22px 18px 20px; }
+  .kairali-exit-offer__content h2 { font-size: 30px; }
+  .kairali-exit-offer__consent { margin: 10px 0 13px; font-size: 11.5px; }
+  .kairali-exit-offer__support { margin-top: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kairali-exit-offer__dialog[open] { animation: none; }
+  .kairali-exit-offer__primary,
+  .kairali-exit-offer__close { transition: none; }
+}

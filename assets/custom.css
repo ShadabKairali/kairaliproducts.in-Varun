@@ -1,0 +1,83 @@
+/* Keep support controls clear of the mobile sticky purchase action. */
+@media (max-width: 899px) {
+  body.template-cart,
+  body[class*="template-product"]:has(.wt-product__sticky-buy--show) {
+    --mobile-sticky-buy-clearance: calc(9rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  body.template-cart .btn-whatsapp-pulse,
+  body[class*="template-product"]:has(.wt-product__sticky-buy--show) .btn-whatsapp-pulse {
+    bottom: var(--mobile-sticky-buy-clearance);
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-whatsapp-pulse {
+    animation: none;
+  }
+}
+
+.wt__quick-buy nav button.close-btn,
+.model-container nav button.close-btn {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0;
+}
+
+/* Kairali treatment for the EasySell address and payment popup. */
+#easysell-modal,
+#easysell-modal button,
+#easysell-modal input,
+#easysell-modal select,
+#easysell-modal textarea { font-family: var(--font-base), Inter, Arial, sans-serif !important; }
+#easysell-modal .es-modal-content { border-radius: 14px !important; color: #1c1c1c; box-shadow: 0 24px 64px rgba(21,21,21,.24) !important; }
+#easysell-modal .es-form-header { color: #151515; font-size: 20px !important; font-weight: 700 !important; letter-spacing: -.02em !important; line-height: 1.25 !important; }
+#easysell-modal label,
+#easysell-modal .es-form-label { color: #1c1c1c !important; font-size: 15px !important; font-weight: 600 !important; letter-spacing: 0 !important; line-height: 1.35 !important; }
+#easysell-modal .es-input,
+#easysell-modal .es-select,
+#easysell-modal .es-form-control { min-height: 48px; border: 1px solid #cfcfcf !important; border-radius: 8px !important; background: #fff !important; color: #151515 !important; font-size: 16px !important; font-weight: 400 !important; letter-spacing: 0 !important; line-height: 1.4 !important; }
+#easysell-modal .es-input::placeholder,
+#easysell-modal .es-form-control::placeholder { color: #717171 !important; opacity: 1; }
+#easysell-modal .es-input:focus-visible,
+#easysell-modal .es-select:focus-visible,
+#easysell-modal .es-form-control:focus-visible,
+#easysell-modal button:focus-visible { outline: 3px solid rgba(106,120,22,.38) !important; outline-offset: 2px !important; }
+#easysell-modal .es-discount-button,
+#easysell-modal .es-button { border-radius: 8px !important; font-size: 16px !important; font-weight: 700 !important; letter-spacing: .02em !important; line-height: 1.2 !important; text-transform: none !important; transition: background-color 180ms ease, transform 180ms ease !important; }
+#easysell-modal .es-discount-button,
+#easysell-modal .es-checkout-btn,
+#easysell-modal .es-cta-btn { min-height: 50px; background: #151515 !important; border: 0 !important; border-radius: 8px !important; color: #fff !important; box-shadow: none !important; }
+#easysell-modal .es-discount-button:hover,
+#easysell-modal .es-button:hover { background: #2d2d2d !important; }
+#easysell-modal .es-discount-button:active,
+#easysell-modal .es-button:active { transform: translateY(1px) !important; }
+#easysell-modal .es-cart-summary,
+#easysell-modal .es-summary { font-variant-numeric: tabular-nums; }
+@media (max-width: 599px) {
+  #easysell-modal .es-modal-content { border-radius: 12px 12px 0 0 !important; }
+  #easysell-modal .es-form-header { font-size: 18px !important; }
+}
+
+/* Keep the shoppable-video rail swipeable without exposing its scrollbar. */
+.shoppable-video__products {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.shoppable-video__products::-webkit-scrollbar { display: none; }
+
+.jdgm-review-snippet-widget-v2 .jdgm-rev-snippet-widget-v2__arrow {
+  padding: 0 !important;
+  color: #000000 !important;
+  background: #ffffff !important;
+  line-height: 1 !important;
+}
+
+.jdgm-review-snippet-widget-v2 .jdgm-rev-snippet-widget-v2__arrow svg {
+  display: block !important;
+  fill: currentColor !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
