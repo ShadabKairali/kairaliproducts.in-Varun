@@ -1,0 +1,209 @@
+{% comment %}
+Country Switcher Popup Section (manual dropdown, no IP)
+- Remembers choice with localStorage (with expiry)
+- Skips cart/checkout and campaign clicks
+- Auto-select based on current domain (optional)
+- Exposes alt paths via data attributes (metafield-aware)
+{% endcomment %}
+
+{%- assign path = request.path -%}
+{%- assign alt_in_path  = path -%}
+{%- assign alt_com_path = path -%}
+
+{%- if template contains 'product' -%}
+  {%- if product.metafields.alt.in_path  and shop.permanent_domain contains '.com' -%}{% assign alt_in_path  = product.metafields.alt.in_path  %}{% endif -%}
+  {%- if product.metafields.alt.com_path and shop.permanent_domain contains '.in'  -%}{% assign alt_com_path = product.metafields.alt.com_path %}{% endif -%}
+{%- elsif template contains 'collection' -%}
+  {%- if collection.metafields.alt.in_path  and shop.permanent_domain contains '.com' -%}{% assign alt_in_path  = collection.metafields.alt.in_path  %}{% endif -%}
+  {%- if collection.metafields.alt.com_path and shop.permanent_domain contains '.in'  -%}{% assign alt_com_path = collection.metafields.alt.com_path %}{% endif -%}
+{%- elsif template contains 'page' -%}
+  {%- if page.metafields.alt.in_path  and shop.permanent_domain contains '.com' -%}{% assign alt_in_path  = page.metafields.alt.in_path  %}{% endif -%}
+  {%- if page.metafields.alt.com_path and shop.permanent_domain contains '.in'  -%}{% assign alt_com_path = page.metafields.alt.com_path %}{% endif -%}
+{%- elsif template contains 'article' -%}
+  {%- if article.metafields.alt.in_path  and shop.permanent_domain contains '.com' -%}{% assign alt_in_path  = article.metafields.alt.in_path  %}{% endif -%}
+  {%- if article.metafields.alt.com_path and shop.permanent_domain contains '.in'  -%}{% assign alt_com_path = article.metafields.alt.com_path %}{% endif -%}
+{%- endif -%}
+
+<style>
+#country-popup{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.5);align-items:center;justify-content:center}
+#country-popup .popup-content{background:#fff;padding:24px;border-radius:10px;max-width:420px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,.25);position:relative}
+#country-popup h4{font-size:18px;color:#165b33;margin:0 0 10px}
+#country-popup p{font-size:14px;margin:0 0 16px}
+#country-popup .close-btn{position:absolute;top:10px;right:14px;background:none;border:none;font-size:20px;cursor:pointer}
+#country-popup select{width:100%;padding:10px;font-size:15px;border:1px solid #ccc;border-radius:6px;appearance:none;background:#fff url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;background-size:12px}
+#country-popup .country-popup__button{margin-top:18px;width:100%;padding:12px;font-size:15px;font-weight:600;background:#165b33;color:#fff;border:none;border-radius:6px;cursor:pointer}
+#country-popup .country-popup__button:hover{background:#0d331d}
+.sr-onlyy {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0}
+
+</style>
+
+<div id="country-popup"
+     role="dialog" aria-modal="true" aria-labelledby="country-title"
+     data-alt-in-path="{{ alt_in_path | escape }}"
+     data-alt-com-path="{{ alt_com_path | escape }}">
+  <div class="popup-content">
+    <button class="close-btn" aria-label="Close popup" id="country-close">&times;</button>
+    <h4 id="country-title">{{ section.settings.popup_title }}</h4>
+    <p>{{ section.settings.popup_heading }}</p>
+    <label for="country-select" class="sr-onlyy">Select Region</label>
+    
+    <select id="country-select" name="country">
+      <option value="in">India (INR)</option>
+      <option value="intl">International (USD)</option>
+    </select>
+    <button class="country-popup__button" id="country-continue">{{ section.settings.button_label }}</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY = "kp_country_choice_v1",
+      days = {{ section.settings.remember_days | default: 7 }},
+      autoSel = {{ section.settings.auto_select | json }},
+      skipPaths = {{ section.settings.skip_paths | json }},
+      blockCampaign = {{ section.settings.block_campaign_params | json }},
+      popup = document.getElementById("country-popup"),
+      select = document.getElementById("country-select"),
+      btn = document.getElementById("country-continue"),
+      closeBtn = document.getElementById("country-close");
+
+  function setChoice(val){
+    try {
+      localStorage.setItem(KEY, JSON.stringify({choice: val, ts: Date.now()}));
+    } catch (error) {
+      // The selector must remain usable when storage is blocked.
+    }
+  }
+  function getChoice(){
+    try {
+      var c = localStorage.getItem(KEY);
+      if(!c) return null;
+      var o = JSON.parse(c);
+      if(Date.now() - o.ts < days*864e5) return o.choice;
+      localStorage.removeItem(KEY);
+    } catch (error) {
+      return null;
+    }
+    return null;
+  }
+  function redirectTo(val){
+    var targetOrigin = val === "in" ? "https://www.kairaliproducts.in" : "https://www.kairaliproducts.com";
+    var targetPath = val === "in"
+      ? popup.getAttribute("data-alt-in-path")
+      : popup.getAttribute("data-alt-com-path");
+    var sourceUrl = new URL(targetPath || location.pathname + location.search + location.hash, targetOrigin);
+    var targetUrl = new URL(targetOrigin);
+    targetUrl.pathname = sourceUrl.pathname;
+    targetUrl.search = sourceUrl.search;
+    targetUrl.hash = sourceUrl.hash;
+    targetUrl.searchParams.set("region", val === "in" ? "in" : "intl");
+    location.assign(targetUrl.toString());
+  }
+
+  function isStoreHost(hostname, domain){
+    return hostname === domain || hostname.slice(-(domain.length + 1)) === "." + domain;
+  }
+
+  // Skip cart/checkout/account pages
+  if(skipPaths && new RegExp(skipPaths,"i").test(location.pathname)) return;
+  // Skip campaign URLs
+  if(blockCampaign && /[?&](utm_|gclid=)/i.test(location.search)) return;
+
+  // If query param present → auto-store and skip popup
+  var params = new URLSearchParams(location.search);
+  var requestedRegion = params.get("region");
+  if(requestedRegion === "in" || requestedRegion === "intl"){
+    setChoice(requestedRegion);
+    return; // Don't show popup
+  }
+
+  var existing = getChoice();
+  if(existing) return; // Already chosen
+
+  // Each domain already represents one market. Remember that market and avoid
+  // blocking the buying journey with a redundant modal.
+  if(autoSel){
+    if(isStoreHost(location.hostname, "kairaliproducts.com")){
+      select.value="intl";
+      setChoice("intl");
+      return;
+    }
+    if(isStoreHost(location.hostname, "kairaliproducts.in")){
+      select.value="in";
+      setChoice("in");
+      return;
+    }
+  }
+
+  // Show popup
+  popup.style.display="flex"; 
+  select.focus();
+
+  closeBtn.onclick = function(){ setChoice("dismissed"); popup.remove(); };
+  btn.onclick = function(){
+    var val = select.value;
+    setChoice(val);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event:"country_switch", selection: val});
+    redirectTo(val);
+  };
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeBtn.click(); });
+})();
+</script>
+
+
+{% schema %}
+{
+  "name": "Country Switcher Popup",
+  "settings": [
+    {
+      "type": "text",
+      "id": "popup_title",
+      "label": "Title",
+      "default": "Choose your region"
+    },
+    {
+      "type": "text",
+      "id": "popup_heading",
+      "label": "Subtitle",
+      "default": "Pick India or International to unlock the best prices & availability."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Continue button label",
+      "default": "Continue"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_select",
+      "label": "Auto-select based on current domain",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "remember_days",
+      "label": "Remember choice (days)",
+      "default": 7
+    },
+    {
+      "type": "checkbox",
+      "id": "show_once",
+      "label": "Close on backdrop click (treat as dismissal)",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "skip_paths",
+      "label": "Skip if path matches (regex)",
+      "default": "(^/cart)|(^/checkout)|(^/account)"
+    },
+    {
+      "type": "checkbox",
+      "id": "block_campaign_params",
+      "label": "Skip when URL has UTM/GCLID",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

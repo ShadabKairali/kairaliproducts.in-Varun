@@ -1,0 +1,94 @@
+{% schema %}
+{
+  "name": "Contact Form Split",
+  "tag": "section",
+  "class": "contact-form-split",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "left_column_content",
+      "label": "Left Column Content",
+      "default": "<p><strong>Contact Us</strong><br>123 Wellness Street<br>Kochi, Kerala<br>Phone: +91 98765 43210<br>Email: support@example.com</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Form Split",
+      "category": "Contact"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="contact-form-grid page-width">
+  <div class="right-column">
+    {% for block in section.blocks %}
+      {% if block.type == '@app' %}
+        {% render block %}
+      {% endif %}
+    {% endfor %}
+  </div>
+    <div class="left-column">
+    {{ section.settings.left_column_content }}
+  </div>
+</div>
+
+<style>
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 2rem 0;
+  align-items: start;
+}
+
+.left-column {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  background-color: #f9f9f4;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+}
+
+.left-column h2 {
+  font-size: 18px;
+  color: #6a7816;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.left-column strong {
+  font-weight: 700;
+  color: #000;
+}
+
+.left-column p {
+  margin: 0.4rem 0;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+  }
+
+  .left-column {
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+</style>

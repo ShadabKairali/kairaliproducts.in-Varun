@@ -1,0 +1,85 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "footer": {
+      "type": "page-footer",
+      "blocks": {
+        "text_JtUjig": {
+          "type": "text",
+          "settings": {
+            "logo_image": "shopify://shop_images/Kairali_Ayurvedic_Product_Logo.png",
+            "heading_text": "Kairali Ayurvedic Products Pvt. Ltd.",
+            "text": "<p>Kairali Ayurvedic Products blends 30+ years of expertise with authentic Ayurvedic wisdom to create high-quality, natural wellness solutions. Our vision is to promote holistic health globally through Ayurveda.</p>"
+          }
+        },
+        "menu_g8gLjt": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "ABOUT US",
+            "links": "about-us"
+          }
+        },
+        "menu_GzMLqf": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "PARTNER WITH US",
+            "links": "partner-with-us"
+          }
+        },
+        "menu_bB7XxG": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "HELP & SUPPORT",
+            "links": "help-support"
+          }
+        },
+        "newsletter_VNMFcU": {
+          "type": "newsletter",
+          "settings": {
+            "heading_newsletter": "Sign Up to Our Newsletter",
+            "text_newsletter": "<p>Be the first to know the latest releases, news, collaborations, and exclusive offers!</p>",
+            "button_type": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "text_JtUjig",
+        "menu_g8gLjt",
+        "menu_GzMLqf",
+        "menu_bB7XxG",
+        "newsletter_VNMFcU"
+      ],
+      "custom_css": [
+        ".wt-footer__title {color: #6a7816 !important; font-size: 18px !important;}",
+        ".wt-footer__list a:hover {color: #b15d03 !important; /* Change to your desired color */}"
+      ],
+      "settings": {
+        "show-social-media-icons": true,
+        "show_country_selector": false,
+        "show_country_selector_label": false,
+        "show_country_selector_flag": false,
+        "show_language_selector": false,
+        "enable_follow_on_shop": true,
+        "show-payments-icons": true,
+        "show-copyright": true,
+        "text": "© 2026 KAIRALI AYURVEDIC PRODUCTS PRIVATE LIMITED. All Rights Reserved.",
+        "big-logo-width": 100,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

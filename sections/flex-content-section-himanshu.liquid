@@ -1,0 +1,366 @@
+{% schema %}
+{
+  "name": "Flex Grid Himanshu",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tab_content",
+      "name": "Tab Content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_1_title",
+          "label": "Tab 1 Title",
+          "default": "Tab 1"
+        },
+        {
+          "type": "richtext",
+          "id": "tab_1_content",
+          "label": "Tab 1 Content"
+        },
+        {
+          "type": "text",
+          "id": "tab_2_title",
+          "label": "Tab 2 Title",
+          "default": "Tab 2"
+        },
+        {
+          "type": "richtext",
+          "id": "tab_2_content",
+          "label": "Tab 2 Content"
+        }
+      ]
+    },
+    {
+      "type": "image_app_block",
+      "name": "Image + App Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "image_heading",
+          "label": "Image Heading"
+        },
+        {
+          "type": "select",
+          "id": "image_heading_alignment",
+          "label": "Image Heading Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "richtext",
+          "id": "app_heading",
+          "label": "App Heading"
+        },
+        {
+          "type": "select",
+          "id": "app_heading_alignment",
+          "label": "App Heading Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "image_link",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flex Grid Himanshu",
+      "blocks": [
+        { "type": "tab_content" },
+        { "type": "image_app_block" },
+        { "type": "image_link" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{%- assign in037_b03_condition_handles = 'migraine,postpregnancy,premature-ejaculation,rheumatoid-arthritis,sinusitis,ayurvedic-medicine-for-diabetes' | split: ',' -%}
+{%- assign in037_b02_condition_handles = 'anti-aging,arthritis,slipped-disc,cataract,dark-circles,facial-paralysis,heart-diseases,hemorrhoids,hypertension,liver-diseases' | split: ',' -%}
+<div class="flex-section-wrapper{% if in037_b03_condition_handles contains page.handle %} in037-b03-condition{% elsif in037_b02_condition_handles contains page.handle %} in037-b02-condition{% endif %}">
+  <div class="main-flex-row">
+    {% assign tab_block = section.blocks | where: "type", "tab_content" | first %}
+    {% assign image_app_block = section.blocks | where: "type", "image_app_block" | first %}
+
+    {% if tab_block %}
+    {%- assign in037_b02_tab_1_title = tab_block.settings.tab_1_title -%}
+    {%- assign in037_b02_tab_1_content = tab_block.settings.tab_1_content -%}
+    {%- assign in037_b02_tab_2_title = tab_block.settings.tab_2_title -%}
+    {%- assign in037_b02_tab_2_content = tab_block.settings.tab_2_content -%}
+    {%- if in037_b03_condition_handles contains page.handle -%}
+      {%- capture in037_b02_tab_1_title -%}{%- render 'in037-b03-content', mode: 'condition_tab_1_title' -%}{%- endcapture -%}
+      {%- capture in037_b02_tab_1_content -%}{%- render 'in037-b03-content', mode: 'condition_tab_1' -%}{%- endcapture -%}
+      {%- capture in037_b02_tab_2_title -%}{%- render 'in037-b03-content', mode: 'condition_tab_2_title' -%}{%- endcapture -%}
+      {%- capture in037_b02_tab_2_content -%}{%- render 'in037-b03-content', mode: 'condition_tab_2' -%}{%- endcapture -%}
+    {%- elsif in037_b02_condition_handles contains page.handle -%}
+      {%- capture in037_b02_tab_1_title -%}{%- render 'in037-b02-content', mode: 'condition_tab_1_title' -%}{%- endcapture -%}
+      {%- capture in037_b02_tab_1_content -%}{%- render 'in037-b02-content', mode: 'condition_tab_1' -%}{%- endcapture -%}
+      {%- capture in037_b02_tab_2_title -%}{%- render 'in037-b02-content', mode: 'condition_tab_2_title' -%}{%- endcapture -%}
+      {%- capture in037_b02_tab_2_content -%}{%- render 'in037-b02-content', mode: 'condition_tab_2' -%}{%- endcapture -%}
+    {%- endif -%}
+    <div class="left-column">
+      <div class="tab-block">
+        <div class="tab-buttons">
+          <button class="tab-link active" onclick="openTab(event, 'tab1-{{ tab_block.id }}')">
+            {{ in037_b02_tab_1_title | strip | escape }}
+          </button>
+          <button class="tab-link" onclick="openTab(event, 'tab2-{{ tab_block.id }}')">
+            {{ in037_b02_tab_2_title | strip | escape }}
+          </button>
+        </div>
+        <div class="tab-content active" id="tab1-{{ tab_block.id }}">
+          {{ in037_b02_tab_1_content }}
+        </div>
+        <div class="tab-content" id="tab2-{{ tab_block.id }}">
+          {{ in037_b02_tab_2_content }}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if image_app_block %}
+    <div class="right-column">
+      <div class="image-app-column">
+
+        <div class="app-section">
+          <div class="app-heading" style="text-align: {{ image_app_block.settings.app_heading_alignment }};">
+            {{ image_app_block.settings.app_heading }}
+          </div>
+          {% for block in section.blocks %}
+            {% if block.type contains '@app' %}
+              {% render block %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="image-section">
+          <div class="image-heading" style="text-align: {{ image_app_block.settings.image_heading_alignment }};">
+            {{ image_app_block.settings.image_heading }}
+          </div>
+
+          {% for block in section.blocks %}
+            {% if block.type == 'image_link' and block.settings.image %}
+              {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}" target="_blank" rel="noopener noreferrer">
+                  {{
+                    block.settings.image
+                    | image_url: width: 600
+                    | image_tag: loading: 'lazy', alt: ''
+                  }}
+                </a>
+              {% else %}
+                {{
+                  block.settings.image
+                  | image_url: width: 600
+                  | image_tag: loading: 'lazy', alt: ''
+                }}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.flex-section-wrapper {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+.main-flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: var(--font-base);
+}
+
+.left-column {
+  flex: 1 1 60%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.right-column {
+  flex: 1 1 30%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.image-app-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.image-section a {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.image-heading, .app-heading {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.tab-buttons {
+  padding: 0px 0px;
+  margin: 0px 10px 20px;
+  float: left;
+  width: 100%;
+  position: relative;
+  border-bottom: solid 1px #e0e0e0;
+  font-size: 14px;
+}
+
+.tab-link {
+  padding: 8px 16px;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+  border-radius: 1px;
+}
+
+.tab-link.active {
+  background: #007b5e;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+  margin-left: 5%;
+}
+
+.tab-content p {
+  font-size: 16px;
+}  
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h1, .tab-content h2, .tab-content h3 {
+  color: #333;
+  margin-top: 20px;
+  color: #007b5e;
+  font-family: var(--font-headline);
+}
+
+.tab-content ul,
+.tab-content ol {
+  padding-left: 20px;
+  margin-top: 12px;
+  color: #333;
+  font-size: 16px;
+}
+
+.tab-content ul {
+  list-style-type: square;
+}
+
+.tab-content ol {
+  list-style-type: decimal;
+}
+
+.tab-content li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.tab-content a {
+  color: #007b5e;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.tab-content a:hover {
+  color: #004c3f;
+  text-decoration-color: #004c3f;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media screen and (max-width: 768px) {
+  .main-flex-row {
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .left-column, .right-column {
+    flex: 1 1 100%;
+    padding: 16px;
+  }
+
+  .tab-buttons {
+    font-size: 13px;
+  }
+
+  .tab-link {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+function openTab(evt, tabId) {
+  const container = evt.currentTarget.closest('.tab-block');
+  const buttons = container.querySelectorAll('.tab-link');
+  const tabs = container.querySelectorAll('.tab-content');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+  tabs.forEach(tab => tab.classList.remove('active'));
+
+  evt.currentTarget.classList.add('active');
+  container.querySelector(`#${tabId}`).classList.add('active');
+}
+</script>

@@ -1,0 +1,345 @@
+<section class="categories-section" style="background-color: {{ section.settings.bg_color }}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <h2 class="section-title" style="color: {{ section.settings.title_color }}">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <div class="section-subtitle" style="color: {{ section.settings.subtitle_color }}">{{ section.settings.subtitle }}</div>
+    {% endif %}
+
+    <div class="categories-wrapper">
+      <div class="left-column">
+        {% assign first_block = section.blocks.first %}
+        {% if first_block != blank %}
+          {%- liquid
+            assign first_category_handle = first_block.settings.link | split: '/' | last
+            assign first_linked_collection = collections[first_category_handle]
+            assign first_category_label = first_block.settings.title | strip_html | strip | default: first_linked_collection.title | default: 'Shop category'
+            assign first_category_image = first_block.settings.desktop_image | default: first_block.settings.mobile_image
+          -%}
+          <a
+            href="{{ first_block.settings.link }}"
+            class="category-card large {{ first_block.settings.alignment }}"
+            aria-label="{{ first_category_label | escape }}"
+          >
+            {% if first_block.settings.desktop_image or first_block.settings.mobile_image %}
+              <picture>
+                {% if first_block.settings.mobile_image %}
+                  <source
+                    media="(max-width: 768px)"
+                    srcset="{{ first_block.settings.mobile_image | image_url }}"
+                    width="{{ first_block.settings.mobile_image.width }}"
+                    height="{{ first_block.settings.mobile_image.height }}"
+                  >
+                {% endif %}
+                <img
+                  src="{{ first_category_image | image_url }}"
+                  alt=""
+                  loading="lazy"
+                  width="{{ first_category_image.width }}"
+                  height="{{ first_category_image.height }}"
+                >
+              </picture>
+            {% endif %}
+            <div class="card-overlay">
+              {% if first_block.settings.title != blank %}
+                <h3 class="card-title">{{ first_block.settings.title }}</h3>
+              {% endif %}
+              {% if first_block.settings.description != blank %}
+                <p class="card-description">{{ first_block.settings.description }}</p>
+              {% endif %}
+              {% if first_block.settings.button_text != blank %}
+                <span class="category-card__button">{{ first_block.settings.button_text }}</span>
+              {% endif %}
+            </div>
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="right-column">
+        {% for block in section.blocks offset:1 %}
+          {%- liquid
+            assign category_handle = block.settings.link | split: '/' | last
+            assign linked_collection = collections[category_handle]
+            assign category_label = block.settings.title | strip_html | strip | default: linked_collection.title | default: 'Shop category'
+            assign category_image = block.settings.desktop_image | default: block.settings.mobile_image
+          -%}
+          <a
+            href="{{ block.settings.link }}"
+            class="category-card {{ block.settings.alignment }}"
+            aria-label="{{ category_label | escape }}"
+          >
+            {% if block.settings.desktop_image or block.settings.mobile_image %}
+              <picture>
+                {% if block.settings.mobile_image %}
+                  <source
+                    media="(max-width: 768px)"
+                    srcset="{{ block.settings.mobile_image | image_url }}"
+                    width="{{ block.settings.mobile_image.width }}"
+                    height="{{ block.settings.mobile_image.height }}"
+                  >
+                {% endif %}
+                <img
+                  src="{{ category_image | image_url }}"
+                  alt=""
+                  loading="lazy"
+                  width="{{ category_image.width }}"
+                  height="{{ category_image.height }}"
+                >
+              </picture>
+            {% endif %}
+            <div class="card-overlay">
+              {% if block.settings.title != blank %}
+                <h3 class="card-title">{{ block.settings.title }}</h3>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="card-description">{{ block.settings.description }}</p>
+              {% endif %}
+              {% if block.settings.button_text != blank %}
+                <span class="category-card__button">{{ block.settings.button_text }}</span>
+              {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.categories-section {
+  padding: 50px 20px;
+}
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.section-subtitle {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0;
+}
+.categories-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+  align-items: stretch;
+  padding: 0% 5% 0% 5%;
+}
+.left-column {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+.right-column {
+  flex: 1 1 40%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* forces 2 items per row */
+  gap: 10px;
+}
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.category-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  height: 100%;
+}
+.category-card:hover img {
+  transform: scale(1.05);
+}
+.category-card.large {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.category-card.large img {
+  height: 100%;
+}
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+}
+.category-card.left .card-overlay {
+  align-items: flex-start;
+  text-align: left;
+}
+.category-card.center .card-overlay {
+  align-items: center;
+  text-align: center;
+}
+.category-card.right .card-overlay {
+  align-items: flex-end;
+  text-align: right;
+}
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.card-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.category-card__button {
+  background: #6a7816;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  .categories-wrapper {
+    flex-direction: column;
+    padding: 0%;
+  }
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-overlay {
+    justify-content: flex-end;
+    padding: 15px;
+  }
+  .category-card img {
+    height: 200px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Category Layout",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop By Category"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1c1c1c"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Sub-title",
+      "default": "Find the right range for your needs"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Sub-title Color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title",
+          "default": "Category Name"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Category Description",
+          "default": "Short description here"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Target Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Buy Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Text Alignment",
+          "default": "center",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay Opacity (Not Used)",
+          "min": 0.1,
+          "max": 0.9,
+          "step": 0.1,
+          "default": 0.6
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Category Grid",
+      "category": "Custom",
+      "blocks": [
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" },
+        { "type": "category" }
+      ]
+    }
+  ]
+}
+{% endschema %}

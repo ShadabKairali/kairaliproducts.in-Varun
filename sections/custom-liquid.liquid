@@ -1,0 +1,120 @@
+{%- if request.page_type == 'product' -%}
+  {%- assign accessible_product_custom_liquid = section.settings.custom_liquid | replace: '<h1', '<h2 class="product-description-heading"' | replace: '</h1>', '</h2>' | replace: '<H1', '<h2 class="product-description-heading"' | replace: '</H1>', '</h2>' -%}
+  {{ accessible_product_custom_liquid }}
+{%- elsif page.handle == 'thank-you' -%}
+  {%- render 'in037-b02-content', mode: 'body' -%}
+{%- elsif page.handle == 'video-gallery' -%}
+  {%- liquid
+    assign accessible_video_gallery = section.settings.custom_liquid | replace: 'body {', '.video-gallery-container {' | replace: 'minmax(320px, 1fr)', 'minmax(min(100%, 280px), 1fr)' | replace: '<meta charset="UTF-8" />', '' | replace: '<meta name="viewport" content="width=device-width, initial-scale=1.0" />', '' | replace: '<title>Video Gallery</title>', '' | replace: '<link rel="stylesheet" href="video-gallery.css" />', '' | replace: '</head>', '' | replace: '<body>', '' | replace: 'frameborder="0"', 'loading="lazy" frameborder="0"'
+
+    assign gallery_last_character = accessible_video_gallery | slice: -1, 1
+    if gallery_last_character == '<'
+      assign gallery_length = accessible_video_gallery.size | minus: 1
+      assign accessible_video_gallery = accessible_video_gallery | slice: 0, gallery_length
+    endif
+  -%}
+  {{ accessible_video_gallery }}
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      .video-card {
+        transition: none;
+      }
+
+      .video-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+  <script>
+    (() => {
+      const gallerySection = document.currentScript.closest('.shopify-section');
+
+      gallerySection?.querySelectorAll('.video-card').forEach((card) => {
+        const heading = card.querySelector('h2');
+        const video = card.querySelector('iframe');
+
+        if (heading && video) {
+          video.title = heading.textContent.trim();
+        }
+      });
+    })();
+  </script>
+{%- elsif page.handle == 'photo-gallery' -%}
+  {%- liquid
+    assign accessible_photo_gallery = section.settings.custom_liquid
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Health_Paroducts_-_Kairali_Ayurvedic_Products.jpg" alt=', 'Health_Paroducts_-_Kairali_Ayurvedic_Products.jpg" width="408" height="272" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Kairkare_Oil_-_Ayurvedic_Products.jpg" alt=', 'Kairkare_Oil_-_Ayurvedic_Products.jpg" width="408" height="572" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Best_Ayurvedic_Products.jpg" alt=', 'Best_Ayurvedic_Products.jpg" width="844" height="272" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'How_To_Buy_Ayurvedic_Products.jpg" alt=', 'How_To_Buy_Ayurvedic_Products.jpg" width="408" height="572" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Kairali_Ayurvedic_Products.jpg" alt=', 'Kairali_Ayurvedic_Products.jpg" width="1200" height="800" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Ayurvedic_Products.jpg" alt=', 'Ayurvedic_Products.jpg" width="408" height="272" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Ayurvedic_Products_Store.jpg" alt=', 'Ayurvedic_Products_Store.jpg" width="408" height="272" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Kairali_Ayurvedic_Products_Skin_Care.jpg" alt=', 'Kairali_Ayurvedic_Products_Skin_Care.jpg" width="408" height="272" decoding="async" alt='
+    assign accessible_photo_gallery = accessible_photo_gallery | replace: 'Herbal_Products_Kairali_Ayurveda.jpg" alt=', 'Herbal_Products_Kairali_Ayurveda.jpg" width="408" height="272" decoding="async" alt='
+  -%}
+  {{ accessible_photo_gallery }}
+  <style>
+    .image-layout-container,
+    .image-layout,
+    .image-layout-5 .stack,
+    .image-layout-5 .center-image,
+    .image-layout-4 .left-combo,
+    .image-layout-4 .right-large {
+      box-sizing: border-box;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .image-layout img {
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .image-layout-5 .stack,
+      .image-layout-5 .center-image,
+      .image-layout-4 .left-combo,
+      .image-layout-4 .right-large {
+        flex-basis: auto;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .image-layout-5 .center-image img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .image-layout img {
+        transition: none;
+      }
+
+      .image-layout img:hover {
+        transform: none;
+      }
+    }
+  </style>
+{%- else -%}
+  {{ section.settings.custom_liquid }}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.custom-liquid.name",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "liquid",
+      "id": "custom_liquid",
+      "label": "t:sections.custom-liquid.settings.custom_liquid.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-liquid.presets.name"
+    }
+  ]
+}
+{% endschema %}

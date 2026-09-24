@@ -1,0 +1,165 @@
+{%- assign heading_id = 'ContractB2BHeading-' | append: section.id -%}
+{%- assign description_id = 'ContractB2BDescription-' | append: section.id -%}
+
+<div id="b2b-enquiry" class="contract-b2b-enquiry" aria-labelledby="{{ heading_id }}">
+  <div class="contract-b2b-enquiry__intro">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="contract-b2b-enquiry__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 id="{{ heading_id }}" class="contract-b2b-enquiry__heading">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {%- endif -%}
+
+    {%- if section.settings.text != blank -%}
+      <div id="{{ description_id }}" class="contract-b2b-enquiry__text rte">
+        {{ section.settings.text }}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="contract-b2b-enquiry__form" aria-describedby="{{ description_id }}">
+    {%- for block in section.blocks -%}
+      <div {{ block.shopify_attributes }}>
+        {% render block %}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }} {
+    background: #f6f2e9;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: clamp(28px, 6vw, 76px);
+    align-items: start;
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: clamp(44px, 7vw, 84px) 0;
+    scroll-margin-top: 120px;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry__intro {
+    position: sticky;
+    top: 120px;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry__eyebrow {
+    margin: 0 0 12px;
+    color: #5d715f;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry__heading {
+    margin: 0;
+    color: #173d2a;
+    font-family: var(--font-headline);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry__text {
+    max-width: 580px;
+    margin-top: 18px;
+    color: #29362f;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry__form {
+    min-width: 0;
+    padding: clamp(18px, 3vw, 30px);
+    border: 1px solid #d8dfd9;
+    border-radius: 14px;
+    background: #ffffff;
+  }
+
+  #shopify-section-{{ section.id }} .contract-b2b-enquiry__form [data-form-root='true'] {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 760px) {
+    #shopify-section-{{ section.id }} .contract-b2b-enquiry {
+      grid-template-columns: minmax(0, 1fr);
+      width: min(100% - 28px, 620px);
+      padding: 42px 0;
+      scroll-margin-top: 92px;
+    }
+
+    #shopify-section-{{ section.id }} .contract-b2b-enquiry__intro {
+      position: static;
+    }
+
+    #shopify-section-{{ section.id }} .contract-b2b-enquiry__form {
+      padding: 14px;
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const enquiry = document.getElementById('b2b-enquiry');
+    const page = enquiry?.closest('main')?.querySelector('.kairali-b2b-page');
+
+    if (!enquiry || !page) return;
+
+    page.querySelectorAll('a[href]').forEach((link) => {
+      const destination = new URL(link.getAttribute('href'), window.location.origin);
+
+      if (destination.origin === window.location.origin && destination.pathname === '/pages/contact-us') {
+        link.setAttribute('href', '#b2b-enquiry');
+        link.setAttribute('aria-describedby', '{{ description_id }}');
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Contract B2B enquiry",
+  "tag": "section",
+  "class": "contract-b2b-enquiry-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Business enquiries"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Discuss your manufacturing or bulk requirement"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Use this form for contract manufacturing, private label, professional bulk packs, or custom quantity requests. Include your business name, destination market, product format and expected timing. Do not send confidential formulas at this stage.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contract B2B enquiry"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["page"]
+  }
+}
+{% endschema %}

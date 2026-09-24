@@ -1,0 +1,366 @@
+{% schema %}
+{
+  "name": "Banner + Form Overlay",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Banner Block",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_heading_mobile",
+          "label": "Hide Heading on Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "sub_heading",
+          "label": "Sub-heading"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_sub_heading_mobile",
+          "label": "Hide Sub-heading on Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_text_mobile",
+          "label": "Hide Text on Mobile"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Buy Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Buy Button Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_button_mobile",
+          "label": "Hide Button on Mobile"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_button_desktop",
+          "label": "Hide Button on Desktop"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button Background Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Button Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    },
+    {
+      "type": "form_heading",
+      "name": "Form Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "form_heading",
+          "label": "Heading Above Form"
+        },
+        {
+          "type": "color",
+          "id": "form_heading_color",
+          "label": "Heading Color",
+          "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "form_heading_align",
+          "label": "Heading Alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner + Form Overlay",
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "form_heading"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+<style>
+.banner-form-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+.banner-image-block {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* Ensures enough height for content + form */
+}
+
+.banner-image-block picture,
+.banner-image-block picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Banner Content */
+.banner-content {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 2;
+  max-width: 40%;
+  color: #fff;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-content h1,
+.banner-content h2,
+.banner-content h3 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.banner-content p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.banner-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.banner-content ul li {
+  list-style-type: disc;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.banner-content .btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Form Overlay */
+.form-overlay-target {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  z-index: 3;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 30%;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  
+}
+
+.form-heading {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-image-block {
+    min-height: 450px;
+    position: relative;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    transform: none;
+    width: 90%;
+    max-width: 90%;
+    z-index: 3;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+  }
+
+  .banner-content h1,
+  .banner-content h2,
+  .banner-content h3 {
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .banner-content p,
+  .banner-content ul li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .banner-content .btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    margin-top: 15px;
+  }
+
+  .form-overlay-target {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    max-width: 100%;
+    width: 90%;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    z-index: 2;
+  }
+
+  .form-heading {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+}
+</style>
+{% endstylesheet %}
+
+
+
+<div class="banner-form-wrapper">
+  {% assign banner_block = section.blocks | where: "type", "banner" | first %}
+  {% assign heading_block = section.blocks | where: "type", "form_heading" | first %}
+
+  {% if banner_block %}
+    <div class="banner-image-block">
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ banner_block.settings.mobile_image | image_url: width: banner_block.settings.mobile_image.width }}">
+        <img
+          loading="lazy"
+          src="{{ banner_block.settings.desktop_image | image_url: width: banner_block.settings.desktop_image.width }}"
+          width="{{ banner_block.settings.desktop_image.width }}"
+          height="{{ banner_block.settings.desktop_image.height }}"
+          alt="Banner Image"
+        >
+      </picture>
+
+      <div class="banner-content" style="color: {{ banner_block.settings.text_color }};">
+        {% unless banner_block.settings.hide_heading_mobile %}
+          <div class="{% if banner_block.settings.hide_heading_mobile %}hide-mobile{% endif %}">
+            {{ banner_block.settings.heading }}
+          </div>
+        {% endunless %}
+        {% unless banner_block.settings.hide_sub_heading_mobile %}
+          <div class="{% if banner_block.settings.hide_sub_heading_mobile %}hide-mobile{% endif %}">
+            {{ banner_block.settings.sub_heading }}
+          </div>
+        {% endunless %}
+        {% unless banner_block.settings.hide_text_mobile %}
+          <div class="{% if banner_block.settings.hide_text_mobile %}hide-mobile{% endif %}">
+            {{ banner_block.settings.text }}
+          </div>
+        {% endunless %}
+        {% unless banner_block.settings.hide_button_mobile or banner_block.settings.hide_button_desktop %}
+          <a class="btn
+            {% if banner_block.settings.hide_button_mobile %} hide-mobile{% endif %}
+            {% if banner_block.settings.hide_button_desktop %} hide-desktop{% endif %}"
+            style="background-color: {{ banner_block.settings.button_color }}; color: {{ banner_block.settings.button_text_color }};"
+            href="{{ banner_block.settings.button_link }}">
+            {{ banner_block.settings.button_text }}
+          </a>
+        {% endunless %}
+      </div>
+    </div>
+  {% endif %}
+
+  <div
+    class="form-overlay-target"
+    {% if page.handle == 'ayurvedic-herbal-products-contract-manufacturing-and-third-party-manufacturing-company-in-india' %}
+      id="contract-enquiry-form"
+    {% endif %}
+  >
+    {% if heading_block %}
+      <div class="form-heading"
+           style="color: {{ heading_block.settings.form_heading_color }}; text-align: {{ heading_block.settings.form_heading_align }};">
+        {{ heading_block.settings.form_heading }}
+      </div>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% if block.type contains '@app' %}
+        {% render block %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

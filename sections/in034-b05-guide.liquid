@@ -1,0 +1,16 @@
+{% paginate collection.products by 12 %}
+  {% if paginate.current_page == 1 %}
+    {% capture in034_b05_guide %}{% render 'in034-b05-content', mode: 'guide' %}{% endcapture %}
+    {% assign in034_b05_guide = in034_b05_guide | strip %}
+    {% if in034_b05_guide != blank %}
+      <div class="collection-description collection-description--in034-b02 rte">{{ in034_b05_guide }}</div>
+    {% endif %}
+  {% endif %}
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "IN-034 B05 guide",
+  "settings": []
+}
+{% endschema %}
