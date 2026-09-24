@@ -1,0 +1,402 @@
+/**
+ * KAIRALI AYURVEDIC PRODUCTS — 2026 LUXURY REDESIGN
+ * MASTER DESIGN SYSTEM TOKENS (Phase 1 Foundation)
+ *
+ * Scope: Pure token definitions and opt-in utility classes.
+ * Safety: Contains ZERO unnamespaced global element overrides (no body, div, p, a, button).
+ * Compatibility: Designed to co-exist alongside Wonder theme tokens without regressions.
+ */
+
+:root {
+  /* ==========================================================================
+     01. COLOR PALETTE — Core Brand & Luxury Ayurvedic Nuances
+     ========================================================================== */
+
+  /* Primary Palette */
+  --kp-color-deep-forest:   #0D2D20; /* Primary brand dark, editorial grounding */
+  --kp-color-warm-ivory:    #FBF8F0; /* Primary brand light, rich warm foundation */
+  --kp-color-warm-charcoal: #191816; /* Primary typography & high-contrast ink */
+  --kp-color-muted-sage:    #A9BD9E; /* Botanical secondary, herbal freshness */
+  --kp-color-sandstone:     #F5F2EB; /* Warm neutral surface & secondary container */
+  --kp-color-muted-gold:    #C9A45C; /* Accent only: heritage emblem & seal touches */
+
+  /* Supporting Botanical Nuances */
+  --kp-color-moss:          #6A7816; /* Classical Kairali heritage green */
+  --kp-color-bronze:        #8F570F; /* Classical Ayurvedic warm copper/bronze */
+  --kp-color-parchment:     #F4EEE1; /* Deep tinted ivory for editorial callouts */
+  --kp-color-white:         #FFFFFF; /* Pure white for high-contrast card surfaces */
+
+  /* Semantic Variables (Source of Truth for Components) */
+  --kp-color-background:    var(--kp-color-warm-ivory);
+  --kp-color-surface:       var(--kp-color-white);
+  --kp-color-surface-alt:   var(--kp-color-sandstone);
+  --kp-color-surface-dark:  var(--kp-color-deep-forest);
+  --kp-color-text:          var(--kp-color-warm-charcoal);
+  --kp-color-text-muted:    rgba(25, 24, 22, 0.68);
+  --kp-color-text-inverse:  var(--kp-color-warm-ivory);
+  --kp-color-text-accent:   var(--kp-color-muted-gold);
+  --kp-color-primary:       var(--kp-color-deep-forest);
+  --kp-color-primary-hover: #164331;
+  --kp-color-accent:        var(--kp-color-muted-gold);
+  --kp-color-border:        rgba(25, 24, 22, 0.12);
+  --kp-color-border-light:  rgba(25, 24, 22, 0.06);
+  --kp-color-border-accent: rgba(201, 164, 92, 0.35);
+
+  /* Functional & State Tokens */
+  --kp-color-success:       #1A5B33;
+  --kp-color-error:         #B43A3A;
+  --kp-color-warning:       #C1882C;
+  --kp-color-info:          #2A4D69;
+
+  /* ==========================================================================
+     02. TYPOGRAPHY SYSTEM — Editorial Hierarchy
+     Uses existing project font stacks (Jost / Inter / system fallbacks)
+     ========================================================================== */
+
+  /* Font Families */
+  --kp-font-display: "Cormorant Garamond", "Playfair Display", "Cinzel", "Georgia", "Baskerville", serif;
+  --kp-font-display-alt: "Jost", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --kp-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --kp-font-label: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --kp-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Font Weights */
+  --kp-font-weight-regular: 400;
+  --kp-font-weight-medium:  500;
+  --kp-font-weight-semibold: 600;
+  --kp-font-weight-bold:    700;
+
+  /* Line Heights */
+  --kp-line-height-tight:   1.12;
+  --kp-line-height-snug:    1.25;
+  --kp-line-height-heading: 1.32;
+  --kp-line-height-body:    1.62;
+  --kp-line-height-relaxed: 1.78;
+
+  /* Letter Spacing */
+  --kp-letter-spacing-tight:   -0.03em;
+  --kp-letter-spacing-normal:  0;
+  --kp-letter-spacing-wide:    0.04em;
+  --kp-letter-spacing-tracked: 0.14em;
+  --kp-letter-spacing-eyebrow: 0.18em;
+
+  /* Fluid Responsive Type Scale (clamp-based from 375px to 1920px) */
+  --kp-text-display-xl: clamp(2.75rem, 5.2vw + 1rem, 4.75rem);   /* 44px - 76px */
+  --kp-text-display-l:  clamp(2.15rem, 3.8vw + 0.8rem, 3.75rem); /* 34px - 60px */
+  --kp-text-display-m:  clamp(1.85rem, 2.8vw + 0.6rem, 2.75rem); /* 30px - 44px */
+  --kp-text-heading-xl: clamp(1.5rem, 2.1vw + 0.5rem, 2.25rem);  /* 24px - 36px */
+  --kp-text-heading-l:  clamp(1.25rem, 1.4vw + 0.5rem, 1.75rem); /* 20px - 28px */
+  --kp-text-heading-m:  clamp(1.125rem, 0.8vw + 0.6rem, 1.375rem);/* 18px - 22px */
+  --kp-text-heading-s:  clamp(1rem, 0.4vw + 0.65rem, 1.1875rem); /* 16px - 19px */
+
+  --kp-text-body-l:     clamp(1.0625rem, 0.3vw + 0.75rem, 1.1875rem); /* 17px - 19px */
+  --kp-text-body-m:     1rem;                                          /* 16px */
+  --kp-text-body-s:     0.875rem;                                      /* 14px */
+  --kp-text-caption:    0.75rem;                                       /* 12px */
+  --kp-text-label:      0.6875rem;                                     /* 11px */
+
+  /* ==========================================================================
+     03. SPACING SCALE — Harmonic 4px/8px Base Rhythm
+     ========================================================================== */
+  --kp-space-1:  4px;
+  --kp-space-2:  8px;
+  --kp-space-3:  12px;
+  --kp-space-4:  16px;
+  --kp-space-5:  24px;
+  --kp-space-6:  32px;
+  --kp-space-7:  48px;
+  --kp-space-8:  64px;
+  --kp-space-9:  96px;
+  --kp-space-10: 128px;
+
+  /* Responsive Section Gaps */
+  --kp-section-gap: clamp(48px, 6vw, 96px);
+  --kp-section-gap-compact: clamp(32px, 4vw, 56px);
+  --kp-grid-gap: clamp(16px, 2.5vw, 32px);
+
+  /* ==========================================================================
+     04. CONTAINER SYSTEM — Editorial, Product & Section Widths
+     ========================================================================== */
+  --kp-container-sm:   640px;  /* Focused single-column text, testimonials */
+  --kp-container-md:   960px;  /* Editorial narratives, ritual layouts */
+  --kp-container-lg:   1200px; /* Standard product & collection grid */
+  --kp-container-xl:   1440px; /* Luxury hero & balanced wide sections */
+  --kp-container-wide: 1600px; /* Aligns with theme --site-max-width */
+  --kp-container-full: 100%;
+
+  --kp-gutter: clamp(16px, 4vw, 48px);
+
+  /* ==========================================================================
+     05. CORNER RADIUS — Restrained Luxury Feel
+     ========================================================================== */
+  --kp-radius-none: 0px;
+  --kp-radius-sm:   4px;
+  --kp-radius-md:   8px;
+  --kp-radius-lg:   12px;
+  --kp-radius-xl:   18px;
+  --kp-radius-pill: 9999px;
+
+  /* ==========================================================================
+     06. SHADOW SYSTEM — Subtle Ambient Depth
+     ========================================================================== */
+  --kp-shadow-none:     none;
+  --kp-shadow-soft:     0 2px 10px rgba(25, 24, 22, 0.04), 0 1px 3px rgba(25, 24, 22, 0.02);
+  --kp-shadow-card:     0 8px 24px rgba(13, 45, 32, 0.06), 0 2px 6px rgba(13, 45, 32, 0.03);
+  --kp-shadow-floating: 0 20px 48px rgba(13, 45, 32, 0.12), 0 4px 12px rgba(13, 45, 32, 0.04);
+  --kp-shadow-inset:    inset 0 1px 3px rgba(25, 24, 22, 0.08);
+
+  /* ==========================================================================
+     07. MOTION & TRANSITIONS — Smooth, Calm Cadence
+     ========================================================================== */
+  --kp-duration-fast:   150ms;
+  --kp-duration-normal: 250ms;
+  --kp-duration-slow:   400ms;
+  --kp-duration-fade:   500ms;
+
+  --kp-ease-luxury: cubic-bezier(0.2, 0.0, 0.1, 1);
+  --kp-ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --kp-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  /* ==========================================================================
+     08. BUTTON FOUNDATION TOKENS
+     ========================================================================== */
+  --kp-btn-height:          48px;
+  --kp-btn-height-sm:       40px;
+  --kp-btn-height-lg:       54px;
+  --kp-btn-padding-x:       28px;
+  --kp-btn-padding-x-sm:    20px;
+  --kp-btn-font-size:       var(--kp-text-label);
+  --kp-btn-font-weight:     var(--kp-font-weight-medium);
+  --kp-btn-letter-spacing:  var(--kp-letter-spacing-tracked);
+  --kp-btn-border-radius:   var(--kp-radius-pill);
+  --kp-btn-transition:      all var(--kp-duration-normal) var(--kp-ease-luxury);
+
+  /* Primary Button Tokens */
+  --kp-btn-primary-bg:           var(--kp-color-deep-forest);
+  --kp-btn-primary-color:        var(--kp-color-warm-ivory);
+  --kp-btn-primary-border:       transparent;
+  --kp-btn-primary-hover-bg:     #164331;
+  --kp-btn-primary-hover-color:  var(--kp-color-white);
+
+  /* Secondary (Outlined) Button Tokens */
+  --kp-btn-secondary-bg:          transparent;
+  --kp-btn-secondary-color:       var(--kp-color-deep-forest);
+  --kp-btn-secondary-border:      var(--kp-color-deep-forest);
+  --kp-btn-secondary-hover-bg:    var(--kp-color-deep-forest);
+  --kp-btn-secondary-hover-color: var(--kp-color-warm-ivory);
+
+  /* Tertiary (Text Link) Button Tokens */
+  --kp-btn-tertiary-color:       var(--kp-color-deep-forest);
+  --kp-btn-tertiary-hover-color: var(--kp-color-bronze);
+
+  /* ==========================================================================
+     09. ACCESSIBILITY & FOCUS
+     ========================================================================== */
+  --kp-focus-ring: 0 0 0 2px var(--kp-color-background), 0 0 0 4px var(--kp-color-primary);
+  --kp-focus-ring-offset: 2px;
+}
+
+/* Reduced Motion Override for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --kp-duration-fast:   0.01ms;
+    --kp-duration-normal: 0.01ms;
+    --kp-duration-slow:   0.01ms;
+    --kp-duration-fade:   0.01ms;
+    --kp-btn-transition:  none;
+  }
+}
+
+/* ==========================================================================
+   10. OPT-IN KAIRALI UTILITY CLASSES (Strictly namespaced under .kp-*)
+   Does NOT apply to unclassed elements or global theme selectors.
+   ========================================================================== */
+
+/* Scoped Container Helpers */
+.kp-container-sm {
+  width: 100%;
+  max-width: var(--kp-container-sm);
+  margin-inline: auto;
+  padding-inline: var(--kp-gutter);
+  box-sizing: border-box;
+}
+
+.kp-container-md {
+  width: 100%;
+  max-width: var(--kp-container-md);
+  margin-inline: auto;
+  padding-inline: var(--kp-gutter);
+  box-sizing: border-box;
+}
+
+.kp-container-lg {
+  width: 100%;
+  max-width: var(--kp-container-lg);
+  margin-inline: auto;
+  padding-inline: var(--kp-gutter);
+  box-sizing: border-box;
+}
+
+.kp-container-xl {
+  width: 100%;
+  max-width: var(--kp-container-xl);
+  margin-inline: auto;
+  padding-inline: var(--kp-gutter);
+  box-sizing: border-box;
+}
+
+.kp-container-wide {
+  width: 100%;
+  max-width: var(--kp-container-wide);
+  margin-inline: auto;
+  padding-inline: var(--kp-gutter);
+  box-sizing: border-box;
+}
+
+/* Scoped Typography Helpers */
+.kp-type-display-xl {
+  font-family: var(--kp-font-display);
+  font-size: var(--kp-text-display-xl);
+  line-height: var(--kp-line-height-tight);
+  letter-spacing: var(--kp-letter-spacing-tight);
+  font-weight: var(--kp-font-weight-regular);
+}
+
+.kp-type-display-l {
+  font-family: var(--kp-font-display);
+  font-size: var(--kp-text-display-l);
+  line-height: var(--kp-line-height-tight);
+  letter-spacing: var(--kp-letter-spacing-tight);
+  font-weight: var(--kp-font-weight-regular);
+}
+
+.kp-type-display-m {
+  font-family: var(--kp-font-display);
+  font-size: var(--kp-text-display-m);
+  line-height: var(--kp-line-height-snug);
+  letter-spacing: var(--kp-letter-spacing-tight);
+  font-weight: var(--kp-font-weight-regular);
+}
+
+.kp-type-heading-xl {
+  font-family: var(--kp-font-display-alt);
+  font-size: var(--kp-text-heading-xl);
+  line-height: var(--kp-line-height-heading);
+  letter-spacing: var(--kp-letter-spacing-tight);
+  font-weight: var(--kp-font-weight-medium);
+}
+
+.kp-type-heading-l {
+  font-family: var(--kp-font-display-alt);
+  font-size: var(--kp-text-heading-l);
+  line-height: var(--kp-line-height-heading);
+  letter-spacing: var(--kp-letter-spacing-normal);
+  font-weight: var(--kp-font-weight-medium);
+}
+
+.kp-type-heading-m {
+  font-family: var(--kp-font-display-alt);
+  font-size: var(--kp-text-heading-m);
+  line-height: var(--kp-line-height-heading);
+  letter-spacing: var(--kp-letter-spacing-normal);
+  font-weight: var(--kp-font-weight-medium);
+}
+
+.kp-type-eyebrow {
+  font-family: var(--kp-font-label);
+  font-size: var(--kp-text-label);
+  line-height: var(--kp-line-height-snug);
+  letter-spacing: var(--kp-letter-spacing-eyebrow);
+  text-transform: uppercase;
+  font-weight: var(--kp-font-weight-semibold);
+  color: var(--kp-color-accent);
+}
+
+.kp-type-body-l {
+  font-family: var(--kp-font-body);
+  font-size: var(--kp-text-body-l);
+  line-height: var(--kp-line-height-body);
+  font-weight: var(--kp-font-weight-regular);
+}
+
+.kp-type-body-m {
+  font-family: var(--kp-font-body);
+  font-size: var(--kp-text-body-m);
+  line-height: var(--kp-line-height-body);
+  font-weight: var(--kp-font-weight-regular);
+}
+
+.kp-type-body-s {
+  font-family: var(--kp-font-body);
+  font-size: var(--kp-text-body-s);
+  line-height: var(--kp-line-height-body);
+  font-weight: var(--kp-font-weight-regular);
+}
+
+.kp-type-caption {
+  font-family: var(--kp-font-body);
+  font-size: var(--kp-text-caption);
+  line-height: var(--kp-line-height-snug);
+  color: var(--kp-color-text-muted);
+}
+
+/* Scoped Button Base Helpers (Only applies when class is explicitly used) */
+.kp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kp-space-2);
+  min-height: var(--kp-btn-height);
+  padding: 0 var(--kp-btn-padding-x);
+  border-radius: var(--kp-btn-border-radius);
+  font-family: var(--kp-font-label);
+  font-size: var(--kp-btn-font-size);
+  font-weight: var(--kp-btn-font-weight);
+  letter-spacing: var(--kp-btn-letter-spacing);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: var(--kp-btn-transition);
+}
+
+.kp-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--kp-focus-ring);
+}
+
+.kp-btn--primary {
+  background-color: var(--kp-btn-primary-bg);
+  color: var(--kp-btn-primary-color);
+  border: 1px solid var(--kp-btn-primary-border);
+}
+
+.kp-btn--primary:hover {
+  background-color: var(--kp-btn-primary-hover-bg);
+  color: var(--kp-btn-primary-hover-color);
+}
+
+.kp-btn--secondary {
+  background-color: var(--kp-btn-secondary-bg);
+  color: var(--kp-btn-secondary-color);
+  border: 1px solid var(--kp-btn-secondary-border);
+}
+
+.kp-btn--secondary:hover {
+  background-color: var(--kp-btn-secondary-hover-bg);
+  color: var(--kp-btn-secondary-hover-color);
+}
+
+.kp-btn--tertiary {
+  background: transparent;
+  color: var(--kp-btn-tertiary-color);
+  border: none;
+  padding: 0;
+  min-height: auto;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.kp-btn--tertiary:hover {
+  color: var(--kp-btn-tertiary-hover-color);
+}
