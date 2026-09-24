@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".container {margin-left: 5%; margin-right: 5%;}"
+      ],
+      "settings": {
+        "compact-size-enabled": false,
+        "hide_content": false,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 20
+      }
+    },
+    "b2b_enquiry": {
+      "type": "contract-b2b-enquiry",
+      "blocks": {
+        "forms_inline_b2b": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "524380",
+            "text_color": "#202020",
+            "button_background_color": "#173d2a",
+            "button_label_color": "#ffffff",
+            "links_color": "#173d2a",
+            "errors_color": "#b42318",
+            "text_alignment": "left",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_b2b"
+      ],
+      "settings": {
+        "eyebrow": "Business enquiries",
+        "heading": "Discuss your manufacturing or bulk requirement",
+        "text": "<p>Use this form for contract manufacturing, private label, professional bulk packs, or custom quantity requests. Include your business name, destination market, product format and expected timing. Do not send confidential formulas at this stage.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b2b_enquiry"
+  ]
+}

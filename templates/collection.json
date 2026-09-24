@@ -1,0 +1,553 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_6X9Vr3": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_QwCR6Y": {
+          "type": "slide",
+          "settings": {
+            "subheading": "",
+            "subheading_disable_on_mobile": false,
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Kaircin_Banner_aa6663c0-8d44-42ef-a2f1-332ee1a8573e.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_image": "shopify://shop_images/KAIRCIN_mobile_25off.png",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_gqiNqr": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "subheading_disable_on_mobile": false,
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "secondary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "#fbfaf6",
+            "color-overlay": "#000000",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Kairali_Ayurveda_5.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "right",
+            "mobile_image": "shopify://shop_images/Online_Ayurvedic_Products.png",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "#fbfaf6"
+          }
+        },
+        "slide_NhdHEn": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "subheading_disable_on_mobile": false,
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://pages/online-consultation",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "shopify://pages/online-consultation",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Free_Ayurvedic_Doctor_Consultation_2.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_image": "shopify://shop_images/Free_Ayurvedic_Doctor_Counsultation.png",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_nRaRUd": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "subheading_disable_on_mobile": false,
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://products/kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Kaircin_Banner_2.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_image": "shopify://shop_images/Ayurvedic_Herbal_Facial_Oil.png",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_zjCe6R": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "subheading_disable_on_mobile": false,
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/treatments-for-ailments",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Ayurvedic_Treatment_711362a6-4994-4c33-9230-2166d6f4479b.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_image": "shopify://shop_images/Ayurvedic_Treatment_Mobile_1.png",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_QwCR6Y",
+        "slide_gqiNqr",
+        "slide_NhdHEn",
+        "slide_nRaRUd",
+        "slide_zjCe6R"
+      ],
+      "name": "t:sections.slideshow.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": true,
+        "auto-rotate": true,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 220,
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "out_hero_mobile": false,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "breadcrumbs": {
+      "type": "main-breadcrumbs",
+      "settings": {
+        "full-width-enabled": false,
+        "text_color": "#8e9d35",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 16,
+        "margin-bottom": 0
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "layout": "text_first",
+        "desktop-percentage-image-width": 50,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 260,
+        "mobile_fixed_height": 260,
+        "full-width-enabled": true,
+        "size_heading": 180,
+        "size_heading_mobile": 230,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 12,
+        "margin-bottom": 12
+      }
+    },
+    "title": {
+      "type": "main-collection-title",
+      "custom_css": [
+        ".hero__title {font-size: 22px; font-weight: 400; letter-spacing: 0.12em;}"
+      ],
+      "settings": {
+        "full-width-enabled": false,
+        "show_collection_description": false,
+        "desktop_text_horizontal_position": "center",
+        "size_heading": 200,
+        "size_heading_mobile": 140,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 12,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_i4cHgb": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% assign in034_b02_handles = 'best-selling-products,featured-products,kairali-ayurvedic-herbal-products-discounted-sale,body-care,face-care,skin-care,hair-care,men-health,women-s-health,fitness-wellness,general-health,diseases,treatments-for-ailments,ayurvedic-pain-relief-oils,ayurvedic-herbal-infusion-ayurvedic-herbal-tea,traditional-ayurvedic-medicine,ayurvedic-herbal-single-herbs-products,arishtas-and-asavams-or-arishta-and-asava,ayurvedic-choornams-herbal-powders-churna,kashayams-ayurvedic-herbal-decoctions,kashayams-tablet,ayurvedic-tablets-gulikas-and-vatis,thailams-tailams-ayurvedic-medicated-oils,kair-by-kairali-herbal-cosmetics-products,general-care,diabetes,arthritis,obesity,men-sexual-health,depression,pain-relief,constipation,acidity,indigestion,migraine,cholesterol-treatment,haemorrohoids,ayurvedic-proprietary-organics,ayurvedic-proprietary-medicines,dry-skin,wrinkles,oily-skin,pimples,pigmentation,dandruff,hair-fall,premature-graying,split-ends,dry-hair,thinning-hair,dental-care,foot-care,premature-ejaculation,erectile-dysfunction,testosterone-booster,male-fertility-support,energy-and-stamina,ayurvedic-energy-booster,muscle-strength-and-recovery,fatigue-and-weakness,immunity-and-general-wellness,daily-health-supplements,multivitamins,stress,weight-management,weight-gain,weight-loss,menstrual-hormonal-health,irregular-periods,pcos-pcod-support,menstrual-pain-relief,hormonal-balance,vaginal-care,post-pregnancy,breast-care' | split: ',' %}{% assign in034_b05_handles = 'daily-supplements,women-sexual-health,osteoporosis,sprain,crush-injury,back-pain,neuralgia,cramps,neck-pain,rheumatic,spondylosis,frozen-shoulder,sciatica,diet,herbal-drink,immune-booster,anaemia,energy,energy-boosters,exhaustion,daily-energy-supplement,gastric-care,chronic-ulcers,fever,headache' | split: ',' %}{% assign in034_b02_handles = in034_b02_handles | concat: in034_b05_handles %}{% assign in034_b06_handles = 'cough-and-cold,memory-boosters,asthma,dyspnea,pulmonary-congestion,abdominal-diseases,hiccough,paralysis,facial-palsy,paraplegia,sexual-disorder,sexual-neurosis,sphermatorrhoea,sexual-impotency,infertility,skin-diseases,scabies,carbuncle,pruritus,eczema,leprosy,leucoderma,gastrointestinal-tract-git-ulcers,urine-related-problems,dysuria' | split: ',' %}{% assign in034_b02_handles = in034_b02_handles | concat: in034_b06_handles %}{% assign in034_b07_handles = 'bph,neurological-dieases,loss-of-memory,epilepsy,insanity,insomnia,ayurvedic-herbal-products-wholesaler-bulk-supplier,gift-products,thailams-wholesale-bulk-packaging,choornams-wholesale-bulk-packaging,herbal-cosmetics-wholesale-bulk-packaging,proprietary-oils-wholesale-bulk-packaging,proprietary-cosmetics-wholesale-bulk-packaging,herbal-infusions-wholesale-bulk-packaging,lehams-ayurvedic-herbal-jams,ghrithams-ayurvedic-herbal-medicated-ghee,ayurvedic-hair-oil,best-ayurvedic-oil-for-leg-pain,best-ayurvedic-syrup-for-irregular-periods,books,best-herbal-shampoo-ayurvedic-herbal-shampoos-to-control-dandruff-hair-fall-and-promote-hair-growth,herbal-soap-best-natural-handmade-herbal-soap-for-healthy-glowing-skin' | split: ',' %}{% assign in034_b02_handles = in034_b02_handles | concat: in034_b07_handles %}{% unless in034_b02_handles contains collection.handle %}{% if collection.description != blank %}<style>.collection-description [data-guide] .path{animation:none!important;transform:none!important}</style><div class=\"collection-description rte\">{{ collection.description }}</div>{% endif %}{% endunless %}"
+      }
+    },
+    "flex_collection_section_4B39Hg": {
+      "type": "flex-collection-section",
+      "disabled": true,
+      "name": "Flex Collection Layout",
+      "settings": {
+        "products_per_page": 120,
+        "columns_mobile": "2",
+        "columns_desktop": "3",
+        "spacing_desktop": "16",
+        "spacing_mobile": "16",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_product_rating": true,
+        "enable_quick_add_button": true,
+        "show_video": true,
+        "full-width-enabled": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "filter_position": "always",
+        "toolbar_style": "buttons",
+        "margin-top": 40,
+        "margin-bottom": 0,
+        "text_alignment": "center"
+      }
+    },
+    "category_himanshu_D74zt3": {
+      "type": "Category-Himanshu",
+      "disabled": true,
+      "name": "Collection Himanshu",
+      "settings": {
+        "products_per_page": 120,
+        "columns_mobile": "2",
+        "columns_desktop": "3",
+        "spacing_desktop": "16",
+        "spacing_mobile": "16",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_product_rating": true,
+        "enable_quick_add_button": true,
+        "show_video": true,
+        "full-width-enabled": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "filter_position": "always",
+        "toolbar_style": "minimal",
+        "margin-top": 0,
+        "margin-bottom": 0,
+        "text_alignment": "center"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".card__title {text-transform: none; font-size: 12px; word-spacing: 0px;}",
+        ".product-card-name {display: -webkit-box; -webkit-line-clamp: 2; /* Show max 2 lines */ -webkit-box-orient: vertical; overflow: hidden; height: 20px; /* Approx height for 2 lines */ word-spacing: -4px; font-size: 16px; word-wrap: normal;}"
+      ],
+      "settings": {
+        "products_per_page": 12,
+        "columns_mobile": "2",
+        "columns_desktop": "3",
+        "spacing_desktop": "16",
+        "full-width-enabled": false,
+        "spacing_mobile": "16",
+        "image_ratio": "adapt",
+        "show_video": true,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_product_rating": false,
+        "enable_quick_add_button": true,
+        "text_alignment": "center",
+        "toolbar_style": "minimal",
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "filter_position": "always",
+        "margin-top": 0,
+        "margin-bottom": 28
+      }
+    },
+    "in034_b02_guide_after_grid": {
+      "type": "custom-liquid",
+      "name": "IN-034 B02 guide after products",
+      "settings": {
+        "custom_liquid": "{% assign in034_b02_handles = 'best-selling-products,featured-products,kairali-ayurvedic-herbal-products-discounted-sale,body-care,face-care,skin-care,hair-care,men-health,women-s-health,fitness-wellness,general-health,diseases,treatments-for-ailments,ayurvedic-pain-relief-oils,ayurvedic-herbal-infusion-ayurvedic-herbal-tea,traditional-ayurvedic-medicine,ayurvedic-herbal-single-herbs-products,arishtas-and-asavams-or-arishta-and-asava,ayurvedic-choornams-herbal-powders-churna,kashayams-ayurvedic-herbal-decoctions,kashayams-tablet,ayurvedic-tablets-gulikas-and-vatis,thailams-tailams-ayurvedic-medicated-oils,kair-by-kairali-herbal-cosmetics-products,general-care,diabetes,arthritis,obesity,men-sexual-health,depression,pain-relief,constipation,acidity,indigestion,migraine,cholesterol-treatment,haemorrohoids,ayurvedic-proprietary-organics,ayurvedic-proprietary-medicines,dry-skin,wrinkles,oily-skin,pimples,pigmentation,dandruff,hair-fall,premature-graying,split-ends,dry-hair,thinning-hair,dental-care,foot-care,premature-ejaculation,erectile-dysfunction,testosterone-booster,male-fertility-support,energy-and-stamina,ayurvedic-energy-booster,muscle-strength-and-recovery,fatigue-and-weakness,immunity-and-general-wellness,daily-health-supplements,multivitamins,stress,weight-management,weight-gain,weight-loss,menstrual-hormonal-health,irregular-periods,pcos-pcod-support,menstrual-pain-relief,hormonal-balance,vaginal-care,post-pregnancy,breast-care' | split: ',' %}{% paginate collection.products by 12 %}{% if paginate.current_page == 1 %}{% if in034_b02_handles contains collection.handle %}{% if collection.description != blank %}<div class=\"collection-description collection-description--in034-b02 rte\">{{ collection.description }}</div>{% endif %}{% endif %}{% endif %}{% endpaginate %}"
+      }
+    },
+    "in034_b05_guide_after_grid": {
+      "type": "in034-b05-guide",
+      "name": "IN-034 B05 guide after products",
+      "settings": {}
+    },
+    "features_banner_bJPayr": {
+      "type": "features-banner",
+      "blocks": {
+        "image_GQBCRh": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Cash_On_Delivery.png",
+            "select_icon": "user",
+            "heading": "CASH ON DELIVERY",
+            "text": "<p>No Online Payment? No Problem. Wellness at Your Door – Pay on Delivery!</p>",
+            "link": "#"
+          }
+        },
+        "image_YtDi3M": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Free_Shipping.png",
+            "select_icon": "bag",
+            "heading": "FREE SHIPPING",
+            "text": "<p>Free Standard Shipping on Orders of ₹799 or More</p>",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "image_GQBCRh",
+        "image_YtDi3M"
+      ],
+      "disabled": true,
+      "name": "Icon with links",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 64,
+        "icon_width_desktop": 92,
+        "icon_layout": "left",
+        "columns_desktop": "2",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_hADmFT": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_bf9aR9": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "user",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_gcNmVy": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>Items you love at prices that fit your budget.We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_yX8NnD": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "star",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_qgFzka": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "search",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bf9aR9",
+        "image_gcNmVy",
+        "image_yX8NnD",
+        "image_qgFzka"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.18em;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 70,
+        "size_heading": 70,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "#fbfaf6",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "#8e9d35",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "newsletter_RKrFQt": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_a9LR3K": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "paragraph_D6ggC7": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_Eqqhw8": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_a9LR3K",
+        "paragraph_D6ggC7",
+        "email_form_Eqqhw8"
+      ],
+      "disabled": true,
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    },
+    "1784800821a8968bd7": {
+      "type": "apps",
+      "blocks": {
+        "wishlist_back_in_stock_wishlist_collection_block_Yz43wM": {
+          "type": "shopify://apps/wishlist-back-in-stock/blocks/wishlist-collection-block/582a225b-bd58-49d0-b0b6-9479192e79c5",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "wishlist_back_in_stock_wishlist_collection_block_Yz43wM"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "in034_b06_guide_after_grid": {
+      "type": "in034-b06-guide",
+      "name": "IN-034 B06 guide after products",
+      "settings": {}
+    },
+    "in034_b07_guide_after_grid": {
+      "type": "in034-b07-guide",
+      "name": "IN-034 B07 guide after products",
+      "settings": {}
+    }
+  },
+  "order": [
+    "slideshow_6X9Vr3",
+    "breadcrumbs",
+    "banner",
+    "title",
+    "custom_liquid_i4cHgb",
+    "flex_collection_section_4B39Hg",
+    "category_himanshu_D74zt3",
+    "product-grid",
+    "in034_b02_guide_after_grid",
+    "in034_b05_guide_after_grid",
+    "in034_b06_guide_after_grid",
+    "in034_b07_guide_after_grid",
+    "features_banner_bJPayr",
+    "features_banner_hADmFT",
+    "newsletter_RKrFQt",
+    "1784800821a8968bd7"
+  ]
+}

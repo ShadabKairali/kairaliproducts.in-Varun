@@ -1,0 +1,407 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": false,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 20
+      }
+    },
+    "banner_with_form_VAVGbD": {
+      "type": "banner-with-form",
+      "blocks": {
+        "banner_CyXVmp": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/main-banner.jpg",
+            "mobile_image": "shopify://shop_images/Factory_1.png",
+            "heading": "<h1>Ayurvedic & Herbal Products Contract Manufacturing/<br/>Third Party Manufacturing Company in India</h1>",
+            "hide_heading_mobile": false,
+            "sub_heading": "",
+            "hide_sub_heading_mobile": false,
+            "text": "<ul><li>We have solution for all your product needs.</li><li> Quality, efficiency & innovation is our strength.</li><li> Provides best raw materials & customized packaging support.</li><li> In house laboratories, research & development team.</li><li> Low MOQs & best price in the industry.</li></ul>",
+            "hide_text_mobile": false,
+            "button_text": "",
+            "button_link": "",
+            "hide_button_mobile": false,
+            "hide_button_desktop": true,
+            "text_color": "#fbfaf6",
+            "button_color": "#ff9900",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "form_heading_NxiFGM": {
+          "type": "form_heading",
+          "settings": {
+            "form_heading": "<p>Consult with our Contract Manufacturing Experts</p>",
+            "form_heading_color": "#ffffff",
+            "form_heading_align": "center"
+          }
+        },
+        "forms_inline_miV8EN": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "524380",
+            "text_color": "#202020",
+            "button_background_color": "#ff9900",
+            "button_label_color": "#fbfaf6",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_CyXVmp",
+        "form_heading_NxiFGM",
+        "forms_inline_miV8EN"
+      ],
+      "custom_css": [
+        ".form-overlay-target {background-color: #294602;}"
+      ],
+      "name": "Banner + Form Overlay",
+      "settings": {}
+    },
+    "separator_xP69Rn": {
+      "type": "separator",
+      "disabled": true,
+      "name": "t:sections.separator.presets.name",
+      "settings": {
+        "heading": "",
+        "show-separator-line": true,
+        "full-width-line": true,
+        "color-background": "#717171",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_HxmMgA": {
+      "type": "custom-liquid",
+      "name": "About Us",
+      "custom_css": [
+        "@media (max-width: 600px) {.about-wrapper {box-sizing: border-box; width: calc(100% - 20px); max-width: calc(100% - 20px);} .about-left, .about-stats {min-width: 0; width: 100%;}}"
+      ],
+      "settings": {
+        "custom_liquid": "<style>\n\n    .about-wrapper {\n      display: flex;\n      flex-wrap: wrap;\n      justify-content: space-between;\n      align-items: flex-start;\n      padding: 30px 40px;\n      gap: 40px;\n      margin-right: 7%;\n      margin-left: 7%;\n      max-width: 1200px;\n    }\n\n    /* LEFT SIDE */\n  .about-left,\n  .about-stats {\n    flex: 1;\n    min-width: 280px;\n      position: relative;\n    }\n    .about-content {\n      position: relative;\n      z-index: 1;\n    }\n\n    .about-content h2 {\n      font-weight: 700;\n      font-size: 40px;\n      font-family: \"Canto\";\n      line-height: 46px;\n      color: #000;\n      margin-bottom: 20px;\n      position: relative;\n      padding-right: 70px;\n      display: inline-block;\n      font-style: normal;\n    }\n\n    .about-content h2::after {\ncontent: \"\";\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n  background-size: contain;\n  background-repeat: no-repeat;\n  width: 60px;\n  height: 20px;\n  position: absolute;\n  top: 60%;\n  right: 0;\n  transform: translateY(-50%);\n\n    }\n\n    .about-content p {\n      font-family: \"Roboto\";\n      margin-bottom: 20px;\n      font-style: normal;\n      font-weight: 400;\n      font-size: 14px;\n      line-height: 22px;\n      color: #464646;\n    }\n\n    .know-more-btn {\n      display: inline-block;\n      background: #b8860b;\n      color: #fff;\n      font-weight: bold;\n      padding: 12px 30px;\n      border-radius: 25px;\n      text-decoration: none;\n      transition: background 0.3s ease;\n    }\n\n    .know-more-btn:hover {\n      background: #a37405;\n    }\n\n    /* RIGHT SIDE */\n    .about-stats {\n      flex: 1;\n      min-width: 300px;\n      max-width: 600px;\n      display: grid;\n      grid-template-columns: repeat(2, 1fr);\n      gap: 30px;\n    }\n\n    .about-stat {\n      text-align: center;\n    }\n\n    .about-stat .stat-number {\n      font-size: 24px;\n      font-weight: bold;\n      color: #7a711f;\n    }\n\n    .about-stat .stat-label {\n      font-size: 16px;\n      margin-bottom: 12px;\n      color: #333;\n    }\n\n    .stat-icon-box {\n      border: 2px solid #b8a44a;\n      border-radius: 16px;\n      padding: 30px 20px;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      min-height: 100px;\n    }\n\n    .stat-icon-box img {\n      max-height: 100px;\n      max-width: 100%;\n    }\n\n    @media (max-width: 992px) {\n      .about-wrapper {\n        flex-direction: column;\n        padding: 30px 20px;\n        width: 90%;\n        margin-left: 10px;\n        margin-right: 10px;\n      }\n\n      .about-stats {\n        grid-template-columns: 1fr 1fr;\n        gap: 20px;\n      }\n    }\n\n  @media (max-width: 600px) {\n    .about-content h2 {\n      font-size: 32px;\n      line-height: 40px;\n      padding-right: 50px;\n    }\n\n    .about-stats {\n      grid-template-columns: 1fr;\n    }\n  }\n  </style>\n\n\n<section class=\"about-wrapper\">\n  <!-- LEFT SIDE -->\n  <div class=\"about-left\">\n    <div class=\"about-content\">\n      <h2>About Us</h2>\n      <p>\n        Kairali Ayurvedic Products is a globally renowned Ayurvedic & Herbal products manufacturer and supplier,\n        specializing in the production of authentic Ayurvedic products. With a legacy spanning over eight decades,\n        Kairali Ayurvedic Products is committed to preserving the ancient wisdom of Ayurveda while incorporating\n        modern manufacturing practices.\n      </p>\n      <p>\n        Our state-of-the-art manufacturing facility, located in Pollachi, Tamil Nadu, adheres to strict quality\n        control measures and is equipped with advanced technology to ensure the highest quality and purity standards\n        in every product. We offer comprehensive contract manufacturing services, including formulation development,\n        sourcing of raw materials, production, packaging, and quality assurance.\n      </p>\n      <a href=\"#\" class=\"know-more-btn\">KNOW MORE</a>\n    </div>\n  </div>\n\n  <!-- RIGHT SIDE -->\n  <div class=\"about-stats\">\n    <div class=\"about-stat\">\n      <div class=\"stat-number\">10000+</div>\n      <div class=\"stat-label\">Satisfied Clients</div>\n      <div class=\"stat-icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Satisfied_Clients.png\" alt=\"Client Icon\">\n      </div>\n    </div>\n    <div class=\"about-stat\">\n      <div class=\"stat-number\">1200+</div>\n      <div class=\"stat-label\">Total Distributors</div>\n      <div class=\"stat-icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Happy_Distributors.png\" alt=\"Distributors Icon\">\n      </div>\n    </div>\n    <div class=\"about-stat\">\n      <div class=\"stat-number\">900+</div>\n      <div class=\"stat-label\">Product SKUs</div>\n      <div class=\"stat-icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Product_SKUs.png\" alt=\"Products Icon\">\n      </div>\n    </div>\n    <div class=\"about-stat\">\n      <div class=\"stat-number\">111+</div>\n      <div class=\"stat-label\">Years of Experience</div>\n      <div class=\"stat-icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Years_of_experience.png\" alt=\"Experience Icon\">\n      </div>\n    </div>\n  </div>\n</section>"
+      }
+    },
+    "custom_liquid_GE4GFw": {
+      "type": "custom-liquid",
+      "name": "Launch Your Own Brand",
+      "settings": {
+        "custom_liquid": "<div class=\"launch-brand-section\">\n  <div class=\"section-wrapper\">\n    <h2>Launch Your Own Brand in Just 30 Days</h2>\n    <p>Experience an end-to-end solution with our contract manufacturing and third party private labeling services for all Ayurvedic & Herbal Products & Medicines.</p>\n\n    <!-- Row 1 -->\n    <div class=\"row\">\n      <div class=\"content-box\">\n        <h3>Products we manufacture</h3>\n        <ul>\n          <li><i class=\"fas fa-check\"></i> Ayurvedic Oils</li>\n          <li><i class=\"fas fa-check\"></i> Ayurvedic Cosmetics</li>\n          <li><i class=\"fas fa-check\"></i> Herbal Cosmetics</li>\n          <li><i class=\"fas fa-check\"></i> Ayurvedic & Herbal Medicines</li>\n          <li><i class=\"fas fa-check\"></i> Traditional Ayurvedic Medicines</li>\n          <li><i class=\"fas fa-check\"></i> Herbal Shampoos & Soaps</li>\n        </ul>\n        <a href=\"#contract-enquiry-form\" class=\"btn\">ENQUIRE NOW</a>\n      </div>\n      <div class=\"image-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/manufacture-1.jpg\" alt=\"Manufacturing Unit\" />\n      </div>\n    </div>\n\n    <!-- Row 2 -->\n    <div class=\"row\">\n      <div class=\"image-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/manufacture-2.jpg\" alt=\"Packing Area\" />\n      </div>\n      <div class=\"content-box\">\n        <h3>Dosage Forms</h3>\n        <div class=\"content-boxul\">\n        <ul>\n          <li><i class=\"fas fa-check\"></i> Capsules</li>\n          <li><i class=\"fas fa-check\"></i> Tablets</li>\n          <li><i class=\"fas fa-check\"></i> Syrups/Tonics</li>\n          <li><i class=\"fas fa-check\"></i> Churnam</li>\n          <li><i class=\"fas fa-check\"></i> Kwath/Decoction</li>\n          <li><i class=\"fas fa-check\"></i> Avaleham/Lehyam</li>\n\n        </ul>\n        \n  <div class=\"content-boxul\">\n        <ul>\n          <li><i class=\"fas fa-check\"></i> Balms/Liniments</li>\n          <li><i class=\"fas fa-check\"></i> Lotions</li>\n          <li><i class=\"fas fa-check\"></i> Shampoos</li>\n          <li><i class=\"fas fa-check\"></i> Soaps</li>\n          <li><i class=\"fas fa-check\"></i> Powders</li>\n        </ul>\n      </div>        \n       </div>\n               <a href=\"#contract-enquiry-form\" class=\"btn\">ENQUIRE NOW</a>    \n      </div>\n    </div>\n  </div>\n</div>\n\n<style>\n  .launch-brand-section .section-wrapper {\n    background-color: #1e392a;\n    background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/background-image-1-1.webp?v=1750749678'); /* Replace with your background */\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: cover;\n    padding: 40px 20px;\n    color: #fff;\n    border-radius: 20px;\n    max-width: 86%;\n    margin: 30px auto;\n  }\n\n  .launch-brand-section h2 {\n  text-align: center;\n  font-size: 30px;\n  margin-bottom: 10px;\n  font-weight: 600;\n  font-family: \"Canto\";\n}\n\n  .launch-brand-section p {\n    text-align: center;\n    font-size: 16px;\n    color: #ccc;\n    max-width: 700px;\n    margin: 0 auto 40px auto;\n  }\n\n  .launch-brand-section .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 30px;\n    margin-bottom: 40px;\n    margin-left: 7%;\n    margin-right: 7%;\n  \n  }\n  \n  .content-boxul {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    gap: 30px;\n  \n  }\n\n  .launch-brand-section .content-box,\n  .launch-brand-section .image-box {\n    flex: 1 1 48%;\n  }\n\n  .launch-brand-section .content-box h3 {\n    margin-bottom: 20px;\n    position: relative;\n    display: inline-block;\n    font-weight: 600;\n    font-size: 30px;\n    line-height: 39px;\n  }\n\n  .launch-brand-section .content-box h3::after {\n    content: \"\";\n    background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n    background-size: contain;\n    background-repeat: no-repeat;\n    width: 60px;\n    height: 20px;\n    position: absolute;\n    bottom: 1px;\n    left: 100%;\n    margin-left: 10px;\n   \n  }\n\n  .launch-brand-section .content-box ul {\n    list-style: none;\n    padding-left: 0;\n    margin: 0;\n  }\n\n  .launch-brand-section .content-box ul li {\n    margin-bottom: 10px;\n    font-size: 14px;\n    line-height: 1.6;\n  }\n\n  .launch-brand-section .content-box ul li i {\n    color: #b7da7a;\n    margin-right: 8px;\n  }\n\n  .launch-brand-section .btn {\n    display: inline-block;\n    margin-top: 20px;\n    padding: 10px 20px;\n    background-color: #f6a622;\n    color: #fff;\n    text-decoration: none;\n    font-weight: bold;\n    border-radius: 6px;\n    font-size: 14px;\n    box-shadow: 0 4px 10px rgba(0,0,0,0.2);\n    transition: 0.3s ease;\n  }\n\n  .launch-brand-section .btn:hover {\n    background-color: #d88f0a;\n  }\n\n  .launch-brand-section .image-box img {\n    width: 100%;\n    border-radius: 10px;\n    display: block;\n  }\n\n  /* Responsive */\n  @media (max-width: 1024px) {\n    .launch-brand-section .row {\n      flex-direction: column;\n      \n    }\n\n    .launch-brand-section .content-box,\n    .launch-brand-section .image-box {\n      flex: 1 1 100%;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .launch-brand-section h2 {\n      font-size: 20px;\n    }\n\n    .launch-brand-section .content-box h3 {\n      font-size: 16px;\n    }\n\n    .launch-brand-section .btn {\n      width: 100%;\n      text-align: center;\n      \n    }\n  .content-boxul {\n      flex-direction: raw;\n  \n  }    \n    \n  }\n</style>\n\n<!-- FontAwesome -->\n<link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\" rel=\"stylesheet\">"
+      }
+    },
+    "custom_liquid_iKTE9J": {
+      "type": "custom-liquid",
+      "name": "Services",
+      "settings": {
+        "custom_liquid": "<style>\n\n\n    .feature-section {\n      padding: 60px 40px;\n      background-color: #fff;\n      max-width: 86%;\n      border-radius: 20px;\n      margin: 0px auto;\n    }\n\n    .feature-grid {\n      display: grid;\n      grid-template-columns: repeat(4, 1fr);\n      gap: 30px;\n    }\n\n    .feature-box {\n      background: #fff;\n      border-radius: 20px;\n      text-align: center;\n      padding: 10px 10px;\n      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.08);\n      border-top: 4px solid #7a711f;\n      border-bottom: 4px solid #7a711f;\n      transition: all 0.3s ease;\n    }\n\n    .feature-box:hover {\n      transform: translateY(-6px);\n      box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);\n    }\n\n    .feature-icon {\n      height: 110px;\n      margin-bottom: 20px;\n      margin-top: 10px;\n    }\n\n    .feature-title {\n      font-size: 18px;\n      color: #7a711f;\n      font-weight: 600;\n      margin-bottom: 10px;\n      line-height: 1.4;\n    }\n\n    .feature-desc {\n      font-size: 14px;\n      color: #333;\n      line-height: 1.6;\n      margin-bottom: 10px;\n    }\n\n    @media (max-width: 1024px) {\n      .feature-grid {\n        grid-template-columns: repeat(2, 1fr);\n      }\n    }\n\n    @media (max-width: 600px) {\n      .feature-grid {\n        grid-template-columns: 1fr;\n      }\n    }\n  </style>\n\n<body>\n\n<section class=\"feature-section\">\n  <div class=\"feature-grid\">\n\n    <div class=\"feature-box\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Quick_Services.png\" alt=\"Quick Services\" class=\"feature-icon\">\n      <div class=\"feature-title\">Quick Services</div>\n      <div class=\"feature-desc\">\n        Prompt response, fast deliveries,<br>\n        and reliable courier partners\n      </div>\n    </div>\n\n    <div class=\"feature-box\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Best_Price.png\" alt=\"Best Price\" class=\"feature-icon\">\n      <div class=\"feature-title\">Best Price In The Industry</div>\n      <div class=\"feature-desc\">\n        Ensuring Quality at competitive<br>\n        rates\n      </div>\n    </div>\n\n    <div class=\"feature-box\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/India.png\" alt=\"Pan India\" class=\"feature-icon\">\n      <div class=\"feature-title\">Pan India Network</div>\n      <div class=\"feature-desc\">\n        Countrywide dealer network,<br>\n        remote location deliveries\n      </div>\n    </div>\n\n    <div class=\"feature-box\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Customer_Support.png\" alt=\"Support\" class=\"feature-icon\">\n      <div class=\"feature-title\">Customer<br>Support</div>\n      <div class=\"feature-desc\">\n        Skilled and experienced team,<br>\n        quick action to technical concerns<br>\n        support\n      </div>\n    </div>\n\n  </div>\n</section>"
+      }
+    },
+    "custom_liquid_LEaGrr": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "custom_css": [
+        "@media (max-width: 768px) {.left-box, .right-box {min-width: 0; width: 100%;}}"
+      ],
+      "settings": {
+        "custom_liquid": "<style>\n\n\n    .solutions-section {\n      background: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/herbal-bg.jpg') center/cover no-repeat;\n      padding: 60px 20px;\n      display: flex;\n      flex-wrap: wrap;\n      gap: 30px;\n      justify-content: center;\n    }\n\n    .left-box,\n    .right-box {\n      border-radius: 20px;\n      padding: 40px 30px;\n      box-sizing: border-box;\n    }\n\n    .left-box {\n      background: rgba(0, 0, 0, 0.75);\n      color: #fff;\n      flex: 1;\n\n    }\n\n    .left-box h2 {\n      font-family: \"Canto\";\n      font-size: 32px;\n      margin-bottom: 25px;\n      font-weight: 600;\n      line-height: 1.2;\n      position: relative;\n      display: inline-flex;\n      align-items: center;\n      gap: 12px;\n    }\n    \n     .left-box h2::before,\n .left-box h2::after {\n    content: \"\";\n    display: inline-block;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: contain;\n    width: 50px;\n    height: 20px;\n  \n}\n\n.left-box h2::before {\n    background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Vector_1.svg');\n\n}\n\n.left-box h2::after {\n    background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n}\n\n    .left-box ul {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .left-box ul li {\n      font-size: 16px;\n      margin-bottom: 15px;\n    }\n\n    .left-box ul li i {\n      color: #b8a44a;\n      margin-right: 10px;\n    }\n\n    .right-box {\n      background: #fff;\n      color: #000;\n      flex: 2;\n      min-width: 300px;\n      max-width: 800px;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-between;\n      box-shadow: 0 8px 16px rgba(0,0,0,0.1);\n    }\n\n    .columns {\n      display: grid;\n      grid-template-columns: repeat(4, 1fr);\n      gap: 20px;\n    }\n\n    .column h4 {\n      font-size: 16px;\n      font-weight: 700;\n      margin-bottom: 15px;\n      color: #1e392a;\n    }\n\n    .column ul {\n      list-style: none;\n      padding: 0;\n      margin: 0;\n    }\n\n    .column ul li {\n      font-size: 14px;\n      margin-bottom: 10px;\n    }\n\n    .column ul li i {\n      color: #7a711f;\n      margin-right: 8px;\n    }\n\n    .button-group {\n      display: flex;\n      flex-wrap: wrap;\n      gap: 20px;\n      margin-top: 30px;\n      \n    }\n\n    .button-group a {\n      padding: 12px 24px;\n      background: #054100;\n      color: #fff;\n      text-decoration: none;\n      font-weight: bold;\n      border-radius: 6px;\n      transition: background 0.3s ease;\n    }\n\n    .button-group a:hover {\n      background: #0b6000;\n    }\n\n    /* Responsive */\n    @media (max-width: 1024px) {\n      .columns {\n        grid-template-columns: repeat(2, 1fr);\n      }\n    }\n\n    @media (max-width: 768px) {\n      .solutions-section {\n        flex-direction: column;\n        padding: 40px 15px;\n      }\n\n\n\n      .left-box,\n      .right-box {\n        max-width: 100%;\n      }\n    }\n\n    @media (max-width: 480px) {\n       .left-box  {\n        text-align: center;\n      }\n      .left-box h2 {\n        font-size: 26px;\n      }\n      \n      .right-box {\n        text-align: center;\n      }\n\n      .button-group {\n        flex-direction: column;\n      }\n\n      .button-group a {\n        width: 80%;\n        text-align: center;\n      }\n    }\n  </style>\n\n\n<section class=\"solutions-section\">\n  <!-- LEFT BOX -->\n  <div class=\"left-box\">\n    <h2>Get All Solutions for</h2>\n    <ul>\n      <li><i class=\"fas fa-check-square\"></i> Ayurvedic Third Party Manufacturing</li>\n      <li><i class=\"fas fa-check-square\"></i> Ayurvedic Products Private Labeling</li>\n      <li><i class=\"fas fa-check-square\"></i> Ayurveda Contract Manufacturing Services</li>\n    </ul>\n  </div>\n\n  <!-- RIGHT BOX -->\n  <div class=\"right-box\">\n    <div class=\"columns\">\n      <div class=\"column\">\n        <h4>Third Party</h4>\n        <ul>\n          <li><i class=\"fas fa-square\"></i> Our Products</li>\n          <li><i class=\"fas fa-square\"></i> Our Products</li>\n          <li><i class=\"fas fa-square\"></i> Your Packing</li>\n        </ul>\n      </div>\n      <div class=\"column\">\n        <h4>Third Party</h4>\n        <ul>\n          <li><i class=\"fas fa-square\"></i> Our Products</li>\n          <li><i class=\"fas fa-square\"></i> Your Products</li>\n          <li><i class=\"fas fa-square\"></i> Your Packing</li>\n        </ul>\n      </div>\n      <div class=\"column\">\n        <h4>Loan Licence</h4>\n        <ul>\n          <li><i class=\"fas fa-square\"></i> Your Products</li>\n          <li><i class=\"fas fa-square\"></i> Your Brand</li>\n          <li><i class=\"fas fa-square\"></i> Your Packing</li>\n        </ul>\n      </div>\n      <div class=\"column\">\n        <h4>Loan Licence</h4>\n        <ul>\n          <li><i class=\"fas fa-square\"></i> Your Concept</li>\n          <li><i class=\"fas fa-square\"></i> Our R&D</li>\n          <li><i class=\"fas fa-square\"></i> Your Brand</li>\n          <li><i class=\"fas fa-square\"></i> Your Packing</li>\n        </ul>\n      </div>\n    </div>\n\n    <div class=\"button-group\">\n      <a href=\"#\">Download Our Catalogue</a>\n      <a href=\"#\">Download Our Presentation</a>\n    </div>\n  </div>\n</section>"
+      }
+    },
+    "custom_liquid_qEyYPN": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "custom_css": [
+        "@media (max-width: 480px) {.section-wrapper {box-sizing: border-box;} .grid {grid-template-columns: minmax(0, 1fr);}}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"why-choose-kairali\">\n  <div class=\"section-wrapper\">\n    <h2>Why should you choose us as your strategic partner as an ayurvedic contract manufacturing company?</h2>\n\n    <div class=\"grid\">\n      <div class=\"box\">\n        <h3>Research <span class=\"decor\"></span></h3>\n        <p>Our years of experience and research tie-ups with numerous renowned doctors, strategic partnerships help us develop unique combinations and solve critical problems.</p>\n      </div>\n\n      <div class=\"box\">\n        <h3>Customization <span class=\"decor\"></span></h3>\n        <p>We deliver highly customized products. We offer a variety of packaging and unique flavors in our products.</p>\n      </div>\n\n      <div class=\"box\">\n        <h3>Unconditional Quality <span class=\"decor\"></span></h3>\n        <p>We believe in quality and we deliver it. We own a state of art manufacturing unit where we design, process and extract herbs with unmatched quality.</p>\n      </div>\n\n      <div class=\"box\">\n        <h3>In House Extraction & Research <span class=\"decor\"></span></h3>\n        <p>We have a fully operating in-house Herb Extraction unit which gives us freedom to provide the desired quality and results in our products.</p>\n      </div>\n\n      <div class=\"box\">\n        <h3>95% Testified Results <span class=\"decor\"></span></h3>\n        <p>Our products offer up to 95% results. Our state of art 7-Stage Process ensures the quality and consistency in the product.</p>\n      </div>\n\n      <div class=\"box\">\n        <h3>Unique Technology <span class=\"decor\"></span></h3>\n        <p>We have upgraded the 7-stage process. After a huge Research and study we are using Cutting-edge this Technology into Ayurvedic Medicine Manufacturing field.</p>\n      </div>\n    </div>\n\n    <div class=\"center\">\n      <a href=\"#contract-enquiry-form\" class=\"btn\">ENQUIRE NOW</a>\n    </div>\n  </div>\n</div>\n\n<style>\n  .why-choose-kairali .section-wrapper {\n    max-width: 1280px;\n    margin: 60px auto;\n    padding: 0 20px;\n    text-align: center;\n    max-width: 86%;\n    \n  }\n\n  .why-choose-kairali h2 {\n    font-size: 30px;\n    font-family: Canto;\n    font-weight: 500;\n    line-height: 1.4;\n    max-width: 900px;\n    margin: 0 auto 40px auto;\n    color: #111;\n  }\n\n  .why-choose-kairali .grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n    gap: 30px;\n    justify-items: center;\n  }\n\n  .why-choose-kairali .box {\n    background: #fff;\n    padding: 25px 20px;\n    border-radius: 12px;\n    box-shadow: 5px 5px 10px rgba(0,0,0,0.40);\n    max-width: 100%;\n    transition: transform 0.3s ease;\n    border-right: solid 3px #8c8f35;\n    border-top: dotted 1px rgba(0, 0, 0, .5);\n    border-left: dotted 1px rgba(0, 0, 0, .5);\n    \n    \n  }\n\n  .why-choose-kairali .box:hover {\n    transform: translateY(-5px);\n  }\n\n  .why-choose-kairali h3 {\n    font-size: 18px;\n    font-family: \"Canto\";\n    font-weight: 600;\n    color: #8c8f35;\n    margin-bottom: 10px;\n    position: relative;\n  }\n\n  .why-choose-kairali .decor::after {\n    content: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n    font-size: 20px;\n    color: #c8a34e;\n    margin-left: 10px;\n    vertical-align: middle;\n  }\n\n  .why-choose-kairali .box p {\n    font-size: 14px;\n    color: #444;\n    line-height: 1.5;\n    font-family: \"Roboto\";\n  }\n\n  .why-choose-kairali .center {\n    margin-top: 40px;\n  }\n\n  .why-choose-kairali .btn {\n    padding: 12px 28px;\n    background-color: #f6a622;\n    color: white;\n    border-radius: 30px;\n    font-weight: 600;\n    font-size: 14px;\n    text-decoration: none;\n    transition: 0.3s ease;\n    box-shadow: 0 4px 12px rgba(0,0,0,0.2);\n  }\n\n  .why-choose-kairali .btn:hover {\n    background-color: #d8910d;\n  }\n\n  @media (max-width: 480px) {\n    .why-choose-kairali h2 {\n      font-size: 20px;\n    }\n\n    .why-choose-kairali .btn {\n      width: 100%;\n    }\n  }\n</style>"
+      }
+    },
+    "custom_liquid_HFptwH": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "custom_css": [
+        "@media (max-width: 768px) {.why-kairali-grid {grid-template-columns: minmax(0, 1fr);}}"
+      ],
+      "settings": {
+        "custom_liquid": "<div class=\"why-kairali-cards\">\n  <div class=\"why-kairali-grid\">\n\n    <div class=\"why-card\">\n      <div class=\"icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/icon-1.png\" alt=\"Icon 1\">\n      </div>\n      <div class=\"card-content\">\n        <h3>Commitment to Partnership</h3>\n        <p>Your success is our priority. We view our relationship with clients as a long-term partnership, offering transparency, reliability and innovation to ensure our partners thrive alongside us.</p>\n      </div>\n    </div>\n\n    <div class=\"why-card\">\n      <div class=\"icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/icon-2.png\" alt=\"Icon 2\">\n      </div>\n      <div class=\"card-content\">\n        <h3>Cost Effectiveness</h3>\n        <p>Partnering with us gives you access to cost-effective solutions without compromising quality. We help you achieve business goals efficiently and affordably.</p>\n      </div>\n    </div>\n\n    <div class=\"why-card\">\n      <div class=\"icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/icon-3.png\" alt=\"Icon 3\">\n      </div>\n      <div class=\"card-content\">\n        <h3>Quality Assurance</h3>\n        <p>Our quality control is unmatched. We ensure premium Ayurvedic solutions through stringent processes, offering effective and reliable products every time.</p>\n      </div>\n    </div>\n\n    <div class=\"why-card\">\n      <div class=\"icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/icon-4.png\" alt=\"Icon 4\">\n      </div>\n      <div class=\"card-content\">\n        <h3>State of the Art Facilities</h3>\n        <p>Our modern manufacturing plants uphold the highest standards, ensuring each Ayurvedic product reflects purity, quality and innovation.</p>\n      </div>\n    </div>\n\n    <div class=\"why-card\">\n      <div class=\"icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/icon-5.png\" alt=\"Icon 5\">\n      </div>\n      <div class=\"card-content\">\n        <h3>Customizable Packaging Support</h3>\n        <p>We provide expert assistance to design standout packaging that reflects your brand and resonates with consumers across markets.</p>\n      </div>\n    </div>\n\n    <div class=\"why-card\">\n      <div class=\"icon-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/icon-6.png\" alt=\"Icon 6\">\n      </div>\n      <div class=\"card-content\">\n        <h3>Flexibility and Adaptability</h3>\n        <p>With agile processes, we quickly adapt to your evolving needs, whether it's demand, timelines, or specifications — ensuring speed and customization.</p>\n      </div>\n    </div>\n\n  </div>\n</div>\n\n<style>\n.why-kairali-cards {\n  padding: 60px 20px;\n}\n\n.why-kairali-grid {\n  max-width: 1200px;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n  gap: 40px;\n}\n\n.why-card {\n  position: relative;\n  background: #fff;\n  border: 2px solid #8d9c33;\n  border-radius: 10px;\n  padding: 60px 20px 30px;\n  text-align: center;\n}\n\n.icon-box {\n  position: absolute;\n  top: -30px;\n  left: 50%;\n  transform: translateX(-50%);\n  background-color: #8d9c33;\n  padding: 15px;\n  border-radius: 10px;\n  width: 100px;\n  height: 100px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.icon-box img {\n  width: 100px;\n  height: 100px;\n  filter: brightness(0) invert(1);\n}\n\n.card-content h3 {\n  font-size: 16px;\n  font-weight: 600;\n  margin-bottom: 12px;\n  color: #1c1c1c;\n}\n\n.card-content p {\n  font-size: 14px;\n  color: #444;\n  line-height: 1.6;\n  padding: 0 10px;\n}\n\n@media (max-width: 768px) {\n  .icon-box {\n    width: 50px;\n    height: 50px;\n    padding: 12px;\n  }\n\n  .icon-box img {\n    width: 80px;\n    height: 80px;\n  }\n\n  .why-card {\n    padding: 50px 16px 24px;\n  }\n}\n</style>"
+      }
+    },
+    "custom_liquid_r7G4Nc": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"our-products-section\">\n  <div class=\"container\">\n    <h2 class=\"products-title\">Our Products</h2>\n\n    <div class=\"products-grid\">\n      <!-- Product Cards -->\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/thilam.jpg\" alt=\"Ayurvedic Oils\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Ayurvedic Oils / Thailam</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/teas.jpg\" alt=\"Ayurvedic Teas\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Ayurvedic Teas / Infusions</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/prop.jpg?v=1750764705\" alt=\"Proprietary Medicines\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Ayurvedic Proprietary Medicines</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/tradional.jpg\" alt=\"Traditional Medicines\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Traditional Ayurvedic Medicines</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/shampoo.jpg\" alt=\"Shampoos & Soaps\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Herbal Shampoos & Soaps</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/beauty.jpg\" alt=\"Beauty Products\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Herbal Beauty Products</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/churan.jpg\" alt=\"Choornams\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Choornams / Powders</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/gulika.jpg?v=1750764505\" alt=\"Gulikas\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Gulikas / Tablets</a></h4>\n      </div>\n\n      <div class=\"product-box\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/kashyam.jpg?v=1750764705\" alt=\"Kashayams\" loading=\"lazy\" />\n        <h4><a href=\"#contract-enquiry-form\">Kashayams / Herbal Decoctions</a></h4>\n      </div>\n    </div>\n  </div>\n</section>\n\n<style>\n.our-products-section {\n  background: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/products-background.jpg') no-repeat center center;\n  background-size: cover;\n  padding: 60px 20px;\n}\n\n.products-title {\n  font-size: 32px;\n  font-weight: 700;\n  color: #fff;\n  text-align: center;\n  margin-bottom: 40px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 12px;\n}\n\n.products-title::before,\n.products-title::after {\n  content: \"\";\n  display: block;\n  width: 50px;\n  height: 20px;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n}\n.products-title::before {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Vector_1.svg');\n}\n.products-title::after {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n}\n\n.products-grid {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 24px;\n}\n\n.product-box {\n  background: #fff;\n  border-radius: 12px;\n  overflow: hidden;\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);\n  text-align: center;\n  transition: transform 0.3s ease;\n  flex: 1 1 calc(33.333% - 24px);\n  max-width: calc(33.333% - 24px);\n}\n\n.product-box:hover {\n  transform: translateY(-6px);\n}\n\n.product-box img {\n  width: 100%;\n  height: auto;\n  border-bottom: 1px solid #eee;\n}\n\n.product-box h4 {\n  margin: 16px;\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.product-box a {\n  text-decoration: none;\n  color: #7a711f;\n  transition: color 0.3s ease;\n}\n\n.product-box a:hover {\n  color: #b8860b;\n}\n\n/* Tablet */\n@media (max-width: 992px) {\n  .product-box {\n    flex: 1 1 calc(50% - 24px);\n    max-width: calc(50% - 24px);\n  }\n\n  .products-title {\n    font-size: 28px;\n  }\n}\n\n/* Mobile */\n@media (max-width: 576px) {\n  .product-box {\n    flex: 1 1 100%;\n    max-width: 100%;\n  }\n\n  .products-title {\n    font-size: 24px;\n    flex-direction: column;\n    gap: 8px;\n  }\n\n  .products-title::before,\n  .products-title::after {\n    width: 30px;\n    height: 12px;\n  }\n}\n</style>"
+      }
+    },
+    "custom_liquid_wG9r6H": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<section class=\"media pt-5\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"awards-heading-media pb-4 w-100 text-center\">\n        <h2 class=\"certification-title\">Our Certifications</h2>\n      </div>\n\n      <div class=\"media-slider\">\n        <!-- Certificate Cards -->\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/WHOGMP.png\" alt=\"WHO-GMP Certified\" />\n          </div>\n          <p>WHO-GMP Certified</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/CE_0b58637f-be1e-4751-b4e8-276b943de7be.png\" alt=\"CE Certificate\" />\n          </div>\n          <p>CE Certificate</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Cruelyfree.png\" alt=\"Cruelty Free Certified\" />\n          </div>\n          <p>Cruelty Free Certified</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/FDA_f6438d8c-6daa-4f63-91dd-c6cb79e86ea9.png\" alt=\"FDA Approved\" />\n          </div>\n          <p>FDA Approved</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Fssai_d2f5b613-d7cd-4af7-866f-7264eeb72b2a.png\" alt=\"FSSAI Certified\" />\n          </div>\n          <p>FSSAI Certified</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/iso_e3c6aa14-52aa-400d-8a59-ec19d56bcbef.png\" alt=\"ISO Certified\" />\n          </div>\n          <p>ISO Certified</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/GLP.png\" alt=\"GLP Certified\" />\n          </div>\n          <p>GLP Certified</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/GMP.png\" alt=\"GMP Certified\" />\n          </div>\n          <p>GMP Certified</p>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"circle-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Wash.png\" alt=\"WASH Certified\" />\n          </div>\n          <p>WASH Certified</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<!-- Style -->\n<style>\n\n.container{\n  text-align: center;\n  margin-left: 40px;\n  margin-right: 40px;\n }\n \n.media {\n  background: #fff;\n  padding: 60px 0;\n}\n.certification-title {\n  font-size: 32px;\n  font-weight: 700;\n  color: #1c1c1c;\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 12px;\n}\n.certification-title::before,\n.certification-title::after {\n  content: \"\";\n  display: block;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  width: 50px;\n  height: 20px;\n  flex-shrink: 0;\n}\n.certification-title::before {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Vector_1.svg');\n}\n.certification-title::after {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n}\n\n.media-slider {\n  margin-top: 30px;\n  padding: 0 30px;\n\n}\n\n.slick-slide {\n  padding: 10px;\n}\n\n.certificate-card {\n  background: #fff;\n  border: 1px solid #eee;\n  border-radius: 12px;\n  text-align: center;\n  padding: 20px 15px;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.05);\n  transition: 0.3s ease;\n}\n.certificate-card:hover {\n  transform: translateY(-4px);\n}\n\n.circle-img {\n  width: 110px;\n  height: 110px;\n  border: 2px solid #d4d4a0;\n  border-radius: 50%;\n  margin: 0 auto 15px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.circle-img img {\n  max-width: 70%;\n  max-height: 70%;\n}\n.certificate-card p {\n  font-weight: 600;\n  font-size: 16px;\n  color: #1c1c1c;\n  margin: 0;\n}\n\n/* Slick arrows */\n.media-slider .slick-prev,\n.media-slider .slick-next {\n  background: #8c9c42;\n  color: white;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  z-index: 9;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0 2px 6px rgba(0,0,0,0.25);\n}\n.media-slider .slick-prev {\n  left: -20px;\n}\n.media-slider .slick-next {\n  right: -20px;\n}\n.media-slider .slick-prev:before,\n.media-slider .slick-next:before {\n  color: white;\n  font-size: 20px;\n  line-height: 1;\n}\n\n/* Mobile fix */\n@media (max-width: 768px) {\n  .certification-title {\n    font-size: 24px;\n  }\n  .media-slider {\n    padding: 0 10px;\n  }\n}\n</style>\n\n<!-- Slick Carousel -->\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css\" />\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css\" />\n<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js\"></script>\n\n<!-- Init Script -->\n<script>\n$(document).ready(function(){\n  $('.media-slider').slick({\n    infinite: true,\n    slidesToShow: 5,\n    slidesToScroll: 1,\n    arrows: true,\n    autoplay: true,\n    autoplaySpeed: 2500,\n    dots: false,\n    prevArrow: '<button type=\"button\" class=\"slick-prev\">&#10094;</button>',\n    nextArrow: '<button type=\"button\" class=\"slick-next\">&#10095;</button>',\n    responsive: [\n      {\n        breakpoint: 1200,\n        settings: { slidesToShow: 4 }\n      },\n      {\n        breakpoint: 992,\n        settings: { slidesToShow: 3 }\n      },\n      {\n        breakpoint: 768,\n        settings: { slidesToShow: 2 }\n      },\n      {\n        breakpoint: 480,\n        settings: { slidesToShow: 1 }\n      }\n    ]\n  });\n});\n</script>"
+      }
+    },
+    "custom_liquid_YLcGP4": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"container\">\n    <div class=\"row\">\n      <div class=\"awards-heading-media pb-4 w-100 text-center\">\n        <h2 class=\"certification-title\">Our Valuable Clients</h2>\n      </div>\n\n      <div class=\"media-slider\">\n        <!-- Certificate Cards -->\n        <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/mylo.png\" alt=\"mylo\" />\n          </div>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Diversey_2b7af667-01aa-41cf-89b6-a14dd70b6a3c.png\" alt=\"Diversey\" />\n          </div>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/vivid.png\" alt=\"vivid\" />\n          </div>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/sani.png\" alt=\"Sani Fast\" />\n          </div>\n        </div>\n\n        <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Godrej.png\" alt=\"Godrej\" />\n          </div>\n        </div>\n        \n         <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayuvya.png\" alt=\"ayuvya\" />\n          </div>\n        </div>       \n\n       <div class=\"certificate-card\">\n          <div class=\"box-img\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Burger.png\" alt=\"Burger Singh\" />\n          </div>\n       </div>         \n\n      </div>\n    </div>\n  </div>\n\n<!-- CSS -->\n<style>\n.container {\n  text-align: center;\n  margin-left: 40px;\n  margin-right: 40px;\n}\n\n.media {\n  background: #fff;\n  padding: 60px 0;\n}\n\n.certification-title {\n  font-size: 32px;\n  font-weight: 700;\n  color: #1c1c1c;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 12px;\n}\n\n.certification-title::before,\n.certification-title::after {\n  content: \"\";\n  display: block;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  width: 50px;\n  height: 20px;\n  flex-shrink: 0;\n}\n\n.certification-title::before {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Vector_1.svg');\n}\n\n.certification-title::after {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n}\n\n.media-slider {\n  margin-top: 30px;\n  padding: 0 30px;\n}\n\n.slick-slide {\n  padding: 10px;\n}\n\n.certificate-card {\n  background: #fff;\n  border: 1px solid #eee;\n  border-radius: 12px;\n  text-align: center;\n  padding: 20px 15px;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.05);\n  transition: 0.3s ease;\n}\n.certificate-card:hover {\n  transform: translateY(-4px);\n}\n\n.box-img {\n  width: 200px;\n  height: 200px;\n  margin: 0 auto 15px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: 2px solid #d4d4a0;\n  border-radius: 12px;\n  padding: 10px;\n}\n\n.box-img img {\n  max-width: 100%;\n  max-height: 100%;\n  object-fit: contain;\n}\n\n.certificate-card p {\n  font-weight: 600;\n  font-size: 16px;\n  color: #1c1c1c;\n  margin: 0;\n}\n\n/* Slick arrows */\n.media-slider .slick-prev,\n.media-slider .slick-next {\n  background: #8c9c42;\n  color: white;\n  border-radius: 50%;\n  width: 36px;\n  height: 36px;\n  z-index: 9;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  box-shadow: 0 2px 6px rgba(0,0,0,0.25);\n}\n\n.media-slider .slick-prev { left: -20px; }\n.media-slider .slick-next { right: -20px; }\n\n.media-slider .slick-prev:before,\n.media-slider .slick-next:before {\n  color: white;\n  font-size: 20px;\n  line-height: 1;\n}\n\n/* Responsive */\n@media (max-width: 768px) {\n  .certification-title {\n    font-size: 24px;\n  }\n  .media-slider {\n    padding: 0 10px;\n  }\n}\n</style>\n\n<!-- Scripts -->\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css\" />\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css\" />\n<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js\"></script>\n\n<script>\n$(document).ready(function(){\n  $('.media-slider').slick({\n    infinite: true,\n    slidesToShow: 5,\n    slidesToScroll: 1,\n    arrows: true,\n    autoplay: true,\n    autoplaySpeed: 2500,\n    dots: false,\n    prevArrow: '<button type=\"button\" class=\"slick-prev\">&#10094;</button>',\n    nextArrow: '<button type=\"button\" class=\"slick-next\">&#10095;</button>',\n    responsive: [\n      { breakpoint: 1200, settings: { slidesToShow: 4 }},\n      { breakpoint: 992, settings: { slidesToShow: 3 }},\n      { breakpoint: 768, settings: { slidesToShow: 2 }},\n      { breakpoint: 480, settings: { slidesToShow: 1 }}\n    ]\n  });\n});\n</script>"
+      }
+    },
+    "custom_liquid_fPmAwA": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"faqcontainer\">\n    <div class=\"row\">\n        <h2 class=\"faq-title\">FAQs</h2>\n      </div>\n  </div>\n\n<!-- CSS -->\n<style>\n.faqcontainer {\n  text-align: center;\n  margin-top: 5px;\n}\n\n.faq-title {\n  font-family: Canto;\n  font-size: 32px;\n  font-weight: 700;\n  color: #1c1c1c;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 12px;\n}\n\n.faq-title::before,\n.faq-title::after {\n  content: \"\";\n  display: block;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  width: 50px;\n  height: 20px;\n  flex-shrink: 0;\n}\n\n.faq-title::before {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Vector_1.svg');\n}\n\n.faq-title::after {\n  background-image: url('https://cdn.shopify.com/s/files/1/0925/8998/1983/files/after-line.svg');\n}\n\n\n/* Responsive */\n@media (max-width: 768px) {\n  .faq-title {\n    font-size: 24px;\n  }\n\n}\n</style>"
+      }
+    },
+    "collapsible_menu_VGtAfM": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_nUF3WV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What kind of ayurvedic products do you manufacture?",
+            "content": "<p>We manufacture tablets, powders, Thailams, Kashayams, Choornam, proprietary medicines & oils, single herbs, proprietary oils, herbal tea, cosmetics & sanitizer. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_EpcCet": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is Kairali ayurvedic products certified by any regulatory authority?",
+            "content": "<p>Yes, Kairali is GMP Certified Ayurvedic Manufacturing Company, vegan friendly certified, cruelty-free certified, ISO 9001:2015, made safe certified etc.</p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_Dx7nhx": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Are the products from kairali safe to use?",
+            "content": "<p>Yes, the products from Kairali are absolutely safe to use as they are incorporated with natural ingredients and undergo strict quality control measures. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_xXATwn": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do kairali ayurvedic products ensure the quality of their products?",
+            "content": "<p>From the procurement of natural ingredients to the ultimate packaging of the product, Kairali Ayurvedic Contract Manufacturing adheres to stringent quality control procedures. To guarantee the effectiveness and security of their Ayurvedic remedies, they also carry out routine testing and quality inspections. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_WnmY4k": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What are the benefits of using kairali ayurvedic products?",
+            "content": "<p>Kairali ayurvedic third party manufacturing company produces natural ayurvedic medications that offer several health advantages basis the kind of products being used. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_xBMrhF": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What is the manufacturing process followed by kairali ayurvedic products?",
+            "content": "<p>In order to develop a powerful herbal composition, Kairali Ayurvedic Products uses natural ingredients that are ground into a fine powder and combined with other herbs and oils, following a traditional Ayurvedic manufacturing procedure. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_QerViB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What is the minimum order quantity (MOQ) for contract manufacturing with kairali?",
+            "content": "<p>The MOQ may vary depending on the type of product and customization requirements. Kairali works closely with clients to determine suitable MOQs based on their specific needs and production capabilities. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_bGYB68": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is kairali ayurvedic products a reliable ayurvedic company in India?",
+            "content": "<p>Kairali Ayurvedic Products is a 100% reliable contract manufacturing company in India serving for more than 8 decades. We have more than 300 products & expanding and 25 centres worldwide that uses natural ingredients and adheres to strict quality control measures. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_UbJrye": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How can I get started with contract manufacturing services from kairali?",
+            "content": "<p>To get started, simply contact Kairali Ayurvedic Product, top herbal contract manufacturers in India through their website www.kairaliproducts.in or customer service on +91-9555156156 to discuss your project requirements and explore partnership opportunities.</p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_wATQxy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Does kairali contract manufacturing offer private label services?",
+            "content": "<p>Yes, Kairali- Ayurvedic Third Party Manufacturing Services provides private label services, allowing clients to brand products with their own labels and packaging designs. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_8FVazw": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What quality control measures does kairali contract manufacturing implement?",
+            "content": "<p>Kairali Contract Manufacturing adheres to stringent quality control measures throughout the manufacturing process, including sourcing of raw materials, production, testing, and packaging, to ensure the highest quality standards are maintained. </p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        },
+        "collapsible_tab_8keTw3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Is kairali contract manufacturing environment friendly?",
+            "content": "<p>Kairali Contract Manufacturing for ayurvedic products is committed to sustainability and environmentally friendly practices. They strive to minimize waste, reduce energy consumption, and use eco-friendly packaging materials whenever possible.</p>",
+            "page": "",
+            "icon": "question_mark"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_nUF3WV",
+        "collapsible_tab_EpcCet",
+        "collapsible_tab_Dx7nhx",
+        "collapsible_tab_xXATwn",
+        "collapsible_tab_WnmY4k",
+        "collapsible_tab_xBMrhF",
+        "collapsible_tab_QerViB",
+        "collapsible_tab_bGYB68",
+        "collapsible_tab_UbJrye",
+        "collapsible_tab_wATQxy",
+        "collapsible_tab_8FVazw",
+        "collapsible_tab_8keTw3"
+      ],
+      "name": "t:sections.collapsible_menu.presets.name",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_D3PAxi": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_VNyQqM": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_HaYWw7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_7L4VRd": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_dqGtz9": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Items you love at prices that fit your budget.Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VNyQqM",
+        "image_HaYWw7",
+        "image_7L4VRd",
+        "image_dqGtz9"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "name": "t:sections.features-banner.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner_with_form_VAVGbD",
+    "separator_xP69Rn",
+    "custom_liquid_HxmMgA",
+    "custom_liquid_GE4GFw",
+    "custom_liquid_iKTE9J",
+    "custom_liquid_LEaGrr",
+    "custom_liquid_qEyYPN",
+    "custom_liquid_HFptwH",
+    "custom_liquid_r7G4Nc",
+    "custom_liquid_wG9r6H",
+    "custom_liquid_YLcGP4",
+    "custom_liquid_fPmAwA",
+    "collapsible_menu_VGtAfM",
+    "features_banner_D3PAxi"
+  ]
+}

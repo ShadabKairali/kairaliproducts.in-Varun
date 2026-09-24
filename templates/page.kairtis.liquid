@@ -1,0 +1,10 @@
+{%- comment -%}
+  IN-037 B03: clean India Kairtis landing template.
+  The content snippet fail-closes if the authenticated India Online Store product
+  is no longer storefront-visible. The global theme owns header, footer, consent,
+  chat and tracking; this template does not duplicate them or collect lead data.
+{%- endcomment -%}
+
+<section class="in037-b03-kairtis-page" data-in037-b03-page="kairtis">
+  {%- render 'in037-b03-content', mode: 'kairtis_body' -%}
+</section>

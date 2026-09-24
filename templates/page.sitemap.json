@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "compact-size-enabled": false,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 20,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_zTpFkh": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .custom-sitemap-container {\n    font-family: Jost, sans-serif !important;\n    background: #f9f9f9 !important;\n    padding: 20px !important;\n  }\n\n  .custom-sitemap {\n    max-width: 800px;\n    margin: auto;\n    background: white;\n    padding: 20px;\n    border-radius: 12px;\n    box-shadow: 0 0 10px rgba(0,0,0,0.05);\n  }\n\n  .custom-sitemap h2 {\n    font-size: 24px;\n    border-bottom: 2px solid #ccc;\n    padding-bottom: 10px;\n  }\n\n  .custom-sitemap ul {\n    list-style: none;\n    padding-left: 20px;\n  }\n\n  .custom-sitemap li {\n    margin: 8px 0;\n  }\n\n  .custom-sitemap a {\n    color: #006a4e;\n    text-decoration: none;\n    font-weight: 500;\n  }\n\n  .custom-sitemap details summary {\n    cursor: pointer;\n    font-weight: bold;\n    margin: 8px 0;\n    position: relative;\n    padding-left: 20px;\n    display: flex;\n    align-items: center;\n  }\n\n  .custom-sitemap details summary::before {\n    content: \"▶\" !important;\n    position: absolute;\n    left: 0;\n    font-size: 16px;\n    color: #006a4e;\n    transition: transform 0.2s ease;\n  }\n\n  .custom-sitemap details[open] summary::before {\n    content: \"▶\" !important;\n  }\n\n  .custom-sitemap details summary:hover,\n  .custom-sitemap a:hover {\n    color: #b77d00;\n  }\n</style>\n<div class=\"custom-sitemap-container\">\n  <div class=\"custom-sitemap\">\n    <h2>Sitemap</h2>\n    <ul>\n      <li><a href=\"/\">Home Page</a></li>\n      <li><a href=\"/collections/featured-products\">Signature Products</a></li>\n\n      <li>\n        <details>\n          <summary><a href=\"/collections/body-care\">Body Care</a></summary>\n          <ul>\n            <li>\n              <details>\n                <summary><a href=\"/collections/skin-care\">Skin Care</a></summary>\n                <ul>\n                  <li><a href=\"/collections/dry-skin\">Dry Skin</a></li>\n                  <li><a href=\"/collections/wrinkles\">Wrinkles</a></li>\n                  <li><a href=\"/collections/oily-skin\">Oily Skin</a></li>\n                  <li><a href=\"/collections/pimples\">Pimples</a></li>\n                  <li><a href=\"/collections/pigmentation\">Pigmentation</a></li>\n                </ul>\n              </details>\n            </li>\n            <li>\n              <details>\n                <summary><a href=\"/collections/hair-care\">Hair Care</a></summary>\n                <ul>\n                  <li><a href=\"/collections/dandruff\">Dandruff</a></li>\n                  <li><a href=\"/collections/hair-fall\">Hair Fall</a></li>\n                  <li><a href=\"/collections/premature-graying\">Premature Graying</a></li>\n                  <li><a href=\"/collections/split-ends\">Split Ends</a></li>\n                  <li><a href=\"/collections/dry-hair\">Dry Hair</a></li>\n                  <li><a href=\"/collections/thinning-hair\">Thinning Hair</a></li>\n                </ul>\n              </details>\n            </li>\n            <li><a href=\"/collections/face-care\">Face Care</a></li>\n            <li><a href=\"/collections/dental-care\">Dental Care</a></li>\n            <li><a href=\"/collections/foot-care\">Foot Care</a></li>\n            <li><a href=\"/collections/general-care\">General Care</a></li>\n          </ul>\n        </details>\n      </li>\n\n      <li>\n        <details>\n          <summary><a href=\"/collections/men-health\">Men's Health</a></summary>\n          <ul>\n            <li>\n              <details>\n                <summary><a href=\"/collections/men-sexual-health\">Sexual Health</a></summary>\n                <ul>\n                  <li><a href=\"/collections/premature-ejaculation\">Premature Ejaculation</a></li>\n                  <li><a href=\"/collections/erectile-dysfunction\">Erectile Dysfunction</a></li>\n                  <li><a href=\"/collections/testosterone-booster\">Testosterone Booster</a></li>\n                  <li><a href=\"/collections/male-fertility-support\">Male Fertility Support</a></li>\n                </ul>\n              </details>\n            </li>\n            <li>\n              <details>\n                <summary><a href=\"/collections/energy-and-stamina\">Energy & Stamina</a></summary>\n                <ul>\n                  <li><a href=\"/collections/ayurvedic-energy-booster\">Ayurvedic Energy Booster</a></li>\n                  <li><a href=\"/collections/muscle-strength-and-recovery\">Muscle Strength & Recovery</a></li>\n                  <li><a href=\"/collections/fatigue-and-weakness\">Fatigue & Weakness</a></li>\n                </ul>\n              </details>\n            </li>\n            <li>\n              <details>\n                <summary><a href=\"/collections/immunity-and-general-wellness\">Immunity & General Wellness</a></summary>\n                <ul>\n                  <li><a href=\"/collections/daily-health-supplements\">Daily Health Supplements</a></li>\n                  <li><a href=\"/collections/multivitamins\">Ayurvedic Multivitamins</a></li>\n                  <li><a href=\"/collections/stress\">Stress & Mental Health</a></li>\n                </ul>\n              </details>\n            </li>\n            <li>\n              <details>\n                <summary><a href=\"/collections/weight-management\">Weight Management</a></summary>\n                <ul>\n                  <li><a href=\"/collections/weight-gain\">Weight Gain</a></li>\n                  <li><a href=\"/collections/weight-loss\">Weight Loss</a></li>\n                </ul>\n              </details>\n            </li>\n          </ul>\n        </details>\n      </li>\n\n      <li>\n        <details>\n          <summary><a href=\"/collections/women-s-health\">Women's Health</a></summary>\n          <ul>\n            <li>\n              <details>\n                <summary><a href=\"/collections/menstrual-hormonal-health\">Menstrual & Hormonal Health</a></summary>\n                <ul>\n                  <li><a href=\"/collections/irregular-periods\">Irregular Periods</a></li>\n                  <li><a href=\"/collections/pcos-pcod-support\">PCOS/PCOD Support</a></li>\n                  <li><a href=\"/collections/menstrual-pain-relief\">Menstrual Pain Relief</a></li>\n                  <li><a href=\"/collections/hormonal-balance\">Hormonal Balance</a></li>\n                </ul>\n              </details>\n            </li>\n            <li><a href=\"/collections/vaginal-care\">Vaginal Care</a></li>\n            <li><a href=\"/collections/post-pregnancy\">Post Pregnancy</a></li>\n            <li><a href=\"/collections/breast-care\">Breast Care</a></li>\n            <li><a href=\"/collections/daily-supplements\">Daily Supplements</a></li>\n            <li><a href=\"/collections/women-sexual-health\">Sexual Health</a></li>\n            <li><a href=\"/collections/stress\">Stress & Mental Health</a></li>\n          </ul>\n        </details>\n      </li>\n<li>\n  <details>\n    <summary><a href=\"/collections/fitness-wellness\">Fitness and Wellness</a></summary>\n    <ul>\n      <li>\n        <details>\n          <summary><a href=\"/collections/pain-relief\">Pain Relief</a></summary>\n          <ul>\n            <li><a href=\"/collections/osteoporosis\">Osteoporosis</a></li>\n            <li><a href=\"/collections/sprain\">Sprain</a></li>            \n            <li><a href=\"/collections/crush-injury\">Crush Injury</a></li>\n            <li><a href=\"/collections/back-pain\">Back Pain</a></li>\n            <li><a href=\"/collections/neuralgia\">Neuralgia</a></li>            \n            <li><a href=\"/collections/cramps\">Cramps</a></li>            \n            <li><a href=\"/collections/neck-pain\">Neck Pain</a></li>            \n            <li><a href=\"/collections/arthritis\">Arthritis</a></li>            \n            <li><a href=\"/collections/rheumatic\">Rheumatic</a></li>            \n            <li><a href=\"/collections/spondylosis\">Spondylosis</a></li>            \n            <li><a href=\"/collections/frozen-shoulder\">Frozen Shoulder</a></li> \n            <li><a href=\"/collections/sciatica\">Sciatica</a></li>            \n          </ul>\n        </details>\n      </li>\n<li>\n        <details>\n          <summary><a href=\"/collections/diet\">Diet</a></summary>\n          <ul>\n            <li><a href=\"/collections/herbal-drink\">Herbal Drink</a></li>\n            <li><a href=\"/collections/immune-booster\">Immune Booster</a></li>\n            <li><a href=\"/collections/weight-loss\">Weight Loss</a></li>\n            <li><a href=\"/collections/anaemia\">Anaemia</a></li>\n            <li><a href=\"/collections/energy\">Energy</a></li>\n            <li><a href=\"/collections/multivitamins\">Multivitamin</a></li>            \n            <li><a href=\"/collections/energy-boosters\">Energy Boosters</a></li>            \n            <li><a href=\"/collections/exhaustion\">Exhaustion</a></li>            \n            <li><a href=\"/collections/daily-energy-supplement\">Daily Energy Supplement</a></li>             \n          </ul>\n        </details>\n      </li>\n<li>\n        <details>\n          <summary><a href=\"/collections/gastric-care\">Gastric Care</a></summary>\n          <ul>\n            <li><a href=\"/collections/chronic-ulcers\">Chronic Ulcers</a></li> \n          </ul>\n        </details>\n      </li>            \n<li><a href=\"/collections/cholesterol-treatment\">Cholesterol Treatment</a></li>   \n          </ul>\n        </details>\n      </li>      \n\n<li>\n        <details>\n          <summary><a href=\"/collections/general-health\">General Health</a></summary>\n          <ul>\n            <li><a href=\"/collections/fever\">Fever</a></li>\n            <li><a href=\"/collections/migraine\">Migraine</a></li>\n            <li><a href=\"/collections/headache\">Headache</a></li>\n            <li><a href=\"/collections/cough-and-cold\">Cough and Cold</a></li>\n            <li><a href=\"/collections/stress\">Stress</a></li>\n            <li><a href=\"/collections/memory-boosters\">Memory Boosters</a></li>\n            <li><a href=\"/collections/multivitamins\">Multivitamin</a></li>            \n            </ul>\n        </details>\n      </li>      \n<li>\n  <details>\n    <summary><a href=\"/collections/diseases\">Diseases</a></summary>\n    <ul>\n      <li>\n        <details>\n          <summary><a href=\"/collections/asthma\">Asthma</a></summary>\n          <ul>\n            <li><a href=\"/collections/dyspnea\">Dyspnea</a></li>\n            <li><a href=\"/collections/pulmonary-congestion\">Pulmonary Congestion</a></li>\n          </ul>\n        </details>\n      </li>\n\n      <li>\n        <details>\n          <summary><a href=\"/collections/abdominal-diseases\">Abdominal Diseases</a></summary>\n          <ul>\n            <li><a href=\"/collections/obesity\">Obesity</a></li>\n            <li><a href=\"/collections/indigestion\">Indigestion</a></li>\n            <li><a href=\"/collections/constipation\">Constipation</a></li>\n            <li><a href=\"/collections/hiccough\">Hiccough</a></li>\n            <li><a href=\"/collections/acidity\">Acidity</a></li>\n          </ul>\n        </details>\n      </li>\n\n      <li><a href=\"/collections/diabetes\">Diabetes</a></li>\n\n      <li>\n        <details>\n          <summary><a href=\"/collections/paralysis\">Paralysis</a></summary>\n          <ul>\n            <li><a href=\"/collections/facial-palsy\">Facial Palsy</a></li>\n            <li><a href=\"/collections/paraplegia\">Paraplegia</a></li>\n          </ul>\n        </details>\n      </li>\n      \n    <li>\n        <details>\n          <summary><a href=\"/collections/sexual-disorder\">Sexual Disorder</a></summary>\n          <ul>\n            <li><a href=\"/collections/sexual-neurosis\">Sexual Neurosis</a></li>\n            <li><a href=\"/collections/sphermatorrhoea\">Spermatorrhoea</a></li>\n             <li><a href=\"/collections/sexual-impotency\">Sexual Impotency</a></li>\n            <li><a href=\"/collections/infertility\">Infertility</a></li> \n          </ul>\n        </details>\n      </li>  \n      \n    <li>\n        <details>\n          <summary><a href=\"/collections/skin-diseases\">Skin Diseases</a></summary>\n          <ul>\n            <li><a href=\"/collections/scabies\">Scabies</a></li>\n            <li><a href=\"/collections/carbuncle\">Carbuncle</a></li>\n             <li><a href=\"/collections/pruritus\">Pruritus</a></li>\n            <li><a href=\"/collections/eczema\">Eczema</a></li>             \n             <li><a href=\"/collections/leprosy\">Leprosy</a></li>\n            <li><a href=\"/collections/leucoderma\">Leucoderma</a></li>             \n          </ul>\n        </details>\n      </li> \n   \n    <li>\n        <details>\n          <summary><a href=\"/collections/haemorrohoids\">Haemorrohoids</a></summary>\n          <ul>\n            <li><a href=\"/collections/gastrointestinal-tract-git-ulcers\">Gastrointestinal Tract (GIT) Ulcers</a></li>                    </ul>\n        </details>\n      </li>    \n      \n  <li>\n        <details>\n          <summary><a href=\"/collections/urine-related-problems\">Urine Related Problems</a></summary>\n          <ul>\n            <li><a href=\"/collections/dysuria\">Dysuria</a></li>                  \n            </ul>\n            <ul>\n            <li><a href=\"/collections/bph\">BPH</a></li>                  \n           </ul>\n        </details>\n      </li> \n      \n<li>\n  <details>\n    <summary><a href=\"/collections/neurological-dieases\">Neurological Diseases</a></summary>\n    <ul>\n      <li><a href=\"/collections/loss-of-memory\">Loss Of Memory</a></li>\n      <li><a href=\"/collections/epilepsy\">Epilepsy</a></li>\n      <li><a href=\"/collections/insanity\">Insanity</a></li>\n      <li><a href=\"/collections/insomnia\">Insomnia</a></li>\n      <li><a href=\"/collections/depression\">Depression</a></li>\n    </ul>\n  </details>\n</li> \n    </ul>\n  </details>\n</li>\n\n<li>\n        <details>\n          <summary><a href=\"/collections/ayurvedic-herbal-products-wholesaler-bulk-supplier\">Ayurvedic & Herbal Products Wholesale & Bulk Supplier</a></summary>\n          <ul>\n            <li><a href=\"/collections/thailams-wholesale-bulk-packaging\">Thailams Wholesale Bulk Packaging</a></li>\n            <li><a href=\"/collections/choornams-wholesale-bulk-packaging\">Choornams Wholesale Bulk Packaging</a></li>\n            <li><a href=\"/collections/herbal-cosmetics-wholesale-bulk-packaging\">Herbal Cosmetics Wholesale Bulk Packaging</a></li>\n            <li><a href=\"/collections/proprietary-oils-wholesale-bulk-packaging\">Proprietary Oils Wholesale Bulk Packaging</a></li>\n            <li><a href=\"/collections/proprietary-cosmetics-wholesale-bulk-packaging\">Proprietary Cosmetics Wholesale Bulk Packaging</a></li>\n            <li><a href=\"/collections/herbal-infusions-wholesale-bulk-packaging\">Herbal Infusions Wholesale Bulk Packaging</a></li>           \n            </ul>\n        </details>\n      </li>     \n\n<li>\n        <details>\n          <summary>About Us</summary>\n          <ul>\n            <li><a href=\"/pages/the-kairali-group\">The Kairali Group</a></li>\n            <li><a href=\"/pages/awards\">Awards</a></li>\n            <li><a href=\"/pages/photo-gallery\">Photo Gallery</a></li>\n            <li><a href=\"/pages/video-gallery\">Video Gallery</a></li>\n             \n            \n            \n            <li><a href=\"/pages/facilities-and-raw-materials\">Facilities & Raw Materials</a></li>            \n            <li><a href=\"/pages/quality-and-safety\">Quality & Safety</a></li>\n            <li><a href=\"/pages/research-and-development\">Research & Development</a></li>\n<li><a href=\"/pages/clinical-trials\">Clinical Trials</a></li>                        \n<li><a href=\"/pages/certifications\">Certifications</a></li>\n<li><a href=\"/pages/csr\">CSR</a></li>\n<li><a href=\"/pages/find-our-store\">Find our Store</a></li>\n            <li><a href=\"/pages/website-disclaimer\">Website Disclaimer</a></li> \n            <li><a href=\"/pages/cookie-and-widget-policy\">Cookies & Providers</a></li>\n            <li><a href=\"/pages/sitemap\">Website Sitemap</a></li>            \n            </ul>\n        </details>\n      </li>  \n<li>\n        <details>\n          <summary>Partner With Us</summary>\n          <ul>\n            <li><a href=\"/pages/enqurie-now\">Enquire Now</a></li>\n            <li><a href=\"/pages/our-footprint\">Our Footprint</a></li>\n            <li><a href=\"/pages/contract-manufacturing\">Contract Manufacturing</a></li>\n            <li><a href=\"/pages/hotel-resort-and-spa-supply\">Hotel, Resort & Spa Supply</a></li>\n<li><a href=\"/pages/become-our-distributers-importers\">Become a Kairali Distributor or Importer</a></li>                        <li><a href=\"/pages/gifting\">Gifting</a></li>\n            </ul>\n        </details>\n      </li> \n<li>\n        <details>\n          <summary>Help & Support</summary>\n          <ul>\n            <li><a href=\"/pages/contact-us\">Contact Us</a></li>\n            <li><a href=\"/pages/faq\">FAQs</a></li>\n            <li><a href=\"/pages/shipping-and-return\">Shipping & Returns</a></li>\n            <li><a href=\"/pages/return-refund-policy\">Return & Refund Policy</a></li>\n<li><a href=\"/pages/terms-and-condition\">Terms & Conditions</a></li>                                       <li><a href=\"/policies/privacy-policy\">Privacy Policy</a></li>\n           <li><a href=\"/pages/offers\">Offers</a></li>\n           <li><a href=\"/pages/online-consultation\">Free Online Consultation</a></li>\n           <li><a href=\"/pages/accessibility-statement\">Accessibility Statement</a></li>\n           <li><a href=\"/pages/cookie-and-widget-policy\">Cookies &amp; Providers</a></li>\n           <li><a href=\"/pages/payment-policy\">Payment Policy</a></li>\n           <li><a href=\"/policies/legal-notice\">Legal &amp; Company Information</a></li>\n            </ul>\n        </details>\n      </li>   \n            <li><a href=\"/collections\">All collections</a></li>\n            <li><a href=\"/collections/all\">All Products</a></li>\n\n    </ul>\n  </div>\n    </div>"
+      }
+    },
+    "features_banner_D3PAxi": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_VNyQqM": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_HaYWw7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_7L4VRd": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_dqGtz9": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Items you love at prices that fit your budget.Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VNyQqM",
+        "image_HaYWw7",
+        "image_7L4VRd",
+        "image_dqGtz9"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_zTpFkh",
+    "features_banner_D3PAxi"
+  ]
+}

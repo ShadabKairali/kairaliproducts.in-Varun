@@ -1,0 +1,65 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "rich_text_kU6r4x": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_fh7e9x": {
+          "type": "heading",
+          "settings": {
+            "heading": "PHOTO GALLERY",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_fh7e9x"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 20,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_TNAeY8": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"image-layout-container\">\n\n  <!-- 5-Image Layout -->\n  <div class=\"image-layout image-layout-5\">\n    <div class=\"stack left-stack\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Kairali_Ayurvedic_Products.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n      <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Ayurvedic_Products.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n    </div>\n    <div class=\"center-image\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Kairkare_Oil_-_Ayurvedic_Products.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n    </div>\n    <div class=\"stack right-stack\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Ayurvedic_Products_Store.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n      <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Kairali_Ayurvedic_Products_Skin_Care.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n    </div>\n  </div>\n\n  <!-- 4-Image Layout -->\n  <div class=\"image-layout image-layout-4\">\n    <div class=\"left-combo\">\n      <div class=\"top-single\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Best_Ayurvedic_Products.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n      </div>\n      <div class=\"bottom-double\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Herbal_Products_Kairali_Ayurveda.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/Health_Paroducts_-_Kairali_Ayurvedic_Products.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n      </div>\n    </div>\n    <div class=\"right-large\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0689/0658/2191/files/How_To_Buy_Ayurvedic_Products.jpg\" alt=\"Kairali Ayurvedic Products\" loading=\"lazy\" />\n    </div>\n  </div>\n\n</div>\n\n<style>\n.image-layout-container {\n  width: 100%;\n  max-width: 1280px;\n  margin: 0 auto;\n  padding: 30px 15px;\n  box-sizing: border-box;\n}\n\n/* Common Image Layout Styling */\n.image-layout {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 20px;\n  margin-bottom: 60px;\n  align-items: stretch;\n  justify-content: center;\n}\n\n.image-layout img {\n  width: 100%;\n  height: auto;\n  object-fit: cover;\n  display: block;\n  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n  transition: transform 0.3s ease;\n}\n\n.image-layout img:hover {\n  transform: scale(1.05);\n}\n\n/* 5-Image Layout */\n.image-layout-5 .stack {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n  gap: 20px;\n  min-width: 180px;\n}\n\n.image-layout-5 .stack img {\n  flex: 1;\n  height: 50%; /* Makes them stretch evenly */\n}\n\n.image-layout-5 .center-image {\n  flex: 0 0 220px;\n  display: flex;\n  justify-content: center;\n  align-items: stretch;\n}\n\n.image-layout-5 .center-image img {\n  height: 100%;\n  width: auto;\n}\n\n/* 4-Image Layout */\n.image-layout-4 .left-combo {\n  flex: 0 0 70%;\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  min-width: 300px;\n}\n\n.image-layout-4 .top-single img {\n  width: 100%;\n}\n\n.image-layout-4 .bottom-double {\n  display: flex;\n  gap: 20px;\n}\n\n.image-layout-4 .bottom-double img {\n  flex: 1 1 0;\n  min-width: 0;\n}\n\n.image-layout-4 .right-large {\n  flex: 0 0 25%;\n  min-width: 300px;\n}\n\n.image-layout-4 .right-large img {\n  height: 100%;\n}\n\n/* Responsive Styles */\n@media (max-width: 768px) {\n  .image-layout {\n    flex-direction: column;\n  }\n\n  .image-layout-5 .stack,\n  .image-layout-5 .center-image,\n  .image-layout-4 .left-combo,\n  .image-layout-4 .right-large {\n    flex: 1 1 100%;\n    min-width: 100%;\n  }\n\n  .image-layout-4 .bottom-double {\n    flex-direction: column;\n  }\n\n  .image-layout-4 .bottom-double img {\n    width: 100%;\n  }\n\n  .image-layout-5 .stack img {\n    height: auto;\n  }\n}\n</style>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_kU6r4x",
+    "custom_liquid_TNAeY8"
+  ]
+}

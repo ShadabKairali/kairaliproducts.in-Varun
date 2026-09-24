@@ -1,0 +1,140 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_7FneGX": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<article class=\"kairali-page kairali-consultation\">\n  <header>\n    <p>Speak with the Kairali consultation team</p>\n    <h1>Free Online Ayurveda Consultation</h1>\n    <p>Use the consultation form on this page to request a conversation about general Ayurveda, Kairali products and the next appropriate step. The team will review your request and contact you using the details you provide.</p>\n    <p><a href=\"#consultation-form\">Request a consultation</a> <a href=\"/collections/all\">Explore Kairali products</a></p>\n  </header>\n\n  <section>\n    <h2>What the online consultation can help with</h2>\n    <ul>\n      <li>Understanding the information needed before choosing a Kairali product.</li>\n      <li>Reviewing general product-use questions, label directions and practical considerations.</li>\n      <li>Identifying when a question should instead be taken to an appropriate healthcare professional.</li>\n    </ul>\n    <p>The consultation does not provide emergency care and does not guarantee diagnosis, treatment, cure or a particular result. Product availability and suitability remain subject to the individual product label and your circumstances.</p>\n  </section>\n\n  <section>\n    <h2>Before you submit the form</h2>\n    <p>Give clear contact details and a concise explanation of what you would like to discuss. Do not submit passwords, payment-card details or emergency information. If you have urgent or severe symptoms, contact local emergency services or an appropriate medical professional instead of waiting for an online response.</p>\n    <p>If your question relates to pregnancy or breastfeeding, a child, allergies, a diagnosed condition or medicines, say so clearly and seek advice from an appropriately qualified healthcare professional before using a product.</p>\n  </section>\n\n  <section id=\"consultation-form\">\n    <h2>Request your online consultation</h2>\n    <p>Complete the consultation form displayed by this page. Submission is a request, not confirmation of an appointment. Please check that your telephone number and email address are accurate so the team can respond.</p>\n  </section>\n\n  <section>\n    <h2>Frequently asked questions</h2>\n    <h3>Is the online Ayurveda consultation free?</h3>\n    <p>The current page offers a free online consultation request. Any product purchase or separate service is optional and should be clearly confirmed before payment.</p>\n    <h3>Will the consultation diagnose or treat a condition?</h3>\n    <p>No diagnosis, cure or treatment outcome is promised. The service is for general Ayurveda and product-related guidance and does not replace appropriate medical care.</p>\n    <h3>Is submitting the form an appointment confirmation?</h3>\n    <p>No. The submission asks the team to review your request and contact you. Availability and the consultation format are confirmed separately.</p>\n    <h3>Where can I find a Kairali centre?</h3>\n    <p>See the <a href=\"/pages/find-our-store\">Kairali store and centre directory</a> for the locations and contact information currently listed by Kairali.</p>\n  </section>\n</article>"
+      }
+    },
+    "17500531964bafa5bd": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_VqGCb6": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "513452",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 40,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_VqGCb6"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "features_banner_CWieHw": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_6MtPcg": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_EJW4Lb": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_7rPKam": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_3eiNVE": {
+          "type": "image",
+          "settings": {
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_6MtPcg",
+        "image_EJW4Lb",
+        "image_7rPKam",
+        "image_3eiNVE"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "name": "t:sections.features-banner.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_7FneGX",
+    "17500531964bafa5bd",
+    "features_banner_CWieHw"
+  ]
+}

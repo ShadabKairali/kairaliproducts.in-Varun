@@ -1,0 +1,582 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "compact-size-enabled": true,
+        "hide_content": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "rich_text_9DUwGp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9CbFpk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need help?",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_9CbFpk"
+      ],
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 0
+      }
+    },
+    "b1762d2f-c545-46f9-ab66-b0f6dc390c56": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15329436369096__b1762d2f-c545-46f9-ab66-b0f6dc390c56-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "FREQUENTLY ASKED QUESTIONS",
+            "disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "template--15329436369096__b1762d2f-c545-46f9-ab66-b0f6dc390c56-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover the answers to your frequently asked questions about our products and services.</p>",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15329436369096__b1762d2f-c545-46f9-ab66-b0f6dc390c56-heading-1",
+        "template--15329436369096__b1762d2f-c545-46f9-ab66-b0f6dc390c56-text-1"
+      ],
+      "settings": {
+        "section_width": "short",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_TFWwkX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.faqCategory {\n  display: flex;\n  align-items: center;\n  gap: 8px; /* space between icon and text */\n  font-weight: bold;\n  font-size: 16px;\n  color: #006A4E;\n  padding: 10px 0px 0px 80px;\n  margin-left: 13%;\n}\n\n.faqCategory svg {\n  flex-shrink: 0;\n  stroke: #5a5a5a; /* adjust color as needed */\n}\n\n@media screen and (max-width: 767px) {\n.faqCategory {\nmargin-left: -3%;\n}\n}\n\n@media screen and (min-width: 768px) and (max-width: 1024px) {\n.faqCategory {\nmargin-left: -1%;\n}\n}\n\n</style>\n\n<p class=\"faqCategory\"><svg aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke-width=\"2\" width=\"20\" class=\"icon icon-picto-document\" viewBox=\"0 0 24 24\">\n      <path d=\"M7.5 9.51h9m-9 3.75h9m-9 3.75h9\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path clip-rule=\"evenodd\" d=\"M15.75 4.51h3.75a1.5 1.5 0 0 1 1.5 1.5V21a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 21V6.01a1.5 1.5 0 0 1 1.5-1.5h3.75a3.75 3.75 0 1 1 7.5 0Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path d=\"M12 3.76a.375.375 0 1 1 0 .75.375.375 0 0 1 0-.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg><strong>General Queries</strong></p>"
+      }
+    },
+    "19343041-49f3-4eb8-918f-d93e323afa2e": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "template--15329436369096__19343041-49f3-4eb8-918f-d93e323afa2e-collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What is Kairali Ayurvedic Products?",
+            "content": "<p>Kairali Ayurvedic Products is a heritage Ayurvedic brand with over 80 years of expertise. We craft authentic wellness and skincare products using time-tested Ayurvedic formulations and high-quality natural ingredients—rooted in tradition, backed by science.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "6c6c8546-4be8-47e9-8694-d542109d388e": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Are your products AYUSH certified?",
+            "content": "<p>Yes, all our Ayurvedic products are certified by AYUSH (Ministry of Ayurveda, Yoga & Naturopathy, Unani, Siddha and Homoeopathy), ensuring safety, authenticity, and compliance with India’s highest regulatory standards.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "18a26329-3e89-409b-b175-cad7e9531a44": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Are your products 100% natural and chemical-free?",
+            "content": "<p>Absolutely. We use only 100% natural herbs, organic extracts, and traditional ingredients—free from parabens, sulfates, silicones, or synthetic additives. Just pure Ayurveda in every bottle.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "1587700a-5ee8-43f8-a35f-d929db42fb22": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do Kairali products have any side effects?",
+            "content": "<p>Our formulations are made from natural ingredients and are generally safe for use. However, we recommend consulting a qualified Ayurvedic practitioner if you're pregnant, nursing, taking medication, or have a medical condition.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "bb27c4f2-0c26-45bf-8b45-d680bea4e03c": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do you ensure product quality?",
+            "content": "<p>Every Kairali product goes through rigorous quality checks. Our in-house R&D team tests for purity, potency, and effectiveness before anything reaches your doorstep.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "2c2aaa13-82fb-4138-aa8a-37f18b412379": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How is product packaging and delivery handled?",
+            "content": "<p>We take packaging seriously. Products are hygienically sealed, securely boxed, and double-checked for safety to ensure they arrive in perfect condition—whether it's across the street or across the globe.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "template--15329436369096__19343041-49f3-4eb8-918f-d93e323afa2e-collapsible_tab-1",
+        "6c6c8546-4be8-47e9-8694-d542109d388e",
+        "18a26329-3e89-409b-b175-cad7e9531a44",
+        "1587700a-5ee8-43f8-a35f-d929db42fb22",
+        "bb27c4f2-0c26-45bf-8b45-d680bea4e03c",
+        "2c2aaa13-82fb-4138-aa8a-37f18b412379"
+      ],
+      "custom_css": [
+        ".wt-collapse-menu {padding: 0px 100px 0px 100px;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_kwbCBr": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.faqCategory {\n  display: flex;\n  align-items: center;\n  gap: 8px; /* space between icon and text */\n  font-weight: bold;\n  font-size: 16px;\n  color: #006A4E;\n  padding: 10px 0px 0px 80px;\n}\n\n.faqCategory svg {\n  flex-shrink: 0;\n  stroke: #5a5a5a; /* adjust color as needed */\n}\n\n</style>\n\n<p class=\"faqCategory\"><svg aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke-width=\"2\" width=\"20\" class=\"icon icon-picto-box\" viewBox=\"0 0 24 24\">\n      <path clip-rule=\"evenodd\" d=\"M.75 5.25 12 9.75l11.25-4.5L12 .75.75 5.25Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path clip-rule=\"evenodd\" d=\"M.75 5.25v13.5L12 23.25V9.75L.75 5.25v0Zm22.5 0v13.5L12 23.25V9.75l11.25-4.5v0Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path d=\"m18.187 7.275-11.25-4.5M20.625 16.5l-1.875.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg><strong>Order, Shipping & Delivery</strong></p>"
+      }
+    },
+    "collapsible_menu_Ehawcg": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_XcNPAM": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer international shipping?",
+            "content": "<p>Yes! We ship worldwide from our global website <a href=\"http://www.kairaliproducts.com\" target=\"_blank\" title=\"kairaliproducts.com\">kairaliproducts.com</a>. Shipping fees are calculated at checkout based on your location. Keep an eye out for seasonal discounts on international deliveries!</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_nPtFF8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I place an order by phone?",
+            "content": "<p>Yes, simply call our customer care team at <a href=\"tel:+919555156156\" title=\"tel:+919555156156\">+91-9555156156</a> to place an order manually. We’re happy to help.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_8a8b6h": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How long does delivery take?",
+            "content": "<ul><li><strong>India:</strong> 5–7 business days</li><li><strong>International:</strong> 7–16 business days You’ll receive tracking updates via email/SMS once your order is dispatched.</li></ul>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_UjXyFr": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I track my order?",
+            "content": "<p>You’ll get a tracking link via email or SMS. Click the link to follow your package in real-time.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_bwNbtR": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How can I cancel my order?",
+            "content": "<p>Orders can be cancelled <strong>before they’re shipped</strong>. Contact our support team immediately at  <a href=\"tel:+919555156156\" title=\"tel:+919555156156\">+91-9555156156</a> for assistance.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_CQwniU": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What if an item is missing from my order?",
+            "content": "<p>Oops! If something’s missing, please call our support team right away and we’ll sort it out with urgency.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_6N3VfA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I modify my order after placing it?",
+            "content": "<p>Unfortunately, once confirmed, orders cannot be changed. You’ll need to place a new order for any modifications.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_GNVJXk": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Received damaged items?",
+            "content": "<p>We’re truly sorry! Contact us at <a href=\"tel:+919555156156\" title=\"tel:+919555156156\">+91-9555156156</a>, and we’ll arrange a replacement or refund ASAP as per our policy.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_ermj8Y": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What if I received the wrong item?",
+            "content": "<p>Mistakes happen, but we’ll fix it fast. Call our team and we’ll send you the correct item without delay.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_7zHHyJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Where can I download my invoice?",
+            "content": "<p>Currently, we do not offer the option to download invoices directly from our website. After placing your order, your invoice will be sent to your registered number provided during checkout. If you haven’t received it or need any assistance, please feel free to contact our support team at <a href=\"tel:+919555156156\" title=\"+919555156156\">+91-95551 56156</a>‬ — we’ll be happy to help you.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_XcNPAM",
+        "collapsible_tab_nPtFF8",
+        "collapsible_tab_8a8b6h",
+        "collapsible_tab_UjXyFr",
+        "collapsible_tab_bwNbtR",
+        "collapsible_tab_CQwniU",
+        "collapsible_tab_6N3VfA",
+        "collapsible_tab_GNVJXk",
+        "collapsible_tab_ermj8Y",
+        "collapsible_tab_7zHHyJ"
+      ],
+      "custom_css": [
+        ".wt-collapse-menu {padding: 0px 100px 0px 100px;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_kpRPec": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.faqCategory {\n  display: flex;\n  align-items: center;\n  gap: 8px; /* space between icon and text */\n  font-weight: bold;\n  font-size: 16px;\n  color: #006A4E;\n  padding: 10px 0px 0px 80px;\n}\n\n.faqCategory svg {\n  flex-shrink: 0;\n  stroke: #5a5a5a; /* adjust color as needed */\n}\n\n</style>\n\n<p class=\"faqCategory\"><svg aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke-width=\"2\" width=\"20\" class=\"icon icon-picto-return\" viewBox=\"0 0 24 24\">\n      <path d=\"m1.25 15.08 2.207-3.384 3.385 2.206\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path d=\"M13.13 2.5a9.525 9.525 0 1 1 0 19.049 9.68 9.68 0 0 1-9.673-9.853\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg><strong>Returns & Refunds</strong></p>"
+      }
+    },
+    "collapsible_menu_FkExF4": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_TRWarA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What’s your return policy?",
+            "content": "<p>We accept returns within 7 days of delivery if the item is unused, unopened, and in its original packaging. Please refer to our full Return & Refund Policy for specifics.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_qpVK7M": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I request a return or refund?",
+            "content": "<p>Contact our support team with your order number, and we’ll guide you through the return process step-by-step.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_pVWgxV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "When will I get my refund?",
+            "content": "<p>Refunds are processed within 10–15 business days after approval and will be credited to your original payment method.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_TRWarA",
+        "collapsible_tab_qpVK7M",
+        "collapsible_tab_pVWgxV"
+      ],
+      "custom_css": [
+        ".wt-collapse-menu {padding: 0px 100px 0px 100px;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_NbhCwK": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n.faqCategory {\n  display: flex;\n  align-items: center;\n  gap: 8px; /* space between icon and text */\n  font-weight: bold;\n  font-size: 16px;\n  color: #006A4E;\n  padding: 10px 0px 0px 80px;\n}\n\n.faqCategory svg {\n  flex-shrink: 0;\n  stroke: #5a5a5a; /* adjust color as needed */\n}\n\n</style>\n\n<p class=\"faqCategory\"><svg aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke-width=\"2\" width=\"20\" class=\"icon icon-picto-customer-support\" viewBox=\"0 0 24 24\">\n      <path d=\"M12.75 15.75h3v4.5l4.5-4.5h1.494c.832 0 1.506-.674 1.506-1.506V2.25a1.5 1.5 0 0 0-1.5-1.5h-12a1.5 1.5 0 0 0-1.5 1.5v4.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path d=\"M19.875 7.875a.375.375 0 1 0 0 .75.375.375 0 0 0 0-.75m-7.5 0a.375.375 0 1 0 0 .75.375.375 0 0 0 0-.75m3.75 0a.375.375 0 1 0 0 .75.375.375 0 0 0 0-.75\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path clip-rule=\"evenodd\" d=\"M6.75 16.5a3.375 3.375 0 1 0 0-6.75 3.375 3.375 0 0 0 0 6.75Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path d=\"M12.75 23.25a6.054 6.054 0 0 0-12 0\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg><strong>Consultation & Ayurvedic Guidance</strong></p>"
+      }
+    },
+    "collapsible_menu_Azrxqb": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_hAKLRT": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do you offer free Ayurvedic consultations?",
+            "content": "<p>Yes! Get free online consultations from certified Ayurvedic doctors. Book directly via our website and receive personalized wellness advice tailored to your dosha and health goals.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_4YKkB7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I know which product is right for me?",
+            "content": "<p>Check our detailed product descriptions, or better yet—book a free Ayurvedic consultation to get recommendations based on your body type, health concerns, and lifestyle.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_hAKLRT",
+        "collapsible_tab_4YKkB7"
+      ],
+      "custom_css": [
+        ".wt-collapse-menu {padding: 0px 100px 0px 100px;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_aHaWpx": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n.faqCategory {\n  display: flex;\n  align-items: center;\n  gap: 8px; /* space between icon and text */\n  font-weight: bold;\n  font-size: 16px;\n  color: #006A4E;\n  padding: 10px 0px 0px 80px;\n}\n\n.faqCategory svg {\n  flex-shrink: 0;\n  stroke: #5a5a5a; /* adjust color as needed */\n}\n\n</style>\n\n<p class=\"faqCategory\"><svg aria-hidden=\"true\" focusable=\"false\" fill=\"none\" stroke-width=\"2\" width=\"20\" class=\"icon icon-picto-customer-support\" viewBox=\"0 0 24 24\">\n      <path d=\"M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path d=\"M12 9l1.618 3.236L17 13l-2.618 2.236L12 19l-2.382-3.764L7 13l3.382-.764L12 9Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg><strong>Why Choose Kairali Over Others?</strong></p>"
+      }
+    },
+    "collapsible_menu_j3r7Qm": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_mXapQV": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What makes Kairali different from other Ayurvedic brands?",
+            "content": "<p>While many brands claim to be \"Ayurvedic,\" Kairali stands apart with 80+ years of authentic heritage. We don't just follow trends—we've been living and breathing Ayurveda since 1939. Every product is crafted with classical formulations passed down through generations, not modern shortcuts or diluted versions.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_tWBkdb": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How is your quality better than competitors?",
+            "content": "<p>Most brands outsource manufacturing or compromise on ingredient quality. We control everything in-house: from sourcing premium herbs to formulation, production, and quality testing. Our AYUSH certification isn't just a badge—it's a commitment to purity that we've maintained for eight decades. We never use fillers, synthetic fragrances, or chemical preservatives that many \"natural\" brands sneak into their products.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_NPTULK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why are your prices competitive despite premium quality?",
+            "content": "<p>Because we manufacture everything ourselves. Unlike competitors who rely on third-party manufacturers and middlemen, our direct-to-consumer model eliminates unnecessary markups. You're paying for authentic Ayurveda, not fancy marketing or inflated retail margins.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_mxqrbm": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Do other brands offer the same level of expertise?",
+            "content": "<p>Few can match our legacy. Kairali isn't just a product line—we own and operate award-winning Ayurvedic resorts and treatment centers where our formulations have been tested on thousands of patients over decades. Our products aren't lab experiments; they're proven remedies refined through real-world healing experiences.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_yKKpgT": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "What about customer support and consultation?",
+            "content": "<p>Many brands sell you a product and disappear. We offer FREE personalized consultations with certified Ayurvedic doctors who help you choose the right products for your unique dosha and health needs. Our customer support during our published support hours ensures you're never alone on your wellness journey.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_DkhwkA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How does your global reach compare?",
+            "content": "<p>While many Ayurvedic brands are limited to India, Kairali delivers authentic Ayurveda worldwide. Our international reputation is built on trust, consistency, and results—not just shipping products, but spreading genuine healing traditions globally</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_mXapQV",
+        "collapsible_tab_tWBkdb",
+        "collapsible_tab_NPTULK",
+        "collapsible_tab_mxqrbm",
+        "collapsible_tab_yKKpgT",
+        "collapsible_tab_DkhwkA"
+      ],
+      "custom_css": [
+        ".wt-collapse-menu {padding: 0px 100px 0px 100px;}"
+      ],
+      "name": "t:sections.collapsible_menu.presets.name",
+      "settings": {
+        "color-body-text": "transparent",
+        "background_color": "transparent",
+        "compact-size-enabled": true,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_KW6xAP": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "FAQ Schema Jeson",
+      "settings": {
+        "custom_liquid": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What is Kairali Ayurvedic Products?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Kairali Ayurvedic Products is a heritage Ayurvedic brand with over 80 years of expertise. We craft authentic wellness and skincare products using time-tested Ayurvedic formulations and high-quality natural ingredients—rooted in tradition, backed by science.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Are your products AYUSH certified?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes, all our Ayurvedic products are certified by AYUSH (Ministry of Ayurveda, Yoga & Naturopathy, Unani, Siddha and Homoeopathy), ensuring safety, authenticity, and compliance with India’s highest regulatory standards.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Are your products 100% natural and chemical-free?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Absolutely. We use only 100% natural herbs, organic extracts, and traditional ingredients—free from parabens, sulfates, silicones, or synthetic additives. Just pure Ayurveda in every bottle.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Do Kairali products have any side effects?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Our formulations are made from natural ingredients and are generally safe for use. However, we recommend consulting a qualified Ayurvedic practitioner if you're pregnant, nursing, taking medication, or have a medical condition.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How do you ensure product quality?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Every Kairali product goes through rigorous quality checks. Our in-house R&D team tests for purity, potency, and effectiveness before anything reaches your doorstep.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How is product packaging and delivery handled?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"We take packaging seriously. Products are hygienically sealed, securely boxed, and double-checked for safety to ensure they arrive in perfect condition—whether it's across the street or across the globe.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Do you offer international shipping?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes! We ship worldwide from our global website kairaliproducts.com. Shipping fees are calculated at checkout based on your location. Keep an eye out for seasonal discounts on international deliveries!\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Can I place an order by phone?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes, simply call our customer care team at +91-9555156156 to place an order manually. We’re happy to help.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How long does delivery take?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"India: 5–7 business days. International: 7–16 business days. You’ll receive tracking updates via email/SMS once your order is dispatched.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How do I track my order?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"You’ll get a tracking link via email or SMS. Click the link to follow your package in real-time.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How can I cancel my order?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Orders can be cancelled before they’re shipped. Contact our support team immediately at +91-9555156156 for assistance.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What if an item is missing from my order?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Oops! If something’s missing, please call our support team right away and we’ll sort it out with urgency.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Can I modify my order after placing it?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Unfortunately, once confirmed, orders cannot be changed. You’ll need to place a new order for any modifications.\"\n      }\n    },\n        {\n      \"@type\": \"Question\",\n      \"name\": \"Received damaged items?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"We’re truly sorry! Contact us at +91-9555156156, and we’ll arrange a replacement or refund ASAP as per our policy.\"\n      }\n    },\n        {\n      \"@type\": \"Question\",\n      \"name\": \"What if I received the wrong item?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Mistakes happen, but we’ll fix it fast. Call our team and we’ll send you the correct item without delay.\"\n      }\n    },\n        {\n      \"@type\": \"Question\",\n      \"name\": \"Where can I download my invoice?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Currently, we do not offer the option to download invoices directly from our website. After placing your order, your invoice will be sent to your registered number provided during checkout. If you haven’t received it or need any assistance, please feel free to contact our support team at +91-9555156156‬ — we’ll be happy to help you.\"\n      }\n    },\n        {\n      \"@type\": \"Question\",\n      \"name\": \"What’s your return policy?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"We accept returns within 7 days of delivery if the item is unused, unopened, and in its original packaging. Please refer to our full Return & Refund Policy for specifics.\"\n      }\n    },\n            {\n      \"@type\": \"Question\",\n      \"name\": \"How do I request a return or refund?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Contact our support team with your order number, and we’ll guide you through the return process step-by-step.\"\n      }\n    },\n            {\n      \"@type\": \"Question\",\n      \"name\": \"When will I get my refund?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Refunds are processed within 10–15 business days after approval and will be credited to your original payment method.\"\n      }\n    },\n            {\n      \"@type\": \"Question\",\n      \"name\": \"Do you offer free Ayurvedic consultations?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes! Get free online consultations from certified Ayurvedic doctors. Book directly via our website and receive personalized wellness advice tailored to your dosha and health goals.\"\n      }\n    },\n            {\n      \"@type\": \"Question\",\n      \"name\": \"How do I know which product is right for me?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Check our detailed product descriptions, or better yet—book a free Ayurvedic consultation to get recommendations based on your body type, health concerns, and lifestyle.\"\n      }\n    }\n  ]\n}\n</script>"
+      }
+    },
+    "8cb67a60-3fd7-4c87-8040-f625fc677a4e": {
+      "type": "separator",
+      "settings": {
+        "heading": "",
+        "show-separator-line": true,
+        "full-width-line": true,
+        "color-background": "#dfdfdf",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "0fb78468-9ddb-4ab4-b0f2-17627de7d650": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-1": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "Delivery worldwide",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-2": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 Days Return Policy",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-3": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "Customer Support",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-4": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "Secure payments",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-1",
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-2",
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-3",
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-4"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 36,
+        "margin-bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_9DUwGp",
+    "b1762d2f-c545-46f9-ab66-b0f6dc390c56",
+    "custom_liquid_TFWwkX",
+    "19343041-49f3-4eb8-918f-d93e323afa2e",
+    "custom_liquid_kwbCBr",
+    "collapsible_menu_Ehawcg",
+    "custom_liquid_kpRPec",
+    "collapsible_menu_FkExF4",
+    "custom_liquid_NbhCwK",
+    "collapsible_menu_Azrxqb",
+    "custom_liquid_aHaWpx",
+    "collapsible_menu_j3r7Qm",
+    "custom_liquid_KW6xAP",
+    "8cb67a60-3fd7-4c87-8040-f625fc677a4e",
+    "0fb78468-9ddb-4ab4-b0f2-17627de7d650"
+  ]
+}

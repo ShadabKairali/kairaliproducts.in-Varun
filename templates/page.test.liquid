@@ -1,0 +1,917 @@
+<style>
+.lipidex-aplus-container {
+  font-family: jost, sans-serif;
+  background: #f9faf9;
+  color: #222;
+  margin: 0 auto;
+  max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(50,50,50,0.08);
+  overflow: hidden;
+}
+
+/* HERO SECTION */
+.lipidex-hero {
+  background: linear-gradient(90deg, #e2ffe6 60%, #fff 100%);
+  background-image: url("https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Untitled_1200_x_400_px_1.png?v=1753178862");
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  ppadding: 10px 24px;
+}
+.lipidex-hero-image .desktop-img {
+  display: none;
+  width: 300px;
+  height: 500;
+  object-fit: cover;
+  margin-right: 36px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  background: #e9fcec;
+}
+
+.lipidex-hero-image .mobile-img {
+  display: none;
+  width: 100%;
+}
+
+.lipidex-hero-main {
+  flex: 1;
+  margin-left: 90px;
+  padding: 0px 0 25px 360px;
+}
+.lipidex-hero-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffee7a;
+  margin-bottom: 12px;
+}
+.lipidex-hero-highlight {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.lipidex-hero-main ul {
+  padding-left: 20px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  list-style: disc;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.lipidex-hero-main ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.lipidex-btn {
+  background: #fff;
+  color: #004c3f;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0px;
+  box-shadow: 0 2px 5px #cbe7d3;
+  transition: 0.15s;
+}
+.lipidex-btn:hover { background: #337d50; }
+
+
+
+/* INGREDIENT SECTION */
+.lipidex-ingredients {
+  background: #e2ffe6;
+  padding: 36px 18px;
+  text-align: center;
+}
+.lipidex-ingredients-title {
+  font-size: 2.5rem;
+  color: #3a905a;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.lipidex-ingredients-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 18px;
+  margin-bottom: 16px;
+}
+.lipidex-ingredient {
+  flex: 1 1 100px;
+  min-width: 150px;
+  max-width: 250px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px 10px;
+  margin: 10px 5px;
+  box-shadow: 0 2px 6px rgba(90,200,130,0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease-in-out;
+}
+.lipidex-ingredient:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.lipidex-ingredient-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: #e6f5ee;
+}
+.lipidex-ingredient-name {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #337d50;
+  margin-bottom: 4px;
+}
+.lipidex-ingredient-desc {
+  font-size: 1.5rem;
+  color: #555;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* WHY LIPIDEX SECTION */
+.lipidex-why {
+  background: #303e37;
+  color: #fff;
+  padding: 38px 18px;
+  text-align: center;
+}
+.lipidex-why-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.lipidex-why-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  max-width: 950px;
+}
+.lipidex-why-list li {
+  font-size: 2rem;
+  margin-bottom: 13px;
+  position: relative;
+  padding-left: 32px;
+  text-align: left;
+}
+.lipidex-why-list li:before {
+  content: "✓";
+  color: #a8ffd2;
+  font-size: 1.25rem;
+  position: absolute;
+  left: 0;
+}
+.lipidex-why .lipidex-btn {
+  background: #fff;
+  color: #3a905a;
+  box-shadow: none;
+}
+.lipidex-why .lipidex-btn:hover {
+  background: #d6f5e2;
+}
+.lipidex-text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 12px;
+
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .lipidex-hero { flex-direction: column; text-align: center; }
+  .lipidex-hero img { margin: 0 0 22px 0; }
+  .lipidex-ingredients-row { flex-direction: column; align-items: center; }
+  
+  .lipidex-hero-image .desktop-img {
+    display: none;
+  }
+  .lipidex-hero-image .mobile-img {
+     display: block;
+     width: 300px;
+     height: 250;
+     object-fit: cover;
+     margin-right: 36px;
+     border-radius: 16px;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+     background: #e9fcec;
+  }
+  
+}
+
+    <!-- proven-and-effective-results start -->
+
+/* Proven and Effective Results Section */
+.lipidex-proven-and-effective-results {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.lipidex-proven-and-effective-results::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 80%, rgba(244, 162, 97, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(45, 90, 90, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lipidex-container3 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.lipidex-row3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.lipidex-col-lg-77, .lipidex-col-lg-57 {
+    flex: 1;
+    min-width: 0;
+}
+
+.lipidex-results-content-box h6 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #c1882c;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.lipidex-results-content-box h6::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    width: 20px;
+    height: 2px;
+    background: #c1882c;
+    transform: translateY(-50%);
+}
+
+.lipidex-results-content-box h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #004c3f;
+    line-height: 1.3;
+    margin-bottom: 35px;
+    font-family: 'Georgia', serif;
+}
+
+/* Result Percentages */
+.lipidex-result-percentage-data {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.lipidex-pc_data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.lipidex-pc_data:nth-child(1) { animation-delay: 0.1s; }
+.lipidex-pc_data:nth-child(2) { animation-delay: 0.2s; }
+.lipidex-pc_data:nth-child(3) { animation-delay: 0.3s; }
+
+.lipidex-pc_data h4 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #c1882c;
+    line-height: 1;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.3s ease;
+}
+
+.lipidex-pc_data:hover h4 {
+    transform: scale(1.05);
+}
+
+.lipidex-pc_data p {
+    font-size: 13px;
+    color: #004c3f;
+    margin: 0;
+    font-weight: 500;
+    max-width: 120px;
+}
+
+/* Image Column */
+.lipidex-col-lg-57 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.lipidex-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+}
+
+.lipidex-col-lg-57 img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.lipidex-col-lg-57 img:hover {
+    transform: scale(1.02);
+}
+
+
+
+/* Utility */
+.lipidex-base-line {
+    font-size: 14px;
+    color: #c1882c;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.on_mobile { display: none; }
+.on_desktop { display: block; }
+
+/* Animations */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .lipidex-row3 {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .lipidex-results-content-box {
+        text-align: center;
+        order: 2;
+    }
+
+    .lipidex-col-lg-57 {
+        order: 1;
+        align-items: center;
+    }
+
+    .lipidex-results-content-box h6::after {
+        display: none;
+    }
+
+    .lipidex-results-content-box h2 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .lipidex-result-percentage-data {
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .lipidex-pc_data {
+        text-align: center;
+        align-items: center;
+    }
+
+    .lipidex-pc_data h4 {
+        font-size: 40px;
+    }
+
+    .lipidex-pc_data p {
+        max-width: 100px;
+        font-size: 12px;
+    }
+
+
+    .lipidex-base-line {
+        margin: -20px 0;
+    }
+
+    .on_desktop { display: none; }
+    .on_mobile { display: block; text-align: center; margin-top: 15px; }
+}
+
+@media (max-width: 767px) {
+    .lipidex-result-percentage-data {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .lipidex-pc_data {
+        flex-direction: row;
+        gap: 15px;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .lipidex-pc_data h4 {
+        font-size: 36px;
+        min-width: 80px;
+    }
+
+    .lipidex-pc_data p {
+        font-size: 13px;
+        max-width: 180px;
+        text-align: left;
+    }
+
+    .lipidex-image-container {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lipidex-results-content-box h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .lipidex-pc_data h4 {
+        font-size: 32px;
+    }
+
+    .lipidex-pc_data p {
+        font-size: 12px;
+    }
+
+    .lipidex-base-line {
+        font-size: 11px;
+    }
+
+    .lipidex-image-container {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 360px) {
+    .lipidex-results-content-box h2 {
+        font-size: 18px;
+    }
+
+    .lipidex-pc_data h4 {
+        font-size: 28px;
+    }
+}  
+
+/*  remarkebal benefits start */
+  .remarkable-benefits {
+    background: linear-gradient(135deg, #f8f4f0 0%, #fff5f0 100%);
+    padding: 0px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.remarkable-benefits h6 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #004c3f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.remarkable-benefits h6 span::before,
+.remarkable-benefits h6 span::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: #f4a261;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+.remarkable-benefits h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #004c3f;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    padding: 0 120px;
+}
+
+/* Layout Container */
+.content-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Left and Right Columns */
+.benefit-column {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Center Image */
+.center-image-box {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 500px;
+}
+
+.center-image-box picture img {
+    max-width: 90%;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+#left_arrow,
+#right_arrow {
+    position: absolute;
+    top: 5%;
+    width: 105px;
+    z-index: 1;
+}
+
+#left_arrow { left: -20px; }
+#right_arrow { right: -20px; }
+
+.on_mobile {
+    display: none;
+}
+
+/* Benefit Box */
+.center-content-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    animation: fadeInUp 0.6s ease-out forwards;
+    position: relative;
+}
+
+.reverse-box {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.icon-box {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-boxx h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #004c3f;
+    margin-bottom: 8px;
+}
+
+.content-boxx p {
+    font-size: 14px;
+    color: #004c3f;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .center-image-box {
+        min-height: 350px;
+        order: 2;
+    }
+
+    .on_mobile {
+        display: block;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        opacity: 0.7;
+    }
+
+    #left_arrow,
+    #right_arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .remarkable-benefits {
+        padding: 60px 15px;
+    }
+
+    .remarkable-benefits h2 {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .content-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .center-content-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reverse-box {
+        flex-direction: column;
+    }
+
+    .icon-box {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon-box img {
+        width: 30px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+  /*  remarkebal benefits end */
+
+  em, .i {
+  font-style: italic;
+  color: #c1882c;
+}
+  
+</style>
+
+<div class="lipidex-aplus-container">
+
+  <!-- HERO BANNER -->
+  <section class="lipidex-hero">
+
+    
+      <div class="lipidex-hero-image">
+    <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Ayurvedic_Weight_Loss_With_LIPIDEX.png" alt="Lipidex Ayurvedic Weight Loss Capsules" class="desktop-img" width="1024" height="1536">
+    <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Ayurvedic_Weight_Loss_With_LIPIDEX.png" alt="Lipidex Capsule Mobile" class="mobile-img" width="1024" height="1536">
+  </div>
+    
+    
+    <div class="lipidex-hero-main">
+      <h2 class="lipidex-hero-title">Lipidex Ayurvedic Weight Loss Capsules – A Natural Way to Lose Weight</h2>
+      <p class="lipidex-hero-highlight">Naturally Burn Excess Fat, Boost Metabolism, and Tone Abdomen</p>
+      
+          <p class="lipidex-text">
+      Kairali’s Lipidex Ayurvedic Weight Loss Capsules are a scientifically formulated blend of 
+      18 potent Ayurvedic herbs, crafted to offer safe, effective, and long-term weight management.
+    </p>
+      <ul>
+        <li>Powered by 18 herbal actives for gradual, safe weight management</li>
+        <li>Curbs hunger pangs & improves nutrient absorption</li>
+        <li>Helps remove toxins and corrects iron deficiency</li>
+      </ul>
+      
+    <p class="lipidex-text">
+      With zero side effects and a simple daily dosage, Lipidex is your Ayurvedic companion for achieving a slimmer, healthier you—naturally.
+    </p>      
+      <button class="lipidex-btn">Buy Now &amp; Transform Your Health</button>
+    </div>
+  </section>
+
+ <!-- Remarkable Benefits start -->
+  <section class="remarkable-benefits">
+  <h6><span>Remarkable Benefits</span></h6>
+  <h2>Inspired by 5000 Years of Science: Lipidex – Your Ayurvedic Solution for a Healthy Weight Management</h2>
+
+  <div class="content-layout">
+
+    <!-- Left Column -->
+    <div class="benefit-column">
+      <div class="center-content-box reverse-box">
+        <div class="icon-box">
+          <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Eliminates_Excess_Fat_1.png" alt="Eliminates Excess Fat" width="600" height="600" />
+        </div>
+        <div class="content-boxx">
+          <h4>Eliminates Excess Fat</h4>
+          <p>Helps naturally reduce fatty deposits, targeting bulging abdomen and flabbiness.</p>
+        </div>
+      </div>
+
+      <div class="center-content-box reverse-box">
+        <div class="icon-box">
+          <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Improves_Muscle_Tone.png" alt="Improves Muscle Tone" width="600" height="600" />
+        </div>
+        <div class="content-boxx">
+          <h4>Improves Muscle Tone</h4>
+          <p>Tones and strengthens abdominal muscles, relieves muscular weakness.</p>
+        </div>
+      </div>
+            <div class="center-content-box reverse-box">
+        <div class="icon-box">
+          <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Boosts_Immunity_Iron.png" alt="Boosts Immunity & Iron" width="600" height="600" />
+        </div>
+        <div class="content-boxx">
+          <h4>Boosts Immunity & Iron</h4>
+          <p>Corrects anaemia, relieves joint pain, and strengthens your immune system.</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Center Image -->
+    <div class="center-image-box">
+      <img id="left_arrow" src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Left_Arrow.png" alt="Left Arrow" width="600" height="600" />
+      <picture>
+        <source media="(min-width:768px)" srcset="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Lipidex_Product.png">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Lipidex_Product.png" alt="Lipidex product pack" width="600" height="600" />
+      </picture>
+      <img id="right_arrow" src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Right_Arrow.png" alt="Right Arrow" width="600" height="600" />
+    </div>
+
+    <!-- Right Column -->
+    <div class="benefit-column">
+      <div class="center-content-box">
+        <div class="icon-box">
+          <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Herbal_Safe.png" alt="Herbal and Safe" width="600" height="600" />
+        </div>
+        <div class="content-boxx">
+          <h4>Herbal & Safe</h4>
+          <p>Plant-based formula with no harsh chemicals, zero side effects, safe for long-term use.</p>
+        </div>
+      </div>
+
+      <div class="center-content-box">
+        <div class="icon-box">
+          <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Gradual_Lasting_Results.png" alt="Gradual, lasting results" width="600" height="600" />
+        </div>
+        <div class="content-boxx">
+          <h4>Gradual, Lasting Results</h4>
+          <p>2–4kg reduction/month, with long-term maintenance regardless of food habits.</p>
+        </div>
+      </div>
+
+      <div class="center-content-box">
+        <div class="icon-box">
+          <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/No_Harsh_Dieting.png" alt="No Harsh Dieting" width="600" height="600" />
+        </div>
+        <div class="content-boxx">
+          <h4>No Harsh Dieting</h4>
+          <p>Lose weight naturally, without extreme diets or appetite suppressants.</p>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+</section>
+  
+    <!-- Remarkable Benefits end -->
+
+  <!-- KEY INGREDIENTS SECTION -->
+  <section class="lipidex-ingredients">
+    <div class="lipidex-ingredients-title">Key Ayurvedic Ingredients</div>
+    <div class="lipidex-ingredients-row">
+      <div class="lipidex-ingredient">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Amrita.png" alt="Amrita" class="lipidex-ingredient-img" width="600" height="600" />
+        <div class="lipidex-ingredient-name">Amrita</div>
+        <div class="lipidex-ingredient-desc"><em>(Tinospora cordifolia)</em><br>Supports detoxification & nutrient absorption</div>
+      </div>
+      <div class="lipidex-ingredient">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Trivrit.png" alt="Trivrit" class="lipidex-ingredient-img" width="600" height="600" />
+        <div class="lipidex-ingredient-name">Trivrit</div>
+        <div class="lipidex-ingredient-desc"><em>(Ipomoea turpethum)</em><br>Promotes gentle fat elimination</div>
+      </div>
+      <div class="lipidex-ingredient">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Avalgujabeeja.png" alt="Avalguja" class="lipidex-ingredient-img" width="600" height="600" />
+        <div class="lipidex-ingredient-name">Avalgujabeeja</div>
+        <div class="lipidex-ingredient-desc"><em>(Psoralea corylifolia)</em><br>Balances metabolism & suppresses cravings</div>
+      </div>
+      <div class="lipidex-ingredient">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Maricha.png" alt="Maricha" class="lipidex-ingredient-img" width="600" height="600" />
+        <div class="lipidex-ingredient-name">Maricha</div>
+        <div class="lipidex-ingredient-desc"><em>(Piper nigrum)</em><br>Enhances digestion, boosts metabolism</div>
+      </div>
+      <div class="lipidex-ingredient">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Guggulu.png" alt="Guggulu" class="lipidex-ingredient-img" width="600" height="600" />
+        <div class="lipidex-ingredient-name">Guggulu</div>
+        <div class="lipidex-ingredient-desc"><em>(Commiphora mukul)</em><br>Reduces fat & cholesterol accumulation</div>
+      </div>
+      <div class="lipidex-ingredient">
+        <img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Loha_Bhasma.png" alt="Loha Bhasma" class="lipidex-ingredient-img" width="600" height="600" />
+        <div class="lipidex-ingredient-name">Loha Bhasma</div>
+        <div class="lipidex-ingredient-desc"><em>(Purified Iron)</em><br>Corrects anaemia & boosts energy levels</div>
+      </div>
+    </div>
+    <div><em>And 12 more synergistic herbs for safe, effective weight management!</em></div>
+  </section>
+  
+    <!-- proven-and-effective-results start -->
+    <section class="lipidex-proven-and-effective-results">
+        <div class="lipidex-container3">
+            <div class="lipidex-row3">
+                <div class="lipidex-col-lg-77 lipidex-col-127">
+                    <div class="lipidex-results-content-box">
+                        <h6>Proven and effective solution</h6>
+                        <h2>Lipidex Weight Loss Formula has shown significant results* in 2 - 3 week, helping customers achieve their goals and feel more confident.</h2>
+                        <div class="lipidex-result-percentage-data">
+                            <div class="lipidex-pc_data">
+                                <h4>87%</h4>
+                                <p>Said they would recommend Lipidex to their family and friends.</p>
+                            </div>
+                            <div class="lipidex-pc_data">
+                                <h4>92%</h4>
+                                <p>Say they noticed visible weight reduction and better energy.</p>
+                            </div>
+                            <div class="lipidex-pc_data">
+                                <h4>90%</h4>
+                                <p>Said they will buy Lipidex again.</p>
+                            </div>
+                        </div>
+                        <p class="lipidex-base-line on_desktop">*Based on an internal survey</p>
+                    </div>
+                </div>
+                <div class="lipidex-col-lg-57 lipidex-col-127">
+                    <div class="lipidex-image-container">
+
+
+
+                        <picture>
+                            <source srcset="https://cdn.kairaliproducts.in/assets/lady-image-mobile.png" media="(max-width:767px)">
+                            <img class="lipidex-img-fluid" loading="lazy" src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Lipid_Weight_Loss.png" alt="Ayurvedic Weight Loss Capsules" width="1400" height="1400">
+                        </picture>
+                    </div>
+                    <p class="lipidex-base-line on_mobile">*Based on an internal survey</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- proven-and-effective-results end -->
+  
+
+  <!-- WHY BUY LIPIDEX -->
+  <section class="lipidex-why">
+    <div class="lipidex-why-title">Why Choose Lipidex?</div>
+    <ul class="lipidex-why-list">
+      <li>Researched blend of 18 Ayurvedic herbs for comprehensive weight management</li>
+      <li>No chemicals, no crash diets, and no addiction</li>
+      <li>Backed by trusted Ayurvedic principles & modern quality standards</li>
+      <li>Convenient dosage, easy for any lifestyle</li>
+      <li>Recommended by Ayurvedic experts</li>
+      <li>Positive customer feedback for visible, lasting results</li>
+    </ul>
+    <button class="lipidex-btn" style="margin-top:24px;">Order Lipidex Now</button>
+  </section>
+</div>

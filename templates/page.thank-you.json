@@ -1,0 +1,145 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_XqkirL": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n\n .containers {\n     padding: 60px 20px;\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n}\n\n.containers img {\n  display: block;\n  margin: auto;\n  width: 50%;\n}\n .containers h1 {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     font-size: 32px;\n     color: #6a7816 !important;\n     margin-bottom: 10px;\n}\n\n .containers h2 {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     font-size: 18px;\n     color: #000000 !important;\n     margin-bottom: 10px;\n}\n .containers p {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     font-size: 16px;\n     margin: 10px 0;\n     color: #303030 !important;\n}\n .contact-box {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     background: #dcdcdc;\n     padding: 20px;\n     margin: 30px auto;\n     border-radius: 10px;\n     width: 90%;\n     max-width: 500px;\n}\n .btn-home {\n     display: inline-block;\n     margin-top: 25px;\n     background-color: #05643c;\n     color: #fff;\n     padding: 12px 30px;\n     border-radius: 30px;\n     text-decoration: none;\n     font-size: 16px;\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     text-decoration: none;\n     transition: background 0.3s ease;\n}\n\n    .btn-home:hover {\n      background-color: #044d2d;\n    }\n \n .next-steps {\n     margin-top: 40px;\n}\n .next-steps a {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     display: block;\n     margin: 8px 0;\n     color: #2c6e49;\n     text-decoration: underline;\n     font-size: 16px;\n}\n .why-section {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     \n     padding: 40px 20px;\n}\n\n.why-section h2 {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     font-size: 24px;\n     color: #6a7816 !important;\n     margin-bottom: 10px;\n}\n\n .why-cards {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     display: flex;\n     justify-content: center;\n     flex-wrap: wrap;\n     gap: 20px;\n}\n .cards {\n     font-family: 'Open Sans', sans-serif;\n     text-align: center;\n     background: #dcdcdc;\n     padding: 20px;\n     border-radius: 10px;\n     width: 200px;\n}\n </style>\n<div class=\"containers\">\n  <img src=\"/cdn/shop/files/Kairali_Ayurvedic_Product_Logo.png\" alt=\"Kairali Logo\" style=\"max-width: 100px; margin-bottom: 30px;\">\n  <h1>Thank You for Reaching Out!</h1>\n  <h2>We have received your inquiry and our team will connect with you shortly.</h2>\n    <p>At Kairali, your journey towards holistic wellness matters to us, and we’re excited to assist you.</p>\n\n  <div class=\"contact-box\">\n    <p><strong>Need urgent assistance?</strong></p>\n    <p>📞 Call us at <a href=\"tel:+919555156156\">+91-9555156156</a><br>\n    💬 WhatsApp us at <a href=\"https://wa.me/918929060540\">+91-8929060540</a></p>\n  </div>\n\n  <div class=\"next-steps\">\n    <p><strong>Meanwhile, you can:</strong></p>\n    <a href=\"/collections/body-care\">Explore Body Care</a>\n    <a href=\"/collections/wellness\">Discover Wellness Products</a>\n    <a href=\"/pages/offers\">Explore Our Best Offers</a>\n  </div>\n\n  <a href=\"/\" class=\"btn-home\">Return to Home</a>\n</div>\n\n<div class=\"why-section\">\n  <h2>🌟 Why Choose Kairali?</h2>\n  <div class=\"why-cards\">\n    <div class=\"cards\">115+ Years of Trusted Ayurvedic Excellence</div>\n    <div class=\"cards\">Pioneering Purity with State-of-the-Art Ayurvedic Production</div>\n    <div class=\"cards\">Sustainably Sourced, Community-Focused Wellness</div>\n    <div class=\"cards\">400+ Authentic Ayurvedic Products for Holistic Health</div>\n  </div>\n</div>"
+      }
+    },
+    "featured_collection_pAmzwf": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "EXPLORE OUR BEST SELLING PRODUCTS",
+        "disable_on_mobile": false,
+        "hide_empty_section": false,
+        "collection": "best-selling-products",
+        "product_list": [],
+        "products_to_show": 24,
+        "enable_stack_products": false,
+        "show_view_all": true,
+        "button_select": "primary",
+        "number_of_column_desktop": 5,
+        "spacing_desktop": "16",
+        "make_products_full_width": true,
+        "number_of_column_mobile": 2.1,
+        "spacing_mobile": "16",
+        "text_alignment": "left",
+        "image_ratio": "square",
+        "show_video": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_product_rating": true,
+        "enable_quick_add_button": true,
+        "color-body-text": "transparent",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_8g4Gj8": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_qNjM4N": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_D3rAN4": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>Items you love at prices that fit your budget.We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_ya8Wc7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_6Kfegd": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_qNjM4N",
+        "image_D3rAN4",
+        "image_ya8Wc7",
+        "image_6Kfegd"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "name": "t:sections.features-banner.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "transparent",
+        "color_background_icon": "transparent",
+        "color_body_text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_XqkirL",
+    "featured_collection_pAmzwf",
+    "features_banner_8g4Gj8"
+  ]
+}

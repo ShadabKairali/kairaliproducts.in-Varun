@@ -1,0 +1,919 @@
+<!doctype html>
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  dir="{% if request.locale.iso_code == 'ar' or request.locale.iso_code == 'he' %}rtl{% else %}ltr{% endif %}"
+>
+  <head>
+    {%- if request.page_type == 'collection' -%}
+      {%- if current_page == blank or current_page == 1 -%}
+        {%- capture in034_b05_seo_title -%}{%- render 'in034-b05-content', mode: 'seo_title' -%}{%- endcapture -%}
+        {%- capture in034_b05_seo_description -%}{%- render 'in034-b05-content', mode: 'seo_description' -%}{%- endcapture -%}
+        {%- assign in034_b05_seo_title = in034_b05_seo_title | strip -%}
+        {%- assign in034_b05_seo_description = in034_b05_seo_description | strip -%}
+        {%- if in034_b05_seo_title != blank -%}
+          {%- assign page_title = in034_b05_seo_title -%}
+        {%- endif -%}
+        {%- if in034_b05_seo_description != blank -%}
+          {%- assign page_description = in034_b05_seo_description -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if request.page_type == 'collection' -%}
+      {%- if current_page == blank or current_page == 1 -%}
+        {%- capture in034_b06_seo_title -%}{%- render 'in034-b06-content', mode: 'seo_title' -%}{%- endcapture -%}
+        {%- capture in034_b06_seo_description -%}{%- render 'in034-b06-content', mode: 'seo_description' -%}{%- endcapture -%}
+        {%- assign in034_b06_seo_title = in034_b06_seo_title | strip -%}
+        {%- assign in034_b06_seo_description = in034_b06_seo_description | strip -%}
+        {%- if in034_b06_seo_title != blank -%}
+          {%- assign page_title = in034_b06_seo_title -%}
+        {%- endif -%}
+        {%- if in034_b06_seo_description != blank -%}
+          {%- assign page_description = in034_b06_seo_description -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if request.page_type == 'collection' -%}
+      {%- if current_page == blank or current_page == 1 -%}
+        {%- capture in034_b07_seo_title -%}{%- render 'in034-b07-content', mode: 'seo_title' -%}{%- endcapture -%}
+        {%- capture in034_b07_seo_description -%}{%- render 'in034-b07-content', mode: 'seo_description' -%}{%- endcapture -%}
+        {%- assign in034_b07_seo_title = in034_b07_seo_title | strip -%}
+        {%- assign in034_b07_seo_description = in034_b07_seo_description | strip -%}
+        {%- if in034_b07_seo_title != blank -%}
+          {%- assign page_title = in034_b07_seo_title -%}
+        {%- endif -%}
+        {%- if in034_b07_seo_description != blank -%}
+          {%- assign page_description = in034_b07_seo_description -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if request.page_type == 'page' -%}
+      {%- capture in037_b01_seo_description -%}{%- render 'in037-b01-content', mode: 'seo_description' -%}{%- endcapture -%}
+      {%- assign in037_b01_seo_description = in037_b01_seo_description | strip -%}
+      {%- if in037_b01_seo_description != blank -%}
+        {%- assign page_description = in037_b01_seo_description -%}
+      {%- endif -%}
+    {%- endif -%}
+    {%- if request.page_type == 'page' or request.page_type == 'policy' -%}
+      {%- assign in037_b02_route_key = page.handle -%}
+      {%- if request.page_type == 'policy' -%}
+        {%- assign in037_b02_route_key = request.path | split: '/' | last -%}
+      {%- endif -%}
+      {%- capture in037_b02_seo_title -%}{%- render 'in037-b02-content', mode: 'seo_title', route_key: in037_b02_route_key -%}{%- endcapture -%}
+      {%- capture in037_b02_seo_description -%}{%- render 'in037-b02-content', mode: 'seo_description', route_key: in037_b02_route_key -%}{%- endcapture -%}
+      {%- assign in037_b02_seo_title = in037_b02_seo_title | strip -%}
+      {%- assign in037_b02_seo_description = in037_b02_seo_description | strip -%}
+    {%- endif -%}
+    {%- if request.page_type == 'page' -%}
+      {%- capture in037_b03_seo_title -%}{%- render 'in037-b03-content', mode: 'seo_title', route_key: page.handle -%}{%- endcapture -%}
+      {%- capture in037_b03_seo_description -%}{%- render 'in037-b03-content', mode: 'seo_description', route_key: page.handle -%}{%- endcapture -%}
+      {%- assign in037_b03_seo_title = in037_b03_seo_title | strip -%}
+      {%- assign in037_b03_seo_description = in037_b03_seo_description | strip -%}
+    {%- endif -%}
+    {%- assign in037_b02_effective_title = in037_b03_seo_title | default: in037_b02_seo_title | default: page_title -%}
+    {%- assign in037_b02_effective_description = in037_b03_seo_description | default: in037_b02_seo_description | default: page_description -%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#8e9e34">
+<meta name="msapplication-navbutton-color" content="#8e9e34">
+<meta name="apple-mobile-web-app-status-bar-style" content="#8e9e34"> 
+<meta name="subject" content="Ayurvedic Products, Herbal Products, Ayurvedic Medicine, Health Care Products, Herbal Products, Ayurvedic Online Store" />
+<meta name="classification" content="Authentic Ayurvedic & herbal products (Ayurvedic medicines, skin care, hair care, beauty care and health care products).">
+<meta property="fb:app_id" content="772925446783525">
+<meta name="twitter:site:id" value="179393613">
+
+<meta name="google-site-verification" content="ThLYKmZBDIEOUDW5D8WZjIcDuZ8OFA2JpD1SuT1ZmEo" />
+<meta name="msvalidate.01" content="8150125AE0C703A62B4F0EBD68520434" />
+<meta name="facebook-domain-verification" content="4xfwqqemrvsss6n3f4326q9b1e3s0v" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {{ shop.url | json }}
+    }{% if request.page_type == 'page' or request.page_type == 'collection' %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ in037_b03_seo_title | default: page_title | json }},
+      "item": {{ canonical_url | json }}
+    }{% endif %}
+  ]
+}
+</script><script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Kairali Ayurvedic Products Private Limited",
+      "url": "https:\/\/www.kairaliproducts.in",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https:\/\/www.kairaliproducts.in\/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.kairaliproducts.in/#organization",
+      "name": "Kairali Ayurvedic Products Private Limited",
+      "logo": "https://www.kairaliproducts.in/cdn/shop/files/KPPL_Transp.png?v=1758880619&width=180",
+      "sameAs": ["https:\/\/www.facebook.com\/KairaliAyurvedicProducts","https:\/\/www.instagram.com\/kairali_ayurvedic_products","https:\/\/www.linkedin.com\/company\/kairali-ayurvedic-group","https:\/\/twitter.com\/Kairali_Group","https:\/\/www.youtube.com\/user\/kairaliayurvedagroup"],
+      "url": "https:\/\/www.kairaliproducts.in",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "@id": "https://www.kairaliproducts.in/policies/refund-policy#policy",
+        "applicableCountry": "IN",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 7,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/ReturnFeesCustomerResponsibility"
+      }
+    }
+  ]
+  </script>
+    {% # theme-check-disable RemoteAsset %}
+    <link rel="alternate" hreflang="en-IN" href="https://www.kairaliproducts.in{{ request.path }}">
+    <link rel="alternate" hreflang="en" href="https://www.kairaliproducts.com{{ request.path }}">
+    <link rel="alternate" hreflang="x-default" href="https://www.kairaliproducts.com{{ request.path }}">
+    {% # theme-check-enable RemoteAsset %}
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- liquid
+      assign should_noindex = false
+
+      if request.page_type == 'search' or request.page_type == 'cart'
+        assign should_noindex = true
+      elsif request.page_type == 'collection' and collection.products_count == 0
+        assign should_noindex = true
+      elsif request.page_type == 'page'
+        if page.handle == 'thank-you' or page.handle == 'consultation-thank-you' or page.handle == 'ppc-thank-you' or page.handle == 'no-route' or page.handle == 'test' or page.handle == 'ai-txt'
+          assign should_noindex = true
+        endif
+      endif
+    -%}
+    {%- if should_noindex -%}
+      <meta name="robots" content="noindex,follow">
+    {%- endif -%}
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <title>{{ in037_b02_effective_title }}</title>
+
+    {% if in037_b02_effective_description %}
+      <meta name="description" content="{{ in037_b02_effective_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags', in037_b01_description_override: in037_b01_seo_description, in037_b02_title_override: in037_b02_seo_title, in037_b02_description_override: in037_b02_seo_description, in037_b03_title_override: in037_b03_seo_title, in037_b03_description_override: in037_b03_seo_description %}
+    
+
+{%- comment -%} Critical CSS should load immediately (blocking) {%- endcomment -%}
+{{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
+<link rel="stylesheet" href="{{ 'critical.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'critical.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- comment -%} Other CSS files loaded with preload for performance {%- endcomment -%}
+{{ 'swiper.css'   | asset_url | stylesheet_tag: preload: true }}
+{{ 'settings.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'custom.css'   | asset_url | stylesheet_tag: preload: true }}
+{{ 'main.css'     | asset_url | stylesheet_tag: preload: true }}
+{{ 'kairali-mobile-hardening.css' | asset_url | stylesheet_tag: preload: true }}
+
+{%- if request.page_type == 'collection' -%}
+  {%- assign in034_b02_handles = 'best-selling-products,featured-products,kairali-ayurvedic-herbal-products-discounted-sale,body-care,face-care,skin-care,hair-care,men-health,women-s-health,fitness-wellness,general-health,diseases,treatments-for-ailments,ayurvedic-pain-relief-oils,ayurvedic-herbal-infusion-ayurvedic-herbal-tea,traditional-ayurvedic-medicine,ayurvedic-herbal-single-herbs-products,arishtas-and-asavams-or-arishta-and-asava,ayurvedic-choornams-herbal-powders-churna,kashayams-ayurvedic-herbal-decoctions,kashayams-tablet,ayurvedic-tablets-gulikas-and-vatis,thailams-tailams-ayurvedic-medicated-oils,kair-by-kairali-herbal-cosmetics-products,general-care,diabetes,arthritis,obesity,men-sexual-health,depression,pain-relief,constipation,acidity,indigestion,migraine,cholesterol-treatment,haemorrohoids,ayurvedic-proprietary-organics,ayurvedic-proprietary-medicines,dry-skin,wrinkles,oily-skin,pimples,pigmentation,dandruff,hair-fall,premature-graying,split-ends,dry-hair,thinning-hair,dental-care,foot-care,premature-ejaculation,erectile-dysfunction,testosterone-booster,male-fertility-support,energy-and-stamina,ayurvedic-energy-booster,muscle-strength-and-recovery,fatigue-and-weakness,immunity-and-general-wellness,daily-health-supplements,multivitamins,stress,weight-management,weight-gain,weight-loss,menstrual-hormonal-health,irregular-periods,pcos-pcod-support,menstrual-pain-relief,hormonal-balance,vaginal-care,post-pregnancy,breast-care' | split: ',' -%}
+  {%- assign in034_b05_handles = 'daily-supplements,women-sexual-health,osteoporosis,sprain,crush-injury,back-pain,neuralgia,cramps,neck-pain,rheumatic,spondylosis,frozen-shoulder,sciatica,diet,herbal-drink,immune-booster,anaemia,energy,energy-boosters,exhaustion,daily-energy-supplement,gastric-care,chronic-ulcers,fever,headache' | split: ',' -%}
+  {%- assign in034_b02_handles = in034_b02_handles | concat: in034_b05_handles -%}
+  {%- assign in034_b06_handles = 'cough-and-cold,memory-boosters,asthma,dyspnea,pulmonary-congestion,abdominal-diseases,hiccough,paralysis,facial-palsy,paraplegia,sexual-disorder,sexual-neurosis,sphermatorrhoea,sexual-impotency,infertility,skin-diseases,scabies,carbuncle,pruritus,eczema,leprosy,leucoderma,gastrointestinal-tract-git-ulcers,urine-related-problems,dysuria' | split: ',' -%}
+  {%- assign in034_b02_handles = in034_b02_handles | concat: in034_b06_handles -%}
+  {%- assign in034_b07_handles = 'bph,neurological-dieases,loss-of-memory,epilepsy,insanity,insomnia,ayurvedic-herbal-products-wholesaler-bulk-supplier,gift-products,thailams-wholesale-bulk-packaging,choornams-wholesale-bulk-packaging,herbal-cosmetics-wholesale-bulk-packaging,proprietary-oils-wholesale-bulk-packaging,proprietary-cosmetics-wholesale-bulk-packaging,herbal-infusions-wholesale-bulk-packaging,lehams-ayurvedic-herbal-jams,ghrithams-ayurvedic-herbal-medicated-ghee,ayurvedic-hair-oil,best-ayurvedic-oil-for-leg-pain,best-ayurvedic-syrup-for-irregular-periods,books,best-herbal-shampoo-ayurvedic-herbal-shampoos-to-control-dandruff-hair-fall-and-promote-hair-growth,herbal-soap-best-natural-handmade-herbal-soap-for-healthy-glowing-skin' | split: ',' -%}
+  {%- assign in034_b02_handles = in034_b02_handles | concat: in034_b07_handles -%}
+  {%- if in034_b02_handles contains collection.handle -%}
+    <style>
+      [id$='__slideshow_6X9Vr3'],
+      [id$='__custom_liquid_i4cHgb'] { display: none !important; }
+      #product-grid .card__title {
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        word-spacing: normal !important;
+      }
+      #product-grid .product-card-name {
+        display: -webkit-box !important;
+        -webkit-box-orient: vertical !important;
+        -webkit-line-clamp: 3 !important;
+        overflow: hidden !important;
+        height: auto !important;
+        min-height: 4.05em !important;
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+        word-spacing: normal !important;
+        overflow-wrap: anywhere !important;
+      }
+      .collection-description--in034-b02 {
+        width: min(calc(100% - 32px), 1180px);
+        margin: 44px auto;
+        overflow: hidden;
+      }
+      .collection-description--in034-b02 *,
+      .collection-description--in034-b02 img {
+        box-sizing: border-box;
+        max-width: 100%;
+      }
+      .collection-description--in034-b02 img {
+        width: auto !important;
+        height: auto !important;
+      }
+      .collection-description--in034-b02 table {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      .collection-description--in034-b02 th,
+      .collection-description--in034-b02 td {
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+      .collection-description--in034-b02 .kairali-collection-guide,
+      .collection-description--in034-b02 .k10-guide {
+        max-width: 1120px !important;
+        margin: 0 auto !important;
+        padding: clamp(28px, 4vw, 52px) !important;
+        color: #243225 !important;
+        background: #f7f3ea !important;
+        border: 1px solid #d9dfda !important;
+        border-radius: 22px !important;
+        box-shadow: none !important;
+      }
+      .collection-description--in034-b02 h2 {
+        max-width: 900px;
+        margin: 0 0 18px !important;
+        color: #173d2a !important;
+        font-size: clamp(30px, 3vw, 42px) !important;
+        line-height: 1.16 !important;
+        letter-spacing: -0.02em !important;
+      }
+      .collection-description--in034-b02 h3 {
+        margin: 28px 0 12px !important;
+        color: #173d2a !important;
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+      }
+      .collection-description--in034-b02 p,
+      .collection-description--in034-b02 li,
+      .collection-description--in034-b02 summary {
+        color: #33443a !important;
+        font-size: 17px !important;
+        line-height: 1.7 !important;
+      }
+      .collection-description--in034-b02 p {
+        margin: 0 0 18px !important;
+      }
+      .collection-description--in034-b02 ul,
+      .collection-description--in034-b02 ol {
+        margin: 0 0 22px !important;
+        padding-left: 24px !important;
+      }
+      .collection-description--in034-b02 li + li {
+        margin-top: 8px !important;
+      }
+      .collection-description--in034-b02 a {
+        color: #17663a !important;
+        text-decoration-thickness: 1px !important;
+        text-underline-offset: 3px !important;
+      }
+      .collection-description--in034-b02 details {
+        margin-top: 12px !important;
+        padding: 15px 18px !important;
+        background: #fffdf8 !important;
+        border: 1px solid #d9dfda !important;
+        border-radius: 12px !important;
+      }
+      .collection-description--in034-b02 details p {
+        margin: 10px 0 0 !important;
+      }
+      .collection-description--in034-b02 summary {
+        color: #173d2a !important;
+        font-weight: 700 !important;
+        cursor: pointer;
+      }
+      .collection-description--in034-b02 .choice-grid,
+      .collection-description--in034-b02 .path {
+        gap: 14px !important;
+      }
+      .collection-description--in034-b02 [data-guide] .path {
+        animation: none !important;
+        transform: none !important;
+      }
+      .collection-description--in034-b02 .guide-links {
+        gap: 12px !important;
+      }
+      @media (max-width: 749px) {
+        .collection-description--in034-b02 {
+          width: calc(100% - 24px);
+          margin: 32px auto;
+        }
+        .collection-description--in034-b02 .kairali-collection-guide,
+        .collection-description--in034-b02 .k10-guide {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 18px !important;
+          padding-right: 18px !important;
+          border-radius: 16px !important;
+        }
+        .collection-description--in034-b02 h2 {
+          font-size: clamp(27px, 8vw, 34px) !important;
+          line-height: 1.15 !important;
+          overflow-wrap: anywhere;
+        }
+        .collection-description--in034-b02 h3 {
+          font-size: 22px !important;
+          line-height: 1.25 !important;
+        }
+        .collection-description--in034-b02 p,
+        .collection-description--in034-b02 li,
+        .collection-description--in034-b02 summary {
+          font-size: 16.5px !important;
+          line-height: 1.6 !important;
+        }
+        .collection-description--in034-b02 .choice-grid,
+        .collection-description--in034-b02 .path {
+          grid-template-columns: 1fr !important;
+        }
+        .collection-description--in034-b02 .guide-links a {
+          width: 100% !important;
+          text-align: center !important;
+        }
+      }
+    </style>
+    {%- assign in040_collection_handles = 'best-selling-products,featured-products,kairali-ayurvedic-herbal-products-discounted-sale,body-care,face-care,skin-care,hair-care,men-health,women-s-health,fitness-wellness,general-health,diseases,treatments-for-ailments,ayurvedic-pain-relief-oils,ayurvedic-herbal-infusion-ayurvedic-herbal-tea,traditional-ayurvedic-medicine,ayurvedic-herbal-single-herbs-products,arishtas-and-asavams-or-arishta-and-asava,ayurvedic-choornams-herbal-powders-churna,kashayams-ayurvedic-herbal-decoctions,kashayams-tablet,ayurvedic-tablets-gulikas-and-vatis,thailams-tailams-ayurvedic-medicated-oils,kair-by-kairali-herbal-cosmetics-products,general-care,diabetes,arthritis,obesity,men-sexual-health,depression,pain-relief,constipation,acidity,indigestion,migraine,cholesterol-treatment,haemorrohoids,ayurvedic-proprietary-organics,ayurvedic-proprietary-medicines,dry-skin,wrinkles,oily-skin,pimples,pigmentation,dandruff,hair-fall,premature-graying,split-ends,dry-hair,thinning-hair,dental-care,foot-care,premature-ejaculation,erectile-dysfunction,testosterone-booster,male-fertility-support,energy-and-stamina,ayurvedic-energy-booster,muscle-strength-and-recovery,fatigue-and-weakness,immunity-and-general-wellness,daily-health-supplements,multivitamins,stress,weight-management,weight-gain,weight-loss,menstrual-hormonal-health,irregular-periods,pcos-pcod-support,menstrual-pain-relief,hormonal-balance,vaginal-care,post-pregnancy,breast-care,daily-supplements,women-sexual-health,osteoporosis,sprain,crush-injury,back-pain,neuralgia,cramps,neck-pain,rheumatic,spondylosis,frozen-shoulder,sciatica,diet,herbal-drink,immune-booster,anaemia,energy,energy-boosters,exhaustion,daily-energy-supplement,gastric-care,chronic-ulcers,fever,headache,cough-and-cold,memory-boosters,asthma,dyspnea,pulmonary-congestion,abdominal-diseases,hiccough,paralysis,facial-palsy,paraplegia,sexual-disorder,sexual-neurosis,sphermatorrhoea,sexual-impotency,infertility,skin-diseases,scabies,carbuncle,pruritus,eczema,leprosy,leucoderma,gastrointestinal-tract-git-ulcers,urine-related-problems,dysuria,bph,neurological-dieases,loss-of-memory,epilepsy,insanity,insomnia,ayurvedic-herbal-products-wholesaler-bulk-supplier,gift-products,thailams-wholesale-bulk-packaging,choornams-wholesale-bulk-packaging,herbal-cosmetics-wholesale-bulk-packaging,proprietary-oils-wholesale-bulk-packaging,proprietary-cosmetics-wholesale-bulk-packaging,herbal-infusions-wholesale-bulk-packaging,lehams-ayurvedic-herbal-jams,ghrithams-ayurvedic-herbal-medicated-ghee,ayurvedic-hair-oil,best-ayurvedic-oil-for-leg-pain,best-ayurvedic-syrup-for-irregular-periods,books,best-herbal-shampoo-ayurvedic-herbal-shampoos-to-control-dandruff-hair-fall-and-promote-hair-growth,herbal-soap-best-natural-handmade-herbal-soap-for-healthy-glowing-skin' | split: ',' -%}
+    {%- if in040_collection_handles contains collection.handle -%}
+      <style>
+        #product-grid .collection__grid__item,
+        #product-grid .card__container {
+          height: 100%;
+          min-width: 0;
+        }
+        #product-grid .card__container {
+          display: flex;
+          flex-direction: column;
+        }
+        #product-grid .card__picture-container {
+          overflow: hidden;
+          background: #f7f3ea;
+          border: 1px solid rgba(106, 120, 22, 0.16);
+          border-radius: 18px;
+          transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+        }
+        #product-grid .card__picture-container:has(a:focus-visible) {
+          border-color: #6a7816;
+          box-shadow: 0 0 0 3px rgba(106, 120, 22, 0.18);
+        }
+        #product-grid .product-card-name {
+          -webkit-line-clamp: 2 !important;
+          min-height: 2.7em !important;
+          margin-top: 14px !important;
+          color: #59651f !important;
+          font-size: 14px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.045em !important;
+          text-wrap: balance;
+        }
+        #product-grid .card__title {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          min-height: 4.05em;
+          overflow: hidden;
+          color: #263129;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+          text-wrap: pretty;
+        }
+        #product-grid .card__price {
+          margin-top: 10px;
+          color: #1f2f25;
+          font-variant-numeric: tabular-nums;
+          font-weight: 600;
+        }
+        #product-grid .card__quick-add-container {
+          margin-top: auto;
+          padding-top: 14px;
+        }
+        #product-grid .card__quick-add-container button,
+        #product-grid .card__quick-add-container .button {
+          min-height: 46px;
+          transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease, transform 160ms ease;
+        }
+        #product-grid .card__quick-add-container button:active,
+        #product-grid .card__quick-add-container .button:active {
+          transform: translateY(1px);
+        }
+        @media (hover: hover) {
+          #product-grid .card__picture-container:hover {
+            border-color: rgba(106, 120, 22, 0.34);
+            box-shadow: 0 14px 34px rgba(46, 57, 33, 0.10);
+            transform: translateY(-2px);
+          }
+        }
+        @media (max-width: 749px) {
+          #product-grid .card__picture-container {
+            border-radius: 14px;
+          }
+          #product-grid .product-card-name {
+            min-height: 2.6em !important;
+            margin-top: 11px !important;
+            font-size: 13px !important;
+            line-height: 1.3 !important;
+          }
+          #product-grid .card__title {
+            font-size: 14px !important;
+            line-height: 1.4 !important;
+            min-height: 4.2em;
+          }
+          #product-grid .card__quick-add-container {
+            padding-top: 11px;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          #product-grid .card__picture-container,
+          #product-grid .card__quick-add-container button,
+          #product-grid .card__quick-add-container .button {
+            transition: none;
+          }
+        }
+      </style>
+    {%- endif -%}
+    {%- if in034_b07_handles contains collection.handle -%}
+      <style>
+        @media (max-width: 768px) {
+          #product-grid .card__title {
+            letter-spacing: normal !important;
+            overflow-wrap: anywhere !important;
+          }
+          body.template-collection #gropulse-consent-banner .gropulse-consent-banner__text-wrapper,
+          body.template-collection #gropulse-consent-banner .gropulse-consent-banner__button-wrapper {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+          }
+          body.template-collection #gropulse-consent-banner .gropulse-consent-banner__button-wrapper {
+            margin-left: 0 !important;
+          }
+        }
+      </style>
+    {%- endif -%}
+    {%- if collection.handle == 'hair-care' -%}
+      <script>
+        (() => {
+          let observer;
+          const moveHairSetAfterProducts = () => {
+            const hairSet = document.getElementById('KairaliHairSet');
+            const collectionSection = document.querySelector('collection-section');
+            if (!hairSet || !collectionSection || collectionSection.nextElementSibling === hairSet) return false;
+            collectionSection.insertAdjacentElement('afterend', hairSet);
+            if (observer) observer.disconnect();
+            return true;
+          };
+          if (!moveHairSetAfterProducts()) {
+            observer = new MutationObserver(moveHairSetAfterProducts);
+            observer.observe(document.documentElement, { childList: true, subtree: true });
+            window.setTimeout(() => observer.disconnect(), 8000);
+          }
+        })();
+      </script>
+    {%- endif -%}
+  {%- else -%}
+    <style>[id$='__in034_b02_guide_after_grid'] { display: none !important; }</style>
+  {%- endif -%}
+{%- endif -%}
+    
+
+    <script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'base.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'kairali-navigation-accessibility.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+    <script src="{{ 'color-swatch.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'drawer-select.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'model_element.js' | asset_url }}" defer="defer"></script>
+
+{{ 'Roboto-Regular.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+
+{{ 'section-multicol.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'section-video.css' | asset_url | stylesheet_tag: preload: true }}
+
+
+<noscript>
+  <link rel="stylesheet" href="{{ 'section-multicol.css' | asset_url }}">
+  <link rel="stylesheet" href="{{ 'section-video.css' | asset_url }}">
+</noscript>
+
+    {{ content_for_header }}
+
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
+    {% style %}
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+      {{ settings.type_headings_font | font_face: font_display: 'swap' }}
+      {{ settings.type_navigation_font | font_face: font_display: 'swap' }}
+      {{ settings.type_buttons_font | font_face: font_display: 'swap' }}
+      {{ settings.type_price_font | font_face: font_display: 'swap' }}
+      {{ settings.type_breadcrumbs_font | font_face: font_display: 'swap' }}
+
+      @font-face {
+        font-family: 'icomoon';
+        src:  url('{{ 'icomoon.eot' | asset_url }}?6k4fkf');
+        src:  url('{{ 'icomoon.eot' | asset_url }}?6k4fkf#iefix') format('embedded-opentype'),
+          url('{{ 'icomoon.ttf' | asset_url }}?6k4fkf') format('truetype'),
+          url('{{ 'icomoon.woff' | asset_url }}?6k4fkf') format('woff'),
+          url('{{ 'icomoon.svg' | asset_url }}?6k4fkf#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+       font-family: 'Roboto';
+       src: url('{{ "Roboto-Regular.woff2" | asset_url }}') format('woff2');
+       font-weight: 400;
+       font-style: normal;
+       font-display: swap;
+      }
+
+    {% endstyle %}
+    <style>
+      :root {
+        --font-base: Inter, sans-serif;
+        --font-headline: Jost, sans-serif;
+        --font-navigation: Inter, sans-serif;
+        --font-button: Inter, sans-serif;
+        --font-price: Inter, sans-serif;
+        --font-base-size: 16px;
+        --font-base-line-height: 1.6;
+        --font-headline-size: 24px;
+        --font-headline-line-height: 1.2;
+        --font-headline-letter-spacing: -0.5px;
+        --font-navigation-size: 16px;
+        --font-navigation-transform: none;
+        --font-navigation-letter-spacing: 0;
+        --font-button-size: 13px;
+        --font-button-transform: none;
+        --font-button-letter-spacing: 0.5px;
+        --font-price-size: 16px;
+      }
+
+      @media (min-width: 1200px) {
+        :root {
+          --font-base-size: 17px;
+          --font-headline-size: 30px;
+          --font-navigation-size: 16px;
+          --font-button-size: 13px;
+        }
+      }
+    </style>
+    <style>
+      [data-custom-badge="{{ settings.custom-badge-1-input }}"]{
+        background-color: {{ settings.custom-badge-1-background }};
+        color: {{ settings.custom-badge-1-text }};
+        }
+      [data-custom-badge="{{ settings.custom-badge-2-input }}"]{
+        background-color: {{ settings.custom-badge-2-background }};
+        color: {{ settings.custom-badge-2-text }};
+        }
+      [data-custom-badge="{{ settings.custom-badge-3-input }}"]{
+        background-color: {{ settings.custom-badge-3-background }};
+        color: {{ settings.custom-badge-3-text }};
+        }
+      [data-custom-badge="{{ settings.custom-badge-4-input }}"]{
+        background-color: {{ settings.custom-badge-4-background }};
+        color: {{ settings.custom-badge-4-text }};
+        }
+@supports (-webkit-touch-callout: none) {
+ 
+.hero__wrapper { 
+    margin-top: 356px;
+    min-height: 30vh !important;
+    position: relative !important;
+    -webkit-transform: translateZ(999) !important;
+  }
+  
+}
+
+    </style>
+
+    {%- unless settings.type_body_font.system? -%}
+      {{ settings.type_body_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {%- endunless -%}
+    {%- unless settings.type_headings_font.system? -%}
+      {{ settings.type_headings_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {%- endunless -%}
+    {%- unless settings.type_navigation_font.system? -%}
+      {{ settings.type_navigation_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {%- endunless -%}
+    {%- unless settings.type_buttons_font.system? -%}
+      {{ settings.type_buttons_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {%- endunless -%}
+    {%- unless settings.type_price_font.system? -%}
+      {{ settings.type_price_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {%- endunless -%}
+    {% comment %}
+      {%- unless settings.type_breadcrumbs_font.system? -%}
+        <link
+          rel="preload"
+          as="font"
+          href="{{ settings.type_breadcrumbs_font | font_url }}"
+          type="font/woff2"
+          crossorigin
+        >
+      {%- endunless -%}
+    {% endcomment %}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+<script>
+  (() => {
+    let clarityLoaded = false;
+
+    function privacyAllows(privacy, methodName) {
+      try {
+        return typeof privacy?.[methodName] === 'function' && privacy[methodName]() === true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function loadClarity() {
+      if (clarityLoaded) return;
+      clarityLoaded = true;
+
+      window.clarity = window.clarity || function () {
+        (window.clarity.q = window.clarity.q || []).push(arguments);
+      };
+      const clarity = document.createElement('script');
+      clarity.async = true;
+      clarity.src = 'https://www.clarity.ms/tag/sf60nw6j1p';
+      document.head.appendChild(clarity);
+    }
+
+    function syncClarityConsent() {
+      const privacy = window.Shopify?.customerPrivacy;
+      if (!privacy) return;
+
+      const analyticsAllowed = privacyAllows(privacy, 'analyticsProcessingAllowed');
+      const marketingAllowed = privacyAllows(privacy, 'marketingAllowed');
+
+      if (analyticsAllowed) loadClarity();
+
+      if (window.clarity) {
+        window.clarity('consentv2', {
+          analytics_Storage: analyticsAllowed ? 'granted' : 'denied',
+          ad_Storage: marketingAllowed ? 'granted' : 'denied'
+        });
+      }
+    }
+
+    document.addEventListener('shopifyCustomerPrivacyApiLoaded', syncClarityConsent);
+    document.addEventListener('visitorConsentCollected', syncClarityConsent);
+    syncClarityConsent();
+  })();
+</script>
+
+<script>
+  (() => {
+    const previousEasySellPurchaseSuccess = window.es_hook_purchase_success;
+
+    window.es_hook_purchase_success = function () {
+      try {
+        if (typeof previousEasySellPurchaseSuccess === 'function') {
+          previousEasySellPurchaseSuccess.apply(this, arguments);
+        }
+      } finally {
+        if (typeof window.clarity === 'function') {
+          window.clarity('event', 'EasySell Order Success');
+        }
+      }
+    };
+  })();
+</script>
+
+  {% if request.page_type == 'page' or request.page_type == 'collection' or request.page_type == 'policy' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {% if request.page_type == 'collection' %}"CollectionPage"{% elsif page.handle == 'contact-us' %}"ContactPage"{% elsif page.handle == 'the-kairali-group' %}"AboutPage"{% else %}"WebPage"{% endif %},
+  "@id": {{ canonical_url | append: '#webpage' | json }},
+  "url": {{ canonical_url | json }},
+  "name": {{ in037_b02_effective_title | json }},
+  "description": {{ in037_b02_effective_description | default: in037_b02_effective_title | strip_html | strip_newlines | json }},
+  "inLanguage": {{ request.locale.iso_code | json }}{% if request.page_type == 'collection' %},
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ collection.products_count | json }},
+    "itemListElement": [{% for product in collection.products limit: 50 %}{"@type":"ListItem","position":{{ forloop.index }},"url":{{ shop.url | append: product.url | json }},"name":{{ product.title | json }}}{% unless forloop.last %},{% endunless %}{% endfor %}]
+  }{% endif %}
+}
+</script>
+{% endif %}
+
+</head>
+
+  {% assign template_name = template | handleize %}
+  {% if template_name.size < 1 %}
+    {% assign template_name = 'empty' | handleize %}
+  {% endif %}
+
+  <body class="template-{{ template_name }} nav-drawer-big mobile-nav">
+    <a href="#root" class="skip-to-content-link">{{ 'accessibility.skip_to_text' | t }}</a>
+    {% if settings.sticky_header %}<div class="sticky-header__threshold"></div>{% endif %}
+    {% sections 'header-group' %}
+    
+    <main id="root" class="" role="main" tabindex="-1">
+      {%- if request.path == '/policies/refund-policy' -%}
+        {{ content_for_layout | replace: '<h1>RETURN, REFUND AND EXCHANGE POLICY OF KAIRALI AYURVEDIC PRODUCTS PVT LTD</h1>', '<h2>RETURN, REFUND AND EXCHANGE POLICY OF KAIRALI AYURVEDIC PRODUCTS PVT LTD</h2>' }}
+      {%- else -%}
+        {{ content_for_layout }}
+      {%- endif -%}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {% if template != 'cart' %}
+      {% render 'cart-drawer' %}
+    {% else %}
+      <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+
+    {% render 'localization-drawer' %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+    </ul>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}',
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
+      };
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+      };
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+        recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
+        recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
+      };
+    </script>
+
+    <script
+      src="{{ 'slider-loader.js' | asset_url }}"
+      data-slider-module-src="{{ 'slider.js' | asset_url }}"
+      defer="defer"
+    ></script>
+
+    <div class="pickup-availability--page-overlay"></div>
+    <div class="wt__quick-buy--page-overlay"></div>
+    <div class="wt__quick-buy">
+      <div class="wt__quick-buy__container">
+        <nav>
+          <button class="close-btn" type="button" aria-label="{{ 'aria-label.close-button' | t }}" tabindex="-1">
+            {% render 'icons', id: 'close' %}
+          </button>
+        </nav>
+        <div class="wt__quick-buy--wrapper">
+          <div class="wt__quick-buy-loader">
+            {% render 'loader' %}
+          </div>
+          <div class="wt__quick-buy__view-all-container hidden">
+            <a href="#">
+              {{ 'general.quick_add.view_all_details' | t }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model-container hidden">
+      <nav>
+        <button class="close-btn" type="button" aria-label="{{ 'aria-label.close-button' | t }}" tabindex="-1">
+          {% render 'icons', id: 'close', icon_class: 'wt-cart__drawer__close' %}
+        </button>
+      </nav>
+      <div class="model">
+        <button class="hero__button--link" role="button" aria-label="{{ 'aria-label.back-button' | t }}">
+          <span>
+            {{ 'aria-label.back-button' | t }}
+          </span>
+        </button>
+      </div>
+    </div>
+    {% if request.design_mode %}
+      <script src="{{ 'parallax.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'page-header-logo-banner.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'page-header-image-banner.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'low-power-video.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'video-controls.js' | asset_url }}" defer="defer"></script>
+      <script type="module" src="{{ 'pdp.js' | asset_url }}" defer="defer"></script>
+      <script type="module" src="{{ 'gallery.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'countdown-timer.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'img-comparison-slider-v8.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+    <!-- Wonder Theme v1.8.1 -->
+
+{% section 'exit-offer-popup' %}
+
+{%- comment -%} WhatsApp + Chatbase floating widgets. Keep this render tag on every theme duplication. {%- endcomment -%}
+    {%- render 'kairali-floating-chat' -%}
+
+{%- comment -%} Other deferred scripts {%- endcomment -%}
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const swiperContainers = Array.from(document.querySelectorAll('.swiper-container')).filter(
+    (container) => container.querySelector(':scope > .swiper-wrapper')
+  );
+  if (!swiperContainers.length) return;
+
+  // Load Swiper only on pages that contain a real Swiper instance.
+  const swiperScript = document.createElement('script');
+  swiperScript.src = '{{ "swiper-bundle.min.js" | asset_url }}';
+  swiperScript.defer = true;
+  document.body.appendChild(swiperScript);
+
+  swiperScript.onload = function() {
+    // Initialize sliders after script loads
+    swiperContainers.forEach(container => {
+      const controls = container.closest('.shopify-section') || container.parentElement;
+
+      new Swiper(container, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        navigation: {
+          nextEl: controls?.querySelector('.wt-slider__nav-next--featured'),
+          prevEl: controls?.querySelector('.wt-slider__nav-prev--featured')
+        },
+        pagination: {
+          el: controls?.querySelector('.wt-slider__pagination'),
+          clickable: true
+        }
+      });
+    });
+  };
+});
+</script>  
+    
+
+  
+<script src="{{ 'tiny-img-link-preloader.js' | asset_url }}" defer></script>
+
+{% if request.page_type == 'product' %}
+  {{ 'kairali-easysell-semantics.css' | asset_url | stylesheet_tag: preload: true }}
+  <script src="{{ 'kairali-easysell-semantics.js' | asset_url }}" defer></script>
+{% endif %}
+
+
+
+</body>
+</html>

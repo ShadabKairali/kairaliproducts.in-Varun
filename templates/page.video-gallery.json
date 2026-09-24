@@ -1,0 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_nmtmbY": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n/* Reset and Base Styles */\nbody {\n  margin: 0;\n  font-family: \"Segoe UI\", sans-serif;\n  background-color: #f9f9f9;\n  color: #333;\n}\n\n.video-gallery-container {\n  max-width: 1200px;\n  padding: 20px;\n  margin: auto;\n}\n\n.video-gallery-container h1 {\n  text-align: center;\n  margin-bottom: 40px;\n  color: #8e9d35; /* Brand green */\n}\n\n/* Grid Layout */\n.video-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n  gap: 30px;\n}\n\n/* Video Card Styling */\n.video-card {\n  background: #fff;\n  border-radius: 10px;\n  overflow: hidden;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);\n  transition: transform 0.2s ease;\n}\n\n.video-card:hover {\n  transform: translateY(-5px);\n}\n\n.video-wrapper {\n  position: relative;\n  padding-bottom: 56.25%; /* 16:9 ratio */\n  height: 0;\n  overflow: hidden;\n}\n\n.video-wrapper iframe {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  border: none;\n}\n\n.video-card h2 {\n  font-size: 18px;\n  margin: 16px;\n  color: #2c2c2c;\n}\n\n.video-card p {\n  margin: 0 16px 16px;\n  font-size: 14px;\n  color: #666;\n}\n\n</style>\n\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>Video Gallery</title>\n  <link rel=\"stylesheet\" href=\"video-gallery.css\" />\n</head>\n<body>\n  <div class=\"video-gallery-container\">\n    <h1>Our Video Gallery</h1>\n    <div class=\"video-grid\">\n\n      <!-- Video 1 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/UuNCc-FMJs4\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>Corporate Video</h2>\n        <p>Kairali-The Ayurvedic Healing Village, situated amongst the dense jungles of Palakkad,</p>\n      </div>\n\n      <!-- Video 2 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/ni_UpTzUIWM?si=iZcnX_TrswQgy-u4\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>Kairbal Powder</h2>\n      </div>\n\n       <!-- Video 3 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/f1ph5LF__j0?si=HEzaEaJlZbF03w00\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>Kairwash from Kairali is an Ayurvedic hair wash powder</h2>\n      </div>\n      \n        <!-- Video 4 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/uBJYy_mBYTE?si=YRAkyi7usXvEwqO_\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>Kairpack Facial Facepack</h2>\n      </div>     \n              <!-- Video 5 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/f4LXW_X7Maw?si=aVQaVL4vS-v31nDt\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>Kaircin Ayurvedic Facial Oil</h2>\n      </div> \n                    <!-- Video 6 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/lJm5PiS_jlU?si=8eCqvlj3Pe6hBCiF\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>An insight into the factories of Kairali</h2>\n      </div>\n      \n                    <!-- Video 7 -->\n      <div class=\"video-card\">\n        <div class=\"video-wrapper\">\n          <iframe src=\"https://www.youtube.com/embed/I53aMDteDO4?si=kJQxvdwxlFIwxR9P\" \n            title=\"YouTube video player\" \n            frameborder=\"0\" \n            allowfullscreen>\n          </iframe>\n        </div>\n        <h2>Ayurvedic Products For Healthy Life</h2>\n      </div>      \n      \n    </div>\n    \n    \n  </div>\n<"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_nmtmbY"
+  ]
+}

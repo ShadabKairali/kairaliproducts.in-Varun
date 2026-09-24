@@ -1,0 +1,794 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "main-breadcrumbs",
+      "settings": {
+        "full-width-enabled": true,
+        "text_color": "#8e9d35",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 8,
+        "margin-bottom": 8
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "brand": "",
+            "size_text": 210,
+            "size_text_mobile": 200
+          }
+        },
+        "custom_liquid_YfB3Fe": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- if product.metafields.custom.product_name != blank -%}\n      <h2 class=\"product-name\">{{ product.metafields.custom.product_name }}</h2>\n    {%- endif -%}\n<style>\n.product-name {\n    font-family: jost, sans-serif;\n    font-style: normal;\n    font-size: 18px;\n    letter-spacing: 0.18em;\n    color: #666;\n    font-weight: 400;\n    overflow-wrap: anywhere;\n}\n</style>"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_hKEPwA": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_included": true,
+            "show_shipping_policy": true,
+            "size_text": 130,
+            "size_text_mobile": 120
+          }
+        },
+        "custom_liquid_TpdHqz": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"currency-switcher\">\n  <a href=\"https://www.kairaliproducts.com{{ product.url }}\" class=\"switch-to-inr\">\n    Shop in USD $\n  </a>\n</div>\n\n<style>\n.currency-switcher {\n  margin-top: 0px; /* space under product price */\n}\n\n.switch-to-inr {\n  display: inline-block;\n  font-size: 14px;\n  font-weight: 500;\n  color: #6a7816; /* theme green */\n  text-decoration: none;\n  border: 1px solid #6a7816;\n  padding: 4px 8px;\n  border-radius: 4px;\n  transition: background-color 0.3s, color 0.3s;\n}\n\n.switch-to-inr:hover {\n  background-color: #6a7816;\n  color: #fff;\n}\n\n</style>"
+          }
+        },
+        "stock_urgency_aKfe8F": {
+          "type": "stock_urgency",
+          "disabled": true,
+          "settings": {
+            "high_stock_text": "<p>In stock</p>",
+            "medium_stock_text": "<p>Only a few left – order now!</p>",
+            "low_stock_text": "<p>🔥 Hurry! Just a few left</p>",
+            "out_of_stock_text": "<p>Out of stock</p>",
+            "high_stock_icon": "🟢",
+            "medium_stock_icon": "🟠",
+            "low_stock_icon": "🔴",
+            "out_of_stock_icon": "❌"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "color_swatch_names": "",
+            "variant_picture_swatch_names": "",
+            "thumb_size": 60,
+            "radius": "default",
+            "border_radius": 0,
+            "dropdown_swatch_names": "",
+            "margin-top": 8,
+            "margin-bottom": 8
+          }
+        },
+        "c1ba8695-94d2-40ad-ac06-93ec3b8cf38e": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": false,
+            "color-background": "#ffffff",
+            "margin-top": 8,
+            "margin-bottom": 16
+          }
+        },
+        "easysell_cod_form_app_block_mdnzhK": {
+          "type": "shopify://apps/easysell-cod-form/blocks/app-block/7bfd0a95-6839-4f02-b2ee-896832dbe67e",
+          "settings": {
+            "product": ""
+          }
+        },
+        "inventory_JWQnXt": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "watermelon_order_limits_app_block_KMfdrB": {
+          "type": "shopify://apps/melon-order-limits/blocks/app-block/91904755-64ba-4bc5-85c6-2e5708522f2b",
+          "settings": {}
+        },
+        "wishlist_back_in_stock_wishlist_block_fDaWgx": {
+          "type": "shopify://apps/wishlist-back-in-stock/blocks/wishlist-block/582a225b-bd58-49d0-b0b6-9479192e79c5",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "show_qty_selector": true,
+            "text_color": "rgba(0,0,0,0)",
+            "background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "text_RKmUBK": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "content": "{{ product.description }}",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_open": true,
+            "icon": "none"
+          }
+        },
+        "custom_liquid_dgQRhE": {
+          "type": "custom_liquid",
+          "name": " Exclusive Offers & Deals",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<style>\n.offer-box-kairali {\n  border: 1px solid #c1882c;\n  border-radius: 6px;\n  max-width: 540px;\n  background: #fff;\n  font-family: \"Poppins\", sans-serif;\n  font-size: 14px;\n  color: #333;\n  margin: 20px auto;\n  box-shadow: 0 2px 6px rgba(0,0,0,0.05);\n}\n\n/* Header Bar */\n.offer-header-kairali {\n  background-color: #6a7816;\n  color: #fff;\n  font-weight: 600;\n  padding: 8px 14px;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-radius: 4px 4px 0 0;\n}\n\n.offer-header-left-kairali {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n}\n\n.offer-header-left-kairali img {\n  width: 22px;\n  height: 22px;\n  display: inline-block;\n  margin-top: -9px;\n  \n}\n\n.offer-header-kairali span {\n  font-size: 16px;\n}\n\n.offer-toggle-kairali {\n  font-size: 16px;\n  line-height: 1;\n  transform: rotate(0);\n  transition: transform 0.3s ease;\n}\n\n.offer-toggle-kairali.open {\n  transform: rotate(180deg);\n}\n\n/* Content Area */\n.offer-content-kairali {\n  display: none;\n  padding: 12px 16px 14px 16px;\n  background: #fff;\n  border-radius: 0 0 6px 6px;\n}\n\n.offer-content-kairali ul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  font-size: 14px;\n}\n\n.offer-content-kairali li {\n  display: flex;\n  align-items: flex-start;\n  margin-bottom: 8px;\n  line-height: 1.5;\n}\n\n.offer-content-kairali li img {\n  width: 20px;\n  height: 20px;\n  margin-right: 8px;\n  margin-top: 1px;\n  flex-shrink: 0;\n}\n\n.offer-content-kairali li strong {\n  color: #2b2b2b;\n}\n.tcspan {\n font-size: 10px;\n font-style: italic;\n}\n\n.disc-highlited {\n  color: rgb(22, 91, 51);\n  font-weight: bold;\n}\n\n.disc-highlited1 {\n  color: red;\n  font-weight: bold;\n  animation: discText 1.2s infinite;\n}\n\n@keyframes discText {\n  0%   { opacity: 1; }\n  50%  { opacity: 0.3; }\n  100% { opacity: 1; }\n}\n\n</style>\n\n<!-- Offer Section -->\n<div class=\"offer-box-kairali\">\n  <div class=\"offer-header-kairali\" onclick=\"toggleOffers(this)\">\n    <div class=\"offer-header-left-kairali\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Kairali_Gift.png?v=1761124526\" alt=\"{{ product.metafields.custom.product_name }}\">\n      <span>Exclusive Offers & Deals</span>\n    </div>\n    <span class=\"offer-toggle-kairali\">−</span>\n  </div>\n\n  <div class=\"offer-content-kairali\" style=\"display:block;\">\n    <ul>\n        \n      \n\n      <li>\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Li_Kairali.png?v=1761124527\" alt=\"{{ product.metafields.custom.product_name }}\">\n        <div><strong>GET 15% OFF</strong> On <a href=\"https://www.kairaliproducts.in/collections/kair-by-kairali-herbal-cosmetics-products\">Ayurvedic Anti-Pigmentation Kit.</a> <span class= \"tcspan\">T&C Apply</span></div>\n      </li>\n\n      <li>\n        <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Li_Kairali.png?v=1761124527\" alt=\"{{ product.metafields.custom.product_name }}\">\n        <div><strong>25% OFF</strong> on <a href=\"https://www.kairaliproducts.in/collections/kair-by-kairali-herbal-cosmetics-products\"> Kaircin Ayurvedic Facial Oil.</a> – Limited Time Only! <span class= \"tcspan\">T&C Apply</span></div>\n      </li>\n\n      <li>\n  <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Li_Kairali.png?v=1761124527\">\n  <div>\n    <span class=\"disc-highlited\">BUY MORE SAVE MORE</span> – Get <span class=\"disc-highlited1\">UP TO 20% OFF</span> on all products. \n    <span class=\"tcspan\">T&C Apply</span>\n  </div>\n</li>\n    </ul>\n  </div>\n</div>\n\n<script>\nfunction toggleOffers(header) {\n  const content = header.nextElementSibling;\n  const icon = header.querySelector(\".offer-toggle-kairali\");\n  const isOpen = content.style.display === \"block\";\n  content.style.display = isOpen ? \"none\" : \"block\";\n  icon.textContent = isOpen ? \"+\" : \"−\";\n  icon.classList.toggle(\"open\", !isOpen);\n}\n</script>"
+          }
+        },
+        "collapsible_tab_JYgx4D": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Exclusive Offers & Deals ",
+            "content": "<ul><li><strong>Diwali Grand Festive Offer!</strong> 20% EXTRA OFF! Use Code: <strong>DIWALI20</strong> at Checkout.</li><li><strong>Festive 25% OFF</strong> on Kaircin Ayurvedic Facial Oil – Limited Time Only!</li><li><strong>Free Standard Shipping:</strong> on Orders of Rs. 799 or More</li></ul>",
+            "metafield_variables": "",
+            "page": "",
+            "icon": "leaf"
+          }
+        },
+        "custom_liquid_4FgfUJ": {
+          "type": "custom_liquid",
+          "name": "Discount Timer",
+          "settings": {
+            "custom_liquid": "{%- if product.metafields.custom.discount_timer != blank -%}\n      {{ product.metafields.custom.discount_timer }}\n    {%- endif -%}"
+          }
+        },
+        "bulletpoints_iWtDxJ": {
+          "type": "bulletpoints",
+          "disabled": true,
+          "settings": {
+            "metafield": "",
+            "default_text": "Bullet points text 1\nBullet points text 2\nBullet points text 3\nBullet points text 4"
+          }
+        },
+        "separator_HcYGiH": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#dedede",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "a05fcf3e-8e1a-4f1f-8d97-2055eb17138d": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#dedede",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "collapsible_tab_Q7UFgL": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Shipping and Delivery",
+            "content": "<p>Experience the convenience of swift order fulfillment with our top-notch Shipping services.</p>",
+            "metafield_variables": "",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "custom_liquid_9XgmnF": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<style>\n.newsannouncement {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0px;\n  margin-top: 20px;\n\n}\n\n\n.newshighlight {\n\n  padding: 12px 20px;\n  border-radius: 20px;\n  text-align: center;\n  max-width: auto;\n  color: #c1882c;\n  font-size: 18px;\n  border: #6a7816 double;\n\n}\n\n.newshighlight strong {\n\n  color: #6a7816;\n\n}\n\n\n.newsannouncement img {\n  height: auto;\n  width: 500px;\n}\n\n@media (max-width: 767px) {\n\n.newsannouncement img {\n  height: auto;\n  width: 300px;\n}\n\n.newshighlight {\n\n  padding: 10px 8px;\n  font-size: 12px;\n  border: #6a7816 double;\n\n}\n}\n</style>\n\n\n\n<div class=\"newsannouncement\">\n  <p class=\"newshighlight\">  \n    <strong>Trusted by 50,000+ Customers</strong> for remarkable results.\n  </p>\n\n  <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Kairali_Ayurvedic_Herbal_Products_Certificates.webp?v=1758877596\" alt=\"Certificates\" loading=\"lazy\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/100_SECURE_PAYMENT_1.png?v=1758877870\" alt=\"Secure Payment\" loading=\"lazy\">\n\n</div>"
+          }
+        },
+        "separator_gDwzxi": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#dedede",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "share_buttons_Ct9CXx": {
+          "type": "share_buttons",
+          "settings": {
+            "heading": "Share",
+            "social_facebook_link": true,
+            "social_twitter_link": true,
+            "social_pinterest_link": true,
+            "social_whatsapp_link": true,
+            "mail_link": true
+          }
+        },
+        "judge_me_reviews_review_snippet_widget_TqwXXF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "reviews_selection": "auto",
+            "products": [],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "min_star_rating": "inherit",
+            "show_review_media": true,
+            "max_reviews": 5,
+            "review_length": "medium",
+            "text_size": "medium",
+            "max_width": 1100,
+            "max_image_size": "small",
+            "arrows_visibility": "always_shown",
+            "transition_speed": 5,
+            "corner_styling": "inherit",
+            "text_color": "",
+            "card_color": "",
+            "stars_color": "",
+            "arrows_color": "",
+            "arrows_background_color": ""
+          }
+        },
+        "wishlist_back_in_stock_wishlist_bis_block_bmUJYy": {
+          "type": "shopify://apps/wishlist-back-in-stock/blocks/wishlist-bis-block/582a225b-bd58-49d0-b0b6-9479192e79c5",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "custom_liquid_YfB3Fe",
+        "rating",
+        "judge_me_reviews_preview_badge_hKEPwA",
+        "price",
+        "custom_liquid_TpdHqz",
+        "stock_urgency_aKfe8F",
+        "variant_picker",
+        "c1ba8695-94d2-40ad-ac06-93ec3b8cf38e",
+        "easysell_cod_form_app_block_mdnzhK",
+        "inventory_JWQnXt",
+        "watermelon_order_limits_app_block_KMfdrB",
+        "wishlist_back_in_stock_wishlist_block_fDaWgx",
+        "wishlist_back_in_stock_wishlist_bis_block_bmUJYy",
+        "buy_buttons",
+        "text_RKmUBK",
+        "description",
+        "custom_liquid_dgQRhE",
+        "collapsible_tab_JYgx4D",
+        "custom_liquid_4FgfUJ",
+        "bulletpoints_iWtDxJ",
+        "separator_HcYGiH",
+        "a05fcf3e-8e1a-4f1f-8d97-2055eb17138d",
+        "collapsible_tab_Q7UFgL",
+        "custom_liquid_9XgmnF",
+        "separator_gDwzxi",
+        "share_buttons_Ct9CXx",
+        "judge_me_reviews_review_snippet_widget_TqwXXF"
+      ],
+      "custom_css": [
+        ".wt-product__name {text-align: left !important; letter-spacing: 0.05em !important; color: #6a7816 !important;}",
+        ".price__sale .price-item--lower {color: #cf4a4a !important;}",
+        ".price-item.price-item--sale.price-item--last.wt-product__price__final {color: #6a7816 !important;}"
+      ],
+      "settings": {
+        "enable_sticky_buy_button": false,
+        "full-width-enabled": true,
+        "desktop-media-size": "normal",
+        "desktop-layout": "carousel-vertical",
+        "desktop-image-ratio": "original",
+        "enable_video_looping": true,
+        "enable-preselected-variant": true,
+        "enable-image-zoom": true,
+        "mobile-image": "small",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 12,
+        "margin-bottom": 0
+      }
+    },
+    "custom_liquid_d4gfpM": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{%- if product.metafields.custom.aplus_content != blank -%}\n      <div class=\"product-aplus-content\">{{ product.metafields.custom.aplus_content }}</div>\n    {%- endif -%}"
+      }
+    },
+    "product_recommendations_6jjNni": {
+      "type": "product-recommendations",
+      "custom_css": [
+        ".card__title {text-transform: none; font-size: 14px; word-spacing: normal; letter-spacing: normal;}",
+        ".product-card-name {display: -webkit-box; -webkit-line-clamp: 2; /* Show max 2 lines */ -webkit-box-orient: vertical; overflow: hidden; height: 20px; /* Approx height for 2 lines */ word-spacing: -4px; font-size: 16px; word-wrap: normal;}",
+        ".headline__title {font-weight: 600; color: #6a7816;}",
+        ".price-item--lower {color: #cf4a4a;}",
+        ".price-item.price-item--sale.price-item--last.wt-product__price__final {color: #284d03;}"
+      ],
+      "name": "t:sections.product-recommendations.presets.name",
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "disable_on_mobile": false,
+        "products_to_show": 12,
+        "number_of_column_desktop": 5,
+        "make_products_full_width": true,
+        "show_secondary_image_on_hover": true,
+        "number_of_column_mobile": 1.5,
+        "text_alignment": "center",
+        "image_ratio": "square",
+        "show_vendor": false,
+        "show_product_rating": false,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "product_tabs_84AJNb": {
+      "type": "product-tabs",
+      "blocks": {
+        "tab_9Cp3pn": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "DESCRIPTION",
+            "metafield_namespace_key": "custom.description"
+          }
+        },
+        "tab_qmPbYP": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "BENEFITS",
+            "metafield_namespace_key": "custom.benefits"
+          }
+        },
+        "tab_pzUiC3": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "DIRECTION OF USE",
+            "metafield_namespace_key": "custom.direction_of_use"
+          }
+        },
+        "tab_bmwB88": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "INGREDIENTS",
+            "metafield_namespace_key": "custom.ingredients"
+          }
+        },
+        "tab_VqQeTy": {
+          "type": "tab",
+          "settings": {
+            "tab_title": "How To Use Video",
+            "metafield_namespace_key": "custom.how_to_use_video"
+          }
+        }
+      },
+      "block_order": [
+        "tab_9Cp3pn",
+        "tab_qmPbYP",
+        "tab_pzUiC3",
+        "tab_bmwB88",
+        "tab_VqQeTy"
+      ],
+      "custom_css": [],
+      "name": "Product Tabs",
+      "settings": {
+        "tab_main_title": "PRODUCT OVERVIEW"
+      }
+    },
+    "recently_viewed_products_tBbRaJ": {
+      "type": "recently-viewed-products",
+      "disabled": true,
+      "custom_css": [
+        ".card__title {text-transform: none; font-size: 14px; word-spacing: normal; letter-spacing: normal;}",
+        ".product-card-name {display: -webkit-box; -webkit-line-clamp: 2; /* Show max 2 lines */ -webkit-box-orient: vertical; overflow: hidden; height: 20px; /* Approx height for 2 lines */ word-spacing: -4px; font-size: 16px; word-wrap: normal;}"
+      ],
+      "name": "Recently Viewed Products",
+      "settings": {
+        "heading": "RECENTLY VIEWED PRODUCTS",
+        "max_products": 12,
+        "products_per_row_desktop": 5,
+        "products_per_row_mobile": 2.5,
+        "text_alignment": "center",
+        "image_ratio": "square",
+        "show_compare_price": true,
+        "enable_slider": true
+      }
+    },
+    "ec5a6457-3cb6-4605-94df-ac6400f950f1": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "disable_on_mobile": false,
+        "hide_empty_section": false,
+        "collection": "",
+        "product_list": [],
+        "products_to_show": 4,
+        "enable_stack_products": false,
+        "show_view_all": true,
+        "button_select": "primary",
+        "number_of_column_desktop": 4,
+        "spacing_desktop": "8",
+        "make_products_full_width": false,
+        "number_of_column_mobile": 2.1,
+        "spacing_mobile": "16",
+        "text_alignment": "left",
+        "image_ratio": "square",
+        "show_video": false,
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_product_rating": false,
+        "enable_quick_add_button": true,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "image_with_text_6eHa6t": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_pcbKAV": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Tell you story",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "heading_D3AMnB": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_m4Jtpa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        },
+        "button_Mcp9Rh": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Button label",
+            "button_link": "/",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_pcbKAV",
+        "heading_D3AMnB",
+        "text_m4Jtpa",
+        "button_Mcp9Rh"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 20,
+        "margin-bottom": 40
+      }
+    },
+    "benefits_video_wybLKE": {
+      "type": "benefits-video",
+      "blocks": {
+        "video_Mf6bbL": {
+          "type": "video",
+          "settings": {
+            "text": "<p>Your text here</p>"
+          }
+        },
+        "video_DzEYDn": {
+          "type": "video",
+          "settings": {
+            "text": "<p>Your text here</p>"
+          }
+        },
+        "video_LA4tdJ": {
+          "type": "video",
+          "settings": {
+            "text": "<p>Your text here</p>"
+          }
+        },
+        "video_kFaM7T": {
+          "type": "video",
+          "settings": {
+            "text": "<p>Your text here</p>"
+          }
+        },
+        "video_4YwRcz": {
+          "type": "video",
+          "settings": {
+            "text": "<p>Your text here</p>"
+          }
+        },
+        "video_cpxigk": {
+          "type": "video",
+          "settings": {
+            "text": "<p>Your text here</p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_Mf6bbL",
+        "video_DzEYDn",
+        "video_LA4tdJ",
+        "video_kFaM7T",
+        "video_4YwRcz",
+        "video_cpxigk"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Benefits video reels",
+        "video_button": false,
+        "text_alignment": "center",
+        "text_style": "body",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "testimonial_images_rLWajG": {
+      "type": "testimonial-images",
+      "blocks": {
+        "testimonial_m9feXM": {
+          "type": "testimonial",
+          "settings": {
+            "icon_select": "100",
+            "text": "<p>\"Your feedback goes here. Share your experience with our product or service.\"</p>",
+            "author": "Author name",
+            "image_link": ""
+          }
+        },
+        "testimonial_ANagRW": {
+          "type": "testimonial",
+          "settings": {
+            "icon_select": "100",
+            "text": "<p>\"Your feedback goes here. Share your experience with our product or service.\"</p>",
+            "author": "Author name",
+            "image_link": ""
+          }
+        },
+        "testimonial_a3G4gh": {
+          "type": "testimonial",
+          "settings": {
+            "icon_select": "100",
+            "text": "<p>\"Your feedback goes here. Share your experience with our product or service.\"</p>",
+            "author": "Author name",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_m9feXM",
+        "testimonial_ANagRW",
+        "testimonial_a3G4gh"
+      ],
+      "disabled": true,
+      "name": "t:sections.testimonial_images.name",
+      "settings": {
+        "title": "Testimonial images",
+        "text_style": "body",
+        "testimonial_text_size_desktop": 160,
+        "testimonial_text_size": 100,
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "auto-rotate": false,
+        "change_slider_time": 5,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 300,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "1753684741740b7a2e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_hCM7dr": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_hCM7dr"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "features_banner_wiKkaQ": {
+      "type": "features-banner",
+      "blocks": {
+        "image_P4yL64": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_m7jjzm": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "user",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_AkKWrq": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "search",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_XPgaAR": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "star",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_P4yL64",
+        "image_m7jjzm",
+        "image_AkKWrq",
+        "image_XPgaAR"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}",
+        ".wt-keys__image {aspect-ratio: attr(width) / attr(height); /* fallback to ratio */ display: block;}"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "newsletter_pEcrBa": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_mLFMeW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "paragraph_d8VNPK": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_gTPAyG": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mLFMeW",
+        "paragraph_d8VNPK",
+        "email_form_gTPAyG"
+      ],
+      "disabled": true,
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "custom_liquid_d4gfpM",
+    "product_tabs_84AJNb",
+    "product_recommendations_6jjNni",
+    "recently_viewed_products_tBbRaJ",
+    "ec5a6457-3cb6-4605-94df-ac6400f950f1",
+    "image_with_text_6eHa6t",
+    "benefits_video_wybLKE",
+    "testimonial_images_rLWajG",
+    "1753684741740b7a2e",
+    "features_banner_wiKkaQ",
+    "newsletter_pEcrBa"
+  ]
+}

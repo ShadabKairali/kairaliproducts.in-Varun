@@ -1,0 +1,171 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "custom_css": [
+        ".headline {color: #c1882c;}"
+      ],
+      "settings": {
+        "heading": "Ooops!",
+        "font_size_mobile": 200,
+        "font_size_desktop": 260,
+        "subtext": "We can't find what you're looking for here. Looks like you’ve taken a wrong turn on the path to wellness. But don't worry, let’s bring you back to nature.",
+        "link-text": "Back to Home",
+        "button_select": "primary",
+        "button_disable_on_mobile": false,
+        "button_link": "/",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 0,
+        "margin-top": 76,
+        "margin-bottom": 72
+      }
+    },
+    "rich_text_aYz4Ep": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Hj98yh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Since you’re here...",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_Hj98yh"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "featured_collection_NLkeAa": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Explore Our Bestsellers",
+        "disable_on_mobile": false,
+        "hide_empty_section": false,
+        "collection": "best-selling-products",
+        "product_list": [],
+        "products_to_show": 24,
+        "enable_stack_products": false,
+        "show_view_all": true,
+        "button_select": "primary",
+        "number_of_column_desktop": 4,
+        "spacing_desktop": "16",
+        "make_products_full_width": true,
+        "number_of_column_mobile": 2.1,
+        "spacing_mobile": "16",
+        "text_alignment": "center",
+        "image_ratio": "square",
+        "show_video": true,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_product_rating": true,
+        "enable_quick_add_button": true,
+        "color-body-text": "transparent",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "collection_list_nAcgBj": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_jqYYL6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "skin-care",
+            "image_collection": "shopify://shop_images/Natural_Skincare_2.png",
+            "text_collection": "Natural Skincare"
+          }
+        },
+        "featured_collection_eVj4MA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hair-care",
+            "image_collection": "shopify://shop_images/Natural_Hair_Care.png",
+            "text_collection": "Natural Hair Care"
+          }
+        },
+        "featured_collection_HxhKaT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ayurvedic-pain-relief-oils",
+            "image_collection": "shopify://shop_images/Ayurvedic_Pain_Relief_Oils_2.png",
+            "text_collection": "Ayurvedic Pain Relief Oils"
+          }
+        },
+        "featured_collection_erVnBt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ayurvedic-herbal-infusion-ayurvedic-herbal-tea",
+            "image_collection": "shopify://shop_images/Ayurvedic_Hrbal_Tea.png",
+            "text_collection": "Ayurvedic Herbal Tea"
+          }
+        },
+        "featured_collection_3NXA3g": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "traditional-ayurvedic-medicine",
+            "image_collection": "shopify://shop_images/traditional_ayurvedic_medicines_1269ef50-a468-4771-8992-bff5c7ced4c4.png",
+            "text_collection": "Traditional Ayurvedic Medicines"
+          }
+        },
+        "featured_collection_4FHQqh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "treatments-for-ailments",
+            "image_collection": "shopify://shop_images/Ayurvedic_Treatment_Kits.png",
+            "text_collection": "Ayurvedic Treatment Kits"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_jqYYL6",
+        "featured_collection_eVj4MA",
+        "featured_collection_HxhKaT",
+        "featured_collection_erVnBt",
+        "featured_collection_3NXA3g",
+        "featured_collection_4FHQqh"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "heading": "Discover Our Ayurvedic Collections Natural Wellness for Every Need",
+        "enable_swipe": false,
+        "disable_images": false,
+        "number_of_column_desktop": 3,
+        "number_of_column_mobile": 2,
+        "color-body-text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_aYz4Ep",
+    "featured_collection_NLkeAa",
+    "collection_list_nAcgBj"
+  ]
+}

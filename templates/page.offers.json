@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "compact-size-enabled": true,
+        "hide_content": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "rich_text_F3wX6H": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_NCFDwF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Current Offers",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_NCFDwF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_wcX86Y": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .current-offers-grid {\n    display: grid;\n    grid-template-columns: repeat(4, minmax(0, 1fr));\n    gap: 20px;\n    max-width: 1200px;\n    margin: 0 auto 40px;\n    padding: 0 20px;\n  }\n\n  .current-offer-card {\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n    padding: 24px;\n    border: 1px solid #dedede;\n    border-radius: 8px;\n    background: #fff;\n  }\n\n  .current-offer-card h2 {\n    margin: 0;\n    color: #6a7816;\n    font-size: 22px;\n  }\n\n  .current-offer-card p {\n    margin: 0;\n    color: #333;\n    line-height: 1.55;\n  }\n\n  .current-offer-card a {\n    margin-top: auto;\n    color: #6a7816;\n    font-weight: 600;\n    text-decoration: underline;\n  }\n\n  @media (max-width: 767px) {\n    .current-offers-grid {\n      grid-template-columns: 1fr;\n    }\n  }\n</style>\n\n<div class=\"current-offers-grid\">\n  <article class=\"current-offer-card\">\n    <h2>Kaircin Ayurvedic Facial Oil</h2>\n    <p>See the product page for the current sizes, price and availability.</p>\n    <a href=\"{{ routes.root_url }}products/kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin\">Shop Kaircin</a>\n  </article>\n\n  <article class=\"current-offer-card\">\n    <h2>Ayurvedic Anti-Pigmentation Kit</h2>\n    <p>See the kit page for its current contents, price and availability.</p>\n    <a href=\"{{ routes.root_url }}products/best-ayurvedic-anti-pigmentation-kit-for-men-and-women-de-tan-kit\">View the kit</a>\n  </article>\n\n  <article class=\"current-offer-card\">\n    <h2>Free Standard Shipping from ₹799</h2>\n    <p>Standard Shipping is ₹99 below ₹799 and free on orders of ₹799 or more. Express Shipping is ₹149 when selected.</p>\n    <a href=\"{{ routes.root_url }}pages/shipping-and-return\">View shipping details</a>\n  </article>\n\n  <article class=\"current-offer-card\">\n    <h2>Browse the offers collection</h2>\n    <p>Check each product page for its current price and availability before ordering.</p>\n    <a href=\"{{ routes.collections_url }}/kairali-ayurvedic-herbal-products-discounted-sale\">View the offers collection</a>\n  </article>\n</div>\n"
+      }
+    },
+    "features_banner_TFy4XN": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_W3CJnQ": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_ePng4K": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_LxhdhT": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_WtTk68": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_W3CJnQ",
+        "image_ePng4K",
+        "image_LxhdhT",
+        "image_WtTk68"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "name": "t:sections.features-banner.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "transparent",
+        "color_background_icon": "transparent",
+        "color_body_text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F3wX6H",
+    "custom_liquid_wcX86Y",
+    "features_banner_TFy4XN"
+  ]
+}

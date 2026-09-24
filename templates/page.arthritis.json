@@ -1,0 +1,369 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner_with_form_zdVJNi": {
+      "type": "banner-with-form",
+      "blocks": {
+        "banner_cMKfJg": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Free_Ayurvedic_Doctor_Consultation_1.png",
+            "heading": "",
+            "hide_heading_mobile": false,
+            "sub_heading": "",
+            "hide_sub_heading_mobile": false,
+            "text": "",
+            "hide_text_mobile": false,
+            "button_text": "",
+            "button_link": "",
+            "hide_button_mobile": false,
+            "hide_button_desktop": false,
+            "text_color": "#ffffff",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff"
+          }
+        },
+        "form_heading_Bf9qBD": {
+          "type": "form_heading",
+          "settings": {
+            "form_heading": "<p><strong>Book Your Free Ayurveda Consultation Today</strong></p>",
+            "form_heading_color": "#8e9d35",
+            "form_heading_align": "center"
+          }
+        },
+        "forms_inline_ybmQGW": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "524419",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_cMKfJg",
+        "form_heading_Bf9qBD",
+        "forms_inline_ybmQGW"
+      ],
+      "disabled": true,
+      "name": "Banner + Form Overlay",
+      "settings": {}
+    },
+    "slideshow_JCwBEj": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_mqdzTL": {
+          "type": "slide",
+          "settings": {
+            "subheading": "",
+            "subheading_disable_on_mobile": false,
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Free_Ayurvedic_Doctor_Consultation_1.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_image": "shopify://shop_images/Free_Ayurvedic_Doctor_Consultation.png",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_Yb7hyF": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell your story",
+            "subheading_disable_on_mobile": false,
+            "heading": "Image slide",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p>Tell your brand's story through images</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Button label",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_eXqjLA": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell your story",
+            "subheading_disable_on_mobile": false,
+            "heading": "Image slide",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p>Tell your brand's story through images</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Button label",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_mqdzTL",
+        "slide_Yb7hyF",
+        "slide_eXqjLA"
+      ],
+      "name": "t:sections.slideshow.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": false,
+        "auto-rotate": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "out_hero_mobile": false,
+        "margin-top": 20,
+        "margin-bottom": 0
+      },
+      "disabled": true
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": false,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_cfAz7N": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"product-listbase\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-8\">\n        <!-- Tabs -->\n        <div class=\"tabs-page\">\n          <ul class=\"tab-buttons\">\n            <li><a href=\"javascript:void(0);\" onclick=\"showtab('AboutProduct',this);\" class=\"active\">Anti Ageing</a></li>\n            <li><a href=\"javascript:void(0);\" onclick=\"showtab('Whykairali',this);\">Why Kairali?</a></li>\n          </ul>\n        </div>\n\n        <!-- Anti Ageing Tab Content -->\n        <div id=\"AboutProduct\" class=\"tabcontent\" style=\"display: block;\">\n          <div class=\"antiage-wrapper\">\n            <h2>What is Anti-Ageing?</h2>\n            <p>Anti-ageing is a process of retaining, delaying, and stopping the ageing process which usually deteriorates with time. It is very important for us to keep a regular check on the causes or factors that might deteriorate our skin. There are many natural ways that can help us keep our skin healthy and supple.</p>\n\n            <h3>What are the Skin-Ageing Signs?</h3>\n            <p>Our skin changes with age, but there are various other reasons like climate, dry weather, improper diet, and lifestyle habits that make our skin liable to premature ageing. We can notice initial signs like wrinkles, fine lines, and visible dark spots. Biologically, our body undergoes natural changes, but we can manage external ageing factors to slow down the visible effects.</p>\n\n            <h3>Signs of Ageing</h3>\n            <ul>\n              <li>Wrinkles</li>\n              <li>Fine lines</li>\n              <li>Dark spots</li>\n              <li>Pigmentation</li>\n              <li>Drooping upper eyelids</li>\n              <li>Patchy skin</li>\n              <li>Dull and sagging skin</li>\n              <li>Open pores</li>\n            </ul>\n\n            <h3>Factors of Ageing According to Ayurveda</h3>\n            <p>Many factors lead to changes in our skin and body. These may be natural or external, but when unmanaged, they become harmful in the long run:</p>\n            <ul>\n              <li>Stress</li>\n              <li>Improper Diet</li>\n              <li>Poor lifestyle</li>\n              <li>Lack of proper sleep</li>\n              <li>Lack of nourishment</li>\n              <li>Lack of hydration</li>\n            </ul>\n\n            <p><strong>Aahaar (Diet)</strong> is a major issue that must be corrected and followed daily, as proper food impacts overall skin health. Ayurveda sees food as medicine.</p>\n            <p><strong>Vihaara (Lifestyle)</strong> includes early rising, light exercise, warm water, regular sleep, and avoiding junk—all contributing to healthy ageing.</p>\n\n            <h3>Solutions in Ayurveda by Kairali Ayurvedic Products</h3>\n            <p>To address common skin issues, Kairali introduces Ayurvedic skincare solutions for youthful, radiant skin:</p>\n            <ul>\n              <li><strong>Kaircin:</strong> Ayurvedic facial night serum</li>\n              <li><strong>Kairpack:</strong> Ayurvedic face pack for soft, supple skin</li>\n              <li><strong>Kairkare:</strong> Body massage oil for detoxifying and de-stressing</li>\n              <li><strong>Kairbal:</strong> Ayurvedic cleansing powder for glowing skin</li>\n            </ul>\n\n            <h3>Why Internal Detox Matters</h3>\n            <p>Skin health begins from within. Detoxifying the body regularly helps prevent dullness and flakiness. Spices like turmeric, fennel, coriander, and fenugreek can improve internal health. Yoga and meditation support healthy, glowing skin.</p>\n\n            <h3>Key Ingredients Used by Kairali Ayurvedic Products</h3>\n            <p>Kairali has been producing Ayurvedic health solutions since 1908 using 100% natural ingredients:</p>\n            <ul>\n              <li>Saffron</li>\n              <li>Lotus</li>\n              <li>Green gram</li>\n              <li>Sandalwood</li>\n            </ul>\n\n            <p><strong>Kaircin:</strong> A nourishing oil with saffron and lotus that revives youthful glow.</p>\n            <p><strong>Kairpack:</strong> Herbal face pack with anti-inflammatory ingredients for blemish-free skin.</p>\n            <p><strong>Kairbal:</strong> Natural exfoliating scrub that removes dead skin and impurities.</p>\n            <p><strong>Kairkare:</strong> Herbal massage oil for fitness and stress relief used for decades by Kairali.</p>\n\n            <h3>Ayurvedic Tips for an Effective Skin Care Regime</h3>\n            <ul>\n              <li>Eat seasonal vegetables</li>\n              <li>Sip herbal or green tea</li>\n              <li>Practice yoga or exercise regularly</li>\n              <li>Get 7–8 hours of sound sleep</li>\n              <li>Drink 8–10 litres of water daily</li>\n              <li>Take regular Ayurvedic therapies</li>\n              <li>Smile and stay happy</li>\n            </ul>\n\n            <p>For expert support or consultation, please <strong>contact us</strong>. Use Ayurvedic products under the guidance of certified Ayurvedic doctors.</p>\n          </div>\n        </div>\n\n        <!-- Why Kairali Tab Content -->\n        <div id=\"Whykairali\" class=\"tabcontent\">\n          <div class=\"antiage-wrapper\">\n            <h2>Why Kairali?</h2>\n            <ul>\n              <li>Kairali is a Trusted Brand.</li>\n              <li>It’s best in Ayurveda.</li>\n              <li>Kairali is a top award-winning company.</li>\n              <li>It operates in 35 locations in 9 countries across 3 continents.</li>\n              <li>Kairali uses top quality raw materials and follows international guidelines while manufacturing products.</li>\n              <li>Guaranteed quality and safety – Kairali is dedicated to enhancing the good name of Ayurveda and follows strict development protocols.</li>\n              <li>Government certified – GMP certified by Tamil Nadu, Karnataka, and Kerala governments.</li>\n              <li>Research and development – A strong team of Ayurvedic physicians and chemists.</li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- Toggle Script -->\n<script>\n  function showtab(tabId, element) {\n    var tabs = document.querySelectorAll(\".tabcontent\");\n    var links = document.querySelectorAll(\".tab-buttons a\");\n\n    tabs.forEach(tab => tab.style.display = \"none\");\n    links.forEach(link => link.classList.remove(\"active\"));\n\n    document.getElementById(tabId).style.display = \"block\";\n    element.classList.add(\"active\");\n  }\n</script>\n\n<!-- CSS -->\n<style>\n.product-listbase {\n  padding: 40px 0;\n  font-family: 'Helvetica Neue', Arial, sans-serif;\n  color: #333;\n}\n.tabs-page ul.tab-buttons {\n  display: flex;\n  list-style: none;\n  padding: 0;\n  margin: 0 0 20px;\n  border-bottom: 2px solid #eee;\n}\n.tabs-page ul.tab-buttons li {\n  margin-right: 20px;\n}\n.tabs-page ul.tab-buttons a {\n  display: block;\n  padding: 10px 15px;\n  text-decoration: none;\n  font-weight: 600;\n  color: #444;\n  border-bottom: 3px solid transparent;\n  transition: 0.3s ease;\n}\n.tabs-page ul.tab-buttons a.active {\n  border-color: #c59d5f;\n  color: #c59d5f;\n}\n.tabcontent {\n  display: none;\n}\n.antiage-wrapper {\n  line-height: 1.7;\n  padding: 20px 30px;\n  max-width: 1000px;\n  margin: 0 auto;\n  text-align: justify;\n}\n.antiage-wrapper h2,\n.antiage-wrapper h3 {\n  color: #c59d5f;\n  margin-top: 30px;\n  margin-bottom: 15px;\n}\n.antiage-wrapper p {\n  margin-bottom: 15px;\n}\n.antiage-wrapper ul {\n  margin: 15px 0;\n  padding-left: 20px;\n}\n.antiage-wrapper ul li {\n  margin-bottom: 8px;\n  list-style: disc;\n}\n@media (max-width: 768px) {\n  .tabs-page ul.tab-buttons {\n    flex-direction: column;\n  }\n  .tabs-page ul.tab-buttons li {\n    margin-bottom: 10px;\n  }\n.antiage-wrapper {\n    padding: 15px 20px;\n  }\n}\n  .antiage-wrapper h2, .antiage-wrapper h3 {\n    font-size: 18px;\n  }\n}\n</style>"
+      }
+    },
+    "flex_content_section_himanshu_GVzxX4": {
+      "type": "flex-content-section-himanshu",
+      "blocks": {
+        "tab_content_YrWHaj": {
+          "type": "tab_content",
+          "settings": {
+            "tab_1_title": "Arthritis",
+            "tab_1_content": "<h1><strong>What is Arthritis?</strong></h1><p>Arthritis is a medical term that is used in case of joint pains. There are more than 100 types of arthritis but the most commonly known are Rheumatoid Arthritis and Osteo Arthritis. A simple pain in the joint is also known as arthritis but its symptoms and results may vary. Inflammation in the joints refers to the condition known as ‘arthritis’. The severity is however different and varies from person to person.<br/><br/>Nowadays, even kids are prone to arthritic pain due to several factors. The lifestyle in which we are living is responsible for many stressful conditions and is targeting to hamper our lifestyle. Caring about our future, this article gives an insight on how we can adopt natural ways to alleviate the problem of arthritis.</p><h3><strong>Causes and Symptoms</strong></h3><p>As we have said earlier, the present day lifestyle is the sole reason for all kinds of health issues. Our race to survive has made us work like a machine, not thinking about the long term results that might take place in the near future. Let us look at some of the leading causes that leads to arthritic pain:</p><ul><li>Improper diet</li><li>Lack of physical exercise</li><li>Growing Age</li><li>Physical Trauma</li><li>Excess physical labour</li><li>Obesity</li></ul><p>Arthritis is however a deteriorating condition that needs proper care and treatment, but when we start noticing the below given signs we need to get extra cautious of getting a proper treatment done:<br/></p><ul><li>Pain in the joints</li><li>Stiffness</li><li>Swelling</li><li>Redness</li><li>Decreased flexibility in the joints</li></ul><p>However, the intensity of the symptoms vary with the severity of the arthritic condition.<br/></p><h2><strong>Arthritic Condition According to Ayurveda</strong></h2><p>Ayurveda is a 5000 year old medical science that has its roots deeply entrenched in traditional texts and scriptures. According to Ayurveda, our body is comprised of three doshas, namely, Vata, Pitta and Kapha that governs the entire functioning of the body. ‘Ama’ which refers to toxins, is the major cause of arthritis. High accumulation of ama in the body along with the combination of aggravated Vata and Pitta leads to an imbalance, thus depleting the vital functions of the body therefore termed as Ojas. It blocks the channels for proper circulation of blood and nourishment and thus leads to an imbalance in the functioning of the Ojas. This further leads to pain, swelling, various inflammatory responses etc.</p><h2><strong>Ayurvedic Solutions for Arthritis</strong></h2><p>Ayurveda always treat the person and not only the disease. As it has an in-depth knowledge of the diseases, so herbal medicine for arthritis provides effective results that go into the root cause. Depending on the severity of the condition of Arthritis, the treatments would also differ. Ayurvedic cure for arthritis can be witnessed from the following ways:</p><p>Proper diet plan as per the dosha is the main therapy that Ayurveda suggests in order to reduce the vitiated amas and activate the organs in the body.<br/></p><ul><li>Ayurvedic treatments like Abhyangam (full-body massage), Panchakarma (natural cleansing process) etc. are also recommended by Ayurvedic physicians if the condition is too severe.</li><li>Special herbal decoctions that can be prepared at home can also be used to reduce pain.</li><li>Ayurvedic herbal treatments like herbal drinks with special herbs also helps to reduce the condition.<br/><br/>This debilitating condition needs proper care and hence if the condition is severe one can always consult the Ayurvedic Physician at online at <a href=\"https://www.kairaliproducts.in\" title=\"https://www.kairaliproducts.in\">kairaliproducts.in</a></li></ul><h3><strong>Ayurvedic Solutions by Kairali</strong></h3><p>Kairali Ayurvedic Products are one of the <br/>leading manufacturers and pioneer in providing solutions to get rid of <br/>Arthritis. It offers various Ayurvedic products for arthritis that are <br/>made with nature’s best ingredients and produce effective results with <br/>long-term benefits. People suffering from severe joint pain can consult <br/>the Ayurvedic doctor at Kairali and take arthritis medicines prescribed <br/>by the doctor. The most prescribed products for Arthritis pain are:</p><ul><li><a href=\"/products/rheuma-spa-capsules-ayurvedic-medicine-for-arthritis\"><strong>Rheumaspa Capsules</strong></a><strong> - </strong> This Ayurvedic medicine for arthritis is effective to get rid of joint inflammation and stiffness.</li><li><a href=\"https://www.kairaliproducts.in/kairtis-110ml.html\"><strong>Kairtis Oil</strong></a><strong> -  </strong>This Ayurvedic solution is an excellent pain relieving oil that helps to release the pain from the body. Made with natural ingredients, this Ayurvedic oil allows for a mobile lifestyle without complications. It <br/>comes with a Potli that is highly beneficial in massaging.</li><li><a href=\"https://www.kairaliproducts.in/taahira-herbal-infusion-100gms.html\"><strong>Taahira Herbal Infusion</strong></a><strong> - </strong>A herbal infusion made with red sandalwood and cardamom, this herbal infusion is a way to control digestion and cleanse the body. Proper nourishment and digestion leads to a healthy body and reduce any kind of pain.</li><li><a href=\"/products/valiya-narayana-thailam-maha-narayana-ayurvedic-oil-for-rheumatic-disorders\"><strong>Maha Narayana Thailam</strong></a><strong> - </strong>This Ayurvedic treatment for rheumatic disorders is beneficial in treating numbness, swelling and burning sensation in the joints.</li><li><a href=\"/products/kairkare-ayurvedic-herbal-body-massage-oil\"><strong>Kairkare Oil</strong></a><strong> - </strong>It is an Ayurvedic body massage oil that helps to release the toxins from the body thus nourishing the skin and the muscle tissue.</li><li><a href=\"/products/yograj-guggulu-ayurvedic-medicine-for-arthritis-gout-and-skin-infections\"><strong>Yograj Guggulu</strong></a><strong> - </strong> People suffering from acute or chronic arthritis can take this Ayurvedic pill. It helps to ease out the pain from the body.</li><li><a href=\"/products/valiya-rasanadi-kashayam-ayurvedic-medicine-for-arthritic-pain\"><strong>Valiya Rasnadi Kashayam/Maha Rasnadi Kashayam</strong></a><strong> - </strong>This Ayurvedic solution is best prepared to treat patients with arthritic conditions that relates to stiffness, numbness, facial palsy etc.</li><li><a href=\"/products/kaisore-guggulu-ayurvedic-medicine-for-skin-diseases-and-arthritis\"><strong>Kaisore Guggulu</strong></a><strong> - </strong>This herbal medicine for arthritis has anti-inflammatory properties that reduces the symptoms of arthritis like redness, burning sensation, stiffness etc.</li></ul><p>For any kind of support or assistance, kindly contact us.<br/><br/>All the products are recommended to be used as per the advice given by our Ayurvedic physician.<br/><br/>Stay healthy and fit by maintaining an Ayurvedic way of life as Ayurveda has amazing secrets to heal the body from any kind of diseases. Follow some lifestyle changes as like waking up early in the morning, doing some physical exercises, drinking plenty of water etc. to avoid complications.</p>",
+            "tab_2_title": "About Kairali",
+            "tab_2_content": "<h2><strong>About Kairali?</strong></h2><ul><li>More than 100 Years of accumulated Experience.</li><li>The company hails from a long family lineage of traditional Ayurvedic doctors.</li><li>The company has received several accolades for its highly beneficial products and is a GMP certified company using state of the art technology for manufacturing and analyzing its products.</li><li>One of the most awarded companies in the Ayurvedic ecosystem.</li><li>Pays top priority to Ayurvedic research and is constantly investing to improve the ancient Ayurvedic wisdom for the benefit of the modern-day ailments.</li><li>All the raw materials are sourced from the best herbal gardens that are mostly natural and environmentally safe.<br/></li></ul>"
+          }
+        },
+        "image_app_block_qcwhL7": {
+          "type": "image_app_block",
+          "settings": {
+            "image_heading": "<p>Latest Achivements</p>",
+            "image_heading_alignment": "center",
+            "app_heading": "<p>Book Your Free Ayurveda Consultation Today</p>",
+            "app_heading_alignment": "center"
+          },
+          "disabled": true
+        },
+        "forms_inline_WX6FP9": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "524419",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 10,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        },
+        "image_link_ThHcbn": {
+          "type": "image_link",
+          "settings": {
+            "image": "shopify://shop_images/Kerala_Green_Leaf.png",
+            "link": ""
+          }
+        },
+        "image_link_WM7Aab": {
+          "type": "image_link",
+          "settings": {
+            "image": "shopify://shop_images/Kaircin_Facial_Oil_e553bc65-50b0-44be-84ac-601fb044b0b0.png",
+            "link": "shopify://products/kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin"
+          }
+        },
+        "image_link_BTp47D": {
+          "type": "image_link",
+          "settings": {
+            "image": "shopify://shop_images/Ayurvedic_Hair_Oil_Kairali_2f42abbe-abca-456a-9f1e-8b3c3af45bea.png",
+            "link": "shopify://products/kairoil-best-ayurvedic-hair-oil-for-hair-fall-and-dandruff"
+          }
+        }
+      },
+      "block_order": [
+        "tab_content_YrWHaj",
+        "image_app_block_qcwhL7",
+        "forms_inline_WX6FP9",
+        "image_link_ThHcbn",
+        "image_link_WM7Aab",
+        "image_link_BTp47D"
+      ],
+      "custom_css": [
+        ".app-heading {color: green;}",
+        ".flex-section-wrapper {padding: 0px 0;}"
+      ],
+      "name": "Flex Grid Himanshu",
+      "settings": {}
+    },
+    "features_banner_D3PAxi": {
+      "type": "features-banner",
+      "blocks": {
+        "image_VNyQqM": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_HaYWw7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_7L4VRd": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_dqGtz9": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Items you love at prices that fit your budget.Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VNyQqM",
+        "image_HaYWw7",
+        "image_7L4VRd",
+        "image_dqGtz9"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "name": "t:sections.features-banner.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      },
+      "disabled": true
+    }
+  },
+  "order": [
+    "banner_with_form_zdVJNi",
+    "slideshow_JCwBEj",
+    "main",
+    "custom_liquid_cfAz7N",
+    "flex_content_section_himanshu_GVzxX4",
+    "features_banner_D3PAxi"
+  ]
+}

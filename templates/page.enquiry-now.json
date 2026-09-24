@@ -1,0 +1,260 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": false,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 20
+      }
+    },
+    "banner_with_form_VRrmVE": {
+      "type": "banner-with-form",
+      "blocks": {
+        "banner_LQFtFF": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hair_Oil_Kairoil_1_b28e1ad7-b030-4ff1-9874-334857bb9d20.png",
+            "heading": "<p>r3r3rwerfewr</p>",
+            "hide_heading_mobile": false,
+            "sub_heading": "<p>r3r23r2r223</p>",
+            "hide_sub_heading_mobile": false,
+            "text": "<p>fewrq3r3r23</p>",
+            "hide_text_mobile": false,
+            "button_text": "Enquiry now",
+            "button_link": "",
+            "hide_button_mobile": false,
+            "hide_button_desktop": false,
+            "text_color": "#ffffff",
+            "button_color": "#fbfaf6",
+            "button_text_color": "#000000"
+          }
+        },
+        "form_heading_6FybEi": {
+          "type": "form_heading",
+          "settings": {
+            "form_heading": "<p><strong>Fill the Form</strong></p>",
+            "form_heading_color": "#ff9900",
+            "form_heading_align": "center"
+          }
+        },
+        "forms_inline_YTPHUm": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "500279",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "banner_LQFtFF",
+        "form_heading_6FybEi",
+        "forms_inline_YTPHUm"
+      ],
+      "disabled": true,
+      "name": "Banner with Form Overlay",
+      "settings": {}
+    },
+    "custom_liquid_ryh3rj": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"responsive-container-block textContainer\">\n  <div class=\"topHead\">\n    <h1 class=\"text-blk heading\">ENQUIRE <span class=\"greenText\">NOW</span></h1>\n    <div class=\"greenLine\"></div>\n  </div>\n  <p class=\"subHeading\">\n    Use this form to send a question about a product, an existing order or a business enquiry.\n  </p>\n  <p class=\"sub-subHeading\">\n    Include your order number, the product name and pack size, or your organisation and country when relevant.\n  </p>\n</div>\n\n<style>\n.textContainer {\n  text-align: center;\n  max-width: 1320px;\n  min-width: 0;\n  margin: 50px auto 30px;\n  padding: 0 20px;\n}\n\n.topHead {\n  margin-bottom: 20px;\n}\n\n.text-blk.heading {\n  font-size: 30px;\n  line-height: 35px;\n  font-weight: 600;\n  margin: 0;\n  color: #080808;\n  text-align: center;\n}\n\n.greenText {\n  color: #6a7816;\n}\n\n.greenLine {\n  width: 160px;\n  height: 6px;\n  background: #6a7816;\n  margin: 10px auto 0;\n}\n\n.subHeading {\n  font-size: 16px;\n  color: #080808;\n  max-width: 630px;\n  margin: 10px auto;\n}\n\n.sub-subHeading {\n  font-size: 14px;\n  color: #555;\n  max-width: 630px;\n  margin: 10px auto;\n}\n</style>"
+      }
+    },
+    "rich_text_ptfaxn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BKLLkN": {
+          "type": "heading",
+          "settings": {
+            "heading": "ENQUIRE NOW",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_6ztNcK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this page to send a product, order or business enquiry.</p>",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_BKLLkN",
+        "text_6ztNcK"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".hero__title {color: #6a7816; font-weight: 600;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "1749813509bb30b02f": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_YijpTg": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "500279",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 10,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_YijpTg"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "contact_form_6gxMBb": {
+      "type": "contact-form",
+      "blocks": {
+        "email_form_N76Qb6": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "email_form_N76Qb6"
+      ],
+      "disabled": true,
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_D3PAxi": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_VNyQqM": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_HaYWw7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_7L4VRd": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_dqGtz9": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Items you love at prices that fit your budget.Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_VNyQqM",
+        "image_HaYWw7",
+        "image_7L4VRd",
+        "image_dqGtz9"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner_with_form_VRrmVE",
+    "custom_liquid_ryh3rj",
+    "rich_text_ptfaxn",
+    "1749813509bb30b02f",
+    "contact_form_6gxMBb",
+    "features_banner_D3PAxi"
+  ]
+}

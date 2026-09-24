@@ -1,0 +1,641 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "b0118af0-7eaf-42de-8ebe-2bacbdcdac45": {
+      "type": "background-video",
+      "blocks": {
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-subheading-1": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell your story",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kairali Ayurvedic Group",
+            "disable_on_mobile": false,
+            "size_heading": 200,
+            "size_heading_mobile": 180
+          }
+        },
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Kairali redefines wellness with natural, Ayurvedic solutions tailored for today’s lifestyle and health needs.</em></p>",
+            "disable_on_mobile": false
+          }
+        },
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-button-1": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Button label",
+            "disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "Button label",
+            "second_disable_on_mobile": false,
+            "second_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-subheading-1",
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-heading-1",
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-text-1",
+        "template--16408320606408__b0118af0-7eaf-42de-8ebe-2bacbdcdac45-button-1"
+      ],
+      "settings": {
+        "heading": "",
+        "full-width-enabled": true,
+        "video_hosted": "shopify://files/videos/Therapy 2.mp4",
+        "mobile_video_hosted": "shopify://files/videos/Therapy 2.mp4",
+        "autoplay": true,
+        "video_controls": false,
+        "video_url": "",
+        "original_ratio": "fixed_height",
+        "desktop_fixed_height": 520,
+        "mobile_fixed_height": 380,
+        "color-body-heading": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "color-body-text": "#ffffff",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "1778038b-a0c4-48d6-9085-3312ff830b43": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16408320606408__1778038b-a0c4-48d6-9085-3312ff830b43-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "COMPANY PROFILE",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "template--16408320606408__1778038b-a0c4-48d6-9085-3312ff830b43-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kairali Ayurvedic Group is headed by joint Managing Directors Mrs. Gita Ramesh and Mr. K.V. Ramesh, both of whom hail from a long family lineage of traditional Ayurvedic doctors. Kairali has been helping amalgamate Ancient Ayurveda with contemporary wellness needs and healing mankind holistically worldwide for decades.<br/><br/>The manufacturing division of Kairali Group - Kairali Ayurvedic Products Private Limited (KAPPL) is a trusted and well-established name involved in manufacturing, exporting and supplying an extensive collection of Ayurvedic Products and Herbal Medicines and has been strengthening the ancient tradition of Ayurveda through continuous Research and Development (R & D) of new Ayurvedic products and medicines to suit modern lifestyle.<br/><br/>KAPPL manufactures and exports authentic Ayurvedic medicine in a state of the art facility with modern equipment under strict quality control and with utmost care. Kairali has built its reputation of being one of the best in India by following very high international standards while handling, procuring and manufacturing its herbal products.<br/><br/>All the Kairali ayurvedic products are manufactured with raw materials that are sourced locally and are environmentally safe. The ingredients are organically grown and picked at the right season with utmost care for maximum potency and effectiveness.</p>",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16408320606408__1778038b-a0c4-48d6-9085-3312ff830b43-heading-1",
+        "template--16408320606408__1778038b-a0c4-48d6-9085-3312ff830b43-text-1"
+      ],
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "left",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 48,
+        "margin-bottom": 48
+      }
+    },
+    "image_banner_kLtmLt": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_C7qFVf": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell you story",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "heading_xrXUmp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kairali Ayurvedic Products has more than 111 years of experience in practice and research of ayurvedic products.",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_6R3DXi": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button_RkYRgX": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Button label",
+            "disable_on_mobile": false,
+            "button_link": "/",
+            "second_button_select": "primary",
+            "second_button_label": "Button label",
+            "second_disable_on_mobile": false,
+            "second_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_C7qFVf",
+        "heading_xrXUmp",
+        "text_6R3DXi",
+        "button_RkYRgX"
+      ],
+      "custom_css": [
+        ".hero__title {color: #ffffff; text-transform: uppercase;}"
+      ],
+      "settings": {
+        "heading": "",
+        "full-width-enabled": true,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "desktop_image": "shopify://shop_images/The_Kairali_Ayurvedic_Group_1.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_vertical_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "color-heading": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "text-container-color": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "features_banner_88J7yL": {
+      "type": "features-banner",
+      "blocks": {
+        "image_YTy3wa": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/gmpcertifications_dde9bb84-6fcf-4ffe-8525-629e43cb75ca.png",
+            "select_icon": "bag",
+            "heading": "GMP Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_NVrUkJ": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Fssai.png",
+            "select_icon": "bag",
+            "heading": "FSSAI Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_ADrhag": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Toxic_Free_fdd3a0d1-ef2c-4ffc-a1ab-02f58984d921.png",
+            "select_icon": "bag",
+            "heading": "Australia Certified Toxic-Free",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_h4xgt7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/vegan_friendly_f6c3187b-9d77-4670-a95c-38f2b2882b9e.png",
+            "select_icon": "bag",
+            "heading": "VEGAN FRIENDLY Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_LADikU": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/curelty_free_1c0d42af-02fc-4aee-a503-6da258003b7f.png",
+            "select_icon": "bag",
+            "heading": "CRUELTY-FREE Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_8X9yBW": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/eurofins_97f03869-4059-41a1-9dd9-5220bdb5af47.png",
+            "select_icon": "bag",
+            "heading": "EUROFINS Certified",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_YTy3wa",
+        "image_NVrUkJ",
+        "image_ADrhag",
+        "image_h4xgt7",
+        "image_LADikU",
+        "image_8X9yBW"
+      ],
+      "settings": {
+        "heading": "CERTIFICATION",
+        "size_heading_mobile": 100,
+        "size_heading": 100,
+        "icon_width_mobile": 120,
+        "icon_width_desktop": 200,
+        "icon_layout": "center",
+        "columns_desktop": "3",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 0
+      }
+    },
+    "features_banner_zekLgY": {
+      "type": "features-banner",
+      "blocks": {
+        "image_4EdLhK": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/iso_073c801b-fc16-418b-91ff-9a5595354c3b.png",
+            "select_icon": "bag",
+            "heading": "ISO Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_3XgGR7": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/FDA.png",
+            "select_icon": "bag",
+            "heading": "FDA Approved",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_PH3Wee": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/made_safe_74fe5e9b-0f26-4311-8623-5ca3e79ce75e.png",
+            "select_icon": "bag",
+            "heading": "MADE SAFE Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_wkFcGr": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/allergy_certified_088582a1-f10d-4b6b-9118-09beff2fbac0.png",
+            "select_icon": "bag",
+            "heading": "ALLERGY Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_GY3C3g": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/ce_16162405-f8f2-4cf0-8396-8a4321c67ecf.png",
+            "select_icon": "bag",
+            "heading": "CE Certified",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_WzPzGr": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/cochintesthouse_6bdc638d-98f9-416b-8ce7-b050d9df3a8b.png",
+            "select_icon": "bag",
+            "heading": "Cochin Test House Certified",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_4EdLhK",
+        "image_3XgGR7",
+        "image_PH3Wee",
+        "image_wkFcGr",
+        "image_GY3C3g",
+        "image_WzPzGr"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 100,
+        "size_heading": 100,
+        "icon_width_mobile": 120,
+        "icon_width_desktop": 200,
+        "icon_layout": "center",
+        "columns_desktop": "3",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_FkbBN9": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n\n    .grid-container-vision {\n      font-family: jost, sans-serif;\n      display: flex;\n      flex-wrap: wrap;\n      gap: 20px;\n      text-align: center;\n     background-color: white;\n    }\n\n    .grid-item-vision {\n      background: white;\n      border-radius: 10px;\n      padding: 20px;\n      flex: 1 1 calc(50% - 20px); /* 2 columns */\n      box-sizing: border-box;\n    }\n\n    .item-heading-vision {\n      font-size: 18px;\n      font-weight: bold;\n      margin-bottom: 0.3em;\n      color: #8e9d35;\n    }\n\n    .item-subheading-vision {\n      font-size: 16px;\n      font-weight: 500;\n      font-weight: bold;\n      margin-bottom: 0.5em;\n      color: #00000;\n    }\n\n    .item-description-vision {\n      font-size: 14px;\n      color: #444;\n    }\n\n    @media (max-width: 768px) {\n      .grid-item-vision {\n        flex: 1 1 100%;\n      }\n    }\n  </style>\n\n  <div class=\"grid-container-vision\">\n    <div class=\"grid-item-vision\">\n      <div class=\"item-heading-vision\">VISION</div>\n      <div class=\"item-subheading-vision\">“Upholding the authentic principles of Ayurveda in order to propagate health and wellbeing worldwide.”</div>\n      <div class=\"item-description-vision\">Kairali Ayurvedic Group encourages a comprehensive approach to health, which understands the individual as a complex combination of elements capable of being brought into harmony. We are committed to enhancing positivity and wellbeing in individuals, the environment and the global community.</div>\n    </div>\n\n    <div class=\"grid-item-vision\">\n      <div class=\"item-heading-vision\">MISSION</div>\n      <div class=\"item-subheading-vision\">“To be recognised around the globe as the essence of true Ayurveda.”</div>\n      <div class=\"item-description-vision\">Kairali Ayurvedic Group continues to advance the use of Ayurvedic practices around the world, establishing an international community of therapists, doctors, educators, hoteliers and retreat providers to give our clients the best wellbeing experience. Kairali seeks partnerships and investment to expand their mission of empowering individuals to transform their lifestyle and future health.</div>\n    </div>\n  </div>\n</body>\n</html>"
+      }
+    },
+    "image_banner_KRjXwc": {
+      "type": "image-banner",
+      "blocks": {
+        "text_ttcyN6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Kairali Ayurvedic Products, the state of the art facility is GMP (Good Manufacturing Practices) certified. Equipped with the latest equipment, most of the production work is done through machines making the production process more hygienic, accurate and speedy. All the work is done under strict supervision of the Ayurvedic Doctors, research scientists and expert technologists. Our Production and manufacturing facilities are fully geared for the mass production of Ayurvedic products that are produced in strict adherence to the ancient Ayurvedic scriptures. All the raw materials used in the manufacturing of products at our facility are authentic, sourced locally and from our own farms in Kerala, are of prescribed quality and are free from any contamination. Adequate quality control measures are adopted and the manufactured products released for sale are of highest international quality.</p>",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "text_ttcyN6"
+      ],
+      "custom_css": [
+        ".hero__text {color: #ffffff;}"
+      ],
+      "settings": {
+        "heading": "",
+        "full-width-enabled": true,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 380,
+        "mobile_fixed_height": 640,
+        "desktop_image": "shopify://shop_images/The_Kairali_Ayurvedic_Group_2.png",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_image": "shopify://shop_images/Factory_1.png",
+        "mobile_text_vertical_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "color-heading": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "text-container-color": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "multicolumn_fNgUMz": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_9Acxbc": {
+          "type": "column",
+          "settings": {
+            "heading": "Kairali – The Ayurvedic Healing Village",
+            "heading_disable_on_mobile": false,
+            "text": "<p>Nestled in the lush greenery of Palakkad, Kerala, Kairali – The Ayurvedic Healing Village is a world-class wellness retreat that blends nature, Ayurveda, and luxury.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "https://ayurvedichealingvillage.com/",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/The_Kairali_Healing_Vilage.png",
+            "mobile_image": "shopify://shop_images/The_Kairali_Healing_Vilage.png"
+          }
+        },
+        "column_Txn8Qb": {
+          "type": "column",
+          "settings": {
+            "heading": "Kairali Ayurvedic Centre",
+            "heading_disable_on_mobile": false,
+            "text": "<p>With a legacy spanning over a century, Kairali Ayurvedic Centre was formally founded in 1989. With a satisfaction rate of over 93.9%, Kairali Ayurvedic Centre is a trusted name worldwide in holistic healing and wellness.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "https://kairalicenters.com/",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Kairali_Ayurvedic_Center.png",
+            "mobile_image": "shopify://shop_images/Kairali_Ayurvedic_Center.png"
+          }
+        },
+        "column_aRtfbj": {
+          "type": "column",
+          "settings": {
+            "heading": "Kairali Guru",
+            "heading_disable_on_mobile": false,
+            "text": "<p>Kairali Guru is the educational and training wing of the Kairali Ayurvedic Group, committed to its common goal of spreading the wisdom of Ayurveda through structured courses, workshops, and certifications.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "https://www.kairali.guru/",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/2_55de7722-4d89-4dfe-b4d1-bb283139d518.png",
+            "mobile_image": "shopify://shop_images/2_55de7722-4d89-4dfe-b4d1-bb283139d518.png"
+          }
+        }
+      },
+      "block_order": [
+        "column_9Acxbc",
+        "column_Txn8Qb",
+        "column_aRtfbj"
+      ],
+      "custom_css": [
+        ".hero__title {font-family: jost, sans-serif; font-weight: 600;}",
+        ".hero__richtext {font-family: jost, sans-serif; font-size: 15px;}"
+      ],
+      "settings": {
+        "heading": "OUR GROUP COMPANIES",
+        "swipe_on_mobile": false,
+        "full-width-enabled": false,
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "color-body-text": "#fbfaf6",
+        "background_color": "#2e4334",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "0fb78468-9ddb-4ab4-b0f2-17627de7d650": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-1": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-2": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-3": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-4": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-1",
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-2",
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-3",
+        "template--15329436369096__0fb78468-9ddb-4ab4-b0f2-17627de7d650-image-4"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 40,
+        "margin-bottom": 52
+      }
+    },
+    "map_address_CgFhaF": {
+      "type": "map-address",
+      "blocks": {
+        "address_header_kBNy3U": {
+          "type": "address_header",
+          "settings": {
+            "address_title": "Our Store",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "map_address_ynyAMX": {
+          "type": "map_address",
+          "settings": {
+            "address_to_display": "<p>151 O'Connor Street, Ground floor, Ottawa, ON, K2P 2L8.</p>"
+          }
+        },
+        "button_jtWi7h": {
+          "type": "button",
+          "settings": {
+            "button_style": "secondary",
+            "button_label": "Get Direction",
+            "button_link": "https://www.google.com/maps/place/Shopify/@45.419181,-75.7016012,17z/data=!3m1!4b1!4m6!3m5!1s0x4cce05468ce3bf21:0x4dfbad2ddac86336!8m2!3d45.4191773!4d-75.6967303!16s%2Fg%2F11wxj_z427?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D"
+          }
+        }
+      },
+      "block_order": [
+        "address_header_kBNy3U",
+        "map_address_ynyAMX",
+        "button_jtWi7h"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "address": "1600 Amphitheatre Parkway, Mountain View, CA 94043, United States",
+        "api_key": "",
+        "initial_map_zoom": 14,
+        "map_style": "default",
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "content_alignment": "left",
+        "content_alignment_desktop": "left",
+        "content_position": "top_left",
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffffff",
+        "background_color_opacity": 85,
+        "background_blur": 0,
+        "margin-top": 0,
+        "margin-bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b0118af0-7eaf-42de-8ebe-2bacbdcdac45",
+    "1778038b-a0c4-48d6-9085-3312ff830b43",
+    "image_banner_kLtmLt",
+    "features_banner_88J7yL",
+    "features_banner_zekLgY",
+    "custom_liquid_FkbBN9",
+    "image_banner_KRjXwc",
+    "multicolumn_fNgUMz",
+    "0fb78468-9ddb-4ab4-b0f2-17627de7d650",
+    "map_address_CgFhaF"
+  ]
+}

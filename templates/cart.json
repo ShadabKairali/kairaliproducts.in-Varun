@@ -1,0 +1,235 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "show_vendor": false,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "pincode_validator_NdtJWG": {
+      "type": "pincode-validator",
+      "blocks": {
+        "pincode_validator_RYzb87": {
+          "type": "pincode_validator",
+          "settings": {
+            "heading": "Check delivery availability",
+            "subtext": "<p>Enter your pincode to check delivery and COD availability.</p>",
+            "placeholder": "Enter 6-digit pincode",
+            "button_text": "Check",
+            "max_width": 520
+          }
+        }
+      },
+      "block_order": [
+        "pincode_validator_RYzb87"
+      ],
+      "name": "Pincode Validator (Block Based)",
+      "settings": {
+        "section_padding": 0
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        },
+        "custom_liquid_Lt6E8F": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<style>\n.newsannouncement {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 0px;\n  margin-top: 20px;\n\n}\n\n\n.newshighlight {\n\n  padding: 12px 20px;\n  border-radius: 20px;\n  text-align: center;\n  max-width: auto;\n  color: #c1882c;\n  font-size: 18px;\n  border: #6a7816 double;\n\n}\n\n.newshighlight strong {\n\n  color: #6a7816;\n\n}\n\n\n.newsannouncement img {\n  height: auto;\n  width: 500px;\n}\n\n@media (max-width: 767px) {\n\n.newsannouncement img {\n  height: auto;\n  width: 300px;\n}\n\n.newshighlight {\n\n  padding: 10px 8px;\n  font-size: 14px;\n  border: #6a7816 double;\n\n}\n}\n</style>\n\n\n\n<div class=\"newsannouncement\">\n  <p class=\"newshighlight\">  \n    <strong>Trusted by 50,000+ Customers</strong> for remarkable results.\n  </p>\n\n  <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Kairali_Ayurvedic_Herbal_Products_Certificates.webp\" alt=\"Certificates\" loading=\"lazy\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0925/8998/1983/files/100_SECURE_PAYMENT_1.png\" alt=\"Secure Payment\" loading=\"lazy\">\n\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons",
+        "custom_liquid_Lt6E8F"
+      ],
+      "settings": {
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Others also bought",
+        "disable_on_mobile": false,
+        "hide_empty_section": false,
+        "collection": "",
+        "product_list": [],
+        "products_to_show": 9,
+        "enable_stack_products": false,
+        "show_view_all": true,
+        "button_select": "primary",
+        "number_of_column_desktop": 3,
+        "spacing_desktop": "16",
+        "make_products_full_width": false,
+        "number_of_column_mobile": 2.1,
+        "spacing_mobile": "16",
+        "text_alignment": "left",
+        "image_ratio": "square",
+        "show_video": false,
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_product_rating": true,
+        "enable_quick_add_button": false,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_7cYzYM": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_PGa9cD": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Cash_On_Delivery.png",
+            "select_icon": "user",
+            "heading": "CASH ON DELIVERY",
+            "text": "<p>No Online Payment? No Problem. Wellness at Your Door – Pay on Delivery! </p>",
+            "link": "#"
+          }
+        },
+        "image_YQyeGC": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Free_Shipping.png",
+            "select_icon": "bag",
+            "heading": "FREE SHIPPING",
+            "text": "<p>Free Standard Shipping on Orders of ₹799 or More</p>",
+            "link": "#"
+          },
+          "disabled": true
+        }
+      },
+      "block_order": [
+        "image_PGa9cD",
+        "image_YQyeGC"
+      ],
+      "custom_css": [
+        ".wt-keys__title {color: #8e9d35; font-weight: 600; letter-spacing: 0.18em;}"
+      ],
+      "name": "Icon with links",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 64,
+        "icon_width_desktop": 92,
+        "icon_layout": "left",
+        "columns_desktop": "2",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_TCC9iq": {
+      "type": "features-banner",
+      "disabled": true,
+      "blocks": {
+        "image_fg9Y3B": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Delivery_worldwide_2.png",
+            "select_icon": "bag",
+            "heading": "DELIVERY WORLDWIDE",
+            "text": "<p>We offer worldwide delivery. Experience holistic wellness with global shipping!</p>",
+            "link": ""
+          }
+        },
+        "image_keJYpU": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7_Days_Return_Policy.png",
+            "select_icon": "bag",
+            "heading": "7 DAYS RETURN POLICY",
+            "text": "<p>We offer a hassle-free return policy within 7 days of purchase. Terms and conditions apply.</p>",
+            "link": ""
+          }
+        },
+        "image_Che3Dn": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/24_7_Customer_Support.png",
+            "select_icon": "bag",
+            "heading": "CUSTOMER SUPPORT",
+            "text": "<p>We’re here to help with order and product questions during our published support hours.</p>",
+            "link": ""
+          }
+        },
+        "image_Fkk7tC": {
+          "type": "image",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Secure_payments.png",
+            "select_icon": "bag",
+            "heading": "SECURE PAYMENTS",
+            "text": "<p>Enjoy hassle-free transactions with our encrypted and trusted payment gateways.</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_fg9Y3B",
+        "image_keJYpU",
+        "image_Che3Dn",
+        "image_Fkk7tC"
+      ],
+      "custom_css": [
+        ".wt-keys__title {font-family: jost, sans-serif; color: #8e9d35; font-weight: 600; margin-bottom: 12px; letter-spacing: 0.18em;}",
+        ".wt-keys__text {font-size: 14px; font-family: jost, sans-serif;}"
+      ],
+      "name": "t:sections.features-banner.settings.presets.name",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 80,
+        "icon_width_mobile": 36,
+        "icon_width_desktop": 48,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "grid",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "#fbfaf6",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "#8e9d35",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "pincode_validator_NdtJWG",
+    "cart-footer",
+    "featured-collection",
+    "features_banner_7cYzYM",
+    "features_banner_TCC9iq"
+  ]
+}
