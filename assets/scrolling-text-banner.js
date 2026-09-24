@@ -1,0 +1,14 @@
+if(!customElements.get("scrolling-text-banner")){customElements.define("scrolling-text-banner",class ScrollingTextBanner extends HTMLElement{constructor(){super();this.spacing=20;this.speedFactor=10;this.speed=100;this.mobileBreakpoint=600;this.mobileSpeedFactor=0.7;this.resizeObserver=null}
+connectedCallback(){this.spacing=parseInt(this.getAttribute("data-spacing"))||this.spacing;const speedInput=parseInt(this.getAttribute("data-speed"))||5;this.speed=this.mapSpeed(speedInput);this.mobileSpeedFactor=parseFloat(this.getAttribute("data-mobile-speed-factor"))||this.mobileSpeedFactor;this.initializeScrollingText();this.observeResizing()}
+disconnectedCallback(){if(this.resizeObserver){this.resizeObserver.disconnect()}}
+mapSpeed(input){const minSpeed=30;const maxSpeed=300;return minSpeed+(maxSpeed-minSpeed)*((input-1)/9)}
+getAdjustedSpeed(){if(window.innerWidth<this.mobileBreakpoint){return this.speed*this.mobileSpeedFactor}
+return this.speed}
+initializeScrollingText(){const heroTitle=this.querySelector(".hero__title");if(!heroTitle){console.error("No `.hero__title` element found inside the scrolling-text-banner component.",);return}
+const textContent=heroTitle.textContent.trim();if(!textContent){console.error("No text content found inside the `.hero__title` element.",);return}
+heroTitle.innerHTML="";const scrollingContainer=document.createElement("div");scrollingContainer.classList.add("scrolling-container");heroTitle.appendChild(scrollingContainer);for(let i=0;i<2;i++){const wrapper=document.createElement("div");wrapper.classList.add("scrolling-wrapper");for(let j=0;j<10;j++){const textWrapper=document.createElement("div");textWrapper.classList.add("scrolling-text");textWrapper.textContent=textContent;textWrapper.style.marginRight=`${this.spacing}px`;wrapper.appendChild(textWrapper)}
+scrollingContainer.appendChild(wrapper)}
+this.setAnimationSpeed(scrollingContainer)}
+setAnimationSpeed(scrollingContainer){requestAnimationFrame(()=>{const wrappers=scrollingContainer.querySelectorAll(".scrolling-wrapper");if(wrappers.length!==2)return;const wrapperWidth=wrappers[0].offsetWidth;const adjustedSpeed=this.getAdjustedSpeed();const duration=wrapperWidth/adjustedSpeed;scrollingContainer.style.width=`${wrapperWidth * 2}px`;wrappers.forEach((wrapper,index)=>{wrapper.style.animationDuration=`${duration}s`;wrapper.style.animationDelay=`${-index * duration}s`})})}
+observeResizing(){const heroTitle=this.querySelector(".hero__title");if(!heroTitle)return;this.resizeObserver=new ResizeObserver(()=>{this.recalculateAnimation()});this.resizeObserver.observe(heroTitle)}
+recalculateAnimation(){const scrollingContainer=this.querySelector(".scrolling-container");if(scrollingContainer){this.setAnimationSpeed(scrollingContainer)}}},)}
