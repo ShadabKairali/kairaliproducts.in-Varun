@@ -1,0 +1,398 @@
+/**
+ * ============================================================================
+ * KAIRALI AYURVEDIC PRODUCTS — 2026 LUXURY REDESIGN
+ * Homepage Stylesheet (Phase 3 Foundation)
+ *
+ * Scope:
+ *   - Dedicated stylesheet for new modular homepage components (.kp-*)
+ *   - Strictly namespaced; ZERO broad global selectors.
+ *   - Editorial luxury Ayurvedic styling (Kairali authenticity + modern elegance)
+ * ============================================================================
+ */
+
+/* ==========================================================================
+   01. HERO COMPONENT (.kp-hero)
+   ========================================================================== */
+
+.kp-hero {
+  position: relative;
+  width: 100%;
+  background-color: var(--kp-color-warm-ivory, #FBF8F0);
+  color: var(--kp-color-warm-charcoal, #191816);
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--kp-color-border-light, rgba(25, 24, 22, 0.06));
+}
+
+/* Hero Inner Container */
+.kp-hero__container {
+  width: 100%;
+  max-width: var(--kp-container-xl, 1440px);
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3.5vw, 64px);
+  padding-block: clamp(36px, 4.5vw, 76px);
+  box-sizing: border-box;
+}
+
+/* Two-column Editorial Grid */
+.kp-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .kp-hero__grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(48px, 5vw, 84px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .kp-hero__grid {
+    grid-template-columns: 1.08fr 1fr;
+    gap: clamp(64px, 6vw, 96px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Content Column
+   -------------------------------------------------------------------------- */
+.kp-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  animation: kpHeroFadeUp var(--kp-duration-slow, 400ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1)) both;
+}
+
+.kp-hero__content--center {
+  align-items: center;
+  text-align: center;
+}
+
+/* Eyebrow / Category Lead */
+.kp-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--kp-font-label, 'Inter', sans-serif);
+  font-size: var(--kp-text-label, 0.6875rem);
+  font-weight: var(--kp-font-weight-semibold, 600);
+  line-height: var(--kp-line-height-snug, 1.25);
+  letter-spacing: var(--kp-letter-spacing-eyebrow, 0.18em);
+  text-transform: uppercase;
+  color: var(--kp-color-deep-forest, #0D2D20);
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+}
+
+.kp-hero__eyebrow-accent {
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--kp-color-muted-gold, #C9A45C);
+  flex-shrink: 0;
+}
+
+/* Primary Homepage Headline (H1) */
+.kp-hero__heading {
+  font-family: var(--kp-font-display, "Cormorant Garamond", serif);
+  font-size: clamp(2rem, 3.8vw + 0.6rem, 3.75rem);
+  font-weight: var(--kp-font-weight-regular, 400);
+  line-height: 1.15;
+  letter-spacing: var(--kp-letter-spacing-tight, -0.02em);
+  color: var(--kp-color-deep-forest, #0D2D20);
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  word-break: normal;
+  max-width: 100%;
+}
+
+.kp-hero__heading em {
+  font-style: italic;
+  font-family: inherit;
+}
+
+/* Supporting Editorial Copy */
+.kp-hero__lead {
+  font-family: var(--kp-font-body, "Inter", sans-serif);
+  font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1.0625rem);
+  font-weight: var(--kp-font-weight-regular, 400);
+  line-height: var(--kp-line-height-body, 1.62);
+  letter-spacing: var(--kp-letter-spacing-normal, 0);
+  color: var(--kp-color-text-muted, rgba(25, 24, 22, 0.72));
+  max-width: 540px;
+  margin: 0 0 clamp(24px, 3vw, 36px);
+  overflow-wrap: break-word;
+}
+
+/* Action Group / CTAs */
+.kp-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 28px);
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  .kp-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+/* Primary CTA Button — restrained luxury rectangle */
+.kp-hero__btn--primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--kp-btn-height, 48px);
+  padding: 0 clamp(20px, 2.5vw, 30px);
+  border-radius: 5px;
+  font-family: var(--kp-font-label, 'Inter', sans-serif);
+  font-size: var(--kp-btn-font-size, 0.6875rem);
+  font-weight: var(--kp-font-weight-medium, 500);
+  letter-spacing: var(--kp-btn-letter-spacing, 0.14em);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background-color: var(--kp-color-deep-forest, #0D2D20);
+  color: var(--kp-color-warm-ivory, #FBF8F0);
+  border: 1px solid transparent;
+  box-shadow: none;
+  transition: background-color var(--kp-duration-normal, 250ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1)),
+              color var(--kp-duration-normal, 250ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1));
+}
+
+.kp-hero__btn--primary:hover {
+  background-color: #164331;
+  color: #FFFFFF;
+}
+
+.kp-hero__btn--primary:focus-visible {
+  outline: none;
+  box-shadow: var(--kp-focus-ring, 0 0 0 2px #FBF8F0, 0 0 0 4px #0D2D20);
+}
+
+/* Secondary CTA — editorial text link with right arrow */
+.kp-hero__btn--secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--kp-btn-height, 48px);
+  padding: 0;
+  font-family: var(--kp-font-label, 'Inter', sans-serif);
+  font-size: var(--kp-btn-font-size, 0.6875rem);
+  font-weight: var(--kp-font-weight-medium, 500);
+  letter-spacing: var(--kp-btn-letter-spacing, 0.14em);
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background-color: transparent;
+  color: var(--kp-color-warm-charcoal, #191816);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(25, 24, 22, 0.28);
+  padding-bottom: 2px;
+  transition: color var(--kp-duration-normal, 250ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1)),
+              border-color var(--kp-duration-normal, 250ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1));
+}
+
+.kp-hero__btn--secondary::after {
+  content: '\2192'; /* → */
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: transform var(--kp-duration-normal, 250ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1));
+}
+
+.kp-hero__btn--secondary:hover {
+  color: var(--kp-color-deep-forest, #0D2D20);
+  border-bottom-color: var(--kp-color-deep-forest, #0D2D20);
+}
+
+.kp-hero__btn--secondary:hover::after {
+  transform: translateX(4px);
+}
+
+.kp-hero__btn--secondary:focus-visible {
+  outline: none;
+  box-shadow: var(--kp-focus-ring, 0 0 0 2px #FBF8F0, 0 0 0 4px #0D2D20);
+}
+
+@media (max-width: 520px) {
+  .kp-hero__btn--secondary {
+    align-self: flex-start;
+  }
+}
+
+/* Heritage Trust Micro-Strip — quiet, supporting role */
+.kp-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  padding-top: clamp(12px, 1.5vw, 18px);
+  border-top: 1px solid rgba(25, 24, 22, 0.07);
+  width: 100%;
+}
+
+.kp-hero__trust-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--kp-font-label, 'Inter', sans-serif);
+  font-size: 0.625rem;
+  font-weight: var(--kp-font-weight-regular, 400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(25, 24, 22, 0.42);
+  padding-right: clamp(12px, 1.8vw, 20px);
+}
+
+/* Dot separator between trust items using pseudo-element */
+.kp-hero__trust-item + .kp-hero__trust-item {
+  padding-left: clamp(12px, 1.8vw, 20px);
+  padding-right: clamp(12px, 1.8vw, 20px);
+  border-left: 1px solid rgba(25, 24, 22, 0.14);
+}
+
+/* Hide star SVG icons — replaced by separator treatment */
+.kp-hero__trust-icon {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Visual / Media Column
+   -------------------------------------------------------------------------- */
+.kp-hero__media {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  animation: kpHeroFadeIn var(--kp-duration-slow, 400ms) var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1)) both;
+}
+
+.kp-hero__figure {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--kp-color-sandstone, #F5F2EB);
+  box-shadow: 0 4px 18px rgba(13, 45, 32, 0.05);
+}
+
+.kp-hero__picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.kp-hero__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1672 / 941;
+  transition: transform 600ms var(--kp-ease-luxury, cubic-bezier(0.2, 0.0, 0.1, 1));
+}
+
+@media (hover: hover) {
+  .kp-hero__figure:hover .kp-hero__image {
+    transform: scale(1.015);
+  }
+}
+
+/* Mobile Layout & Composition (< 768px) */
+@media (max-width: 767px) {
+  .kp-hero__container {
+    padding-block: 28px 40px;
+  }
+
+  .kp-hero__grid {
+    gap: 24px;
+  }
+
+  .kp-hero__image {
+    aspect-ratio: 4 / 3;
+    max-height: 320px;
+    object-position: center 35%;
+  }
+
+  .kp-hero__trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .kp-hero__trust-item {
+    padding-right: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .kp-hero__trust-item + .kp-hero__trust-item {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+/* Subtle Entry Animations */
+@keyframes kpHeroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kpHeroFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Respect Accessibility Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .kp-hero__content,
+  .kp-hero__media {
+    animation: none !important;
+  }
+
+  .kp-hero__btn,
+  .kp-hero__image {
+    transition: none !important;
+    transform: none !important;
+  }
+}

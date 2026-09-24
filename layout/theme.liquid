@@ -193,6 +193,7 @@
 {{ 'custom.css'   | asset_url | stylesheet_tag: preload: true }}
 {{ 'main.css'     | asset_url | stylesheet_tag: preload: true }}
 {{ 'kairali-header.css' | asset_url | stylesheet_tag }}
+{{ 'kairali-home.css' | asset_url | stylesheet_tag }}
 {{ 'kairali-mobile-hardening.css' | asset_url | stylesheet_tag: preload: true }}
 
 {%- if request.page_type == 'collection' -%}

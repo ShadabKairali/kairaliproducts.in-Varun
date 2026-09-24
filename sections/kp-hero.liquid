@@ -1,0 +1,295 @@
+{{ 'kairali-home.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign bg_color = section.settings.background_color | default: '#FBF8F0'
+  assign focal_point = section.settings.image_focal_point | default: 'center'
+-%}
+
+<section
+  id="KpHero-{{ section.id }}"
+  class="kp-hero"
+  style="--kp-hero-bg: {{ bg_color }}; background-color: var(--kp-hero-bg);"
+  aria-labelledby="KpHeroHeading-{{ section.id }}"
+  role="region"
+>
+  <div class="kp-hero__container">
+    <div class="kp-hero__grid">
+      
+      <!-- Editorial Content Column -->
+      <div class="kp-hero__content{% if section.settings.content_alignment == 'center' %} kp-hero__content--center{% endif %}">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="kp-hero__eyebrow">
+            <span class="kp-hero__eyebrow-accent" aria-hidden="true"></span>
+            {{ section.settings.eyebrow | escape }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h1 id="KpHeroHeading-{{ section.id }}" class="kp-hero__heading">
+            {{ section.settings.heading | escape }}
+          </h1>
+        {%- endif -%}
+
+        {%- if section.settings.body != blank -%}
+          <p class="kp-hero__lead">
+            {{ section.settings.body | escape }}
+          </p>
+        {%- endif -%}
+
+        {%- if section.settings.primary_cta_label != blank or section.settings.secondary_cta_label != blank -%}
+          <div class="kp-hero__actions">
+            {%- if section.settings.primary_cta_label != blank and section.settings.primary_cta_url != blank -%}
+              <a
+                href="{{ section.settings.primary_cta_url }}"
+                class="kp-hero__btn kp-hero__btn--primary"
+                aria-label="{{ section.settings.primary_cta_label | escape }}"
+              >
+                {{ section.settings.primary_cta_label | escape }}
+              </a>
+            {%- endif -%}
+
+            {%- if section.settings.secondary_cta_label != blank and section.settings.secondary_cta_url != blank -%}
+              <a
+                href="{{ section.settings.secondary_cta_url }}"
+                class="kp-hero__btn kp-hero__btn--secondary"
+                aria-label="{{ section.settings.secondary_cta_label | escape }}"
+              >
+                {{ section.settings.secondary_cta_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_trust_strip -%}
+          <div class="kp-hero__trust" aria-label="Heritage & Trust">
+            {%- if section.settings.trust_item_1 != blank -%}
+              <span class="kp-hero__trust-item">
+                <svg class="kp-hero__trust-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0L9.8 5.5H15.6L11 8.9L12.7 14.4L8 11L3.3 14.4L5 8.9L0.4 5.5H6.2L8 0Z"/>
+                </svg>
+                {{ section.settings.trust_item_1 | escape }}
+              </span>
+            {%- endif -%}
+
+            {%- if section.settings.trust_item_2 != blank -%}
+              <span class="kp-hero__trust-item">
+                <svg class="kp-hero__trust-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0L9.8 5.5H15.6L11 8.9L12.7 14.4L8 11L3.3 14.4L5 8.9L0.4 5.5H6.2L8 0Z"/>
+                </svg>
+                {{ section.settings.trust_item_2 | escape }}
+              </span>
+            {%- endif -%}
+
+            {%- if section.settings.trust_item_3 != blank -%}
+              <span class="kp-hero__trust-item">
+                <svg class="kp-hero__trust-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M8 0L9.8 5.5H15.6L11 8.9L12.7 14.4L8 11L3.3 14.4L5 8.9L0.4 5.5H6.2L8 0Z"/>
+                </svg>
+                {{ section.settings.trust_item_3 | escape }}
+              </span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Media Visual Column -->
+      <div class="kp-hero__media">
+        <figure class="kp-hero__figure">
+          <picture class="kp-hero__picture">
+            {%- if section.settings.mobile_image != blank -%}
+              <source
+                media="(max-width: 767px)"
+                srcset="{{ section.settings.mobile_image | image_url: width: 640 }} 640w, {{ section.settings.mobile_image | image_url: width: 750 }} 750w, {{ section.settings.mobile_image | image_url: width: 1122 }} 1122w"
+                sizes="(max-width: 767px) 100vw, 50vw"
+                width="{{ section.settings.mobile_image.width }}"
+                height="{{ section.settings.mobile_image.height }}"
+              >
+            {%- else -%}
+              <source
+                media="(max-width: 767px)"
+                srcset="{{ 'kairali-home-hero-premium-mobile-v1.webp' | asset_url }}"
+                width="1122"
+                height="1402"
+              >
+            {%- endif -%}
+
+            {%- if section.settings.desktop_image != blank -%}
+              <img
+                src="{{ section.settings.desktop_image | image_url: width: 1200 }}"
+                srcset="{{ section.settings.desktop_image | image_url: width: 800 }} 800w, {{ section.settings.desktop_image | image_url: width: 1200 }} 1200w, {{ section.settings.desktop_image | image_url: width: 1672 }} 1672w"
+                sizes="(max-width: 1023px) 100vw, (max-width: 1440px) 50vw, 720px"
+                alt="{{ section.settings.image_alt | default: 'Kairali Ayurvedic wellness rituals and pure herbal formulations' | escape }}"
+                width="{{ section.settings.desktop_image.width }}"
+                height="{{ section.settings.desktop_image.height }}"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                class="kp-hero__image"
+                style="object-position: {{ focal_point }};"
+              >
+            {%- else -%}
+              <img
+                src="{{ 'kairali-home-hero-premium-desktop-v1.webp' | asset_url }}"
+                alt="{{ section.settings.image_alt | default: 'Kairali authentic Ayurvedic wellness rituals and pure herbal formulations' | escape }}"
+                width="1672"
+                height="941"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                class="kp-hero__image"
+                style="object-position: {{ focal_point }};"
+              >
+            {%- endif -%}
+          </picture>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali Premium Hero",
+  "tag": "section",
+  "class": "kp-section-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Editorial Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "default": "Ayurveda, Rooted in Tradition"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline (H1)",
+      "default": "Ayurveda for Everyday Rituals."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Supporting Copy",
+      "default": "Time-tested Ayurvedic formulations crafted with pure botanicals and over a century of traditional wisdom, bringing authentic holistic wellness into your daily life."
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Call to Actions"
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_label",
+      "label": "Primary CTA Label",
+      "default": "Explore Ayurveda"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_url",
+      "label": "Primary CTA Link",
+      "default": "/collections/traditional-ayurvedic-medicine"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_label",
+      "label": "Secondary CTA Label",
+      "default": "Shop Best Sellers"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_url",
+      "label": "Secondary CTA Link",
+      "default": "/collections/featured-products"
+    },
+    {
+      "type": "header",
+      "content": "Hero Imagery"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image (Aspect ~16:9)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image (Aspect ~4:5)"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Kairali authentic Ayurvedic wellness rituals and pure herbal formulations"
+    },
+    {
+      "type": "select",
+      "id": "image_focal_point",
+      "label": "Image Focal Point",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "top", "label": "Top" },
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Trust & Heritage Micro-Strip"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_strip",
+      "label": "Show Heritage Trust Indicators",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "trust_item_1",
+      "label": "Trust Item 1",
+      "default": "Since 1908 Kerala Lineage"
+    },
+    {
+      "type": "text",
+      "id": "trust_item_2",
+      "label": "Trust Item 2",
+      "default": "Classical Ayurvedic Formulations"
+    },
+    {
+      "type": "text",
+      "id": "trust_item_3",
+      "label": "Trust Item 3",
+      "default": "Pure Botanicals & Herbs"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FBF8F0"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kairali Premium Hero"
+    }
+  ]
+}
+{% endschema %}
