@@ -1,0 +1,54 @@
+<a href="{{ url }}" class="suggest-item">
+  {%- if product.featured_media != blank -%}
+    {%- assign suggest_image = featured_media.preview_image | default: featured_media -%}
+    <figure class="wt-cart__item__thumb suggest-item__thumb">
+      <img
+        src="{{ featured_media | image_url: width: 150 }}"
+        alt=""
+        loading="lazy"
+        width="150"
+        height="{{ 150 | divided_by: suggest_image.aspect_ratio | ceil }}"
+      >
+    </figure>
+  {%- endif -%}
+  <div class="wt-cart__item__body suggest-item__body">
+    <div class="wt-cart__item__data">
+      {%- if settings.show_product_vendor -%}
+        <div class="wt-cart__item__vendor">{{ product.vendor }}</div>
+      {% endif %}
+      <h3 class="wt-cart__item__name">{{ name }}</h3>
+      <h3 class="wt-cart__item__name2">{{ product.metafields.custom.product_name }}</h3>
+
+      {%- if settings.show_product_price -%}
+        <div class="wt-cart__item__price">
+          {% render 'price', product: product, use_variant: true, show_badges: false %}
+        </div>
+      {% endif %}
+
+      {% unless product.available %}
+        <span class="suggest-item__availability">{{ 'products.product.sold_out' | t }}</span>
+      {% endunless %}
+
+      {% if rating %}
+        {% assign rating_percent = rating.rating | times: 100.0 | divided_by: 5.0 %}
+        {% render 'rating-stars', percent: rating_percent %}
+      {% endif %}
+    </div>
+  </div>
+</a>
+
+
+<style>
+  .wt-cart__item__name2 {
+    font-family: jost, sans-serif;
+    color: #8e9e34; 
+  }
+
+  .suggest-item__availability {
+    display: inline-block;
+    margin-top: 0.4rem;
+    color: rgb(var(--color-text));
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  </style>

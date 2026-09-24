@@ -1,0 +1,319 @@
+{%- comment -%}
+  IN-037 B03: exact India static-page content and metadata layer.
+  Product eligibility is fail-closed: only the two authenticated ACTIVE products
+  published to the India Online Store are referenced. Draft, Admin-only and
+  unpublished products are not named, linked, recommended, counted or used.
+  The six condition guides contain no product recommendation, product link, dose,
+  diagnosis, cure, treatment or guaranteed outcome.
+{%- endcomment -%}
+
+{%- case mode -%}
+  {%- when 'seo_title' -%}
+    {%- case route_key -%}
+      {%- when 'migraine' -%}Migraine Symptoms & When to Get Help | Kairali India
+      {%- when 'postpregnancy' -%}Postnatal Recovery & Warning Signs | Kairali India
+      {%- when 'premature-ejaculation' -%}Premature Ejaculation Guide & Next Steps | Kairali India
+      {%- when 'rheumatoid-arthritis' -%}Rheumatoid Arthritis Symptoms & Care | Kairali India
+      {%- when 'sinusitis' -%}Sinusitis Symptoms & When to Seek Care | Kairali India
+      {%- when 'ayurvedic-medicine-for-diabetes' -%}Diabetes Symptoms, Testing & Care | Kairali India
+      {%- when 'kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men' -%}Kaircin Facial Oil with Saffron & Lotus | Kairali India
+      {%- when 'kairtis-joints-pain-relief-oil-best-ayurvedic-oil-for-knees-pain-and-joints-pain' -%}Kairtis Ayurvedic Massage Oil | Kairali India
+      {%- when 'our-happy-customers-reviews' -%}Customer Reviews | Kairali India
+    {%- endcase -%}
+
+  {%- when 'seo_description' -%}
+    {%- case route_key -%}
+      {%- when 'migraine' -%}Understand common migraine symptoms and triggers, how a headache diary helps, and which sudden or severe signs need urgent medical care in India.
+      {%- when 'postpregnancy' -%}Learn about postnatal recovery, follow-up care and emotional wellbeing, plus the heavy-bleeding warning signs that need urgent medical attention.
+      {%- when 'premature-ejaculation' -%}Premature ejaculation is common and often occasional. Learn what it means, which physical or emotional factors matter, and when to speak to a doctor.
+      {%- when 'rheumatoid-arthritis' -%}Rheumatoid arthritis is a long-term autoimmune condition. Learn its joint symptoms, why early diagnosis matters, and which signs need prompt care.
+      {%- when 'sinusitis' -%}Sinusitis is swelling of the sinuses, often after a cold. Learn the usual symptoms, sensible self-care limits, and when to arrange a medical check.
+      {%- when 'ayurvedic-medicine-for-diabetes' -%}Diabetes is a long-term condition that needs testing and clinician-led care. Learn common symptoms, why regular checks matter and what to ask a doctor.
+      {%- when 'kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men' -%}Kaircin is an Ayurvedic facial oil with saffron and lotus for a nightly routine. See the product page for pack options, price and current availability.
+      {%- when 'kairtis-joints-pain-relief-oil-best-ayurvedic-oil-for-knees-pain-and-joints-pain' -%}Kairtis is a traditional herbal massage oil for external use with its potli. See the product page for pack options, price and current availability.
+      {%- when 'our-happy-customers-reviews' -%}Browse customer ratings and review text displayed dynamically by the reviews app for Kairali India products, then open a product page for current details.
+    {%- endcase -%}
+
+  {%- when 'display_title' -%}
+    {%- case page.handle -%}
+      {%- when 'kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men' -%}Kaircin Ayurvedic Facial Oil with Saffron and Lotus
+      {%- when 'our-happy-customers-reviews' -%}Customer Reviews
+    {%- endcase -%}
+
+  {%- when 'body' -%}
+    {%- case page.handle -%}
+      {%- when 'kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men' -%}
+        {%- assign in037_b03_kaircin = all_products['kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin'] -%}
+        <div class="in037-b03 in037-b03--product in037-b03--kaircin">
+          {%- if in037_b03_kaircin != blank -%}
+            <div class="in037-b03-product__grid">
+              <div class="in037-b03-product__media">
+                {%- if in037_b03_kaircin.featured_image != blank -%}
+                  {{
+                    in037_b03_kaircin.featured_image
+                    | image_url: width: 900
+                    | image_tag:
+                      widths: '360, 540, 720, 900',
+                      sizes: '(max-width: 749px) 100vw, 42vw',
+                      loading: 'eager',
+                      alt: 'Kaircin Ayurvedic Facial Oil pack'
+                  }}
+                {%- else -%}
+                  <img
+                    src="{{ 'kairali-hero-product-india-kaircin-10ml.webp' | asset_url }}"
+                    alt="Kaircin Ayurvedic Facial Oil pack"
+                    width="1000"
+                    height="1000"
+                    loading="eager"
+                  >
+                {%- endif -%}
+              </div>
+              <div class="in037-b03-product__intro">
+                <p class="in037-b03__lead">Kaircin is an Ayurvedic facial oil formulated with saffron, lotus and traditionally used botanical ingredients. It is suitable for a nightly skincare routine.</p>
+                <p>It helps nourish and moisturise while supporting a radiant, smooth and healthy-looking appearance. Regular use helps improve softness and enhance natural glow.</p>
+                <p class="in037-b03__actions"><a class="in037-b03__cta" href="{{ in037_b03_kaircin.url }}">View the Kaircin product page</a><a href="/pages/product-faqs">Product FAQs</a></p>
+                <p class="in037-b03__note">The product page shows current pack choices, price and availability.</p>
+              </div>
+            </div>
+
+            <h2>A simple nightly skincare step</h2>
+            <p>Add Kaircin to your nightly routine only as directed on the physical label supplied with your pack. Use that label as the current guide for the exact product and pack you receive.</p>
+
+            <h2>What Kaircin is designed to support</h2>
+            <p>Kaircin is designed to nourish and moisturise facial skin and to support a smooth, radiant and healthy-looking appearance. It is a cosmetic facial oil, not a medical treatment.</p>
+
+            <h2>Questions before you choose</h2>
+            <p>For a label, pack-size or product question, contact Kairali India before ordering. For a diagnosed skin condition or a medical concern, speak with a qualified healthcare professional.</p>
+            <p class="in037-b03__actions"><a class="in037-b03__cta" href="{{ in037_b03_kaircin.url }}">View the Kaircin product page</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          {%- else -%}
+            <p class="in037-b03__lead">The Kaircin product page is not currently available through the India Online Store.</p>
+            <p class="in037-b03__actions"><a href="/pages/contact-us">Contact Kairali India</a></p>
+          {%- endif -%}
+        </div>
+
+      {%- when 'our-happy-customers-reviews' -%}
+        <div class="in037-b03 in037-b03--reviews">
+          <p class="in037-b03__lead">Customer ratings and review text are displayed below by the live Judge.me reviews app.</p>
+          <p>The app updates its review content dynamically. Reviews describe individual customer experiences; they are not guarantees or medical advice. Open the relevant product page for current product details, price and availability.</p>
+          <p>Need help with a product or an order? <a href="/pages/contact-us">Contact Kairali India</a>.</p>
+        </div>
+    {%- endcase -%}
+
+  {%- when 'condition_tab_1_title' -%}
+    {%- case page.handle -%}
+      {%- when 'migraine' -%}Migraine
+      {%- when 'postpregnancy' -%}After childbirth
+      {%- when 'premature-ejaculation' -%}Premature ejaculation
+      {%- when 'rheumatoid-arthritis' -%}Rheumatoid arthritis
+      {%- when 'sinusitis' -%}Sinusitis
+      {%- when 'ayurvedic-medicine-for-diabetes' -%}Diabetes
+    {%- endcase -%}
+
+  {%- when 'condition_tab_1' -%}
+    {%- case page.handle -%}
+      {%- when 'migraine' -%}
+        <article class="in037-b03 in037-b03--guide">
+          <h1>Migraine: symptoms, triggers and when to get help</h1>
+          <p class="in037-b03__lead">Migraine is a common health condition. Attacks can differ from person to person, so recognising your own pattern can help when you speak with a doctor.</p>
+
+          <h2>Common features</h2>
+          <ul>
+            <li>A throbbing headache, often on one side of the head.</li>
+            <li>Feeling sick or being sick.</li>
+            <li>Sensitivity to light or sound.</li>
+            <li>For some people, warning signs such as visual changes before the headache. This is called an aura.</li>
+          </ul>
+
+          <h2>Keep a simple headache diary</h2>
+          <p>Note when each attack starts, how long it lasts, the symptoms you notice and anything that may be part of your pattern, such as sleep, meals or stress. Take the diary to your appointment.</p>
+
+          <h2>Arrange a medical appointment</h2>
+          <p>Speak with a doctor if attacks are frequent, severe, getting worse, changing from your usual pattern or affecting daily life.</p>
+
+          <h2 class="in037-b03__urgent-title">Get emergency help immediately</h2>
+          <div class="in037-b03__urgent">
+            <p>Use local emergency services or go to the nearest hospital for a sudden, extremely painful headache, or a headache with problems speaking, remembering or seeing; confusion or drowsiness; a seizure; weakness on one side; a very high temperature with meningitis symptoms; or after a recent head injury.</p>
+          </div>
+
+          <p class="in037-b03__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          <p class="in037-b03__source">Source: <a href="https://www.nhs.uk/conditions/Migraine/" rel="noopener noreferrer" target="_blank">NHS, Migraine</a>. General information only; use local Indian healthcare and emergency services.</p>
+        </article>
+
+      {%- when 'postpregnancy' -%}
+        <article class="in037-b03 in037-b03--guide">
+          <h1>After childbirth: recovery, check-ups and warning signs</h1>
+          <p class="in037-b03__lead">The weeks after birth are a recovery period for both physical and emotional health. Regular postnatal care during the first six weeks supports you and your baby.</p>
+
+          <h2>What postnatal care covers</h2>
+          <ul>
+            <li>Follow-up contact with a qualified midwife, nurse or doctor.</li>
+            <li>Checks for you and your baby.</li>
+            <li>Support with feeding and physical recovery.</li>
+            <li>Attention to emotional wellbeing.</li>
+          </ul>
+          <p>If follow-up has not been arranged, ask your local health service when and where your postnatal check will happen.</p>
+
+          <h2>Recovery is individual</h2>
+          <p>Bleeding, soreness and tiredness can occur in the early weeks, but recovery does not follow one timetable. Raise any concern with your midwife, nurse or doctor. If low mood, anxiety or distress continues or gets worse, tell a health professional.</p>
+
+          <h2 class="in037-b03__urgent-title">Get urgent medical help immediately</h2>
+          <div class="in037-b03__urgent">
+            <p>Go to the nearest hospital or use local emergency services if bleeding becomes sudden or very heavy, especially with faintness or a fast heartbeat, or if you believe something is seriously wrong.</p>
+          </div>
+
+          <p class="in037-b03__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          <p class="in037-b03__source">Sources: <a href="https://www.who.int/activities/raising-the-importance-of-postnatal-care" rel="noopener noreferrer" target="_blank">WHO, Postnatal care</a>; <a href="https://www.who.int/tools/your-life-your-health/life-phase/pregnancy--birth-and-after-childbirth/getting-the-health-services-you-need-after-childbirth" rel="noopener noreferrer" target="_blank">WHO, Health services after childbirth</a>; <a href="https://www.nhs.uk/pregnancy/labour-and-birth/your-body/" rel="noopener noreferrer" target="_blank">NHS, Your body after the birth</a>. General information only; use local Indian healthcare and emergency services.</p>
+        </article>
+
+      {%- when 'premature-ejaculation' -%}
+        <article class="in037-b03 in037-b03--guide">
+          <h1>Premature ejaculation: what it means and when to seek advice</h1>
+          <p class="in037-b03__lead">Premature ejaculation is common. An occasional episode may not need care, but persistent or distressing concerns deserve a confidential conversation with a doctor.</p>
+
+          <h2>What the term means</h2>
+          <p>Premature ejaculation means ejaculating sooner than you or your partner would like. Both physical and psychological factors can contribute.</p>
+
+          <h2>When to speak with a doctor</h2>
+          <ul>
+            <li>The concern keeps happening rather than being occasional.</li>
+            <li>It causes distress or affects your wellbeing.</li>
+            <li>It affects your relationship.</li>
+          </ul>
+          <p>A qualified clinician can discuss possible contributing factors and appropriate next steps. A medical consultation is confidential.</p>
+
+          <p class="in037-b03__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          <p class="in037-b03__source">Source: <a href="https://www.nhs.uk/conditions/ejaculation-problems/" rel="noopener noreferrer" target="_blank">NHS, Ejaculation problems</a>. General information only; use local Indian healthcare services.</p>
+        </article>
+
+      {%- when 'rheumatoid-arthritis' -%}
+        <article class="in037-b03 in037-b03--guide">
+          <h1>Rheumatoid arthritis: symptoms and why early assessment matters</h1>
+          <p class="in037-b03__lead">Rheumatoid arthritis is a long-term autoimmune condition that can cause joint pain, swelling and stiffness.</p>
+
+          <h2>Common symptoms</h2>
+          <ul>
+            <li>Joint pain.</li>
+            <li>Swelling in and around the joints.</li>
+            <li>Stiffness, often more noticeable after rest.</li>
+            <li>Symptoms that can vary over time.</li>
+          </ul>
+          <p>These symptoms can overlap with other joint conditions. Arrange a medical assessment for persistent joint pain, swelling or stiffness rather than trying to diagnose the cause yourself.</p>
+
+          <h2>Why early assessment matters</h2>
+          <p>Early diagnosis helps a clinician plan appropriate care. Before an appointment, note which joints are affected, when symptoms are worst and how they affect daily tasks.</p>
+
+          <h2 class="in037-b03__urgent-title">Get prompt medical care</h2>
+          <div class="in037-b03__urgent">
+            <p>Contact a doctor promptly if a joint becomes suddenly severe, hot or swollen, or if you feel generally unwell with the joint symptoms.</p>
+          </div>
+
+          <p class="in037-b03__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          <p class="in037-b03__source">Sources: <a href="https://www.nhs.uk/conditions/rheumatoid-arthritis/" rel="noopener noreferrer" target="_blank">NHS, Rheumatoid arthritis</a>; <a href="https://www.nhs.uk/conditions/arthritis/" rel="noopener noreferrer" target="_blank">NHS, Arthritis</a>. General information only; use local Indian healthcare services.</p>
+        </article>
+
+      {%- when 'sinusitis' -%}
+        <article class="in037-b03 in037-b03--guide">
+          <h1>Sinusitis: symptoms, self-care limits and when to get help</h1>
+          <p class="in037-b03__lead">Sinusitis is swelling of the sinuses. It commonly follows a cold or flu and often improves without antibiotics.</p>
+
+          <h2>Common symptoms</h2>
+          <ul>
+            <li>Pain, pressure or tenderness around the cheeks, eyes or forehead.</li>
+            <li>A blocked or runny nose.</li>
+            <li>A reduced sense of smell.</li>
+            <li>Headache, a high temperature or a cough.</li>
+          </ul>
+
+          <h2>While symptoms are improving</h2>
+          <p>Rest, drink enough fluids and avoid smoke. A pharmacist or doctor can advise whether a medicine is suitable for you.</p>
+
+          <h2>Arrange a medical assessment</h2>
+          <p>Speak with a doctor if symptoms are severe, persist without improving, keep returning or occur on one side only. Seek prompt care rather than waiting for a routine appointment if you are very unwell.</p>
+
+          <p class="in037-b03__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          <p class="in037-b03__source">Source: <a href="https://www.nhs.uk/conditions/sinusitis-sinus-infection/" rel="noopener noreferrer" target="_blank">NHS, Sinusitis</a>. General information only; use local Indian healthcare services.</p>
+        </article>
+
+      {%- when 'ayurvedic-medicine-for-diabetes' -%}
+        <article class="in037-b03 in037-b03--guide">
+          <h1>Diabetes: symptoms, testing and ongoing care</h1>
+          <p class="in037-b03__lead">Diabetes is a chronic disease that needs proper diagnosis, regular testing and ongoing care from a qualified clinician.</p>
+
+          <h2>What happens in diabetes</h2>
+          <p>The body does not produce enough insulin or cannot use insulin effectively, so blood glucose stays higher than it should.</p>
+
+          <h2>Symptoms may be mild</h2>
+          <p>Common symptoms include increased thirst, passing urine more often, tiredness, unexplained weight loss and blurred vision. Type 2 diabetes symptoms can be mild, and some people have no clear symptoms when diagnosed.</p>
+
+          <h2>Testing and regular care matter</h2>
+          <p>Diabetes is diagnosed by measuring blood glucose, not by an online checklist. Clinician-led treatment and regular checks help reduce the risk of complications affecting the heart, blood vessels, eyes, kidneys, nerves and feet.</p>
+
+          <h2 class="in037-b03__urgent-title">Keep prescribed care in place</h2>
+          <div class="in037-b03__urgent">
+            <p>Do not stop, reduce or replace insulin or any prescribed diabetes medicine without speaking with the clinician who prescribed it. If you become acutely unwell, use local emergency services or go to the nearest hospital.</p>
+          </div>
+
+          <p class="in037-b03__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+          <p class="in037-b03__source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/diabetes" rel="noopener noreferrer" target="_blank">World Health Organization, Diabetes</a>. General information only; use local Indian healthcare and emergency services.</p>
+        </article>
+    {%- endcase -%}
+
+  {%- when 'condition_tab_2_title' -%}Next steps
+
+  {%- when 'condition_tab_2' -%}
+    <div class="in037-b03 in037-b03--guide-note">
+      <h2>Use this guide as a starting point</h2>
+      <p>This page gives general information and responsible next steps. It cannot diagnose a condition or replace care from a qualified clinician. No product is recommended on this guide.</p>
+      <ul>
+        <li>For a non-urgent health conversation, read the <a href="/pages/online-consultation">online consultation information</a>.</li>
+        <li>For a general site or service question, <a href="/pages/contact-us">contact Kairali India</a>.</li>
+        <li>For urgent or severe symptoms, use local emergency services or go to the nearest hospital.</li>
+      </ul>
+    </div>
+
+  {%- when 'kairtis_body' -%}
+    {%- assign in037_b03_kairtis = all_products['kairtis-ayurvedic-massage-oil-joint-knee-comfort'] -%}
+    <div class="in037-b03 in037-b03--product in037-b03--kairtis">
+      {%- if in037_b03_kairtis != blank -%}
+        <h1>Kairtis Ayurvedic Massage Oil</h1>
+        <div class="in037-b03-product__grid">
+          <div class="in037-b03-product__media">
+            {%- if in037_b03_kairtis.featured_image != blank -%}
+              {{
+                in037_b03_kairtis.featured_image
+                | image_url: width: 900
+                | image_tag:
+                  widths: '360, 540, 720, 900',
+                  sizes: '(max-width: 749px) 100vw, 42vw',
+                  loading: 'eager',
+                  alt: 'Kairtis Ayurvedic Massage Oil pack'
+              }}
+            {%- endif -%}
+          </div>
+          <div class="in037-b03-product__intro">
+            <p class="in037-b03__lead">Kairtis is a traditional herbal massage formulation designed for external use and used with its Ayurvedic massage potli.</p>
+            <p>It supports joint and knee comfort, muscle relaxation, mobility and ease of movement as part of a regular wellness routine.</p>
+            <p class="in037-b03__actions"><a class="in037-b03__cta" href="{{ in037_b03_kairtis.url }}">View product and current availability</a><a href="/pages/product-faqs">Product FAQs</a></p>
+            <p class="in037-b03__note">The product page shows current pack choices, price and availability.</p>
+          </div>
+        </div>
+
+        <h2>Use Kairtis as directed on the pack</h2>
+        <p>Kairtis is an external-use massage oil intended for use with its Ayurvedic massage potli. Follow the directions on the physical label supplied with the exact pack you receive.</p>
+
+        <h2>Support for a regular wellness routine</h2>
+        <p>The current product description presents Kairtis as support for joint and knee comfort, muscle relaxation, mobility and ease of movement. It is not a substitute for diagnosis or prescribed care.</p>
+
+        <h2>When to seek medical advice</h2>
+        <p>Persistent or severe joint pain, swelling or stiffness needs medical assessment. Do not stop or change prescribed treatment without speaking with the clinician responsible for your care.</p>
+
+        <h2>Questions before you choose</h2>
+        <p>For a label, pack-size or product question, contact Kairali India before ordering.</p>
+        <p class="in037-b03__actions"><a class="in037-b03__cta" href="{{ in037_b03_kairtis.url }}">View product and current availability</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+      {%- else -%}
+        <h1>Kairtis Ayurvedic Massage Oil</h1>
+        <p class="in037-b03__lead">The Kairtis product page is not currently available through the India Online Store.</p>
+        <p class="in037-b03__actions"><a href="/pages/contact-us">Contact Kairali India</a></p>
+      {%- endif -%}
+    </div>
+{%- endcase -%}

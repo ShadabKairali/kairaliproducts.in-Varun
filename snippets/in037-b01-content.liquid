@@ -1,0 +1,40 @@
+{%- comment -%}
+  IN-037 B01: exact India static-page content and metadata layer.
+  Product scope is locked to authenticated ACTIVE + India Online Store items.
+{%- endcomment -%}
+{%- case mode -%}
+  {%- when 'seo_description' -%}
+    {%- case page.handle -%}
+      {%- when 'offers' -%}Open the Kairali India offers page to check current product prices and availability before ordering.
+      {%- when 'contact-us' -%}Use the Kairali India contact page for a product or order question, or find the published office phone numbers and support email.
+      {%- when 'faq' -%}Find Kairali India links for product information, shipping, returns, payment, business enquiries and contact.
+      {%- when 'video-gallery' -%}Browse the Kairali India video gallery for company, facility and product videos published on this page.
+      {%- when 'sitemap' -%}Browse Kairali India product categories, help and support pages, company information and partnership pages.
+      {%- when 'enqurie-now' -%}Send Kairali India a question about a product, an existing order or a business enquiry through this enquiry page.
+    {%- endcase -%}
+  {%- when 'faq_body' -%}
+    <section class="page-content page-content--faq">
+      <style>
+        .page-content--faq{--green:#173d2a;--cream:#f6f2e9;max-width:900px;margin:0 auto;padding:clamp(20px,4vw,52px);color:#29362f}.page-content--faq>header{max-width:760px;margin:0 auto 48px;text-align:center}.page-content--faq>header p:first-child{font-family:Georgia,serif;font-size:clamp(23px,3.1vw,35px);line-height:1.28;color:var(--green)}.page-content--faq h2{font-family:Georgia,serif;color:var(--green);font-size:clamp(25px,3vw,34px);margin:50px 0 18px}.page-content--faq details{border-top:1px solid #d7ddd7}.page-content--faq details:last-of-type{border-bottom:1px solid #d7ddd7}.page-content--faq summary{position:relative;cursor:pointer;list-style:none;padding:20px 48px 20px 0;font-weight:700;line-height:1.35;color:#213b2c}.page-content--faq summary::-webkit-details-marker{display:none}.page-content--faq summary:after{content:'+';position:absolute;right:4px;top:14px;font-size:28px;font-weight:400}.page-content--faq details[open] summary:after{content:'−'}.page-content--faq details p{margin:0;padding:0 44px 22px 0;font-size:16px;line-height:1.7}.page-content--faq a{color:var(--green);text-underline-offset:3px}.page-content--faq .faq-help{padding:22px;background:var(--cream);border-radius:10px;font-size:16px;line-height:1.7}@media(max-width:600px){.page-content--faq{padding:24px 16px}.page-content--faq>header{text-align:left;margin-bottom:34px}.page-content--faq h2{margin-top:40px}.page-content--faq summary{padding:18px 40px 18px 0}.page-content--faq details p{padding-right:4px}}
+      </style>
+      <header>
+        <p>Use these links to find the information currently published on Kairali India.</p>
+        <p><a href="{{ routes.all_products_collection_url }}">Browse products</a> or <a href="/pages/contact-us">contact Kairali</a> if you need help finding the right page.</p>
+      </header>
+
+      <h2>Products and labels</h2>
+      <details><summary>Where can I see ingredients, directions and pack information?</summary><p>Open the page for the exact product and variant. Read the product page and the label supplied with the product before use.</p></details>
+      <details><summary>Where can I check price and availability?</summary><p>Open the product page and select the intended variant to view the price and availability shown by the India store. Review the selected variant again before checkout.</p></details>
+
+      <h2>Orders and published policies</h2>
+      <details><summary>Where can I read the delivery information?</summary><p>Read the <a href="/pages/shipping-and-return">Shipping and Delivery</a> page before ordering.</p></details>
+      <details><summary>Where can I read the return and refund terms?</summary><p>Read the <a href="/pages/return-refund-policy">Return, Refund and Cancellation Policy</a>.</p></details>
+      <details><summary>Where can I check payment information?</summary><p>Read the <a href="/pages/payment-policy">Payment Policy</a> and review the options presented at checkout.</p></details>
+      <details><summary>How do I ask about an existing order?</summary><p>Use the <a href="/pages/contact-us">Contact page</a>. Include the order number and the email address or mobile number used for the order.</p></details>
+
+      <h2>Business enquiries</h2>
+      <details><summary>Where can I send a business enquiry?</summary><p>Use the <a href="/pages/enqurie-now">Enquire Now</a> page and include your organisation, country and what you need.</p></details>
+
+      <p class="faq-help">Still looking for a page? Visit the <a href="/pages/sitemap">website sitemap</a> or <a href="/pages/contact-us">contact Kairali</a>.</p>
+    </section>
+{%- endcase -%}

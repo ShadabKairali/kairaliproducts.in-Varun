@@ -1,0 +1,207 @@
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  assign total_active_values = 0
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+    
+  if search_page
+      assign results_url = results_url | append: '&type=product'
+  endif
+-%}
+
+{%- assign total_active_values = 0 -%}
+{%- for filter in results.filters -%}
+  {% if filter.type == 'price_range' %}
+    {%- assign total_active_values = total_active_values | plus: 1 %}
+  {% endif %}
+  {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+{%- endfor -%}
+
+{% assign options_as_color_swatches = settings.color_swatch_names
+  | downcase
+  | newline_to_br
+  | strip_newlines
+  | split: '<br />'
+  | uniq 
+%}
+
+<aside
+  id="wt-filters-drawer"
+  class="collection__aside collection__filter wt-filter{% if section.settings.filter_position == "drawer" %} wt-filter--drawer{% endif %}
+  {% if filters_length < 1 or enable_filtering != true %} wt-filter--hidden {% endif %}
+  "
+  data-toggle-tabindex=".wt-filter__close, .wt-cart__cta, .wt-filter__clear-all, .filter__remove, .f-current__list__cancel, .quick-links a"
+>
+  <div class="wt-filter__header">
+    <div>{{ 'products.facets.filter_by_label' | t }}</div>
+    <button class="wt-filter__close" aria-label="{{ 'aria-label.facets-close' | t }}" tabindex="-1">
+      {% render 'icons', id: 'close' %}
+    </button>
+  </div>
+  <div class="wt-filter__body facets-container">
+    <facet-filters-form class="facets" data-position="{{ section.settings.filter_position }}">
+
+<div class="collection__parent-title" >Quick Links </div>
+<div class="collection__filter-group">          
+            {% assign current_collection_title = collection.title | downcase %}
+        {% if current_collection_title == 'body care' %}
+          {% assign menu_handle = 'main-menu' %}
+
+
+{% elsif current_collection_title == 'body care' %}	{% assign menu_handle = 'body-care-menu' %}
+{% elsif current_collection_title == 'men health' %}	{% assign menu_handle = 'men-health-menu' %}
+{% elsif current_collection_title == 'women health' %}	{% assign menu_handle = 'women-health-menu' %}
+{% elsif current_collection_title == 'fitness and wellness' %}	{% assign menu_handle = 'fitness-and-wellness-menu' %}
+{% elsif current_collection_title == 'general health' %}	{% assign menu_handle = 'general-health-menu' %}
+{% elsif current_collection_title == 'diseases' %}	{% assign menu_handle = 'diseases-menu' %}
+{% elsif current_collection_title == 'ayurvedic & herbal products wholesale & bulk supplier' %}	{% assign menu_handle = 'ayurvedic-&-herbal-products-wholesale-&-bulk-supplier-menu' %}
+{% elsif current_collection_title == 'ayurvedic proprietary organics' %}	{% assign menu_handle = 'ayurvedic-proprietary-organics-menu' %}
+{% elsif current_collection_title == 'ayurvedic herbal tea' %}	{% assign menu_handle = 'ayurvedic-herbal-tea-menu' %}
+{% elsif current_collection_title == 'essential oils' %}	{% assign menu_handle = 'essential-oils-menu' %}
+{% elsif current_collection_title == 'kair by kairali' %}	{% assign menu_handle = 'kair-by-kairali-menu' %}
+{% elsif current_collection_title == 'ayurvedic proprietary medicines' %}	{% assign menu_handle = 'ayurvedic-proprietary-medicines-menu' %}
+{% elsif current_collection_title == 'traditional ayurvedic range' %}	{% assign menu_handle = 'traditional-ayurvedic-range-menu' %}
+{% elsif current_collection_title == 'single herbs' %}	{% assign menu_handle = 'single-herbs-menu' %}
+{% elsif current_collection_title == 'treatments for ailments' %}	{% assign menu_handle = 'treatments-for-ailments-menu' %}
+{% elsif current_collection_title == 'gift products' %}	{% assign menu_handle = 'gift-products-menu' %}
+{% elsif current_collection_title == 'ayurvedic pain relief oils' %}	{% assign menu_handle = 'ayurvedic-pain-relief-oils-menu' %}
+{% elsif current_collection_title == 'best selling products' %}	{% assign menu_handle = 'best-selling-products-menu' %}
+{% elsif current_collection_title == 'skin care' %}	{% assign menu_handle = 'skin-care-menu' %}
+{% elsif current_collection_title == 'hair care' %}	{% assign menu_handle = 'hair-care-menu' %}
+{% elsif current_collection_title == 'general care' %}	{% assign menu_handle = 'general-care-menu' %}
+{% elsif current_collection_title == 'men sexual health' %}	{% assign menu_handle = 'men-sexual-health-menu' %}
+{% elsif current_collection_title == 'women sexual health' %}	{% assign menu_handle = 'women-sexual-health-menu' %}          
+{% elsif current_collection_title == 'sexual health' %}	{% assign menu_handle = 'sexual-health-menu' %}
+{% elsif current_collection_title == 'energy & stamina' %}	{% assign menu_handle = 'energy-stamina-menu' %}
+{% elsif current_collection_title == 'weight management' %}	{% assign menu_handle = 'weight-management-menu' %}
+{% elsif current_collection_title == 'immunity & general wellness' %}	{% assign menu_handle = 'immunity-general-wellness-menu' %}
+{% elsif current_collection_title == 'menstrual & hormonal health' %}	{% assign menu_handle = 'menstrual-hormonal-health-menu' %}
+{% elsif current_collection_title == 'pain relief' %}	{% assign menu_handle = 'pain-relief-menu' %}
+{% elsif current_collection_title == 'gastric care' %}	{% assign menu_handle = 'gastric-care-menu' %}
+{% elsif current_collection_title == 'diet' %}	{% assign menu_handle = 'diet-menu' %}
+{% elsif current_collection_title == 'asthma' %}	{% assign menu_handle = 'asthma-menu' %}
+{% elsif current_collection_title == 'abdominal diseases' %}	{% assign menu_handle = 'abdominal-diseases-menu' %}
+{% elsif current_collection_title == 'paralysis' %}	{% assign menu_handle = 'paralysis-menu' %}
+{% elsif current_collection_title == 'sexual disorder' %}	{% assign menu_handle = 'sexual-disorder-menu' %}
+{% elsif current_collection_title == 'skin diseases' %}	{% assign menu_handle = 'skin-diseases-menu' %}
+{% elsif current_collection_title == 'haemorrohoids' %}	{% assign menu_handle = 'haemorrohoids-menu' %}
+{% elsif current_collection_title == 'urine related problems' %}	{% assign menu_handle = 'urine-related-problems-menu' %}
+{% elsif current_collection_title == 'neurological diseases' %}	{% assign menu_handle = 'neurological-diseases-menu' %}
+{% elsif current_collection_title == 'ayurvedic herbal products wholesale and bulk supplier' %}	{% assign menu_handle = 'ayurvedic-herbal-products-wholesale-and-bulk-supplier-menu' %}
+
+
+
+
+
+        {% else %}
+        {% assign menu_handle = 'main-menu' %}
+        {% endif %}
+
+        {% assign nav_menu = linklists[menu_handle] %}
+        {% if nav_menu.links.size > 0 %}
+          <div class="quick-links">
+            <ul>
+              {% for link in nav_menu.links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+
+
+  
+        </div>
+
+
+      
+
+      
+      <form
+        id="FacetFiltersForm"
+      >
+        {%- if results.terms -%}
+          <input type="hidden" name="q" value="{{ results.terms | escape }}">
+          <input name="options[prefix]" type="hidden" value="last">
+        {%- endif -%}
+
+        {% render 'filter-current', results: results, results_url: results_url %}
+
+        <input
+          style="display:none;"
+          name="sort_by"
+          value="{{ sort_by }}"
+          id="SortBy"
+        >
+        
+        {%- if search_page -%}
+          <input type="hidden" name="type" value="product">
+        {%- endif -%}
+
+        {%- for filter in results.filters -%}
+          {%- if filter.param_name == 'filter.p.tag' -%}
+            {%- for active_value in filter.active_values -%}
+              <input
+                type="hidden"
+                name="{{ active_value.param_name }}"
+                value="{{ active_value.value | escape }}"
+              >
+            {%- endfor -%}
+            {%- continue -%}
+          {%- endif -%}
+          {% case filter.type %}
+            {% when 'boolean', 'list' %}
+              {% render 'filter-type-list',
+                filter: filter,
+                index: forloop.index,
+                filter_position: section.settings.filter_position,
+                options_as_color_swatches: options_as_color_swatches
+              %}
+            {% when 'price_range' %}
+              {% render 'filter-price',
+                filter: filter,
+                results: results,
+                filter_position: section.settings.filter_position,
+                index: forloop.index
+              %}
+          {% endcase %}
+        {%- endfor -%}
+      </form>
+    </facet-filters-form>
+  </div>
+  <footer class="wt-filter__footer">
+    <div class="wt-filter__footer__body {% if filter_position == 'always' %}always-visible{% endif %}">
+      <button
+        aria-label="{{ 'products.facets.apply' | t }}"
+        class="btn-checkout wt-cart__cta"
+        onclick="document.querySelector('collection-section').toggleDrawer()"
+        tabindex="-1"
+      >
+        {{ 'products.facets.apply' | t }}
+      </button>
+      <facet-remove>
+        <a
+          href="{{ results_url }}"
+          role="button"
+          aria-label="{{- 'products.facets.clear_all' | t -}}"
+          tabindex="-1"
+          class="wt-filter__clear-all"
+        >
+          <button
+            aria-label="{{- 'products.facets.clear_all' | t -}}"
+            class="hero__button  hero__button--primary  hero__button--secondary hero__button--link wt-filter__remove-all"
+            tabindex="-1"
+          >
+            <span>
+              {{- 'products.facets.clear_all' | t -}}
+            </span>
+          </button>
+        </a>
+      </facet-remove>
+    </div>
+  </footer>
+</aside>

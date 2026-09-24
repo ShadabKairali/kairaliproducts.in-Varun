@@ -1,0 +1,301 @@
+{% liquid
+  assign amla_product = all_products['amla-shikakai-shampoo-herbal-hair-strengthening-shampoo']
+  assign aloe_product = all_products['kairali-aloevera-herbal-shampoo-for-dry-and-damaged-hair']
+  assign amla_variant = amla_product.variants | where: 'sku', 'HCASS0200NP0925' | first
+  assign aloe_variant = aloe_product.variants | where: 'sku', 'HCAVS0200NP0925' | first
+  assign set_available = false
+  if amla_variant.available and aloe_variant.available
+    assign set_available = true
+  endif
+  assign set_price = amla_variant.price | plus: aloe_variant.price
+%}
+
+{% if amla_product != blank and aloe_product != blank %}
+  <section
+    id="KairaliHairSet"
+    class="kairali-hair-set"
+    data-hair-set-builder
+    data-amla-variant="{{ amla_variant.id }}"
+    data-aloe-variant="{{ aloe_variant.id }}"
+    aria-labelledby="KairaliHairSetTitle"
+  >
+    <div class="kairali-hair-set__shell">
+      <div class="kairali-hair-set__intro">
+        <p class="kairali-hair-set__eyebrow">AN EASY TWO-ITEM ROUTINE</p>
+        <h2 id="KairaliHairSetTitle">Build a two-shampoo set</h2>
+        <p>Add both full-size shampoos in one step. Each stays a separate cart item with its current price and availability.</p>
+      </div>
+
+      <div class="kairali-hair-set__products">
+        <article class="kairali-hair-set__product">
+          <a href="{{ amla_product.url }}" aria-label="View Amla Shikakai Shampoo">
+            {{
+              amla_product.featured_image
+              | image_url: width: 600
+              | image_tag:
+                class: 'kairali-hair-set__image',
+                loading: 'lazy',
+                widths: '240, 360, 480, 600',
+                sizes: '(min-width: 900px) 160px, 38vw',
+                alt: 'Amla Shikakai Shampoo, 200 ml'
+            }}
+          </a>
+          <div>
+            <h3><a href="{{ amla_product.url }}">Amla Shikakai Shampoo</a></h3>
+            <p>{{ amla_variant.title }}</p>
+            <strong>{{ amla_variant.price | money_with_currency }}</strong>
+          </div>
+        </article>
+        <article class="kairali-hair-set__product">
+          <a href="{{ aloe_product.url }}" aria-label="View Aloe Vera Shampoo">
+            {{
+              aloe_product.featured_image
+              | image_url: width: 600
+              | image_tag:
+                class: 'kairali-hair-set__image',
+                loading: 'lazy',
+                widths: '240, 360, 480, 600',
+                sizes: '(min-width: 900px) 160px, 38vw',
+                alt: 'Aloe Vera Shampoo, 200 ml'
+            }}
+          </a>
+          <div>
+            <h3><a href="{{ aloe_product.url }}">Aloe Vera Shampoo</a></h3>
+            <p>{{ aloe_variant.title }}</p>
+            <strong>{{ aloe_variant.price | money_with_currency }}</strong>
+          </div>
+        </article>
+      </div>
+
+      <div class="kairali-hair-set__summary">
+        <p><span>Set total</span><strong>{{ set_price | money_with_currency }}</strong></p>
+        <button
+          type="button"
+          class="button button--primary kairali-hair-set__button"
+          {% unless set_available %}disabled{% endunless %}
+        >
+          {% if set_available %}Add both{% else %}Temporarily unavailable{% endif %}
+        </button>
+        <p class="kairali-hair-set__note">Two separate cart items. No automatic subscription.</p>
+        <p class="kairali-hair-set__status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+<style>
+  .kairali-hair-set {
+    box-sizing: border-box;
+    color: var(--color-text);
+    margin: 1.6rem auto 3.2rem;
+    max-width: var(--site-max-width);
+    padding-inline: calc(var(--gap, 8px) * 2);
+  }
+
+  .kairali-hair-set__shell {
+    align-items: center;
+    background: #f4f6e8;
+    border: 1px solid rgba(75, 87, 35, 0.22);
+    border-radius: 1.4rem;
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: minmax(12rem, 0.9fr) minmax(28rem, 1.5fr) minmax(13rem, 0.7fr);
+    padding: 2.4rem;
+  }
+
+  .kairali-hair-set__intro h2 {
+    color: #24310f;
+    font-family: var(--font-headline);
+    font-size: clamp(2.4rem, 2.8vw, 3.6rem);
+    line-height: 1.06;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .kairali-hair-set__intro > p:last-child {
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .kairali-hair-set__eyebrow {
+    color: #617024;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin: 0;
+  }
+
+  .kairali-hair-set__products {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kairali-hair-set__product {
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid rgba(75, 87, 35, 0.16);
+    border-radius: 1.2rem;
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    padding: 1.2rem;
+  }
+
+  .kairali-hair-set__image {
+    aspect-ratio: 1;
+    border-radius: 0.8rem;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .kairali-hair-set__product h3 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+  }
+
+  .kairali-hair-set__product h3 a {
+    color: #24310f;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.25rem;
+  }
+
+  .kairali-hair-set__product p {
+    color: #5b604f;
+    font-size: 1.3rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .kairali-hair-set__product strong {
+    color: #24310f;
+    font-size: 1.4rem;
+  }
+
+  .kairali-hair-set__summary {
+    border-left: 1px solid rgba(75, 87, 35, 0.22);
+    padding-left: 2.4rem;
+  }
+
+  .kairali-hair-set__summary > p:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 1.2rem;
+  }
+
+  .kairali-hair-set__summary > p:first-child span {
+    color: #5b604f;
+    font-size: 1.3rem;
+  }
+
+  .kairali-hair-set__summary > p:first-child strong {
+    color: #24310f;
+    font-size: 1.8rem;
+  }
+
+  .kairali-hair-set__button {
+    min-height: 4.8rem;
+    width: 100%;
+  }
+
+  .kairali-hair-set__button:focus-visible,
+  .kairali-hair-set__product a:focus-visible {
+    outline: 0.2rem solid #24310f;
+    outline-offset: 0.3rem;
+  }
+
+  .kairali-hair-set__note,
+  .kairali-hair-set__status {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin: 0.8rem 0 0;
+  }
+
+  .kairali-hair-set__status:empty {
+    display: none;
+  }
+
+  @media (max-width: 899px) {
+    .kairali-hair-set {
+      margin-bottom: 2.4rem;
+    }
+
+    .kairali-hair-set__shell {
+      gap: 1.8rem;
+      grid-template-columns: 1fr;
+      padding: 1.8rem;
+    }
+
+    .kairali-hair-set__intro h2 {
+      font-size: 2.7rem;
+    }
+
+    .kairali-hair-set__summary {
+      border-left: 0;
+      border-top: 1px solid rgba(75, 87, 35, 0.22);
+      padding-left: 0;
+      padding-top: 1.8rem;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .kairali-hair-set__products {
+      grid-template-columns: 1fr;
+    }
+
+    .kairali-hair-set__product {
+      grid-template-columns: 7rem minmax(0, 1fr);
+    }
+  }
+</style>
+
+<script>
+  (() => {
+    const builder = document.querySelector('[data-hair-set-builder]');
+    if (!builder || builder.dataset.initialized === 'true') return;
+
+    const button = builder.querySelector('.kairali-hair-set__button');
+    const status = builder.querySelector('.kairali-hair-set__status');
+    if (!button || button.disabled) return;
+
+    builder.dataset.initialized = 'true';
+    button.addEventListener('click', async () => {
+      const originalLabel = button.textContent.trim();
+      const root = window.Shopify && window.Shopify.routes ? window.Shopify.routes.root : '/';
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Adding both';
+      status.textContent = '';
+
+      try {
+        const response = await fetch(root + 'cart/add.js', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            items: [
+              { id: Number(builder.dataset.amlaVariant), quantity: 1 },
+              { id: Number(builder.dataset.aloeVariant), quantity: 1 }
+            ]
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error('Cart request failed');
+        }
+
+        status.textContent = 'Both items added. Opening your cart.';
+        window.location.assign(root + 'cart');
+      } catch (error) {
+        status.textContent = 'We could not add both items. Please try again or shop them separately.';
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = originalLabel;
+      }
+    });
+  })();
+</script>

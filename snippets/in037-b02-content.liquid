@@ -1,0 +1,511 @@
+{%- comment -%}
+  IN-037 B02: exact India static-page content and metadata layer.
+  Draft and Admin-only products are excluded. Condition and utility copy contains
+  no direct product recommendation, dose, cure, efficacy or stock claim.
+{%- endcomment -%}
+{%- case mode -%}
+  {%- when 'seo_title' -%}
+    {%- case route_key -%}
+      {%- when 'privacy-policy' -%}Privacy Policy | Kairali India
+      {%- when 'legal-notice' -%}Legal Notice | Kairali India
+      {%- when 'photo-gallery' -%}Photo Gallery | Kairali India
+      {%- when 'no-route' -%}Page Not Found | Kairali India
+      {%- when 'facilities-and-raw-materials' -%}Facilities & Raw Materials | Kairali India
+      {%- when 'clinical-trials' -%}Product Evidence Requests | Kairali India
+      {%- when 'research-and-development' -%}Research & Product Documents | Kairali India
+      {%- when 'quality-and-safety' -%}Product Quality & Safe Use | Kairali India
+      {%- when 'csr' -%}Community & Environment | Kairali India
+      {%- when 'certifications' -%}Certification Document Requests | Kairali India
+      {%- when 'thank-you' -%}Thank You | Kairali India
+      {%- when 'ppc-thank-you' -%}Business Enquiry Next Steps | Kairali India
+      {%- when 'consultation-thank-you' -%}Consultation Enquiry Next Steps | Kairali India
+      {%- when 'product-reviews' -%}Product Reviews | Kairali India
+      {%- when 'anti-aging' -%}Skin Ageing Guide | Kairali India
+      {%- when 'arthritis' -%}Arthritis Symptoms & Next Steps | Kairali India
+      {%- when 'slipped-disc' -%}Slipped Disc: Symptoms & Urgent Signs | Kairali India
+      {%- when 'cataract' -%}Cataracts: Symptoms & Eye Checks | Kairali India
+      {%- when 'dark-circles' -%}Dark Circles: When to Seek Advice | Kairali India
+      {%- when 'facial-paralysis' -%}Sudden Facial Weakness: Get Help | Kairali India
+      {%- when 'heart-diseases' -%}Heart Disease Warning Signs | Kairali India
+      {%- when 'hemorrhoids' -%}Piles (Haemorrhoids): When to Get Help | Kairali India
+      {%- when 'hypertension' -%}High Blood Pressure: Symptoms & Checks | Kairali India
+      {%- when 'liver-diseases' -%}Liver Disease: Signs & Checks | Kairali India
+    {%- endcase -%}
+
+  {%- when 'seo_description' -%}
+    {%- case route_key -%}
+      {%- when 'privacy-policy' -%}Read how Kairali India collects, uses and shares personal information, uses cookies, and explains your choices and contact options under this policy.
+      {%- when 'legal-notice' -%}Read Kairali India's legal notice for company and contact information, website terms, and important limits around product descriptions and availability.
+      {%- when 'photo-gallery' -%}View nine images in the Kairali India photo gallery. Individual captions, dates, locations and image-specific details are not currently published on this page.
+      {%- when 'no-route' -%}This Kairali India page is unavailable. Return to the home page, browse all products or contact the team if you need help finding the right destination.
+      {%- when 'facilities-and-raw-materials' -%}Ask whether current facility, raw-material, manufacturing or quality records are available for the exact product, pack size and market you are assessing.
+      {%- when 'clinical-trials' -%}Ask Kairali India whether current studies, laboratory reports, labels or regulatory documents are available for a named product, pack size and market.
+      {%- when 'research-and-development' -%}Ask whether current research, literature, testing or product documents are available for an exact Kairali product, pack size and destination market.
+      {%- when 'quality-and-safety' -%}Read label-first guidance on ingredients, directions, warnings, storage, damaged packs, possible reactions and reporting a product concern to Kairali India.
+      {%- when 'csr' -%}Ask whether dated information is available about a Kairali community or environmental activity, including its location, period and evidence for your review.
+      {%- when 'certifications' -%}Ask whether a current certificate or test record exists for an exact Kairali product, SKU, facility and market before relying on a logo, mark or standard.
+      {%- when 'thank-you' -%}Find Kairali India phone, WhatsApp and contact options, plus clear links to browse products, read product FAQs and view the offers page on this site.
+      {%- when 'ppc-thank-you' -%}Find next steps for a Kairali India business enquiry, including contact, distribution, contract manufacturing, certification and policy information.
+      {%- when 'consultation-thank-you' -%}Find next steps for a Kairali India consultation enquiry, product FAQs and contact routes, plus guidance on when to seek urgent medical help locally.
+      {%- when 'product-reviews' -%}This page does not currently publish review content. Browse Kairali India products, read the exact label and contact the team if you need more information.
+      {%- when 'anti-aging' -%}Read a plain guide to age-related skin changes, everyday sun protection and gentle care, with responsible next steps and dermatology-source guidance.
+      {%- when 'arthritis' -%}Understand common arthritis symptoms, the signs that need urgent medical care and practical next steps for persistent joint pain, swelling or stiffness.
+      {%- when 'slipped-disc' -%}Understand what a slipped disc is, how nerve pressure may affect you and which bladder, bowel, numbness or weakness signs need emergency hospital care.
+      {%- when 'cataract' -%}Learn what cataracts are, the gradual vision changes they may cause and why an eye professional should assess symptoms and discuss treatment options.
+      {%- when 'dark-circles' -%}Dark circles are a concern, not one diagnosis. Fatigue may contribute; persistent, one-sided, painful, swollen or vision-related changes need assessment.
+      {%- when 'facial-paralysis' -%}Sudden one-sided facial weakness can be a stroke sign. Read the face, arm and speech warning signs and why immediate emergency assessment matters.
+      {%- when 'heart-diseases' -%}Understand heart and blood vessel disease and the chest discomfort, breathlessness, faintness or stroke-like signs that need urgent medical assessment.
+      {%- when 'hemorrhoids' -%}Learn what piles or haemorrhoids are, why rectal bleeding should not be self-diagnosed and which bleeding or severe-pain signs need medical care.
+      {%- when 'hypertension' -%}High blood pressure often has no symptoms. Learn why measurement matters and which chest pain, breathing, confusion or vision signs need immediate care.
+      {%- when 'liver-diseases' -%}Many liver diseases have no early symptoms. Read the signs that need medical assessment, including jaundice, persistent weakness, appetite loss and itching.
+    {%- endcase -%}
+
+  {%- when 'display_title' -%}
+    {%- case page.handle -%}
+      {%- when 'no-route' -%}Page Not Found
+      {%- when 'facilities-and-raw-materials' -%}Facilities & Raw Materials: Document Requests
+      {%- when 'clinical-trials' -%}Product Evidence & Document Requests
+      {%- when 'research-and-development' -%}Research & Product Documentation
+      {%- when 'quality-and-safety' -%}Product Quality & Responsible Use
+      {%- when 'csr' -%}Community & Environmental Information
+      {%- when 'certifications' -%}Certification & Testing Document Requests
+      {%- when 'ppc-thank-you' -%}Business Enquiry Next Steps
+      {%- when 'consultation-thank-you' -%}Consultation Enquiry Next Steps
+      {%- when 'product-reviews' -%}Product Reviews
+    {%- endcase -%}
+
+  {%- when 'body' -%}
+    {%- case page.handle -%}
+      {%- when 'no-route' -%}
+        <section class="in037-b02 in037-b02--utility">
+          <p>The page you requested is not available. It may have moved, been renamed or been removed.</p>
+          <h2>Where to go next</h2>
+          <ul>
+            <li><a href="{{ routes.root_url }}">Return to the Kairali India home page</a></li>
+            <li><a href="{{ routes.all_products_collection_url }}">Browse all products</a></li>
+            <li><a href="/pages/contact-us">Contact Kairali India</a> if you still cannot find what you need</li>
+          </ul>
+        </section>
+
+      {%- when 'facilities-and-raw-materials' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">Facility, manufacturing, raw-material and quality documents can differ by product, pack size, site, batch and destination market. Ask for the current record that applies to your exact requirement.</p>
+
+          <h2>What to include in your request</h2>
+          <ul>
+            <li>The exact product name and pack size</li>
+            <li>The country or market where the product will be sold or used</li>
+            <li>The document, standard or test information you need</li>
+            <li>Whether your request concerns a retail order, distribution or contract manufacturing</li>
+          </ul>
+
+          <h2>What to ask about</h2>
+          <ul>
+            <li>Whether a current manufacturing or facility document is available for the stated scope</li>
+            <li>Whether product-specific raw-material, testing or batch information can be shared</li>
+            <li>Which information is relevant to a contract-manufacturing or distribution enquiry</li>
+          </ul>
+          <p>Ask whether the document is available and how it may be used. A record for one product, site or market should not be treated as evidence for another.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Request a document</a><a href="/pages/contract-manufacturing">Contract manufacturing</a><a href="/pages/certifications">Certification information</a></p>
+        </section>
+
+      {%- when 'clinical-trials' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">This page does not currently publish a clinical-trial report. If you need evidence for a named product, ask whether any current document is available for the exact product, pack size and market.</p>
+
+          <h2>Include these details</h2>
+          <ul>
+            <li>The exact product name and pack size</li>
+            <li>The country or market relevant to your request</li>
+            <li>The type of record you need, such as a study, laboratory report, label or regulatory document</li>
+            <li>How you intend to use the document</li>
+          </ul>
+
+          <h2>Important evidence boundary</h2>
+          <p>A study or report for one product, formulation, sample or batch is not evidence for another. Nothing on this page states that a Kairali product treats, prevents or cures a medical condition.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Ask about a document</a><a href="/pages/certifications">Certification information</a><a href="/pages/quality-and-safety">Quality and safety</a></p>
+        </section>
+
+      {%- when 'research-and-development' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">Research literature, laboratory testing and clinical evidence are different kinds of information. A document for one product or formulation should not be treated as evidence for another.</p>
+
+          <h2>Request information for an exact product</h2>
+          <p>Send the product name, pack size, destination market and the type of information you need. Ask whether a current document is available for that exact scope.</p>
+
+          <h2>Useful details to include</h2>
+          <ul>
+            <li>The product and pack size you are assessing</li>
+            <li>Whether you need a label, literature reference, test record or another document</li>
+            <li>The destination market and intended use of the information</li>
+          </ul>
+          <p>This page does not state that research or testing for one item proves a treatment outcome or applies across the Kairali catalogue.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Request product information</a><a href="/pages/certifications">Certification documents</a><a href="/pages/quality-and-safety">Quality and responsible use</a></p>
+        </section>
+
+      {%- when 'quality-and-safety' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">Use the physical pack for the exact product and variant as the primary reference for ingredients, directions, warnings, batch details, storage and expiry.</p>
+
+          <h2>Before using a product</h2>
+          <ul>
+            <li>Check that the seal and pack are intact and that you selected the intended product and pack size.</li>
+            <li>Read the full label and follow its directions and warnings.</li>
+            <li>Ask a qualified health professional about suitability or interactions if you take medicines, have a medical condition, are pregnant or breastfeeding, or are choosing for a child.</li>
+            <li>Do not use a damaged, leaking, unsealed or expired pack.</li>
+          </ul>
+
+          <h2>If information appears different</h2>
+          <p>If the online page and the physical pack appear to differ, pause use and contact Kairali India. Send the product name, pack size, batch details and clear photographs of the relevant label panels.</p>
+
+          <h2>If a reaction or safety concern occurs</h2>
+          <p>Stop using the product and seek appropriate medical help when needed. Contact Kairali India with the product, batch and order details.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Report a product concern</a><a href="/pages/product-faqs">Product FAQs</a><a href="/pages/return-refund-policy">Return and refund policy</a></p>
+        </section>
+
+      {%- when 'csr' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">This page does not currently publish dated CSR reports or verified impact figures. If you are assessing Kairali for a supplier review, publication or partnership, request the records relevant to your exact question.</p>
+
+          <h2>What to include in your request</h2>
+          <ul>
+            <li>The community or environmental topic you are reviewing</li>
+            <li>The location and time period you need</li>
+            <li>The type of evidence or confirmation required</li>
+            <li>Your organisation and the purpose of the review</li>
+          </ul>
+
+          <h2>Check the scope of any record</h2>
+          <p>Ask whether current, dated information is available for any activity, place and period in your request. Do not treat an undated statement or a record for one activity as proof of another.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Ask about available information</a><a href="/pages/the-kairali-group">About the Kairali Group</a></p>
+        </section>
+
+      {%- when 'certifications' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">A certificate, test report, logo or mark may apply only to a named product, facility, market and period. It should not be treated as applying to the full catalogue without exact scope evidence.</p>
+
+          <h2>Ask about a current document</h2>
+          <p>Send the product name, SKU, pack size, destination market and the document or standard you need. Ask whether current material is available and what exact scope it covers.</p>
+
+          <h2>Check before relying on a document</h2>
+          <ul>
+            <li>The holder, issuer or laboratory</li>
+            <li>The certificate or report number</li>
+            <li>The product, SKU, facility or sample in scope</li>
+            <li>The issue date, expiry date or report date</li>
+            <li>The market and permitted use of any logo or wording</li>
+          </ul>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Ask about product documentation</a><a href="/pages/facilities-and-raw-materials">Facilities and raw materials</a><a href="/pages/contract-manufacturing">Contract manufacturing</a></p>
+        </section>
+
+      {%- when 'ppc-thank-you' -%}
+        <section class="in037-b02 in037-b02--utility">
+          <p class="in037-b02__lead">Need to add information to a business enquiry or follow up? Use the links below to contact Kairali India or review the relevant pages.</p>
+
+          <h2>Add details to your enquiry</h2>
+          <p>Use the contact page if you need to add your organisation, city or country, the product or service you need, or whether your request concerns distribution or contract manufacturing.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India</a><a href="/pages/contract-manufacturing">Contract manufacturing</a><a href="/pages/become-our-distributers-importers">Distribution and import enquiries</a></p>
+
+          <h2>Useful information</h2>
+          <ul>
+            <li><a href="/pages/certifications">Certification information</a></li>
+            <li><a href="/pages/faq">General FAQ</a></li>
+            <li><a href="/pages/shipping-and-return">Shipping and delivery</a></li>
+            <li><a href="/pages/return-refund-policy">Return, refund and cancellation policy</a></li>
+            <li><a href="/pages/terms-and-condition">Terms and conditions</a></li>
+            <li><a href="/pages/website-disclaimer">Website disclaimer</a></li>
+            <li><a href="/policies/privacy-policy">Privacy policy</a></li>
+          </ul>
+          <p>This page does not publish a price list. Check any selected product page and pack size before ordering.</p>
+        </section>
+
+      {%- when 'consultation-thank-you' -%}
+        <section class="in037-b02 in037-b02--utility">
+          <p class="in037-b02__lead">Need to add information to a consultation enquiry or follow up? Use the links below to contact Kairali India or ask a non-urgent question.</p>
+
+          <h2>Add details or ask a question</h2>
+          <p>Use the contact page if you need to add information to your request. If you have severe, sudden or urgent symptoms, contact local emergency services or your nearest hospital now rather than waiting online.</p>
+
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India</a><a href="/pages/online-consultation">Online consultation</a><a href="/pages/product-faqs">Product FAQs</a></p>
+          <p><a href="{{ routes.root_url }}">Return to the home page</a></p>
+        </section>
+
+      {%- when 'product-reviews' -%}
+        <section class="in037-b02">
+          <p class="in037-b02__lead">This page does not currently publish customer-review content.</p>
+
+          <h2>Choose with the current product information</h2>
+          <ul>
+            <li>Read the exact product label, ingredients, directions and warnings.</li>
+            <li>Check the selected pack size, current price and availability before ordering.</li>
+            <li>Contact Kairali India if a label, ingredient or direction is unclear.</li>
+          </ul>
+
+          <p class="in037-b02__actions"><a href="{{ routes.all_products_collection_url }}">Browse all products</a><a href="/pages/product-faqs">Product FAQs</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+        </section>
+
+      {%- when 'thank-you' -%}
+        <section class="in037-b02 in037-b02--utility in037-b02--thank-you">
+          <h1>Contact Kairali India &amp; Next Steps</h1>
+          <p class="in037-b02__lead">Need to add information to an enquiry or follow up? Use the contact details and useful links below.</p>
+
+          <h2>Need to contact us?</h2>
+          <ul>
+            <li>Call <a href="tel:+919555156156">+91 95551 56156</a></li>
+            <li>WhatsApp <a href="https://wa.me/918929060540">+91 89290 60540</a></li>
+            <li>Use the <a href="/pages/contact-us">Kairali India contact page</a></li>
+          </ul>
+          <p>If your message is about an order, keep the order number and the email address or mobile number used for the order ready.</p>
+
+          <h2>Continue browsing</h2>
+          <p class="in037-b02__actions"><a href="{{ routes.all_products_collection_url }}">Browse all products</a><a href="/pages/offers">View the offers page</a><a href="/pages/product-faqs">Read product FAQs</a><a href="{{ routes.root_url }}">Return home</a></p>
+        </section>
+    {%- endcase -%}
+
+  {%- when 'condition_tab_1_title' -%}
+    {%- case page.handle -%}
+      {%- when 'anti-aging' -%}Skin ageing
+      {%- when 'arthritis' -%}Arthritis
+      {%- when 'slipped-disc' -%}Slipped disc
+      {%- when 'cataract' -%}Cataracts
+      {%- when 'dark-circles' -%}Dark circles
+      {%- when 'facial-paralysis' -%}Facial weakness
+      {%- when 'heart-diseases' -%}Heart warning signs
+      {%- when 'hemorrhoids' -%}Piles (haemorrhoids)
+      {%- when 'hypertension' -%}High blood pressure
+      {%- when 'liver-diseases' -%}Liver disease
+    {%- endcase -%}
+
+  {%- when 'condition_tab_1' -%}
+    {%- case page.handle -%}
+      {%- when 'anti-aging' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Skin ageing: everyday care and responsible next steps</h1>
+          <p class="in037-b02__lead">Skin changes with age, and sun exposure can contribute to premature ageing.</p>
+
+          <h2>Everyday care</h2>
+          <ul>
+            <li>Protect your skin from the sun each day.</li>
+            <li>Cleanse gently instead of scrubbing.</li>
+            <li>Moisturise when the skin feels dry or tight.</li>
+            <li>Use each product exactly as its label directs.</li>
+          </ul>
+          <p>No topical product can promise to reverse ageing or solve every skin concern.</p>
+
+          <h2>When to seek advice</h2>
+          <p>For questions about a skin change, ask a doctor or dermatologist.</p>
+
+          <h2>Choose with the label in front of you</h2>
+          <p>Compare the exact product's ingredients, directions and warnings before deciding whether it suits your routine. This guide does not recommend a product or treatment.</p>
+          <p class="in037-b02__actions"><a href="{{ routes.all_products_collection_url }}">Browse products</a><a href="/pages/product-faqs">Product FAQs</a><a href="/pages/online-consultation">Online consultation information</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.aad.org/public/everyday-care/skin-care-secrets/anti-aging/reduce-premature-aging-skin" rel="noopener noreferrer" target="_blank">American Academy of Dermatology, premature skin ageing guidance</a>. General information only.</p>
+        </article>
+
+      {%- when 'arthritis' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Arthritis: symptoms and next steps</h1>
+          <p class="in037-b02__lead">Arthritis can cause pain, swelling and stiffness in one or more joints.</p>
+
+          <h2>Get urgent medical care if</h2>
+          <ul>
+            <li>A joint becomes suddenly hot, red or very swollen.</li>
+            <li>You feel generally unwell with the joint symptoms.</li>
+          </ul>
+
+          <h2>If symptoms are persistent</h2>
+          <p>Arrange a medical assessment for unexplained joint pain, swelling or stiffness that persists.</p>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not recommend a product, dose or course of treatment for arthritis.</p>
+          <p class="in037-b02__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/product-faqs">Product FAQs</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.nhs.uk/conditions/arthritis/" rel="noopener noreferrer" target="_blank">NHS, Arthritis</a>. General information only.</p>
+        </article>
+
+      {%- when 'slipped-disc' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Slipped disc: symptoms and emergency signs</h1>
+          <p class="in037-b02__lead">A slipped or herniated disc happens when tissue between the bones of the spine bulges outward. It may press on nearby nerves.</p>
+
+          <h2>Go to hospital immediately if</h2>
+          <ul>
+            <li>You lose bladder or bowel control, or cannot pass urine.</li>
+            <li>You develop numbness around the genitals, buttocks or inner thighs.</li>
+            <li>You develop major or worsening weakness in the legs.</li>
+          </ul>
+          <p>These signs can mean serious pressure on spinal nerves and need emergency assessment.</p>
+
+          <h2>If it is not an emergency</h2>
+          <p>Arrange a medical assessment if symptoms persist, worsen or worry you.</p>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not claim that an Ayurvedic product can move a disc into place or cure a slipped disc. Get a diagnosis before considering supportive care.</p>
+          <p class="in037-b02__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.nhs.uk/conditions/slipped-disc/" rel="noopener noreferrer" target="_blank">NHS, Slipped disc</a>. General information only.</p>
+        </article>
+
+      {%- when 'cataract' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Cataracts: symptoms and eye checks</h1>
+          <p class="in037-b02__lead">A cataract is clouding of the lens inside the eye. It can cause gradual blurred vision, glare, poorer night vision or colours that look faded.</p>
+
+          <h2>What to do</h2>
+          <p>Arrange an examination with an eye professional. An examination can identify the cause of a vision change and help you discuss whether treatment is needed. Surgery is the established corrective treatment for cataracts when needed.</p>
+
+          <h2>Use professional eye advice</h2>
+          <p>Use only eye treatments advised by a qualified eye professional. This page does not provide a home eye-wash, purging or dosing routine.</p>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not recommend a Kairali product or home procedure for cataracts.</p>
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India</a><a href="/pages/product-faqs">Product FAQs</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.nhs.uk/conditions/cataracts/" rel="noopener noreferrer" target="_blank">NHS, Cataracts in adults</a>. General information only.</p>
+        </article>
+
+      {%- when 'dark-circles' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Dark circles under the eyes</h1>
+          <p class="in037-b02__lead">Dark circles are a visible concern rather than one diagnosis. Fatigue can contribute, but appearance alone does not show the cause.</p>
+
+          <h2>What may contribute</h2>
+          <p>Fatigue can contribute to the appearance of dark circles, but the appearance alone does not establish a cause.</p>
+
+          <h2>When to have the change assessed</h2>
+          <p>Seek professional advice if the change is persistent, appears on one side, or comes with pain, swelling or a change in vision.</p>
+
+          <h2>Choose responsibly</h2>
+          <p>This guide does not diagnose the cause or recommend a product as a treatment for dark circles. Compare ingredients, directions and warnings before choosing facial care.</p>
+          <p class="in037-b02__actions"><a href="{{ routes.all_products_collection_url }}">Browse products</a><a href="/pages/product-faqs">Product FAQs</a><a href="/pages/online-consultation">Online consultation information</a></p>
+
+          <p class="in037-b02__source">General information bounded by the governed Kairali India source review. It does not replace advice from a qualified professional.</p>
+        </article>
+
+      {%- when 'facial-paralysis' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Sudden facial weakness: get emergency help</h1>
+          <p class="in037-b02__lead">Sudden weakness or drooping on one side of the face can be a sign of stroke. Treat it as an emergency until a qualified professional says otherwise.</p>
+
+          <h2>Call local emergency services now if</h2>
+          <ul>
+            <li>One side of the face has dropped or the person cannot smile evenly.</li>
+            <li>One arm is weak or cannot be raised and held up.</li>
+            <li>Speech is slurred, confused or absent.</li>
+          </ul>
+          <p>Any one of these signs needs immediate assessment. Do not wait for it to pass.</p>
+
+          <h2>If stroke has been ruled out</h2>
+          <p>Bell's palsy is another possible cause of one-sided facial weakness and also needs prompt professional assessment.</p>
+
+          <h2>About Kairali products</h2>
+          <p>Do not delay emergency assessment to try an oil, tablet, nasal preparation or massage routine. This guide does not recommend a product or regimen for facial paralysis.</p>
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India for a non-urgent product question</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.nhs.uk/conditions/bells-palsy/" rel="noopener noreferrer" target="_blank">NHS, Bell's palsy</a>. General information only.</p>
+        </article>
+
+      {%- when 'heart-diseases' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Heart and blood vessel disease: warning signs</h1>
+          <p class="in037-b02__lead">Cardiovascular disease is a general term for disorders of the heart and blood vessels.</p>
+
+          <h2>Get urgent medical help for</h2>
+          <ul>
+            <li>Chest pain, pressure or discomfort</li>
+            <li>Sudden difficulty breathing or faintness</li>
+            <li>Sudden weakness on one side of the face or body</li>
+            <li>Sudden slurred or confused speech</li>
+          </ul>
+          <p>These signs need urgent assessment. Contact local emergency services and do not wait for them to pass.</p>
+
+          <h2>If you are concerned but it is not an emergency</h2>
+          <p>Arrange a medical assessment rather than relying on a retail page for diagnosis.</p>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not recommend a remedy or dose for heart disease.</p>
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India for a non-urgent product question</a><a href="/pages/quality-and-safety">Quality and safety</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-%28cvds%29" rel="noopener noreferrer" target="_blank">World Health Organization, cardiovascular diseases</a>. General information only.</p>
+        </article>
+
+      {%- when 'hemorrhoids' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Piles (haemorrhoids): symptoms and when to get help</h1>
+          <p class="in037-b02__lead">Piles, also called haemorrhoids, are swollen blood vessels or lumps in or around the anus.</p>
+
+          <h2>Do not self-diagnose bleeding</h2>
+          <p>Rectal bleeding can have causes other than piles. Arrange medical advice rather than assuming the cause.</p>
+
+          <h2>Get medical care promptly if</h2>
+          <ul>
+            <li>Bleeding is severe, persistent or will not stop.</li>
+            <li>You have severe pain.</li>
+          </ul>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not recommend a product or dose for piles. Discuss bleeding and persistent symptoms with a qualified health professional before considering supportive care.</p>
+          <p class="in037-b02__actions"><a href="/pages/online-consultation">Online consultation information</a><a href="/pages/product-faqs">Product FAQs</a><a href="/pages/contact-us">Contact Kairali India</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.nhs.uk/conditions/piles-haemorrhoids/" rel="noopener noreferrer" target="_blank">NHS, Piles (haemorrhoids)</a>. General information only.</p>
+        </article>
+
+      {%- when 'hypertension' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>High blood pressure: why measurement matters</h1>
+          <p class="in037-b02__lead">High blood pressure, or hypertension, commonly causes no symptoms. Measuring blood pressure is the way to detect it.</p>
+
+          <h2>Get your blood pressure checked</h2>
+          <p>Ask a qualified health professional to measure it and explain what the reading means for you. Do not judge your blood pressure only by how you feel.</p>
+
+          <h2>Get immediate medical care if</h2>
+          <p>A very high reading comes with chest pain, difficulty breathing, confusion or a change in vision.</p>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not recommend an Ayurvedic product, oil or dose for high blood pressure. Follow the treatment plan given by your qualified health professional.</p>
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India for a non-urgent product question</a><a href="/pages/quality-and-safety">Quality and safety</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.who.int/news-room/fact-sheets/detail/hypertension" rel="noopener noreferrer" target="_blank">World Health Organization, hypertension</a>. General information only.</p>
+        </article>
+
+      {%- when 'liver-diseases' -%}
+        <article class="in037-b02 in037-b02--guide">
+          <h1>Liver disease: signs and getting checked</h1>
+          <p class="in037-b02__lead">Many liver diseases can have no early symptoms. A suspected liver problem needs medical assessment rather than self-treatment.</p>
+
+          <h2>Signs to have assessed</h2>
+          <ul>
+            <li>Yellowing of the skin or whites of the eyes (jaundice)</li>
+            <li>Persistent weakness or tiredness</li>
+            <li>Loss of appetite</li>
+            <li>Persistent itching</li>
+          </ul>
+
+          <h2>About Kairali products</h2>
+          <p>This guide does not claim that a Kairali product protects the liver, prevents damage, restores liver function or neutralises toxins.</p>
+          <p class="in037-b02__actions"><a href="/pages/contact-us">Contact Kairali India for a non-urgent product question</a><a href="/pages/quality-and-safety">Quality and safety</a></p>
+
+          <p class="in037-b02__source">Source: <a href="https://www.nhs.uk/conditions/liver-disease/" rel="noopener noreferrer" target="_blank">NHS, Liver disease</a>. General information only.</p>
+        </article>
+    {%- endcase -%}
+
+  {%- when 'condition_tab_2_title' -%}About this guide
+
+  {%- when 'condition_tab_2' -%}
+    <div class="in037-b02 in037-b02--guide-note">
+      <h2>About this guide</h2>
+      <p>This page provides general information and responsible next steps. It does not diagnose a condition, replace medical care or recommend a Kairali product for treatment.</p>
+      <ul>
+        <li>Use the <a href="/pages/product-faqs">Product FAQs</a> to understand labels, formats and responsible selection.</li>
+        <li>Use the <a href="/pages/quality-and-safety">Quality and Safety</a> page for label and product-use guidance.</li>
+        <li>Use the <a href="/pages/contact-us">Contact page</a> for a non-urgent product or order question.</li>
+      </ul>
+    </div>
+{%- endcase -%}

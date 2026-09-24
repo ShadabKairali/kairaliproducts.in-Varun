@@ -1,0 +1,111 @@
+{% liquid
+  assign amla_product = all_products['amla-shikakai-shampoo-herbal-hair-strengthening-shampoo']
+  assign aloe_product = all_products['kairali-aloevera-herbal-shampoo-for-dry-and-damaged-hair']
+  assign amla_variant = amla_product.variants | where: 'sku', 'HCASS0200NP0925' | first
+  assign aloe_variant = aloe_product.variants | where: 'sku', 'HCAVS0200NP0925' | first
+  assign companion_product = blank
+  assign companion_variant = blank
+  assign companion_name = blank
+  if current_product.handle == amla_product.handle
+    assign companion_product = aloe_product
+    assign companion_variant = aloe_variant
+    assign companion_name = 'Aloe Vera Shampoo'
+  elsif current_product.handle == aloe_product.handle
+    assign companion_product = amla_product
+    assign companion_variant = amla_variant
+    assign companion_name = 'Amla Shikakai Shampoo'
+  endif
+  assign entry_available = false
+  if companion_product != blank and amla_variant.available and aloe_variant.available
+    assign entry_available = true
+  endif
+%}
+
+{% if entry_available %}
+  <aside class="kairali-hair-entry" data-hair-set-entry aria-label="Two-shampoo set option">
+    <a class="kairali-hair-entry__image-link" href="{{ collections['hair-care'].url }}#KairaliHairSet" aria-label="View the two-shampoo set">
+      {{
+        companion_product.featured_image
+        | image_url: width: 240
+        | image_tag:
+          class: 'kairali-hair-entry__image',
+          loading: 'lazy',
+          widths: '96, 144, 192, 240',
+          sizes: '72px',
+          alt: companion_name
+      }}
+    </a>
+    <div class="kairali-hair-entry__content">
+      <p class="kairali-hair-entry__eyebrow">PAIR YOUR SHAMPOO</p>
+      <h2>Complete the shampoo pair</h2>
+      <p>See {{ companion_name }} with this product. Both stay separate in your cart with current prices and availability.</p>
+      <p class="kairali-hair-entry__meta">{{ companion_variant.title }}, {{ companion_variant.price | money_with_currency }}</p>
+      <a class="kairali-hair-entry__link" href="{{ collections['hair-care'].url }}#KairaliHairSet">View the two-item set</a>
+    </div>
+  </aside>
+{% endif %}
+
+<style>
+  .kairali-hair-entry {
+    align-items: center;
+    background: #f4f6e8;
+    border: 1px solid rgba(75, 87, 35, 0.22);
+    border-radius: 1.2rem;
+    display: grid;
+    gap: 1.4rem;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    margin: 1.6rem 0;
+    padding: 1.4rem;
+  }
+
+  .kairali-hair-entry__image {
+    aspect-ratio: 1;
+    background: #ffffff;
+    border: 1px solid rgba(75, 87, 35, 0.14);
+    border-radius: 0.8rem;
+    display: block;
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .kairali-hair-entry__content h2 {
+    color: #24310f;
+    font-family: var(--font-headline);
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin: 0.3rem 0 0.5rem;
+  }
+
+  .kairali-hair-entry__content > p {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    margin: 0 0 0.5rem;
+  }
+
+  .kairali-hair-entry__eyebrow {
+    color: #617024;
+    font-size: 1.05rem !important;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+
+  .kairali-hair-entry__meta {
+    color: #5b604f;
+    font-weight: 600;
+  }
+
+  .kairali-hair-entry__link {
+    color: #526218;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1rem;
+    text-underline-offset: 0.3rem;
+  }
+
+  .kairali-hair-entry a:focus-visible {
+    outline: 0.2rem solid #24310f;
+    outline-offset: 0.3rem;
+  }
+</style>

@@ -1,0 +1,151 @@
+{% doc %}
+Renders one premium homepage card with HTML copy, a decorative theme background, authentic product pack layers, and an optional live product commerce line.
+
+@param {string} id - Stable card identifier.
+@param {string} href - Card CTA destination.
+@param {string} background - Decorative desktop background theme asset filename.
+@param {string} [mobile_background] - Optional decorative mobile background theme asset filename.
+@param {number} [mobile_background_width] - Optional mobile background intrinsic width.
+@param {number} [mobile_background_height] - Optional mobile background intrinsic height.
+@param {string} [tone] - Card tone modifier.
+@param {string} [eyebrow] - Card eyebrow copy.
+@param {string} heading - Card H3 copy.
+@param {string} [body] - Card body copy.
+@param {string} cta - Card CTA copy.
+@param {string} [product_1_src] - First product pack source.
+@param {string} [product_1_alt] - First product pack alternative text.
+@param {number} [product_1_width] - First product pack intrinsic width.
+@param {number} [product_1_height] - First product pack intrinsic height.
+@param {string} [product_2_src] - Second product pack source.
+@param {string} [product_2_alt] - Second product pack alternative text.
+@param {number} [product_2_width] - Second product pack intrinsic width.
+@param {number} [product_2_height] - Second product pack intrinsic height.
+@param {string} [product_3_src] - Third product pack source.
+@param {string} [product_3_alt] - Third product pack alternative text.
+@param {number} [product_3_width] - Third product pack intrinsic width.
+@param {number} [product_3_height] - Third product pack intrinsic height.
+@param {string} [product_4_src] - Fourth product pack source.
+@param {string} [product_4_alt] - Fourth product pack alternative text.
+@param {number} [product_4_width] - Fourth product pack intrinsic width.
+@param {number} [product_4_height] - Fourth product pack intrinsic height.
+@param {string} [commerce_product_handle] - Optional product handle used only for live price and availability.
+@param {string} [card_modifier] - Optional additional card classes.
+{% enddoc %}
+
+{%- liquid
+  assign card_dom_id = id | handleize
+  assign card_tone = tone | default: 'light'
+  assign product_count = 0
+
+  if product_1_src != blank
+    assign product_count = product_count | plus: 1
+  endif
+  if product_2_src != blank
+    assign product_count = product_count | plus: 1
+  endif
+  if product_3_src != blank
+    assign product_count = product_count | plus: 1
+  endif
+  if product_4_src != blank
+    assign product_count = product_count | plus: 1
+  endif
+
+  assign product_1_render_width = product_1_width | default: 1000
+  assign product_1_render_height = product_1_height | default: product_1_render_width
+  assign product_2_render_width = product_2_width | default: 1000
+  assign product_2_render_height = product_2_height | default: product_2_render_width
+  assign product_3_render_width = product_3_width | default: 1000
+  assign product_3_render_height = product_3_height | default: product_3_render_width
+  assign product_4_render_width = product_4_width | default: 1000
+  assign product_4_render_height = product_4_height | default: product_4_render_width
+  assign mobile_background_render_width = mobile_background_width | default: 1254
+  assign mobile_background_render_height = mobile_background_height | default: 1254
+
+  assign commerce_product = blank
+  assign commerce_state = 'not-linked'
+  if commerce_product_handle != blank
+    assign commerce_product = all_products[commerce_product_handle]
+    if commerce_product != blank
+      if commerce_product.available
+        assign commerce_state = 'available'
+      else
+        assign commerce_state = 'unavailable'
+      endif
+    endif
+  endif
+-%}
+
+<article
+  id="{{ card_dom_id }}"
+  class="kp-card kp-card--{{ card_tone | escape }}{% if card_modifier != blank %} {{ card_modifier | escape }}{% endif %}"
+  aria-labelledby="{{ card_dom_id }}-title"
+  data-card-id="{{ id | escape }}"
+  data-availability="{{ commerce_state }}"
+>
+  <a
+    class="kp-card__link"
+    href="{{ href | escape }}"
+    aria-label="{{ cta | append: ': ' | append: heading | escape }}"
+  >
+  <div class="kp-card__media">
+    <picture class="kp-card__background" aria-hidden="true">
+      {%- if mobile_background != blank -%}
+        <source media="(max-width: 749px)" srcset="{{ mobile_background | asset_url }}" width="{{ mobile_background_render_width }}" height="{{ mobile_background_render_height }}">
+      {%- endif -%}
+      <img
+        src="{{ background | asset_url }}"
+        alt=""
+        width="1254"
+        height="1254"
+        loading="lazy"
+        decoding="async"
+      >
+    </picture>
+
+    {%- if product_count > 0 -%}
+      <div class="kp-card__products kp-card__products--count-{{ product_count }}" data-product-count="{{ product_count }}">
+        {%- if product_1_src != blank -%}
+          {% render 'kairali-premium-product-image', src: product_1_src, alt: product_1_alt, width: product_1_render_width, height: product_1_render_height, position: 1 %}
+        {%- endif -%}
+        {%- if product_2_src != blank -%}
+          {% render 'kairali-premium-product-image', src: product_2_src, alt: product_2_alt, width: product_2_render_width, height: product_2_render_height, position: 2 %}
+        {%- endif -%}
+        {%- if product_3_src != blank -%}
+          {% render 'kairali-premium-product-image', src: product_3_src, alt: product_3_alt, width: product_3_render_width, height: product_3_render_height, position: 3 %}
+        {%- endif -%}
+        {%- if product_4_src != blank -%}
+          {% render 'kairali-premium-product-image', src: product_4_src, alt: product_4_alt, width: product_4_render_width, height: product_4_render_height, position: 4 %}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="kp-card__content">
+    {%- if eyebrow != blank -%}
+      <p class="kp-eyebrow">{{ eyebrow | escape }}</p>
+    {%- endif -%}
+
+    <h3 id="{{ card_dom_id }}-title" class="kp-card__title">{{ heading | escape }}</h3>
+
+    {%- if body != blank -%}
+      <p class="kp-card__body">{{ body | escape }}</p>
+    {%- endif -%}
+
+    {%- if commerce_product != blank -%}
+      <p class="kp-card__commerce">
+        <span class="kp-card__price">
+          {%- if commerce_product.price_varies -%}From&nbsp;{%- endif -%}
+          {{- commerce_product.price | money -}}
+        </span>
+        {%- if commerce_product.compare_at_price > commerce_product.price -%}
+          <s class="kp-card__compare-price">{{ commerce_product.compare_at_price | money }}</s>
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+
+    <span class="kp-card__cta" aria-hidden="true">
+      {{- cta | escape -}}
+    </span>
+  </div>
+  </a>
+</article>

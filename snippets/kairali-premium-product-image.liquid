@@ -1,0 +1,34 @@
+{% doc %}
+Renders a responsive Shopify-CDN product pack image for a premium homepage card.
+
+@param {string} src - Product image URL.
+@param {string} alt - Descriptive product-pack alternative text.
+@param {number} width - Source intrinsic width.
+@param {number} height - Source intrinsic height.
+@param {number} position - Product position within the composition.
+{% enddoc %}
+
+{%- liquid
+  assign base_src = src | split: '&width=' | first
+  assign base_src = base_src | split: '?width=' | first
+  assign query_joiner = '?'
+  if base_src contains '?'
+    assign query_joiner = '&'
+  endif
+  assign src_360 = base_src | append: query_joiner | append: 'width=360'
+  assign src_540 = base_src | append: query_joiner | append: 'width=540'
+  assign src_720 = base_src | append: query_joiner | append: 'width=720'
+  assign src_900 = base_src | append: query_joiner | append: 'width=900'
+-%}
+
+<img
+  class="kp-card__product kp-card__product--{{ position }}"
+  src="{{ src_720 | escape }}"
+  srcset="{{ src_360 | escape }} 360w, {{ src_540 | escape }} 540w, {{ src_720 | escape }} 720w, {{ src_900 | escape }} 900w"
+  sizes="(max-width: 767px) 58vw, (max-width: 1100px) 32vw, 24vw"
+  alt="{{ alt | escape }}"
+  width="{{ width }}"
+  height="{{ height }}"
+  loading="lazy"
+  decoding="async"
+>

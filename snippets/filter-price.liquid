@@ -1,0 +1,149 @@
+{%- liquid
+  assign max_price = filter.range_max | divided_by: 100.0
+  assign max_price_label = filter.range_max | money
+  assign currency_symbol = cart.currency.symbol | default: localization.country.currency.symbol
+  assign min_value = blank
+  assign max_value = blank
+
+  if filter.min_value.value != null
+    assign min_value = filter.min_value.value | divided_by: 100.0
+  endif
+
+  if filter.max_value.value != null
+    assign max_value = filter.max_value.value | divided_by: 100.0
+  endif
+-%}
+
+<collapsible-section
+  class="f-price-slider filter js-filter"
+  data-open="false"
+  data-index="{{ index }}"
+  data-toggle-tabindex=".f-price__input"
+>
+  <button
+    type="button"
+    class="filter__header wt-collapse__trigger"
+    tabindex="{% if filter_position == 'always' %}0{% else %}-1{% endif %}"
+    data-open="false"
+    aria-expanded="false"
+    aria-controls="wt-filter-{{ filter.param_name }}"
+  >
+    <div>
+      {{- filter.label | escape -}}
+      <span class="facets__selected">
+        {% if filter.min_value.value != null or filter.max_value.value != null %}(1){% endif %}
+      </span>
+    </div>
+    {% render 'icons', id: 'plus' %}
+  </button>
+
+  <div class="filter__body wt-collapse__target" id="wt-filter-{{ filter.param_name }}">
+    <div class="f-price">
+      <p id="PriceRangeStatus-{{ index }}">{{ 'products.facets.max_price' | t: price: max_price_label }}</p>
+      <price-inputs class="f-price__inputs" data-max="{{ max_price }}">
+        <div class="f-price__val">
+          <label for="Filter-{{ filter.min_value.param_name }}">
+            {{ 'products.facets.from' | t }} ({{ currency_symbol }})
+          </label>
+          <input
+            class="f-price__input f-price__input--from"
+            id="Filter-{{ filter.min_value.param_name }}"
+            name="{{ filter.min_value.param_name }}"
+            type="number"
+            inputmode="numeric"
+            min="0"
+            max="{{ max_price }}"
+            step="0.01"
+            {% if min_value != blank %}value="{{ min_value }}"{% endif %}
+            placeholder="0"
+            aria-describedby="PriceRangeStatus-{{ index }}"
+          >
+        </div>
+
+        <span class="f-price__sep" aria-hidden="true">–</span>
+
+        <div class="f-price__val">
+          <label for="Filter-{{ filter.max_value.param_name }}">
+            {{ 'products.facets.to' | t }} ({{ currency_symbol }})
+          </label>
+          <input
+            class="f-price__input f-price__input--to"
+            id="Filter-{{ filter.max_value.param_name }}"
+            name="{{ filter.max_value.param_name }}"
+            type="number"
+            inputmode="numeric"
+            min="0"
+            max="{{ max_price }}"
+            step="0.01"
+            {% if max_value != blank %}value="{{ max_value }}"{% endif %}
+            placeholder="{{ max_price }}"
+            aria-describedby="PriceRangeStatus-{{ index }}"
+          >
+        </div>
+      </price-inputs>
+    </div>
+  </div>
+</collapsible-section>
+
+<style>
+  .f-price-slider > .filter__header {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  if (!customElements.get('price-inputs')) {
+    customElements.define('price-inputs', class extends HTMLElement {
+      connectedCallback() {
+        if (this.dataset.ready === 'true') return;
+        this.dataset.ready = 'true';
+
+        this.from = this.querySelector('[name="filter.v.price.gte"]');
+        this.to = this.querySelector('[name="filter.v.price.lte"]');
+        this.limit = Number(this.dataset.max) || 999999;
+        this.trigger = this.closest('collapsible-section')?.querySelector('.wt-collapse__trigger');
+
+        if (!this.from || !this.to) return;
+
+        this.trigger?.addEventListener('keydown', (event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          this.trigger.click();
+        });
+        this.from.addEventListener('input', () => this.normalize(this.from));
+        this.to.addEventListener('input', () => this.normalize(this.to));
+        this.normalize();
+      }
+
+      normalize(changedInput) {
+        var fromValue = this.from.value === '' ? null : Number(this.from.value);
+        var toValue = this.to.value === '' ? null : Number(this.to.value);
+
+        if (fromValue !== null) {
+          fromValue = Math.max(0, Math.min(this.limit, fromValue));
+        }
+        if (toValue !== null) {
+          toValue = Math.max(0, Math.min(this.limit, toValue));
+        }
+
+        if (fromValue !== null && toValue !== null && fromValue > toValue) {
+          if (changedInput === this.from) fromValue = toValue;
+          else toValue = fromValue;
+        }
+
+        if (fromValue !== null) this.from.value = fromValue;
+        if (toValue !== null) this.to.value = toValue;
+
+        this.from.max = toValue === null ? this.limit : toValue;
+        this.to.min = fromValue === null ? 0 : fromValue;
+      }
+    });
+  }
+</script>

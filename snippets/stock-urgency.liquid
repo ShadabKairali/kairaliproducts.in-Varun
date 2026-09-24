@@ -1,0 +1,29 @@
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign quantity = variant.inventory_quantity
+-%}
+
+<div class="stock-urgency" {{ block.shopify_attributes }}>
+  {% if variant.available %}
+    {% if quantity > 10 %}
+      <div class="stock-urgency__message stock-urgency__message--high"><span class="stock-urgency__icon">{{ block.settings.high_stock_icon }}</span><span class="stock-urgency__text">{{ block.settings.high_stock_text }}</span></div>
+    {% elsif quantity > 3 %}
+      <div class="stock-urgency__message stock-urgency__message--medium"><span class="stock-urgency__icon">{{ block.settings.medium_stock_icon }}</span><span class="stock-urgency__text">{{ block.settings.medium_stock_text }}</span></div>
+    {% else %}
+      <div class="stock-urgency__message stock-urgency__message--low"><span class="stock-urgency__icon">{{ block.settings.low_stock_icon }}</span><span class="stock-urgency__text">{{ block.settings.low_stock_text }}</span></div>
+    {% endif %}
+  {% else %}
+    <div class="stock-urgency__message stock-urgency__message--out"><span class="stock-urgency__icon">{{ block.settings.out_of_stock_icon }}</span><span class="stock-urgency__text">{{ block.settings.out_of_stock_text }}</span></div>
+  {% endif %}
+</div>
+
+<style>
+  .stock-urgency { margin-top: 10px; max-width: 100%; }
+  .stock-urgency__message { display: flex; align-items: center; gap: 8px; font-size: 1.5rem; font-weight: 400; }
+  .stock-urgency__icon { display: inline-block; font-size: 1.5rem; }
+  .stock-urgency__message--high { color: green; }
+  .stock-urgency__message--medium { color: orange; }
+  .stock-urgency__message--low { color: red; animation: stock-urgency-pulse 1.2s infinite; }
+  .stock-urgency__message--out { color: red; }
+  @keyframes stock-urgency-pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.6; } 100% { transform: scale(1); opacity: 1; } }
+</style>
