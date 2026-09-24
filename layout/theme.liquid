@@ -189,9 +189,10 @@
 {%- comment -%} Other CSS files loaded with preload for performance {%- endcomment -%}
 {{ 'swiper.css'   | asset_url | stylesheet_tag: preload: true }}
 {{ 'settings.css' | asset_url | stylesheet_tag: preload: true }}
-{{ 'kairali-tokens.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'kairali-tokens.css' | asset_url | stylesheet_tag }}
 {{ 'custom.css'   | asset_url | stylesheet_tag: preload: true }}
 {{ 'main.css'     | asset_url | stylesheet_tag: preload: true }}
+{{ 'kairali-header.css' | asset_url | stylesheet_tag }}
 {{ 'kairali-mobile-hardening.css' | asset_url | stylesheet_tag: preload: true }}
 
 {%- if request.page_type == 'collection' -%}

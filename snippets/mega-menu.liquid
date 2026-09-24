@@ -1,169 +1,418 @@
-<ul
-  class="wt-page-nav-mega__list wt-page-nav-mega__list--center"
->
-  {%- for link in section.settings.menu.links -%}
-    {% assign menu_class = '--simple' %}
-    {% assign show_mega = false %}
-    {% assign promo_blocks = false %}
+{% comment %}
+  Kairali Ayurvedic Products — 2026 Luxury Redesign
+  snippets/mega-menu.liquid
+  Architecture:
+    - SHOP (Rich Mega Menu: Skin, Hair, Body, Classical Wellness, Promo Cards, Utility Pills)
+    - DISCOVER (Editorial: Classical Pharmacy, Online Vaidya Consultation, Centres, Rituals)
+    - ABOUT KAIRALI (Heritage Since 1908, Footprint, Awards, Centres, Contact)
+    - JOURNAL (Ayurvedic Wisdom & Blog at /blogs/news)
+  All destinations strictly verified against live store inventory and pages.
+{% endcomment %}
 
-    {% if blocks.size > 0 %}
-      {% for block in blocks %}
-        {% assign megamenu_trigger = block.settings.title | handle | strip %}
-        {% if link.handle == megamenu_trigger %}
-          {% assign show_mega = true %}
-          {% assign mega_block = block %}
-          {% assign menu_class = '--mega' %}
-          {% if mega_block.settings.desktop_image_1
-            or mega_block.settings.desktop_image_2
-            or mega_block.settings.desktop_image_3
-            or mega_block.settings.desktop_image_4
-            or mega_block.settings.desktop_image_5
-            or mega_block.settings.desktop_image_6
-          %}
-            {% assign promo_blocks = true %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+{% assign shop_promo_1_img = 'shopify://shop_images/Mega_menu_image_1.png' %}
+{% assign shop_promo_1_heading = 'KAIRKARE BODY OIL' %}
+{% assign shop_promo_1_sub = 'Classical herbal massage oil for deep relaxation.' %}
+{% assign shop_promo_1_url = '/products/kairkare-ayurvedic-herbal-body-massage-oil' %}
+
+{% assign shop_promo_2_img = 'shopify://shop_images/Mega_menu_image_4.png' %}
+{% assign shop_promo_2_heading = 'SHATAVARI CAPSULES' %}
+{% assign shop_promo_2_sub = 'Traditional Ayurvedic vitality and hormonal balance.' %}
+{% assign shop_promo_2_url = '/products/shatavari-capsules-herbal-health-supplement-for-women' %}
+
+{% for block in blocks %}
+  {% assign block_title = block.settings.title | downcase | strip %}
+  {% if block_title contains 'body' or block_title contains 'shop' %}
+    {% if block.settings.desktop_image_1 %}
+      {% assign shop_promo_1_img = block.settings.desktop_image_1 %}
+      {% assign shop_promo_1_heading = block.settings.heading_1 | default: 'KAIRKARE BODY OIL' %}
+      {% assign shop_promo_1_sub = block.settings.text_1 | default: 'Ayurvedic Body Massage Oil' %}
+      {% assign shop_promo_1_url = block.settings.link_1 | default: '/products/kairkare-ayurvedic-herbal-body-massage-oil' %}
     {% endif %}
-    {%- if link.links != blank or promo_blocks -%}
-      <li
-        class="wt-page-nav-mega__item wt-page-nav-mega__item--parent wt-page-nav-mega__item{{ menu_class }}"
-      >
-        <a
-          href="{{ link.url }}"
-          tabindex="-1"
-          data-menu-level="1"
-          class="wt-page-nav-mega__link wt-page-nav-mega__link--parent {% if link.current %} wt-page-nav-mega__link--active{% endif %}"
-        >
-          <span class="wt-page-nav-mega__link__text wt-page-nav-mega__link__text--underline">
-            {{- link.title | escape -}}
-          </span>
-          {% render 'icons', id: 'plus' %}
-          {% render 'icons', id: 'arrow-down' %}
-        </a>
-        <div class="wt-page-nav-mega__sublist__wrapper wt-page-nav-mega__sublist__wrapper{{ menu_class }}">
-          <ul class="wt-page-nav-mega__sublist">
-            {%- for childlink in link.links -%}
-              {%- if childlink.links == blank -%}
-                <li class="wt-page-nav-mega__sublist__item wt-page-nav-mega__sublist__item--child">
-                  <a
-                    href="{{ childlink.url }}"
-                    data-menu-level="2"
-                    tabindex="-1"
-                    class="wt-page-nav-mega__sublist__link  {% if link.current %} wt-page-nav-mega__sublist__link--active{% endif %}"
-                    ><span class="wt-page-nav-mega__decorated">{{ childlink.title | escape }}</span></a
-                  >
-                </li>
-              {%- else -%}
-                <li
-                  class="wt-page-nav-mega__sublist__item wt-page-nav-mega__sublist__item--child wt-page-nav-mega__sublist--parent"
+    {% if block.settings.desktop_image_2 %}
+      {% assign shop_promo_2_img = block.settings.desktop_image_2 %}
+      {% assign shop_promo_2_heading = block.settings.heading_2 | default: 'SHATAVARI CAPSULES' %}
+      {% assign shop_promo_2_sub = block.settings.text_2 | default: 'Women’s Health & Vitality' %}
+      {% assign shop_promo_2_url = block.settings.link_2 | default: '/products/shatavari-capsules-herbal-health-supplement-for-women' %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign context = menu_context | default: 'desktop' %}
+
+<ul class="wt-page-nav-mega__list wt-page-nav-mega__list--center kp-header__nav-list">
+
+  <!-- ======================================================================
+       1. SHOP (MEGA MENU)
+       ====================================================================== -->
+  <li class="wt-page-nav-mega__item wt-page-nav-mega__item--parent wt-page-nav-mega__item--mega kp-nav-item">
+    <a
+      href="/collections/featured-products"
+      data-menu-level="1"
+      class="wt-page-nav-mega__link wt-page-nav-mega__link--parent kp-nav-link"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="kp-submenu-shop-{{ context }}"
+      id="kp-nav-link-shop-{{ context }}"
+    >
+      <span class="wt-page-nav-mega__link__text wt-page-nav-mega__link__text--underline">SHOP</span>
+      {% render 'icons', id: 'arrow-down' %}
+    </a>
+
+    <div class="wt-page-nav-mega__sublist__wrapper wt-page-nav-mega__sublist__wrapper--mega kp-mega-menu__wrapper" id="kp-submenu-shop-{{ context }}">
+      <!-- Desktop Mega Menu View -->
+      <div class="kp-mega-menu__container">
+        <div class="kp-mega-menu__grid">
+
+          <!-- Column 1: Skin Care -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/collections/skin-care" data-menu-level="2" tabindex="-1">Skin Care</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/collections/face-care" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Facial Care</a></li>
+              <li><a href="/collections/kair-by-kairali-herbal-cosmetics-products" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Herbal Cosmetics</a></li>
+              <li><a href="/collections/pigmentation" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Pigmentation & De-Tan</a></li>
+              <li><a href="/collections/dry-skin" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Dry & Sensitive Skin</a></li>
+              <li><a href="/collections/wrinkles" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Anti-Ageing & Radiance</a></li>
+              <li><a href="/collections/skin-care" data-menu-level="3" tabindex="-1" class="kp-mega-col__view-all">All Skin Care →</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Hair Care -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/collections/hair-care" data-menu-level="2" tabindex="-1">Hair Care</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/collections/hair-fall" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Hair Fall Control</a></li>
+              <li><a href="/collections/dandruff" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Anti-Dandruff</a></li>
+              <li><a href="/collections/premature-graying" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Premature Greying</a></li>
+              <li><a href="/collections/dry-hair" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Dry & Damaged Hair</a></li>
+              <li><a href="/collections/thinning-hair" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Hair Strengthening</a></li>
+              <li><a href="/collections/hair-care" data-menu-level="3" tabindex="-1" class="kp-mega-col__view-all">All Hair Care →</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Body & Wellness -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/collections/body-care" data-menu-level="2" tabindex="-1">Body & Health</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/collections/body-care" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Body Massage Oils</a></li>
+              <li><a href="/collections/ayurvedic-pain-relief-oils" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Pain Relief Oils</a></li>
+              <li><a href="/collections/fitness-wellness" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Fitness & Wellness</a></li>
+              <li><a href="/collections/general-care" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Daily Hygiene & Care</a></li>
+              <li><a href="/collections/daily-health-supplements" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Daily Health Supplements</a></li>
+              <li><a href="/collections/body-care" data-menu-level="3" tabindex="-1" class="kp-mega-col__view-all">All Body Care →</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Classical Ayurveda -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/collections/traditional-ayurvedic-medicine" data-menu-level="2" tabindex="-1">Ayurveda (1908)</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/collections/thailams-tailams-ayurvedic-medicated-oils" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Medicated Thailams</a></li>
+              <li><a href="/collections/kashayams-ayurvedic-herbal-decoctions" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Herbal Kashayams</a></li>
+              <li><a href="/collections/ayurvedic-tablets-gulikas-and-vatis" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Tablets & Gulikas</a></li>
+              <li><a href="/collections/ayurvedic-herbal-single-herbs-products" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Single Herbs & Extracts</a></li>
+              <li><a href="/collections/traditional-ayurvedic-medicine" data-menu-level="3" tabindex="-1" class="kp-mega-col__view-all">All Traditional Medicines →</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Editorial Spotlight Cards -->
+          <div class="kp-mega-promo">
+            <p class="kp-mega-promo__eyebrow">Signature Formulations</p>
+
+            <a href="{{ shop_promo_1_url }}" data-menu-level="2" tabindex="-1" class="kp-mega-card">
+              <div class="kp-mega-card__media">
+                <img
+                  src="{{ shop_promo_1_img | image_url: width: 200 }}"
+                  alt="{{ shop_promo_1_heading }}"
+                  class="kp-mega-card__img"
+                  loading="lazy"
+                  width="68"
+                  height="68"
                 >
-                  <a
-                    href="{{ childlink.url }}"
-                    data-menu-level="2"
-                    tabindex="-1"
-                    class="wt-page-nav-mega__sublist__link wt-page-nav-mega__sublist__link--parent {% if childlink.current %} wt-page-nav-mega__sublist__link--active{% endif %}"
-                  >
-                    <span class="wt-page-nav-mega__decorated">{{ childlink.title | escape }}</span>
-                    {% render 'icons', id: 'plus' %}
-                    {% render 'icons', id: 'arrow-right' %}
-                  </a>
-                  <ul class="wt-page-nav-mega__sublist wt-page-nav-mega__sublist--nested">
-                    {%- for grandchildlink in childlink.links -%}
-                      <li
-                        class="wt-page-nav-mega__sublist__item wt-page-nav-mega__sublist__item--grandchild"
-                      >
-                        <a
-                          href="{{ grandchildlink.url }}"
-                          data-menu-level="3"
-                          class="wt-page-nav-mega__sublist__link"
-                          tabindex="-1"
-                        >
-                          <span class="wt-page-nav-mega__decorated">{{ grandchildlink.title | escape }}</span>
-                        </a>
-                      </li>
-                    {%- endfor -%}
-                  </ul>
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-            {% if show_mega %}
-              <li
-                data-block-id="{{ mega_block.id }}"
-                class="wt-page-nav-mega__sublist__item wt-page-nav-mega__sublist__item--gallery"
-              >
-                <ul class="mega-menu__gallery">
-                  {% assign promo_images_count = 0 %}
-                  {% for i in (1..6) %}
-                    {% assign key = 'desktop_image_' | append: i %}
-                    {% if mega_block.settings[key] %}
-                      {% assign promo_images_count = promo_images_count | plus: 1 %}
-                      <li class="mega-menu__gallery__item">
-                        {% assign link_key = 'link_' | append: i %}
-                        <a
-                          href="{{ mega_block.settings[link_key] | downcase }}"
-                          class="mega-menu__gallery__link"
-                          data-menu-level="2"
-                          tabindex="-1"
-                        >
-                          <picture class="mega-menu__gallery__picture">
-                            <img
-                              class="mega-menu__gallery__img"
-                              srcset="
-                                {% if mega_block.settings[key].width >= 400 %}{{ mega_block.settings[key] | image_url: width: 400 }} 400w, {% endif %}
-                                {% if mega_block.settings[key].width >= 800 %}{{ mega_block.settings[key] | image_url: width: 800 }} 800w, {% endif %}
-                                {% if mega_block.settings[key].width >= 1200 %}{{ mega_block.settings[key] | image_url: width: 1200 }} 1200w, {% endif %}
-                                {% if mega_block.settings[key].width >= 1600 %}{{ mega_block.settings[key] | image_url: width: 1600 }} 1600w, {% endif %}
-                                {{ mega_block.settings[key] | image_url: width: 800 }} 800w
-                              "
-                              sizes="(min-width: 800px) 800px, 100vw"
-                              src="{{ mega_block.settings[key] | image_url: width: 800 }}"
-                              alt="{{ mega_block.settings[key].alt | escape }}"
-                              width="{{ mega_block.settings[key].width }}"
-                              height="{{ mega_block.settings[key].height }}"
-                              loading="lazy"
-                            >
-                            {% assign heading_key = 'heading_' | append: i %}
-                            <span class="mega-menu__gallery__heading wt-page-nav-mega__decorated">
-                              {{- mega_block.settings[heading_key] -}}
-                            </span>
-                            {% assign text_key = 'text_' | append: i %}
-                            <p class="mega-menu__gallery__caption">{{ mega_block.settings[text_key] }}</p>
-                          </picture>
-                        </a>
-                      </li>
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              </li>
-              {% if promo_images_count > 0 %}
-                <style>
-                  [data-block-id='{{ mega_block.id }}'] {
-                    --promo-columns: span {{mega_block.settings.promo_section_width}};
-                  }
-                </style>
-              {% endif %}
-            {% endif %}
+              </div>
+              <div class="kp-mega-card__content">
+                <span class="kp-mega-card__tag">HERITAGE MASSAGE</span>
+                <h4 class="kp-mega-card__title">{{ shop_promo_1_heading }}</h4>
+                <p class="kp-mega-card__desc">{{ shop_promo_1_sub }}</p>
+              </div>
+            </a>
+
+            <a href="{{ shop_promo_2_url }}" data-menu-level="2" tabindex="-1" class="kp-mega-card">
+              <div class="kp-mega-card__media">
+                <img
+                  src="{{ shop_promo_2_img | image_url: width: 200 }}"
+                  alt="{{ shop_promo_2_heading }}"
+                  class="kp-mega-card__img"
+                  loading="lazy"
+                  width="68"
+                  height="68"
+                >
+              </div>
+              <div class="kp-mega-card__content">
+                <span class="kp-mega-card__tag">PURE BOTANICAL</span>
+                <h4 class="kp-mega-card__title">{{ shop_promo_2_heading }}</h4>
+                <p class="kp-mega-card__desc">{{ shop_promo_2_sub }}</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Mega Menu Bottom Bar -->
+        <div class="kp-mega-menu__footer">
+          <div class="kp-mega-menu__pills">
+            <a href="/collections/best-selling-products" data-menu-level="2" tabindex="-1" class="kp-mega-pill kp-mega-pill--gold">★ Best Sellers</a>
+            <a href="/collections/featured-products" data-menu-level="2" tabindex="-1" class="kp-mega-pill">✦ Featured Formulations</a>
+            <a href="/pages/offers" data-menu-level="2" tabindex="-1" class="kp-mega-pill">🏷 Current Offers</a>
+            <a href="/pages/online-consultation" data-menu-level="2" tabindex="-1" class="kp-mega-pill">⚕ Consult a Vaidya</a>
+          </div>
+          <span class="kp-mega-menu__badge">AUTHENTIC KERALA AYURVEDA SINCE 1908</span>
+        </div>
+      </div>
+
+      <!-- Mobile Accordion Drawer View -->
+      <div class="kp-mobile-subnav">
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">Skin Care</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/collections/face-care" class="kp-mobile-subnav__link">Facial Care</a></li>
+            <li><a href="/collections/pigmentation" class="kp-mobile-subnav__link">Pigmentation & De-Tan</a></li>
+            <li><a href="/collections/kair-by-kairali-herbal-cosmetics-products" class="kp-mobile-subnav__link">Herbal Cosmetics</a></li>
+            <li><a href="/collections/skin-care" class="kp-mobile-subnav__link">View All Skin Care</a></li>
           </ul>
         </div>
-      </li>
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">Hair Care</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/collections/hair-fall" class="kp-mobile-subnav__link">Hair Fall Control</a></li>
+            <li><a href="/collections/dandruff" class="kp-mobile-subnav__link">Anti-Dandruff</a></li>
+            <li><a href="/collections/hair-care" class="kp-mobile-subnav__link">View All Hair Care</a></li>
+          </ul>
+        </div>
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">Body & Health</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/collections/body-care" class="kp-mobile-subnav__link">Body Massage Oils</a></li>
+            <li><a href="/collections/ayurvedic-pain-relief-oils" class="kp-mobile-subnav__link">Pain Relief Oils</a></li>
+            <li><a href="/collections/fitness-wellness" class="kp-mobile-subnav__link">Fitness & Wellness</a></li>
+          </ul>
+        </div>
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">Traditional Ayurveda</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/collections/thailams-tailams-ayurvedic-medicated-oils" class="kp-mobile-subnav__link">Medicated Thailams</a></li>
+            <li><a href="/collections/kashayams-ayurvedic-herbal-decoctions" class="kp-mobile-subnav__link">Herbal Kashayams</a></li>
+            <li><a href="/collections/traditional-ayurvedic-medicine" class="kp-mobile-subnav__link">All Classical Medicines</a></li>
+          </ul>
+        </div>
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">Featured Highlights</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/collections/best-selling-products" class="kp-mobile-subnav__link">★ Best Sellers</a></li>
+            <li><a href="/pages/offers" class="kp-mobile-subnav__link">🏷 Special Offers</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
 
-    {%- else -%}
-      <li class="wt-page-nav-mega__item">
-        <a
-          href="{{ link.url }}"
-          data-menu-level="1"
-          tabindex="-1"
-          class="wt-page-nav-mega__link {% if link.current %} wt-page-nav-mega__link--active{% endif %}"
-          {% if link.current %}
-            aria-current="page"
-          {% endif %}
-        >
-          <span class="wt-page-nav-mega__link__text wt-page-nav-mega__link__text--underline">
-            {{- link.title | escape -}}
-          </span>
-        </a>
-      </li>
-    {%- endif -%}
-  {%- endfor -%}
+  <!-- ======================================================================
+       2. DISCOVER (EDITORIAL MEGA MENU)
+       ====================================================================== -->
+  <li class="wt-page-nav-mega__item wt-page-nav-mega__item--parent wt-page-nav-mega__item--mega kp-nav-item">
+    <a
+      href="/pages/the-kairali-group"
+      data-menu-level="1"
+      class="wt-page-nav-mega__link wt-page-nav-mega__link--parent kp-nav-link"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="kp-submenu-discover-{{ context }}"
+      id="kp-nav-link-discover-{{ context }}"
+    >
+      <span class="wt-page-nav-mega__link__text wt-page-nav-mega__link__text--underline">DISCOVER</span>
+      {% render 'icons', id: 'arrow-down' %}
+    </a>
+
+    <div class="wt-page-nav-mega__sublist__wrapper wt-page-nav-mega__sublist__wrapper--mega kp-mega-menu__wrapper" id="kp-submenu-discover-{{ context }}">
+      <!-- Desktop View -->
+      <div class="kp-mega-menu__container">
+        <div class="kp-mega-menu__grid">
+
+          <!-- Column 1: Classical Ayurveda -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/collections/traditional-ayurvedic-medicine" data-menu-level="2" tabindex="-1">Ayurvedic Heritage</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/pages/the-kairali-group" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Kerala Healing Legacy</a></li>
+              <li><a href="/collections/traditional-ayurvedic-medicine" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Classical Formulations</a></li>
+              <li><a href="/collections/thailams-tailams-ayurvedic-medicated-oils" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Traditional Thailams</a></li>
+              <li><a href="/collections/kashayams-ayurvedic-herbal-decoctions" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Herbal Kashayams</a></li>
+              <li><a href="/collections/ayurvedic-herbal-single-herbs-products" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Single Herb Botanicals</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Doctor Care & Centres -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/pages/online-consultation" data-menu-level="2" tabindex="-1">Doctor Guidance</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/pages/online-consultation" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Consult an Ayurvedic Doctor</a></li>
+              <li><a href="/pages/find-our-store" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Treatment Centres & Clinics</a></li>
+              <li><a href="/pages/our-happy-customers-reviews" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Patient Testimonials</a></li>
+              <li><a href="/pages/faq" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Ayurveda FAQs & Guide</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Wellness Solutions -->
+          <div class="kp-mega-col">
+            <h3 class="kp-mega-col__title">
+              <a href="/collections/fitness-wellness" data-menu-level="2" tabindex="-1">Targeted Wellness</a>
+            </h3>
+            <ul class="kp-mega-col__list">
+              <li><a href="/collections/pain-relief" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Joint & Muscle Comfort</a></li>
+              <li><a href="/collections/immunity-and-general-wellness" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Immunity & Stamina</a></li>
+              <li><a href="/collections/general-health" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">General Health Elixirs</a></li>
+              <li><a href="/pages/offers" data-menu-level="3" tabindex="-1" class="kp-mega-col__link">Curated Gift Kits & Offers</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Editorial Consultation Card -->
+          <div class="kp-mega-promo" style="grid-column: span 2;">
+            <p class="kp-mega-promo__eyebrow">Expert Vaidya Consultation</p>
+            <div style="background: #ffffff; border-radius: var(--kp-radius-md, 8px); padding: 18px; border: 1px solid rgba(13,45,32,0.06); display: flex; flex-direction: column; gap: 8px;">
+              <h4 style="font-family: var(--kp-font-heading); font-size: 16px; margin: 0; color: var(--kp-color-deep-forest);">Personalised Ayurvedic Health Consultations</h4>
+              <p style="font-size: 13px; color: rgba(25,24,22,0.72); line-height: 1.5; margin: 0;">Speak directly with qualified Ayurvedic physicians from Kairali Ayurvedic Group for customized dietary, lifestyle, and herbal advice.</p>
+              <div style="margin-top: 8px;">
+                <a href="/pages/online-consultation" class="kp-mega-pill kp-mega-pill--gold" style="font-size: 12px; padding: 8px 18px;">Book Online Consultation →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="kp-mega-menu__footer">
+          <div class="kp-mega-menu__pills">
+            <a href="/pages/the-kairali-group" class="kp-mega-pill">Four Generations of Ayurveda</a>
+            <a href="/pages/online-consultation" class="kp-mega-pill kp-mega-pill--gold">Online Doctor Consultation</a>
+            <a href="/pages/find-our-store" class="kp-mega-pill">Store & Centre Locator</a>
+          </div>
+          <span class="kp-mega-menu__badge">HOLISTIC WELLNESS ROOTED IN KERALA</span>
+        </div>
+      </div>
+
+      <!-- Mobile Accordion Drawer View -->
+      <div class="kp-mobile-subnav">
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">Ayurvedic Care</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/pages/online-consultation" class="kp-mobile-subnav__link">Consult an Ayurvedic Doctor</a></li>
+            <li><a href="/pages/find-our-store" class="kp-mobile-subnav__link">Treatment Centres & Clinics</a></li>
+            <li><a href="/collections/traditional-ayurvedic-medicine" class="kp-mobile-subnav__link">Classical Formulations</a></li>
+            <li><a href="/pages/offers" class="kp-mobile-subnav__link">Curated Offers & Kits</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <!-- ======================================================================
+       3. ABOUT KAIRALI (HERITAGE DROPDOWN)
+       ====================================================================== -->
+  <li class="wt-page-nav-mega__item wt-page-nav-mega__item--parent kp-nav-item">
+    <a
+      href="/pages/the-kairali-group"
+      data-menu-level="1"
+      class="wt-page-nav-mega__link wt-page-nav-mega__link--parent kp-nav-link"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="kp-submenu-about-{{ context }}"
+      id="kp-nav-link-about-{{ context }}"
+    >
+      <span class="wt-page-nav-mega__link__text wt-page-nav-mega__link__text--underline">ABOUT KAIRALI</span>
+      {% render 'icons', id: 'arrow-down' %}
+    </a>
+
+    <div class="wt-page-nav-mega__sublist__wrapper kp-mega-menu__wrapper" id="kp-submenu-about-{{ context }}">
+      <!-- Desktop View -->
+      <div class="kp-mega-menu__container kp-mega-menu__container--compact">
+        <ul class="kp-dropdown-list">
+          <li class="kp-dropdown-item">
+            <a href="/pages/the-kairali-group" data-menu-level="2" tabindex="-1">
+              <span>The Kairali Story (Since 1908)</span>
+              <span style="color: var(--kp-color-muted-gold);">→</span>
+            </a>
+          </li>
+          <li class="kp-dropdown-item">
+            <a href="/pages/our-footprint" data-menu-level="2" tabindex="-1">
+              <span>Our Global Footprint</span>
+              <span style="color: var(--kp-color-muted-gold);">→</span>
+            </a>
+          </li>
+          <li class="kp-dropdown-item">
+            <a href="/pages/awards" data-menu-level="2" tabindex="-1">
+              <span>Awards & Recognitions</span>
+              <span style="color: var(--kp-color-muted-gold);">→</span>
+            </a>
+          </li>
+          <li class="kp-dropdown-item">
+            <a href="/pages/find-our-store" data-menu-level="2" tabindex="-1">
+              <span>Treatment Centres & Stores</span>
+              <span style="color: var(--kp-color-muted-gold);">→</span>
+            </a>
+          </li>
+          <li class="kp-dropdown-item">
+            <a href="/pages/our-happy-customers-reviews" data-menu-level="2" tabindex="-1">
+              <span>Customer Reviews</span>
+              <span style="color: var(--kp-color-muted-gold);">→</span>
+            </a>
+          </li>
+          <li class="kp-dropdown-item">
+            <a href="/pages/contact-us" data-menu-level="2" tabindex="-1">
+              <span>Contact Us</span>
+              <span style="color: var(--kp-color-muted-gold);">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Accordion Drawer View -->
+      <div class="kp-mobile-subnav">
+        <div class="kp-mobile-subnav__group">
+          <div class="kp-mobile-subnav__group-title">The Kairali Legacy</div>
+          <ul class="kp-mobile-subnav__list">
+            <li><a href="/pages/the-kairali-group" class="kp-mobile-subnav__link">The Kairali Story (Since 1908)</a></li>
+            <li><a href="/pages/our-footprint" class="kp-mobile-subnav__link">Our Global Footprint</a></li>
+            <li><a href="/pages/awards" class="kp-mobile-subnav__link">Awards & Recognitions</a></li>
+            <li><a href="/pages/find-our-store" class="kp-mobile-subnav__link">Treatment Centres & Stores</a></li>
+            <li><a href="/pages/contact-us" class="kp-mobile-subnav__link">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+
+  <!-- ======================================================================
+       4. JOURNAL (DIRECT LINK)
+       ====================================================================== -->
+  <li class="wt-page-nav-mega__item kp-nav-item">
+    <a
+      href="/blogs/news"
+      data-menu-level="1"
+      class="wt-page-nav-mega__link kp-nav-link"
+      id="kp-nav-link-journal-{{ context }}"
+    >
+      <span class="wt-page-nav-mega__link__text wt-page-nav-mega__link__text--underline">JOURNAL</span>
+    </a>
+  </li>
+
 </ul>

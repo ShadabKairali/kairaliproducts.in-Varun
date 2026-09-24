@@ -43,13 +43,29 @@
 
 {% assign layout_options = 'option_3,option_4' | split: ',' %}
 <script>
-  {% comment %}// If 'layout_options' contains current section setting, then add 'mobile-nav'{% endcomment %}
-  {% comment %}// otherwise remove 'mobile-nav'{% endcomment %}
-  {% if layout_options contains section.settings.layout %}
-  document.body.classList.add('mobile-nav');
-  {% else %}
-  document.body.classList.remove('mobile-nav');
-  {% endif %}
+  (() => {
+    const mediaQuery = window.matchMedia('(min-width: 1200px)');
+    const shouldForceMobileNav = {% if layout_options contains section.settings.layout %}true{% else %}false{% endif %};
+
+    function updateNavigationMode(e) {
+      const isDesktop = e ? e.matches : mediaQuery.matches;
+      if (isDesktop) {
+        document.body.classList.remove('mobile-nav');
+      } else if (shouldForceMobileNav) {
+        document.body.classList.add('mobile-nav');
+      } else {
+        document.body.classList.remove('mobile-nav');
+      }
+    }
+
+    updateNavigationMode();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateNavigationMode);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(updateNavigationMode);
+    }
+  })();
 </script>
 
 <page-header
@@ -147,7 +163,7 @@
         <mega-menu-section class="mega-menu">
           <nav class="wt-page-nav-mega {% if section.settings.show_shadow %} wt-page-nav-mega--shadow{% endif %}">
             {%- if section.settings.menu != blank -%}
-              {% render 'mega-menu', menu: section.settings.menu, blocks: section.blocks %}
+              {% render 'mega-menu', menu: section.settings.menu, blocks: section.blocks, menu_context: 'desktop' %}
             {%- endif -%}
           </nav>
         </mega-menu-section>
@@ -471,13 +487,24 @@
     <mega-menu-section class="mega-menu">
       <nav class="wt-page-nav-mega {% if section.settings.show_shadow %} wt-page-nav-mega--shadow{% endif %}">
         {%- if section.settings.menu != blank -%}
-          {% render 'mega-menu', menu: section.settings.menu, blocks: section.blocks %}
+          {% render 'mega-menu', menu: section.settings.menu, blocks: section.blocks, menu_context: 'mobile' %}
         {%- endif -%}
       </nav>
 
       {% if shop.customer_accounts_enabled or section.settings.mobile_footer_menu != null %}
         <aside class="wt-page-nav-mega__aside">
-          <ul class="wt-page-nav-mega__aside-list">
+          <div style="margin-bottom: 14px;">
+            <a href="/pages/online-consultation" class="kp-drawer-cta-btn" tabindex="-1">
+              <span>⚕ Book Ayurvedic Consultation</span>
+            </a>
+          </div>
+          <ul class="kp-drawer-quicklinks">
+            <li><a href="/pages/the-kairali-group" tabindex="-1">Our Story (Since 1908)</a></li>
+            <li><a href="/pages/find-our-store" tabindex="-1">Treatment Centres & Stores</a></li>
+            <li><a href="/pages/contact-us" tabindex="-1">Contact Us</a></li>
+            <li><a href="/pages/faq" tabindex="-1">Ayurveda FAQs</a></li>
+          </ul>
+          <ul class="wt-page-nav-mega__aside-list" style="margin-top: 10px;">
             {%- if shop.customer_accounts_enabled -%}
               <li class="wt-page-nav-mega__aside-list__item">
                 <a
