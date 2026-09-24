@@ -1,0 +1,690 @@
+/* IN-034: scoped mobile/A+ hardening for the India storefront. */
+.product-aplus-content {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+  letter-spacing: normal;
+}
+
+.product-aplus-content *,
+.product-tabs-container * {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.product-aplus-content img[width][height] {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.product-aplus-content section,
+.product-aplus-content div {
+  max-width: 100%;
+}
+
+body.template-product .product-tabs-container {
+  display: block !important;
+  max-width: 100%;
+}
+
+.product-tabs-container .tab-content {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.product-aplus-content table,
+.product-tabs-container .tab-content table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-tabs-container .tab-content img,
+.product-tabs-container .tab-content iframe,
+.product-tabs-container .tab-content video {
+  max-width: 100%;
+  height: auto;
+}
+
+.hxt__spm-undefined {
+  display: none !important;
+}
+
+.hextom__spm__widget[style*="opacity: 0"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#spm_subscribe_back_in_stock_alert,
+#spm_subscribe_price_drop_alert {
+  right: auto !important;
+  left: 1rem !important;
+  bottom: calc(1rem + var(--kairali-floating-clearance, 0px) + env(safe-area-inset-bottom, 0px)) !important;
+}
+
+.hh-swiper-autoplay-toggle {
+  right: 16px !important;
+  bottom: 148px !important;
+  left: auto;
+}
+
+/* Keep the consent decision fully usable on small screens. EasySell owns a
+   much higher z-index than the consent app, so the order bar must yield while
+   consent is visible and return only after the visitor makes a choice. */
+@media screen and (max-width: 760px) {
+  html.kairali-consent-open #es-sticky,
+  html.kairali-consent-open .es-sticky-bottom {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* iOS WebKit can retain the lazy collection slider's provisional flex height
+   after the six cards have resolved, leaving a large blank tail before the
+   following Why Choose section. The homepage block is not swipe-enabled, so
+   use the same two-column layout as a content-sized grid on affected phones. */
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 430px) {
+    body.template-index .collection-list-section .section-content,
+    body.template-index .collection-list-section .wt-slider,
+    body.template-index .collection-list-section .wt-slider__container--collection-list,
+    body.template-index .collection-list-section .collection-list__container:not(.swiper-wrapper) {
+      height: auto !important;
+      min-height: 0 !important;
+    }
+
+    body.template-index .collection-list-section .collection-list__container:not(.swiper-wrapper) {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+      gap: 16px;
+    }
+
+    body.template-index .collection-list-section .collection-list__container:not(.swiper-wrapper) > .collection-list__item {
+      width: 100% !important;
+      max-width: none !important;
+      min-height: 0 !important;
+      height: auto !important;
+      align-self: start;
+      flex: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .kairali-priya-launcher {
+    width: 64px;
+    min-width: 64px;
+    padding-inline: 8px;
+    font-size: 0 !important;
+    letter-spacing: 0;
+  }
+
+  .kairali-priya-launcher::after {
+    content: "PRIYA";
+    font-size: 12px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+  }
+
+  body.template-product .product-aplus-content h1,
+  body.template-product .product-aplus-content h2 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    letter-spacing: normal !important;
+  }
+
+  body.template-product .product-aplus-content h3,
+  body.template-product .product-aplus-content h4 {
+    font-size: 21px !important;
+    line-height: 1.35 !important;
+    letter-spacing: normal !important;
+  }
+
+  body.template-product .product-aplus-content p,
+  body.template-product .product-aplus-content li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    letter-spacing: normal !important;
+    overflow-wrap: anywhere;
+  }
+
+  product-recommendations.related-products .headline__title {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+
+  .product-tabs-container .tab-button {
+    min-height: 48px;
+    font-size: 14px !important;
+  }
+
+  .product-tabs-container .tab-content {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  .wt-product__info #spm_subscribe_out_of_stock,
+  .wt-product__info [id^="wcWishlist_"],
+  .wt-product__info button.bis_product {
+    width: 100% !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+  }
+
+  .wt-product__info [id*="wishlist_back_in_stock"],
+  .wt-product__info .th_prd_wl_btn,
+  .wt-product__info .wc_wl_bis_btn {
+    display: grid !important;
+    width: 100%;
+    gap: 8px;
+    margin-top: 8px !important;
+  }
+}
+
+
+/* IN-037 B01: preserve natural aspect ratios on the two exact affected Pages. */
+@media screen and (max-width: 749px) {
+  .wt-page[data-page-handle="awards"] .awardrepeater .article-img-container img,
+  .wt-page[data-page-handle="become-our-distributers-importers"] .kairali-b2b-page > header > img {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+/* IN-037 B02: readable, contained static and condition-page content. */
+.in037-b02 {
+  width: min(100%, 920px);
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+  padding: clamp(20px, 4vw, 44px);
+  box-sizing: border-box;
+  color: #29362f;
+  overflow-wrap: anywhere;
+}
+
+.in037-b02 *,
+.in037-b02 *::before,
+.in037-b02 *::after {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.in037-b02 h1,
+.in037-b02 h2,
+.in037-b02 h3 {
+  color: #173d2a !important;
+  line-height: 1.2 !important;
+  text-wrap: balance;
+}
+
+.in037-b02 h1 {
+  margin: 0 0 20px !important;
+  font-size: clamp(30px, 4vw, 42px) !important;
+}
+
+.in037-b02 h2 {
+  margin: 34px 0 12px !important;
+  font-size: clamp(24px, 3vw, 30px) !important;
+}
+
+.in037-b02 p,
+.in037-b02 li {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+
+.in037-b02 p {
+  margin: 0 0 18px;
+}
+
+.in037-b02 ul,
+.in037-b02 ol {
+  margin: 0 0 22px;
+  padding-left: 1.35em !important;
+}
+
+.in037-b02 li {
+  margin-bottom: 9px;
+}
+
+.in037-b02 a {
+  color: #145a3a;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.in037-b02__lead {
+  max-width: 760px;
+  font-size: 19px !important;
+  line-height: 1.65 !important;
+}
+
+.in037-b02__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px !important;
+}
+
+.in037-b02__actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 10px 15px;
+  border: 1px solid #356c4e;
+  border-radius: 7px;
+  background: #f3f7f2;
+  line-height: 1.35;
+}
+
+.in037-b02__source {
+  margin-top: 32px !important;
+  padding-top: 18px;
+  border-top: 1px solid #d7ddd7;
+  color: #4a5a50;
+}
+
+.in037-b02--utility {
+  max-width: 820px;
+}
+
+@media screen and (max-width: 749px) {
+  .in037-b02 {
+    width: 100%;
+    padding: 18px 14px;
+  }
+
+  .in037-b02__lead {
+    font-size: 18px !important;
+  }
+
+  .in037-b02__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .in037-b02__actions a {
+    width: 100%;
+  }
+
+  .in037-b02-condition .left-column,
+  .in037-b02-condition .tab-block,
+  .in037-b02-condition .tab-content {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .in037-b02-condition .tab-content {
+    margin-left: 0;
+  }
+}
+
+/* IN-037 B03: source-bounded guides, product bridge Pages and reviews shell. */
+.in037-b03,
+.in037-b03 *,
+.in037-b03 *::before,
+.in037-b03 *::after,
+.in037-b03-condition,
+.in037-b03-condition * {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.in037-b03 {
+  width: min(100%, 960px);
+  margin-inline: auto;
+  color: #29362f;
+  overflow-wrap: anywhere;
+}
+
+.in037-b03 h1,
+.in037-b03 h2,
+.in037-b03 h3 {
+  color: #173d2a !important;
+  line-height: 1.2 !important;
+  letter-spacing: normal !important;
+  text-wrap: balance;
+}
+
+.in037-b03 h1 {
+  margin: 0 0 20px !important;
+  font-size: clamp(32px, 4.2vw, 48px) !important;
+}
+
+.in037-b03 h2 {
+  margin: 34px 0 12px !important;
+  font-size: clamp(24px, 3vw, 31px) !important;
+}
+
+.in037-b03 p,
+.in037-b03 li {
+  font-size: 17px !important;
+  line-height: 1.68 !important;
+  letter-spacing: normal !important;
+}
+
+.in037-b03 p {
+  margin: 0 0 18px;
+}
+
+.in037-b03 ul,
+.in037-b03 ol {
+  margin: 0 0 24px;
+  padding-left: 1.35em !important;
+}
+
+.in037-b03 li {
+  margin-bottom: 8px;
+}
+
+.in037-b03 a {
+  color: #145a3a;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.in037-b03__lead {
+  max-width: 780px;
+  font-size: 19px !important;
+  line-height: 1.62 !important;
+}
+
+.in037-b03__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px !important;
+}
+
+.in037-b03__actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px solid #356c4e;
+  border-radius: 8px;
+  background: #f3f7f2;
+  font-size: 16px;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+}
+
+.in037-b03__actions .in037-b03__cta {
+  border-color: #173d2a;
+  background: #173d2a;
+  color: #fff;
+}
+
+.in037-b03__note {
+  color: #526259;
+  font-size: 17px !important;
+}
+
+.in037-b03__source {
+  margin-top: 34px !important;
+  padding-top: 18px;
+  border-top: 1px solid #d7ddd7;
+  color: #526259;
+  font-size: 17px !important;
+}
+
+.in037-b03__urgent-title {
+  color: #713323 !important;
+}
+
+.in037-b03__urgent {
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  border-left: 4px solid #9a4f37;
+  border-radius: 0 8px 8px 0;
+  background: #fbf4ef;
+}
+
+.in037-b03__urgent > :last-child {
+  margin-bottom: 0;
+}
+
+.in037-b03-condition .main-flex-row {
+  width: min(calc(100% - 32px), 1180px);
+  margin-inline: auto;
+}
+
+.in037-b03-condition .left-column,
+.in037-b03-condition .right-column,
+.in037-b03-condition .tab-block,
+.in037-b03-condition .tab-buttons,
+.in037-b03-condition .tab-content {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.in037-b03-condition .tab-buttons {
+  display: flex;
+  float: none;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 0;
+  gap: 8px;
+}
+
+.in037-b03-condition .tab-link {
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 6px 6px 0 0;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.in037-b03-condition .tab-content {
+  width: 100%;
+  margin-left: 0;
+}
+
+.in037-b03-condition .in037-b03--guide,
+.in037-b03-condition .in037-b03--guide-note {
+  padding: 2px;
+}
+
+.wt-page[data-page-handle="kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men"],
+.wt-page[data-page-handle="our-happy-customers-reviews"] {
+  width: min(calc(100% - 32px), 1180px);
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.wt-page[data-page-handle="kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men"] .wt-page__title,
+.wt-page[data-page-handle="our-happy-customers-reviews"] .wt-page__title {
+  max-width: 940px;
+  margin-inline: auto;
+  color: #173d2a;
+  font-size: clamp(32px, 4.2vw, 48px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: normal !important;
+  text-align: left;
+  text-wrap: balance;
+}
+
+.wt-page[data-page-handle="kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men"] .wt-page__wrapper,
+.wt-page[data-page-handle="our-happy-customers-reviews"] .wt-page__wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.in037-b03--product,
+.in037-b03--reviews {
+  padding: clamp(22px, 4vw, 48px);
+}
+
+.in037-b03-product__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  margin-bottom: clamp(34px, 5vw, 64px);
+}
+
+.in037-b03-product__media {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: clamp(14px, 3vw, 28px);
+  border: 1px solid #dce3da;
+  border-radius: 18px;
+  background: #f8faf6;
+}
+
+.in037-b03-product__media a {
+  display: block;
+  width: 100%;
+}
+
+.in037-b03-product__media img {
+  display: block;
+  width: 100%;
+  max-width: 540px;
+  height: auto !important;
+  margin-inline: auto;
+  object-fit: contain !important;
+}
+
+.in037-b03-kairtis-page {
+  width: 100%;
+  padding: clamp(24px, 5vw, 64px) 16px max(48px, calc(var(--kairali-floating-clearance, 0px) + 24px));
+  background: #f4f0e6;
+}
+
+.in037-b03-kairtis-page .in037-b03--product {
+  width: min(100%, 1120px);
+  padding: clamp(24px, 4vw, 54px);
+  border: 1px solid #d9dfd5;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.in037-b03--reviews {
+  max-width: 940px;
+  padding-top: 10px;
+  padding-bottom: max(28px, calc(var(--kairali-floating-clearance, 0px) + 16px));
+}
+
+@media screen and (max-width: 749px) {
+  .in037-b03-condition {
+    padding: 22px 0 max(36px, calc(var(--kairali-floating-clearance, 0px) + 18px));
+  }
+
+  .in037-b03-condition .main-flex-row {
+    width: calc(100% - 24px);
+    margin-inline: auto;
+  }
+
+  .in037-b03-condition .left-column,
+  .in037-b03-condition .right-column {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .in037-b03-condition .tab-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .in037-b03-condition .tab-link {
+    width: 100%;
+    padding-inline: 10px;
+    font-size: 14px;
+  }
+
+  .in037-b03 h1 {
+    font-size: 30px !important;
+  }
+
+  .in037-b03 h2 {
+    font-size: 24px !important;
+  }
+
+  .in037-b03 p,
+  .in037-b03 li {
+    font-size: 17px !important;
+    line-height: 1.65 !important;
+  }
+
+  .in037-b03__lead {
+    font-size: 18px !important;
+  }
+
+  .in037-b03__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .in037-b03__actions a {
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+  }
+
+  .in037-b03__urgent {
+    padding: 16px;
+  }
+
+  .wt-page[data-page-handle="kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men"],
+  .wt-page[data-page-handle="our-happy-customers-reviews"] {
+    width: calc(100% - 24px);
+  }
+
+  .wt-page[data-page-handle="kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men"] .wt-page__title,
+  .wt-page[data-page-handle="our-happy-customers-reviews"] .wt-page__title {
+    font-size: 30px !important;
+  }
+
+  .in037-b03--product,
+  .in037-b03--reviews {
+    padding: 18px 0;
+  }
+
+  .in037-b03-product__grid,
+  .in037-b03--kairtis .in037-b03-product__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-bottom: 34px;
+  }
+
+  .in037-b03--kaircin .in037-b03-product__media {
+    order: -1;
+  }
+
+  .in037-b03-product__media {
+    padding: 14px;
+  }
+
+  .in037-b03-kairtis-page {
+    padding-inline: 12px;
+  }
+
+  .in037-b03-kairtis-page .in037-b03--product {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+}
