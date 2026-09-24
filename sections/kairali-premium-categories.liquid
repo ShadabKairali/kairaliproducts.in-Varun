@@ -1,0 +1,76 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+{% assign kaircin_product_asset = 'kaircin-10ml-authentic-transparent.webp' | asset_url %}
+
+<section class="kp-home-section kp-home-section--tinted" aria-labelledby="KpCategories-{{ section.id }}">
+  <div class="kp-home-section__inner">
+    <header class="kp-section-intro">
+      <p class="kp-eyebrow">Choose a product family</p>
+      <h2 id="KpCategories-{{ section.id }}" class="kp-section-title">Shop by Ayurvedic Product Family</h2>
+      <p class="kp-section-body">Start with the product family that best fits your daily ritual.</p>
+    </header>
+
+    <div class="kp-grid kp-grid--categories">
+      {% render 'kairali-premium-card',
+        id: 'category-01', href: '/collections/ayurvedic-proprietary-organics',
+        background: 'kp-in-home-r03-category-01-bg.jpg', mobile_background: 'kp-in-home-r03-category-01-bg-mobile.webp', mobile_background_width: 1774, mobile_background_height: 887,
+        tone: 'light', card_modifier: 'kp-card--category',
+        eyebrow: 'Kaircin • Kairoil • Kairtis', heading: "Kairali's Signature Organic Range",
+        body: 'Three Kairali favourites for nightly face care, weekly hair oiling and warm body massage.', cta: 'Shop Signature Organics',
+        product_1_src: kaircin_product_asset, product_1_alt: 'Kaircin Ayurvedic Facial Oil 10 ml bottle',
+        product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-hair-treatment-oil-controls-hair-fall-eliminates-dandruff-naturally-kairoil-7736115.png?v=1765329847&width=640', product_2_alt: 'Kairoil Ayurvedic Hair Oil bottle',
+        product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/kairtis-ayurvedic-massage-oil.png?v=1786131417&width=640', product_3_alt: 'Kairtis Ayurvedic Massage Oil bottle and massage potli'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'category-02', href: '/collections/kair-by-kairali-herbal-cosmetics-products',
+        background: 'kp-in-home-r03-category-02-bg.jpg', mobile_background: 'kp-in-home-r03-category-02-bg-mobile.webp', mobile_background_width: 1774, mobile_background_height: 887,
+        tone: 'light', card_modifier: 'kp-card--category',
+        eyebrow: 'Shampoo • soap • shower gel', heading: 'Herbal Care for Everyday Rituals',
+        body: "Shop Kairali's herbal shampoos, soaps and shower care for simple daily hair and body routines.", cta: 'Shop Herbal Care',
+        product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Best_Herbal_Anti-Dandruff_Shampoo_-_Lemon_Herbal_Shampoo.png?v=1764246221&width=640', product_1_alt: 'Kairali Lemon Herbal Shampoo bottle',
+        product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/luxurious-sandal-herbal-soap-to-make-skin-naturally-radiant-hydrated-deeply-moisturized-3092500.jpg?v=1753879822&width=640', product_2_alt: 'Kairali Sandal Herbal Soap pack',
+        product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/herbal-shower-gel-nourishing-herbal-body-wash-for-skin-repair-rejuvenation-strawberry-shower-gel-1701811.png?v=1762842642&width=640', product_3_alt: 'Kairali Strawberry Herbal Shower Gel bottle'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'category-03', href: '/collections/ayurvedic-proprietary-medicines',
+        background: 'kp-in-home-r03-category-03-bg.jpg', mobile_background: 'kp-in-home-r03-category-03-bg-mobile.webp', mobile_background_width: 1774, mobile_background_height: 887,
+        tone: 'light', card_modifier: 'kp-card--category',
+        eyebrow: 'Capsules + formulations', heading: 'Focused Ayurvedic Formulations',
+        body: "Compare Kairali's Ayurvedic capsules and formulations by format, without searching the whole catalogue.", cta: 'Compare Formulations',
+        product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/durance-ayurvedic-herbal-wellness-capsules-8483739.png?v=1786471278&width=640', product_1_alt: 'Durance Ayurvedic Wellness Capsules pack',
+        product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/safe-effective-ayurvedic-weight-loss-capsules-naturally-supports-fat-reduction-lipidex-capsules-8378654.png?v=1761512893&width=640', product_2_alt: 'Lipidex Ayurvedic Capsules pack',
+        product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-medicine-for-impotence-infertility-natural-fertility-booster-for-men-women-duravin-forte-capsules-2166037.png?v=1760684031&width=640', product_3_alt: 'Duravin Forte capsules pack'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'category-04', href: '/collections/traditional-ayurvedic-medicine',
+        background: 'kp-in-home-r03-category-04-bg.jpg', mobile_background: 'kp-in-home-r03-category-04-bg-mobile.webp', mobile_background_width: 1774, mobile_background_height: 887,
+        tone: 'light', card_modifier: 'kp-card--category',
+        eyebrow: 'Thailams • lehyams • kashayams', heading: 'Traditional Ayurveda, Familiar Formats',
+        body: 'Shop Kairali thailams, lehyams and kashayams, the classical preparations Kerala households know.', cta: 'Shop Traditional Ayurveda',
+        product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/chyawanprash-powerful-herbal-immunity-booster-for-overall-health-vitality-chyawanaprasam-6049877.png?v=1764002521&width=640', product_1_alt: 'Kairali Chyawanprash jar',
+        product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-nasya-oil-for-sinusitis-migraine-nervous-disorders-treatment-anu-thailam-2410701.png?v=1768068367&width=640', product_2_alt: 'Kairali Anu Thailam bottle',
+        product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-oil-for-skin-brightening-pigmentation-reduces-dark-spots-blemishes-treats-skin-diseases-nalpamaradi-thailam-1786744.png?v=1768648388&width=640', product_3_alt: 'Kairali Nalpamaradi Thailam bottle'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'category-05', href: '/collections/ayurvedic-herbal-single-herbs-products',
+        background: 'kp-in-home-r03-category-05-bg.jpg', mobile_background: 'kp-in-home-r03-category-05-bg-mobile.webp', mobile_background_width: 1774, mobile_background_height: 887,
+        tone: 'light', card_modifier: 'kp-card--category',
+        eyebrow: 'Safed Musli + Shatavari', heading: 'Single-Herb Ayurvedic Capsules',
+        body: 'Choose Safed Musli or Shatavari in a daily capsule — one herb, one simple format.', cta: 'Choose Your Herb',
+        product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/safed-musli-ayurvedic-herbal-wellness-capsules-1721035.png?v=1786471279&width=640', product_1_alt: 'Kairali Safed Musli Ayurvedic Capsules pack',
+        product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/herbal-health-supplement-for-women-supports-hormonal-balance-reproductive-health-shatavari-capsules-6580887.png?v=1768648450&width=640', product_2_alt: 'Kairali Shatavari Capsules pack'
+      %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali categories",
+  "settings": [],
+  "presets": [{ "name": "Kairali categories" }]
+}
+{% endschema %}

@@ -1,0 +1,64 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="kp-home-section kp-home-section--kits"
+  aria-labelledby="KairaliPremiumKits-{{ section.id }}"
+>
+  <header class="kp-section-intro">
+    <p class="kp-eyebrow">READY-MADE AYURVEDIC SETS</p>
+    <h2 id="KairaliPremiumKits-{{ section.id }}" class="kp-section-title">Ayurvedic Treatment Kits by Need</h2>
+    <p class="kp-section-body">Face care, men's wellness and everyday immunity — each Kairali kit comes as one complete set, so you are not working out which product goes with which.</p>
+  </header>
+
+  <div class="kp-grid kp-grid--kits">
+    {% render 'kairali-premium-card',
+      id: 'KIT-01',
+      href: '/products/best-ayurvedic-face-care-skin-brightening-kit',
+      background: 'kp-in-home-r03-kit-01-bg.webp',
+      tone: 'dark',
+      eyebrow: 'STEP 1 KAIRPACK → STEP 2 KAIRCIN',
+      heading: 'Your Two-Step Kairali Face Ritual',
+      body: 'Kairpack herbal face pack first, Kaircin saffron facial oil after. Two products, one order, and the order of use already settled for you.',
+      cta: 'Shop the Face-Care Kit',
+      commerce_product_handle: 'best-ayurvedic-face-care-skin-brightening-kit',
+      card_modifier: 'kp-card--kit kp-card--kit-01'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'KIT-02',
+      href: '/products/best-effective-ayurvedic-medicine-for-premature-ejaculation-and-erectile-dysfunction-treatment',
+      background: 'kp-in-home-r03-kit-02-bg.png',
+      tone: 'light',
+      eyebrow: 'DURAVIN FORTE · ASHWAGANDHA · SAFED MUSLI',
+      heading: "Men's Ayurvedic Wellness, in One Discreet Set",
+      body: 'Duravin Forte, Ashwagandha and Safed Musli in one discreet three-product Kairali set, ordered privately online.',
+      cta: "Shop the Men's Set",
+      commerce_product_handle: 'best-effective-ayurvedic-medicine-for-premature-ejaculation-and-erectile-dysfunction-treatment',
+      card_modifier: 'kp-card--kit kp-card--kit-02'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'KIT-03',
+      href: '/products/best-ayurvedic-immunity-booster-kit-for-overall-health-and-vitality',
+      background: 'kp-in-home-r03-kit-03-bg.webp',
+      tone: 'light',
+      eyebrow: 'AAROGYA • CHYAWANPRASH • MULBERINE',
+      heading: 'Three Kairali Ayurvedic Habits, One Everyday Kit',
+      body: 'Aarogya herbal infusion to brew, Chyawanprash by the spoon and Mulberine capsules — three formats, three moments of the day, bought as one set.',
+      cta: 'Shop the 3-Product Kit',
+      commerce_product_handle: 'best-ayurvedic-immunity-booster-kit-for-overall-health-and-vitality',
+      card_modifier: 'kp-card--kit kp-card--kit-03'
+    %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali premium kits",
+  "presets": [
+    {
+      "name": "Kairali premium kits"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,53 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section class="kp-home-section kp-home-section--forest" aria-labelledby="KpWhy-{{ section.id }}">
+  <div class="kp-home-section__inner kp-why">
+    <div class="kp-why__portrait">
+      <img
+        src="{{ 'kp-in-home-r03-legacy-portrait.webp' | asset_url }}"
+        alt="Kairali Ayurveda legacy illustration"
+        width="600"
+        height="554"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+
+    <div class="kp-why__content">
+      <p class="kp-eyebrow">The Kairali difference</p>
+      <h2 id="KpWhy-{{ section.id }}" class="kp-section-title">Why Generations Choose Kairali</h2>
+      <p class="kp-section-body">Four grounded reasons to feel more confident choosing Kairali online.</p>
+
+      <ol class="kp-why__facts">
+        <li class="kp-why__fact">
+          <span class="kp-why__number">01</span>
+          <strong>Kerala Ayurveda, rooted in 1908</strong>
+          <span>A legacy carried across generations.</span>
+        </li>
+        <li class="kp-why__fact">
+          <span class="kp-why__number">02</span>
+          <strong>Kairali's own formulations</strong>
+          <span>Oils, herbal care and classical formats from one Ayurvedic house.</span>
+        </li>
+        <li class="kp-why__fact">
+          <span class="kp-why__number">03</span>
+          <strong>Ayurvedic centres and Healing Village</strong>
+          <span>A wider Kairali practice in India and abroad.</span>
+        </li>
+        <li class="kp-why__fact">
+          <span class="kp-why__number">04</span>
+          <strong>Product guidance before you order</strong>
+          <span>See the current pack, price and availability on each product page.</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why choose Kairali",
+  "settings": [],
+  "presets": [{ "name": "Why choose Kairali" }]
+}
+{% endschema %}

@@ -1,0 +1,166 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+{% assign kaircin_product_asset = 'kaircin-10ml-authentic-transparent.webp' | asset_url %}
+
+<section
+  class="kp-home-section kp-home-section--collections"
+  aria-labelledby="KairaliPremiumCollections-{{ section.id }}"
+>
+  <header class="kp-section-intro">
+    <p class="kp-eyebrow">SIX WAYS TO SHOP</p>
+    <h2 id="KairaliPremiumCollections-{{ section.id }}" class="kp-section-title">Shop Ayurveda Your Way</h2>
+    <p class="kp-section-body">Skin care, hair oils, massage oils, herbal infusions, classical formulations and ready-made kits — six routes into the Kairali range instead of one long catalogue.</p>
+  </header>
+
+  <div class="kp-grid kp-grid--collections">
+    {% render 'kairali-premium-card',
+      id: 'COLL-01',
+      href: '/collections/skin-care',
+      background: 'kp-in-home-r03-collection-01-bg.webp',
+      tone: 'light',
+      eyebrow: 'KAIRCIN · SANDAL SOAP · KAIRBAL',
+      heading: 'Ayurvedic Skin Care for Face and Body',
+      body: "Kaircin facial oil, Sandal herbal soap and Kairbal cleansing powder — Kairali's face-and-body shelf in one place, three formats visible at once.",
+      cta: 'Shop Skin Care',
+      product_1_src: kaircin_product_asset,
+      product_1_alt: 'Kaircin Facial Oil product pack',
+      product_1_width: 1000,
+      product_1_height: 1000,
+      product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/luxurious-sandal-herbal-soap-to-make-skin-naturally-radiant-hydrated-deeply-moisturized-3092500.jpg?v=1753879822',
+      product_2_alt: 'Sandal Herbal Soap product pack',
+      product_2_width: 1000,
+      product_2_height: 1000,
+      product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-herbal-body-wash-powder-provides-deep-cleansing-glowing-skin-naturally-3101825.png?v=1753879834',
+      product_3_alt: 'Kairbal Body Cleansing Powder product pack',
+      product_3_width: 1080,
+      product_3_height: 1080,
+      card_modifier: 'kp-card--collection kp-card--collection-01'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'COLL-02',
+      href: '/collections/hair-care',
+      background: 'kp-in-home-r03-collection-02-bg.webp',
+      tone: 'light',
+      eyebrow: 'KAIROIL · NEELIBRINGADI · BHRINGRAJ',
+      heading: "Compare Kairali's Three Ayurvedic Hair Oils",
+      body: 'Kairoil, Neelibringadi and Bhringraj side by side — choose your hair oil in one view instead of opening three separate product pages.',
+      cta: 'Shop Hair Oils',
+      product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-hair-treatment-oil-controls-hair-fall-eliminates-dandruff-naturally-kairoil-7736115.png?v=1765329847',
+      product_1_alt: 'Kairoil Hair Oil product pack',
+      product_1_width: 1000,
+      product_1_height: 1000,
+      product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-hair-oil-for-hair-growth-hair-fall-control-premature-greying-dry-damaged-hair-neelibringadi-thailam-5388936.png?v=1768979827',
+      product_2_alt: 'Neelibringadi Thailam product pack',
+      product_2_width: 1000,
+      product_2_height: 1000,
+      product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-hair-oil-for-hair-growth-hair-fall-prevention-1478492.jpg?v=1753879610',
+      product_3_alt: 'Bhringraj Kera Thailam product pack',
+      product_3_width: 1000,
+      product_3_height: 1000,
+      card_modifier: 'kp-card--collection kp-card--collection-02'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'COLL-03',
+      href: '/collections/ayurvedic-pain-relief-oils',
+      background: 'kp-in-home-r03-collection-03-bg.webp',
+      tone: 'light',
+      eyebrow: 'KAIRTIS · KARPOORADI · MURIVENNA',
+      heading: "Kairali's Ayurvedic Massage Oils, Side by Side",
+      body: 'Kairtis, Karpooradi and Murivenna — three traditional Kairali Ayurvedic massage oils in one view, with the rest of the oil shelf one tap away.',
+      cta: 'Shop Massage Oils',
+      product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/kairtis-ayurvedic-massage-oil.png?v=1786131417',
+      product_1_alt: 'Kairtis Massage Oil product pack',
+      product_1_width: 1000,
+      product_1_height: 1000,
+      product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-pain-relief-oil-for-body-joint-pain-relieves-stiffness-inflammation-naturally-5247654.jpg?v=1753879645',
+      product_2_alt: 'Karpooradi Thailam product pack',
+      product_2_width: 600,
+      product_2_height: 600,
+      product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-oil-for-acute-injuries-sprains-fractures-arthritis-musculoskeletal-pain-1656894.jpg?v=1753879655',
+      product_3_alt: 'Murivenna Oil product pack',
+      product_3_width: 600,
+      product_3_height: 600,
+      card_modifier: 'kp-card--collection kp-card--collection-03'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'COLL-04',
+      href: '/collections/ayurvedic-herbal-infusion-ayurvedic-herbal-tea',
+      background: 'kp-in-home-r03-collection-04-bg.webp',
+      tone: 'light',
+      eyebrow: 'KAIRALI AYURVEDIC HERBAL INFUSIONS',
+      heading: 'Swap One Cup of Tea for Ayurveda',
+      body: 'A warm, aromatic Kairali Ayurvedic herbal infusion in place of your usual evening tea — the easiest way to bring Ayurveda into an ordinary day.',
+      cta: 'Shop Herbal Infusions',
+      product_1_src: 'https://www.kairaliproducts.in/cdn/shop/files/ayurvedic-herbal-infusion-herbal-tea-for-immunity-vitality-5354340.jpg?v=1753879825&width=1600',
+      product_1_alt: 'Kairali Aarogya Ayurvedic Herbal Infusion pack',
+      product_1_width: 1080,
+      product_1_height: 1080,
+      card_modifier: 'kp-card--collection kp-card--collection-04'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'COLL-05',
+      href: '/collections/traditional-ayurvedic-medicine',
+      background: 'kp-in-home-r03-collection-05-bg.webp',
+      tone: 'light',
+      eyebrow: 'ANU THAILAM · CHYAWANPRASH · HARIDRAKANDAM',
+      heading: 'Classical Ayurvedic Formulations, in Familiar Formats',
+      body: 'Thailams, lehyams and classical herbal preparations — Anu Thailam, Chyawanprash and Haridrakandam among them, in the forms Indian households already use.',
+      cta: 'Shop Formulations',
+      product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-nasya-oil-for-sinusitis-migraine-nervous-disorders-treatment-anu-thailam-2410701.png?v=1768068367',
+      product_1_alt: 'Anu Thailam product pack',
+      product_1_width: 1000,
+      product_1_height: 1000,
+      product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/chyawanprash-powerful-herbal-immunity-booster-for-overall-health-vitality-chyawanaprasam-6049877.png?v=1764002521',
+      product_2_alt: 'Chyawanprash product pack',
+      product_2_width: 1000,
+      product_2_height: 1000,
+      product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-medicine-for-skin-allergies-dermatitis-itching-rashes-inflammation-3431349.jpg?v=1753879632',
+      product_3_alt: 'Haridrakandam product pack',
+      product_3_width: 800,
+      product_3_height: 800,
+      card_modifier: 'kp-card--collection kp-card--collection-05'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'COLL-06',
+      href: '/collections/treatments-for-ailments',
+      background: 'kp-in-home-r03-collection-06-bg.webp',
+      tone: 'light',
+      eyebrow: 'READY-MADE AYURVEDIC KITS',
+      heading: 'Every Ayurvedic Treatment Kit in One Place',
+      body: 'From back and joint care to everyday immunity, each Kairali Ayurvedic treatment kit brings its coordinated products together in one easy order.',
+      cta: 'Shop All Kits',
+      product_1_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/kairtis-ayurvedic-massage-oil.png?v=1786131417',
+      product_1_alt: 'Kairtis Ayurvedic massage oil and potli pack',
+      product_1_width: 1000,
+      product_1_height: 1000,
+      product_2_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/best-ayurvedic-oil-for-acute-injuries-sprains-fractures-arthritis-musculoskeletal-pain-1656894.jpg?v=1753879655',
+      product_2_alt: 'Murivenna Ayurvedic oil product pack',
+      product_2_width: 600,
+      product_2_height: 600,
+      product_3_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/chyawanprash-powerful-herbal-immunity-booster-for-overall-health-vitality-chyawanaprasam-6049877.png?v=1764002521',
+      product_3_alt: 'Chyawanprash product pack',
+      product_3_width: 1000,
+      product_3_height: 1000,
+      product_4_src: 'https://cdn.shopify.com/s/files/1/0925/8998/1983/files/ayurvedic-multivitamin-health-supplement-capsule-boosts-immunity-overall-vitality-mulberine-capsules-7923773.png?v=1762341335',
+      product_4_alt: 'Mulberine Capsules product pack',
+      product_4_width: 1000,
+      product_4_height: 1000,
+      card_modifier: 'kp-card--collection kp-card--collection-06'
+    %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali collections",
+  "presets": [
+    {
+      "name": "Kairali collections"
+    }
+  ]
+}
+{% endschema %}

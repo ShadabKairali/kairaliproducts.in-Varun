@@ -1,0 +1,187 @@
+{% assign background_rgb = section.settings['color-bg-overlay'] | color_to_rgb %}
+{% assign text_rgb = section.settings['color-body-text'] | color_to_rgb %}
+<style>
+  section[id="shopify-section-{{ section.id }}"]{
+      {% if section.settings.full-width-enabled %}
+        --border-radius: 0;
+      {% endif %}
+
+      {% if background_rgb != 'rgba(0, 0, 0, 0.0)' %}
+        --color-overlay-rgb: {{ section.settings.color-bg-overlay | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+        --color-overlay-opacity: {{ section.settings['color-overlay-opacity'] | divided_by: 100.0 }};
+      {% endif %}
+
+      {% if text_rgb != 'rgba(0, 0, 0, 0.0)' %}
+        --color-custom-text: {{ section.settings.color-body-text }};
+      {% endif %}
+
+      {% if section.settings.margin-top %}
+          --section-gap-top: {{ section.settings.margin-top }}px;
+      {% endif %}
+
+      {% if section.settings.margin-bottom %}
+          --section-gap-bottom: {{ section.settings.margin-bottom }}px;
+      {% endif %}
+
+      --font-headline-scale-desk: {{ section.settings.size_heading | divided_by: 100.0 }};
+
+      --font-headline-scale: {{ section.settings.size_heading_mobile | divided_by: 100.0 }};
+
+  }
+
+  {% if page.handle == 'ppc-thank-you' %}
+    section[id="shopify-section-{{ section.id }}"] .slick-list {
+      position: relative;
+      display: block;
+      overflow: hidden;
+    }
+  {% endif %}
+</style>
+
+{%- assign accessible_page_content = page.content | replace: '<h1', '<h2' | replace: '</h1>', '</h2>' | replace: '<H1', '<H2' | replace: '</H1>', '</H2>' -%}
+{%- assign in037_b03_body_handles = 'kaircin-facial-serum-kumkumadi-tailam-anti-aging-serum-best-face-serum-for-women-and-men,our-happy-customers-reviews' | split: ',' -%}
+{%- assign in037_b02_body_handles = 'no-route,facilities-and-raw-materials,clinical-trials,research-and-development,quality-and-safety,csr,certifications,ppc-thank-you,consultation-thank-you,product-reviews' | split: ',' -%}
+{%- if in037_b03_body_handles contains page.handle -%}
+  {%- capture accessible_page_content -%}{%- render 'in037-b03-content', mode: 'body' -%}{%- endcapture -%}
+{%- elsif in037_b02_body_handles contains page.handle -%}
+  {%- capture accessible_page_content -%}{%- render 'in037-b02-content', mode: 'body' -%}{%- endcapture -%}
+{%- elsif page.handle == 'faq' -%}
+  {%- capture accessible_page_content -%}{%- render 'in037-b01-content', mode: 'faq_body' -%}{%- endcapture -%}
+{%- elsif page.handle == 'contract-manufacturing' -%}
+  {%- assign accessible_page_content = accessible_page_content | replace: '<h2 style="text-align: center;"><img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Contract-Manufacturing.jpg?v=1749808672" alt=""></h2>', '<div style="text-align: center;"><img src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Contract-Manufacturing.jpg?v=1749808672" alt=""></div>' -%}
+{%- elsif page.handle == 'privacy-policy' -%}
+  {%- capture privacy_empty_span_heading -%}<h3 dir="ltr">
+<span></span><br>
+</h3>{%- endcapture -%}
+  {%- capture privacy_empty_strong_heading -%}<h3 dir="ltr">
+<strong></strong><br>
+</h3>{%- endcapture -%}
+  {%- assign accessible_page_content = accessible_page_content | replace: '<h2><img alt="" src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Privacy-Policy.jpg?v=1749813001"></h2>', '<div><img alt="" src="https://cdn.shopify.com/s/files/1/0925/8998/1983/files/Privacy-Policy.jpg?v=1749813001"></div>' | remove: privacy_empty_span_heading | remove: privacy_empty_strong_heading -%}
+{%- elsif page.handle == 'ppc-thank-you' -%}
+  {%- assign accessible_page_content = accessible_page_content | remove: '<h5 class="mrbottom-20"><br></h5>' -%}
+{%- elsif page.handle == 'shipping-and-return' or page.handle == 'return-refund-policy' or page.handle == 'terms-and-condition' or page.handle == 'accessibility-statement' -%}
+  {%- assign accessible_page_content = accessible_page_content | replace: 'href="http://www.kairaliproducts.in"', 'href="/"' | replace: 'href="http://www.kairaliproducts.in/"', 'href="/"' -%}
+{%- elsif page.handle == 'website-disclaimer' -%}
+  {%- assign accessible_page_content = accessible_page_content | replace: 'href="www.kairaliproducts.in"', 'href="/"' -%}
+{%- elsif page.handle == 'the-kairali-group' -%}
+  {%- assign accessible_page_content = accessible_page_content | replace: 'href="https://www.kairaliproducts.in/certifications"', 'href="/pages/certifications"' -%}
+{%- endif -%}
+{%- capture in037_b02_display_title -%}{%- render 'in037-b02-content', mode: 'display_title' -%}{%- endcapture -%}
+{%- assign in037_b02_display_title = in037_b02_display_title | strip -%}
+{%- capture in037_b03_display_title -%}{%- render 'in037-b03-content', mode: 'display_title' -%}{%- endcapture -%}
+{%- assign in037_b03_display_title = in037_b03_display_title | strip -%}
+{%- if in037_b03_display_title == blank -%}
+  {%- assign in037_b03_display_title = in037_b02_display_title | default: page.title -%}
+{%- endif -%}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-page-handle="{{ page.handle | escape }}"
+  class="wt-page {% if section.settings.compact-size-enabled == true %}  wt-page--compact{% endif %}"
+>
+  <h1 class="wt-page__title">
+    {{ in037_b03_display_title | escape }}
+  </h1>
+  {%- unless section.settings.hide_content -%}
+    <div class="rte wt-page__wrapper">
+      {{ accessible_page_content }}
+    </div>
+  {%- endunless -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page.main_name",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "compact-size-enabled",
+      "label": "Use compact size for big screens",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_content",
+      "label": "Show page title only",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "size_heading",
+      "min": 50,
+      "max": 500,
+      "step": 10,
+      "default": 140,
+      "label": "t:sections.settings.settings.size-heading.label",
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "size_heading_mobile",
+      "min": 80,
+      "max": 300,
+      "step": 10,
+      "default": 100,
+      "label": "t:sections.settings.settings.size-heading-mobile.label",
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.global.colors",
+      "info": "t:sections.global.colors-info"
+    },
+    {
+      "type": "color",
+      "id": "color-body-text",
+      "default": "transparent",
+      "label": "t:sections.settings.settings.text-color.label"
+    },
+    {
+      "type": "color",
+      "id": "color-bg-overlay",
+      "default": "transparent",
+      "label": "t:sections.settings.settings.background-color.label"
+    },
+    {
+      "type": "range",
+      "id": "color-overlay-opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "label": "t:sections.settings.settings.background-opacity.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.global.section_spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin-top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40,
+      "unit": "px",
+      "label": "t:sections.settings.settings.distance-top.label"
+    },
+    {
+      "type": "range",
+      "id": "margin-bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0,
+      "unit": "px",
+      "label": "t:sections.settings.settings.distance-bottom.label",
+      "info": "t:sections.settings.settings.distance-bottom.info"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}

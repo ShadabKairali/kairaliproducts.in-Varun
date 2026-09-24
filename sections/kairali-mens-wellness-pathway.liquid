@@ -1,0 +1,305 @@
+{%- if section.settings.release_approved and collection.handle == 'men-sexual-health' -%}
+  {%- assign visible_card_count = 0 -%}
+  {%- for block in section.blocks -%}
+    {%- assign selected_product = block.settings.product -%}
+    {%- assign expected_handle = block.settings.expected_handle | strip -%}
+    {%- assign expected_sku = block.settings.expected_sku | strip -%}
+    {%- assign selected_variant = selected_product.variants | where: 'sku', expected_sku | first -%}
+    {%- if block.settings.release_ready and selected_product != blank -%}
+      {%- if selected_product.handle == expected_handle and selected_variant != blank and selected_variant.available -%}
+        {%- assign visible_card_count = visible_card_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- if visible_card_count > 0 -%}
+    <section
+      class="kairali-pathway"
+      aria-labelledby="KairaliPathwayHeading-{{ section.id }}"
+      data-section-id="{{ section.id }}"
+    >
+      <div class="kairali-pathway__inner">
+        <header class="kairali-pathway__header">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="kairali-pathway__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+          {%- endif -%}
+          <h2 id="KairaliPathwayHeading-{{ section.id }}" class="kairali-pathway__heading">
+            {{ section.settings.heading | escape }}
+          </h2>
+          {%- if section.settings.intro != blank -%}
+            <p class="kairali-pathway__intro">{{ section.settings.intro | escape }}</p>
+          {%- endif -%}
+        </header>
+
+        <div class="kairali-pathway__grid" role="list">
+          {%- for block in section.blocks -%}
+            {%- assign selected_product = block.settings.product -%}
+            {%- assign expected_handle = block.settings.expected_handle | strip -%}
+            {%- assign expected_sku = block.settings.expected_sku | strip -%}
+            {%- assign selected_variant = selected_product.variants | where: 'sku', expected_sku | first -%}
+            {%- if block.settings.release_ready and selected_product != blank -%}
+              {%- if selected_product.handle == expected_handle and selected_variant != blank and selected_variant.available -%}
+                {%- assign destination_url = selected_product.url | append: '?variant=' | append: selected_variant.id -%}
+                <article class="kairali-pathway__card" role="listitem" {{ block.shopify_attributes }}>
+                  <div>
+                    <p class="kairali-pathway__status">Available now</p>
+                    <h3 class="kairali-pathway__card-heading">{{ block.settings.heading | escape }}</h3>
+                    {%- if block.settings.description != blank -%}
+                      <p class="kairali-pathway__description">{{ block.settings.description | escape }}</p>
+                    {%- endif -%}
+                  </div>
+                  <dl class="kairali-pathway__facts">
+                    <div>
+                      <dt>Pack</dt>
+                      <dd>{{ selected_variant.title | escape }}</dd>
+                    </div>
+                    <div>
+                      <dt>Current price</dt>
+                      <dd>{{ selected_variant.price | money }}</dd>
+                    </div>
+                  </dl>
+                  <a class="kairali-pathway__link" href="{{ destination_url }}">
+                    {{ section.settings.button_label | escape }}
+                    <span aria-hidden="true">&#8599;</span>
+                  </a>
+                </article>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .kairali-pathway {
+    margin: clamp(1.5rem, 4vw, 3.5rem) auto;
+    padding: 0 1rem;
+  }
+
+  .kairali-pathway__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 3.75rem);
+    background: #f4f0e8;
+    border: 1px solid rgba(42, 54, 36, 0.14);
+  }
+
+  .kairali-pathway__header {
+    max-width: 720px;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .kairali-pathway__eyebrow,
+  .kairali-pathway__status,
+  .kairali-pathway__facts dt {
+    margin: 0;
+    color: #53614a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .kairali-pathway__heading {
+    max-width: 18ch;
+    margin: 0.5rem 0 0;
+    color: #20291d;
+    font-size: clamp(1.8rem, 4vw, 3.25rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .kairali-pathway__intro {
+    max-width: 60ch;
+    margin: 1rem 0 0;
+    color: #4d5549;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .kairali-pathway__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(42, 54, 36, 0.16);
+    border: 1px solid rgba(42, 54, 36, 0.16);
+  }
+
+  .kairali-pathway__card {
+    display: flex;
+    min-height: 310px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    background: #fffdf8;
+  }
+
+  .kairali-pathway__card-heading {
+    margin: 0.7rem 0 0;
+    color: #20291d;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .kairali-pathway__description {
+    max-width: 46ch;
+    margin: 0.8rem 0 0;
+    color: #5a6256;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .kairali-pathway__facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: auto 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(42, 54, 36, 0.14);
+  }
+
+  .kairali-pathway__facts dd {
+    margin: 0.35rem 0 0;
+    color: #20291d;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .kairali-pathway__link {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.6rem;
+    color: #20291d;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+  }
+
+  .kairali-pathway__link:hover {
+    color: #53614a;
+  }
+
+  .kairali-pathway__link:focus-visible {
+    outline: 2px solid #20291d;
+    outline-offset: 5px;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1049px) {
+    .kairali-pathway__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .kairali-pathway {
+      padding: 0 0.75rem;
+    }
+
+    .kairali-pathway__inner {
+      padding: 1.5rem 1rem;
+    }
+
+    .kairali-pathway__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .kairali-pathway__card {
+      min-height: 280px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Men's wellness pathway",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "release_approved",
+      "label": "Release approved",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Men's wellness"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Review current pack options"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "Open each product page to check its current pack, price and availability before choosing."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View product details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_path",
+      "name": "Product path",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "release_ready",
+          "label": "Product approved",
+          "default": false
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "expected_handle",
+          "label": "Expected handle"
+        },
+        {
+          "type": "text",
+          "id": "expected_sku",
+          "label": "Expected first available SKU"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Neutral heading"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Neutral description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Men's wellness pathway"
+    }
+  ]
+}
+{% endschema %}

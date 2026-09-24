@@ -1,0 +1,21 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section class="kp-home-section kp-home-section--forest" aria-label="Kairtis Ayurvedic massage ritual">
+  <div class="kp-home-section__inner">
+    {% render 'kairali-premium-card',
+      id: 'kairtis-feature', href: '/products/kairtis-ayurvedic-massage-oil-joint-knee-comfort',
+      background: 'kp-in-home-r03-kairtis-bg.jpg', tone: 'light', card_modifier: 'kp-card--feature',
+      eyebrow: 'Oil + potli massage ritual', heading: 'Kairtis: Ayurvedic Oil and Potli, One Ritual',
+      body: 'Pair Kairtis Ayurvedic Massage Oil with its potli for a focused joint-and-muscle massage at home.', cta: 'Shop Kairtis',
+      commerce_product_handle: 'kairtis-ayurvedic-massage-oil-joint-knee-comfort'
+    %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali Kairtis feature",
+  "settings": [],
+  "presets": [{ "name": "Kairali Kairtis feature" }]
+}
+{% endschema %}

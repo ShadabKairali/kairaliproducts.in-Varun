@@ -1,0 +1,830 @@
+<style>
+  [data-section-id="{{ section.id }}"]
+  {
+
+      {% if section.settings.full-width-enabled %}
+          --border-radius: 0;
+      {% endif %}
+
+      {% if section.settings.margin-top %}
+        --section-gap-top: {{ section.settings.margin-top }}px;
+      {% endif %}
+
+      {% if section.settings.margin-bottom %}
+          --section-gap-bottom: {{ section.settings.margin-bottom }}px;
+      {% endif %}
+
+      --grid-gap: {{ section.settings.spacing_desktop }}px;
+      --grid-gap-mobile: {{ section.settings.spacing_mobile }}px;
+  }
+
+  @media (max-width: 899px) {
+    .collection__grid {
+      {% if section.settings.columns_mobile == "1" %}
+        --cols: 1;
+      {% else %}
+        --cols: 2;
+      {% endif %}
+    }
+  }
+
+  [data-section-id="{{ section.id }}"] .collection__grid {
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    min-width: 0;
+  }
+
+  [data-section-id="{{ section.id }}"] .collection__grid__item {
+    min-width: 0;
+  }
+
+  @media (max-width: 359px) {
+    [data-section-id="{{ section.id }}"] .collection__grid .price__container,
+    [data-section-id="{{ section.id }}"] .collection__grid .price__sale,
+    [data-section-id="{{ section.id }}"] .collection__grid .price__sale__details-wrapper,
+    [data-section-id="{{ section.id }}"] .collection__grid .price__details {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    [data-section-id="{{ section.id }}"] .collection__grid .price__sale__details-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+.collection__body {
+  flex-grow: 1;
+  margin-top: 20px;
+}
+
+.quick-links {
+  margin-bottom: 20px;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.quick-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+
+  .quick-links a:hover {
+    background-color: #b8860b;
+    color: #fff;
+  }
+
+.collection__parent-title {
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.18em;
+    text-color: #1c1c1c;
+    margin-left: 30px;
+    margin-top: 30px;
+  }  
+
+
+
+  .collection__filter-group {
+    margin-bottom: 20px;
+    {% comment %} position: sticky; {% endcomment %}
+    top: 55px;
+    margin-left: 30px;
+  }
+
+@media (max-width: 767px) {
+  .collection__filter-group {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing {
+    align-items: center;
+    background: #f8f5ee;
+    border: 1px solid #d8c69c;
+    border-radius: 8px;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin: 0 0 24px;
+    padding: 18px 20px;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing__eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing__copy {
+    line-height: 1.5;
+    margin: 0;
+    max-width: 760px;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing__link,
+  [data-section-id="{{ section.id }}"] .professional-bulk-enquiry-button {
+    background: #1c1c1c;
+    border: 1px solid #1c1c1c;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    min-height: 44px;
+    padding: 10px 14px;
+    text-decoration: none;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing__link:hover,
+  [data-section-id="{{ section.id }}"] .professional-bulk-enquiry-button:hover {
+    background: #b8860b;
+    border-color: #b8860b;
+    color: #fff;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing__link:focus-visible,
+  [data-section-id="{{ section.id }}"] .professional-bulk-enquiry-button:focus-visible {
+    outline: 2px solid #b8860b;
+    outline-offset: 2px;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-routing__link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  [data-section-id="{{ section.id }}"] .professional-bulk-enquiry-button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    [data-section-id="{{ section.id }}"] .professional-bulk-routing {
+      align-items: stretch;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding: 16px;
+    }
+
+    [data-section-id="{{ section.id }}"] .professional-bulk-routing__link {
+      text-align: center;
+      white-space: normal;
+      width: 100%;
+    }
+  }
+  
+</style>
+
+{% if section.settings['full-width-enabled'] %}
+  {% assign section_variant = 'section--full' %}
+{% else %}
+  {% assign section_variant = '' %}
+{% endif %}
+
+{%- liquid
+  assign professional_bulk_enquiry_url = blank
+  if collection.handle == 'ayurvedic-herbal-products-wholesaler-bulk-supplier'
+    assign professional_bulk_enquiry_url = '/pages/contract-manufacturing#b2b-enquiry'
+  endif
+-%}
+
+{%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+{%- assign filters_length = collection.filters | size -%}
+
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+
+{% if section.settings.enable_quick_add_button %}
+  <script src="{{ 'variant-dropdown.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<script active-filters>
+  var activeFilters = {
+  {%- for filter in collection.filters-%}
+    {{ filter.label | json }}: {
+      {%- for active_filter in filter.active_values -%}
+        {{ active_filter.label | json }}: {{ active_filter.value | json }}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    }{%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+  }
+</script>
+
+<div data-section-id="{{ section.id }}" class="{{ section_variant }}">
+  {% if collection.handle == 'hair-care' %}
+    {% render 'kairali-hair-set-builder' %}
+  {% endif %}
+  <collection-section
+    class="collection{% if section.settings.filter_position == "always" %} collection--with-aside{% endif %}"
+    data-filter-position="{{ section.settings.filter_position }}"
+  >
+    {% if section.settings.enable_filtering or section.settings.enable_sorting %}
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+      {% render 'facets',
+        results: collection,
+        enable_filtering: section.settings.enable_filtering,
+        enable_sorting: section.settings.enable_sorting,
+        filter_type: section.settings.filter_type,
+        filter_position: section.settings.filter_position,
+        filters_length: filters_length,
+        sort_by: sort_by
+      %}
+    {% endif %}
+
+    <section id="ProductGridContainer" class="collection__body">
+      <header role="banner" class="collection__header"></header>
+
+      <div class="collection__counter mobile">
+        <span id="ProductCount" class="counter__value">
+          {%- if collection.results_count -%}
+            {{ 'templates.search.results_with_count' | t: terms: collection.terms, count: collection.results_count }}
+          {%- elsif collection.products_count == collection.all_products_count -%}
+            {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+          {%- else -%}
+            {{
+              'products.facets.product_count'
+              | t: product_count: collection.products_count, count: collection.all_products_count
+            }}
+          {%- endif -%}
+        </span>
+      </div>
+
+      <div class="collection__sticky-header collection__sticky-header--{{ section.settings.toolbar_style }}">
+        <div class="collection__subheader">
+          <div class="collection__counter">
+            <span id="ProductCountDesktop" class="counter__value">
+              {%- if collection.results_count -%}
+                {{
+                  'templates.search.results_with_count'
+                  | t: terms: collection.terms, count: collection.results_count
+                }}
+              {%- elsif collection.products_count == collection.all_products_count -%}
+                {{ 'products.facets.product_count_simple' | t: count: collection.products_count }}
+              {%- else -%}
+                {{
+                  'products.facets.product_count'
+                  | t: product_count: collection.products_count, count: collection.all_products_count
+                }}
+              {%- endif -%}
+            </span>
+          </div>
+        </div>
+
+        <input
+          type="checkbox"
+          id="grid-layout"
+          class="collection__mobile-layout-checkbox"
+          aria-label="Grid Layout"
+          {% if section.settings.columns_mobile == '2' %}
+            checked
+          {% endif %}
+        >
+        {% if section.settings.enable_filtering or section.settings.enable_sorting %}
+          <div
+            class="collection__toolbar collection__toolbar--{{ section.settings.toolbar_style }}"
+            toolbar-style="{{ section.settings.toolbar_style}}"
+          >
+            {% if section.settings.toolbar_style == 'minimal' %}
+              <script src="{{ 'switch-column.js' | asset_url }}" defer="defer"></script>
+              <switch-column
+                data-col="{{ section.settings.columns_mobile }}"
+                data-design-mode="{% if request.design_mode %}true{% endif %}"
+              >
+                <div class="loading-overlay {% if request.design_mode %}hidden{% endif %}">
+                  {% render 'button-loading-indicator', hidden: false %}
+                </div>
+                <label
+                  class="collection__mobile-layout-switch {% if request.design_mode %}collection__mobile-layout-switch--hidden{% endif %}"
+                  for="grid-layout"
+                >
+                  <span class="css-icon css-icon--grid"></span>
+                  <span class="css-icon css-icon--square"></span>
+                </label>
+              </switch-column>
+            {% endif %}
+
+            {%- assign total_active_values = 0 -%}
+            {%- for filter in collection.filters -%}
+              {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+              {% if filter.type == 'price_range' %}
+                {% if filter.max_value and filter.max_value.value < filter.range_max %}
+                  {%- assign total_active_values = total_active_values | plus: 1 -%}
+                {% endif %}
+
+                {% if filter.min_value and filter.min_value.value > 0 %}
+                  {%- assign total_active_values = total_active_values | plus: 1 -%}
+                {% endif %}
+              {% endif %}
+            {%- endfor -%}
+
+            {% if section.settings.enable_filtering and filters_length > 0 %}
+              <div
+                class="collection__filter-trigger wt-filter__trigger{% if section.settings.filter_position == "drawer" %} wt-filter__trigger--drawer{% endif %}"
+                tabindex="0"
+                role="button"
+                aria-expanded="false"
+                aria-controls="wt-filters-drawer"
+              >
+                {% render 'icons', id: 'filter' %}
+                {{ 'products.facets.filter_button' | t }}
+                {% if total_active_values > 0 %}
+                  <span class="wt-filter__trigger__counter">
+                    {{ total_active_values }}
+                  </span>
+                {% endif %}
+              </div>
+            {% endif %}
+
+            {%- if section.settings.enable_sorting -%}
+              {% render 'custom-select',
+                custom_class: 'collection__sort',
+                select_options: collection.sort_options,
+                sort_by: sort_by
+              %}
+            {%- endif -%}
+          </div>
+          <script src="{{ 'sticky-filters.js' | asset_url }}" defer="defer"></script>
+          <sticky-filters></sticky-filters>
+        {% endif %}
+      </div>
+
+      {% if professional_bulk_enquiry_url != blank %}
+        <aside class="professional-bulk-routing" aria-labelledby="professional-bulk-routing-title">
+          <div>
+            <p id="professional-bulk-routing-title" class="professional-bulk-routing__eyebrow">
+              Professional &amp; Bulk ordering
+            </p>
+            <p class="professional-bulk-routing__copy">
+              Available listed bulk packs can be purchased directly. Ayurveda centres and business clients needing
+              custom quantities—or a pack currently unavailable—can send a business enquiry.
+            </p>
+          </div>
+          <a
+            class="button hero__button--secondary professional-bulk-routing__link"
+            href="{{ professional_bulk_enquiry_url }}"
+          >
+            Start a business enquiry
+          </a>
+        </aside>
+      {% endif %}
+
+      {%- paginate collection.products by section.settings.products_per_page -%}
+        <div
+          id="product-grid"
+          data-id="{{ section.id }}"
+          class="collection__grid"
+          data-cols="{{ section.settings.columns_mobile }}"
+          data-cols-desktop="{{ section.settings.columns_desktop }}"
+        >
+          {% for product in collection.products %}
+            {% assign lazy_load = true %}
+
+            {% assign card_variant = product.selected_or_first_available_variant %}
+            {% assign use_available_variant = false %}
+            {% assign url = product.url %}
+            {% if product.available and product.price_min != card_variant.price %}
+              {% assign use_available_variant = true %}
+              {% assign url = card_variant.url %}
+            {% endif %}
+
+            {% assign card_image = product.featured_image %}
+            {% if use_available_variant and card_variant.featured_image %}
+              {% assign card_image = card_variant.featured_image %}
+            {% endif %}
+            {% assign alt = card_image.alt | escape %}
+            {% assign uri = product.handle | escape %}
+
+            <div
+              class="collection__grid__item {% if settings.animations %}scroll-trigger animate--slide-in {% endif %} {% if settings.disabled_animations_on_mobile %} disabled-on-mobile {% endif %}"
+              {% if settings.animations %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {% if use_available_variant %}
+                {% assign image_hover = false %}
+              {% elsif section.settings.show_secondary_image and product.images[1] %}
+                {% assign image_hover = product.images[1] %}
+              {% else %}
+                {% assign image_hover = false %}
+              {% endif %}
+
+              {% render 'card',
+                card_product: product,
+                img: card_image,
+                image_ratio: section.settings.image_ratio,
+                img_hover: image_hover,
+                alt: alt,
+                subtitle: product.vendor,
+                reviews: product.metafields.reviews,
+                title: product.title,
+                url: url,
+                uri: uri,
+                variants: product.variants,
+                product_options: product.options,
+                product: product,
+                use_available_variant: use_available_variant,
+                rating: section.settings.show_product_rating,
+                text_alignment: section.settings.text_alignment,
+                media_aspect_ratio: section.settings.image_ratio,
+                enable_quick_add_button: section.settings.enable_quick_add_button,
+                show_video: section.settings.show_video,
+                image_sizes: 'auto, (min-width: 1000px) 620px, 100vw',
+                lazy_load: lazy_load,
+                professional_bulk_enquiry_url: professional_bulk_enquiry_url
+              %}
+            </div>
+          {% endfor %}
+        </div>
+        {% if paginate.pages > 1 %}
+          {% render 'pagination', paginate: paginate, anchor: '' %}
+        {% endif %}
+      {%- endpaginate -%}
+    </section>
+  </collection-section>
+  {%- if collection.products.size == 0 -%}
+    {%- liquid
+      assign governed_empty_handles = 'dental-care,diet,ghrithams-ayurvedic-herbal-medicated-ghee,gift-products,herbal-cosmetics-wholesale-bulk-packaging,herbal-infusions-wholesale-bulk-packaging,proprietary-cosmetics-wholesale-bulk-packaging,proprietary-oils-wholesale-bulk-packaging' | split: ','
+      assign wholesale_empty_handles = 'herbal-cosmetics-wholesale-bulk-packaging,herbal-infusions-wholesale-bulk-packaging,proprietary-cosmetics-wholesale-bulk-packaging,proprietary-oils-wholesale-bulk-packaging' | split: ','
+    -%}
+    {%- if governed_empty_handles contains collection.handle -%}
+      <section class="kairali-empty-collection" aria-labelledby="kairali-empty-collection-title">
+        {%- if wholesale_empty_handles contains collection.handle -%}
+          <p class="kairali-empty-collection__eyebrow">Professional &amp; bulk orders</p>
+          <h2 id="kairali-empty-collection-title">Ask us for current bulk-pack availability</h2>
+          <p>
+            The exact bulk packs in this category are not currently available for direct online purchase.
+            Pack sizes and availability depend on current factory stock, so please send a B2B enquiry for an exact response.
+          </p>
+          <div class="kairali-empty-collection__actions">
+            <a class="button button--primary" href="/pages/contract-manufacturing#b2b-enquiry">Send a B2B enquiry</a>
+            <a class="button button--secondary" href="{{ collections['ayurvedic-herbal-products-wholesaler-bulk-supplier'].url }}">Browse available bulk packs</a>
+          </div>
+        {%- else -%}
+          <p class="kairali-empty-collection__eyebrow">Current availability</p>
+          <h2 id="kairali-empty-collection-title">No products are available in this collection right now</h2>
+          <p>
+            This collection page remains available while the current factory-stock catalogue is updated.
+            You can continue shopping the products that are available online today.
+          </p>
+          <div class="kairali-empty-collection__actions">
+            <a class="button button--primary" href="{{ collections['kairali-ayurvedic-herbal-products-discounted-sale'].url }}">Browse available products</a>
+            <a class="button button--secondary" href="{{ routes.search_url }}">Search the store</a>
+          </div>
+        {%- endif -%}
+      </section>
+    {%- else -%}
+      <div class="collection__counter collection__empty-collection">
+        {{ 'sections.collection_template.empty' | t -}}
+      </div>
+    {%- endif -%}
+  {% endif %}
+</div>
+
+{% style %}
+  .kairali-empty-collection {
+    width: min(760px, calc(100% - 32px));
+    margin: 28px auto 64px;
+    padding: clamp(24px, 5vw, 44px);
+    border: 1px solid rgba(106, 120, 22, 0.28);
+    border-radius: 16px;
+    background: #f8f6ef;
+    color: #29362f;
+    text-align: center;
+  }
+
+  .kairali-empty-collection__eyebrow {
+    margin: 0 0 10px;
+    color: #6a7816;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .kairali-empty-collection h2 {
+    margin: 0 auto 14px;
+    max-width: 620px;
+    color: #173d2a;
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.18;
+  }
+
+  .kairali-empty-collection > p:not(.kairali-empty-collection__eyebrow) {
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  .kairali-empty-collection__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .kairali-empty-collection__actions .button {
+    min-height: 48px;
+  }
+
+  @media (max-width: 540px) {
+    .kairali-empty-collection {
+      margin-bottom: 44px;
+      text-align: left;
+    }
+
+    .kairali-empty-collection__actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .kairali-empty-collection__actions .button {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<script src="{{ 'collection-section.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "spaced-section collection-grid-section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 12,
+      "max": 120,
+      "step": 12,
+      "default": 24,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.2.label"
+        }
+      ],
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label"
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "options": [
+        {
+          "value": "3",
+          "label": "t:sections.main-collection-product-grid.settings.columns_desktop.3.label"
+        },
+        {
+          "value": "4",
+          "label": "t:sections.main-collection-product-grid.settings.columns_desktop.4.label"
+        }
+      ],
+      "default": "3",
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+    },
+    {
+      "type": "select",
+      "id": "spacing_desktop",
+      "options": [
+        {
+          "value": "8",
+          "label": "t:sections.main-collection-product-grid.settings.spacing_desktop.1.label"
+        },
+        {
+          "value": "16",
+          "label": "t:sections.main-collection-product-grid.settings.spacing_desktop.2.label"
+        },
+        {
+          "value": "24",
+          "label": "t:sections.main-collection-product-grid.settings.spacing_desktop.3.label"
+        }
+      ],
+      "default": "16",
+      "label": "t:sections.main-collection-product-grid.settings.spacing_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full-width-enabled",
+      "label": "t:sections.settings.settings.section-full-width.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.global.mobile_version"
+    },
+    {
+      "type": "select",
+      "id": "spacing_mobile",
+      "options": [
+        {
+          "value": "4",
+          "label": "4px"
+        },
+        {
+          "value": "8",
+          "label": "8px"
+        },
+        {
+          "value": "12",
+          "label": "12px"
+        },
+        {
+          "value": "16",
+          "label": "16px"
+        }
+      ],
+      "default": "16",
+      "label": "t:sections.featured-collection.settings.spacing_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "square",
+      "label": "t:sections.featured-collection.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_video",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_video.label",
+      "info": "t:sections.main-collection-product-grid.settings.show_video.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_rating",
+      "default": true,
+      "label": "t:sections.featured-collection.settings.show_product_rating.label",
+      "info": "t:sections.featured-collection.settings.show_product_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add_button",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.enable_quick_add_button.label",
+      "info": "t:sections.featured-collection.settings.enable_quick_add_button.info"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "center",
+          "label": "t:sections.featured-collection.settings.text_alignment.center.label"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.featured-collection.settings.text_alignment.left.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.featured-collection.settings.text_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.global.toolbar"
+    },
+    {
+      "type": "select",
+      "id": "toolbar_style",
+      "options": [
+        {
+          "value": "minimal",
+          "label": "t:sections.main-collection-product-grid.settings.toolbar_style.minimal.label"
+        },
+        {
+          "value": "buttons",
+          "label": "t:sections.main-collection-product-grid.settings.toolbar_style.buttons.label"
+        }
+      ],
+      "default": "minimal",
+      "label": "t:sections.main-collection-product-grid.settings.toolbar_style.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "select",
+      "id": "filter_position",
+      "options": [
+        {
+          "value": "always",
+          "label": "t:sections.main-collection-product-grid.settings.filter_position.always.label"
+        },
+        {
+          "value": "drawer",
+          "label": "t:sections.main-collection-product-grid.settings.filter_position.drawer.label"
+        }
+      ],
+      "default": "always",
+      "label": "t:sections.main-collection-product-grid.settings.filter_position.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.global.section_spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin-top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40,
+      "unit": "px",
+      "label": "t:sections.settings.settings.distance-top.label"
+    },
+    {
+      "type": "range",
+      "id": "margin-bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 0,
+      "unit": "px",
+      "label": "t:sections.settings.settings.distance-bottom.label",
+      "info": "t:sections.settings.settings.distance-bottom.info"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,105 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section id="shop-by-concern" class="kp-home-section kp-home-section--tinted" aria-labelledby="KpConcerns-{{ section.id }}">
+  <div class="kp-home-section__inner">
+    <header class="kp-section-intro">
+      <p class="kp-eyebrow">Start with your need</p>
+      <h2 id="KpConcerns-{{ section.id }}" class="kp-section-title">What Would You Like to Support?</h2>
+      <p class="kp-section-body">Pick the concern you actually deal with and go straight to the Kairali Ayurvedic products grouped for it.</p>
+    </header>
+
+    <div class="kp-grid kp-grid--concerns">
+      {% render 'kairali-premium-card',
+        id: 'concern-01', href: '/collections/diabetes', background: 'kp-in-home-r03-concern-01.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Kairali Ayurvedic range', heading: 'Ayurvedic Blood Sugar & Metabolic Wellness',
+        body: 'The Kairali Ayurvedic products grouped under blood sugar and metabolic wellness, gathered on one page rather than scattered through the catalogue.',
+        cta: 'Shop Metabolic Wellness'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-02', href: '/collections/arthritis', background: 'kp-in-home-r03-concern-02.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Kairali Ayurvedic range', heading: 'Ayurvedic Joint & Mobility Care',
+        body: 'Every Kairali Ayurvedic oil and formulation grouped under joint and mobility care, on one page instead of spread across the catalogue.',
+        cta: 'Shop Joint & Mobility Care'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-03', href: '/collections/obesity', background: 'kp-in-home-r03-concern-03.webp', tone: 'dark', card_modifier: 'kp-card--concern',
+        eyebrow: 'Kairali Ayurvedic range', heading: 'Ayurvedic Weight Management',
+        body: "Kairali's Ayurvedic weight-management range in one place, so you can compare formats instead of searching the catalogue product by product.",
+        cta: 'Shop Weight Management'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-04', href: '/collections/men-sexual-health', background: 'kp-in-home-r03-concern-04.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Kairali Ayurvedic range', heading: "Ayurvedic Men's Wellness",
+        body: "The Kairali Ayurvedic men's range on one page — compare what is in it and order privately, without a counter conversation.",
+        cta: "Shop Men's Wellness"
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-05', href: '/collections/depression', background: 'kp-in-home-r03-concern-05.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Kairali Ayurvedic range', heading: 'Ayurvedic Sleep, Stress & Mind Care',
+        body: 'The Kairali Ayurvedic range grouped for sleep, stress and mind wellness — the evening-routine products together in one place.',
+        cta: 'Shop Sleep & Stress Care'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-06', href: '/collections/pain-relief', background: 'kp-in-home-r03-concern-06.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Muscle & joint care', heading: 'Give Stiff Shoulders a Warm Oil Massage',
+        body: "Shop Kairali's Ayurvedic oils for joint-and-muscle massage you can do yourself, at home.",
+        cta: 'Shop Muscle & Joint Care'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-07', href: '/collections/constipation', background: 'kp-in-home-r03-concern-07.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Daily digestive care', heading: 'Stay Regular, Without the Awkwardness',
+        body: "Order Kairali's Ayurvedic digestive care from home, without a conversation at the counter.",
+        cta: 'Shop Digestive Care'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-08', href: '/collections/acidity', background: 'kp-in-home-r03-concern-08.webp', tone: 'dark', card_modifier: 'kp-card--concern',
+        eyebrow: 'Acidity & stomach comfort', heading: 'Comfort After Meals, Made Simpler',
+        body: 'Find Kairali Ayurvedic options for acidity and after-meal stomach comfort.',
+        cta: 'Shop Stomach Comfort'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-09', href: '/collections/indigestion', background: 'kp-in-home-r03-concern-09.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Digestive and gut wellness', heading: "Build a Gut Routine You'll Actually Keep",
+        body: "Browse Kairali's Ayurvedic gut-wellness range and choose the format that fits your daily routine.",
+        cta: 'Shop Gut Wellness'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-10', href: '/collections/migraine', background: 'kp-in-home-r03-concern-10.webp', tone: 'dark', card_modifier: 'kp-card--concern',
+        eyebrow: 'Head & mind comfort', heading: 'The Ayurvedic Head-Oil Ritual, at Home',
+        body: "Kairali's Ayurvedic oils for slow head and temple massage at the end of a heavy day.",
+        cta: 'Shop Head Care'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-11', href: '/collections/cholesterol-treatment', background: 'kp-in-home-r03-concern-11.webp', tone: 'light', card_modifier: 'kp-card--concern',
+        eyebrow: 'Heart & metabolic wellness', heading: 'Care for the Years Ahead',
+        body: "Start looking after the years ahead with Kairali's Ayurvedic heart and metabolic range.",
+        cta: 'Shop Heart & Metabolic'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'concern-12', href: '/collections/haemorrohoids', background: 'kp-in-home-r03-concern-12.webp', tone: 'dark', card_modifier: 'kp-card--concern',
+        eyebrow: 'Piles & bowel comfort', heading: 'Ayurvedic Piles & Bowel Comfort',
+        body: "Browse Kairali's Ayurvedic range for piles and bowel comfort discreetly from home.",
+        cta: 'Shop Piles & Bowel Care'
+      %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali premium concerns",
+  "settings": [],
+  "presets": [{ "name": "Kairali premium concerns" }]
+}
+{% endschema %}

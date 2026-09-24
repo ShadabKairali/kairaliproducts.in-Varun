@@ -1,0 +1,53 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section class="kp-home-section" aria-labelledby="KpStories-{{ section.id }}">
+  <div class="kp-home-section__inner">
+    <header class="kp-section-intro">
+      <p class="kp-eyebrow">Four Kairali rituals</p>
+      <h2 id="KpStories-{{ section.id }}" class="kp-section-title">Featured Ayurvedic Products</h2>
+      <p class="kp-section-body">Choose a ritual for face, hair, body or massage—and meet the Kairali product that fits it.</p>
+    </header>
+
+    <div class="kp-grid kp-grid--stories">
+      {% render 'kairali-premium-card',
+        id: 'story-kaircin', href: '/products/kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin',
+        background: 'kp-in-home-r03-story-kaircin-01-bg.jpg', tone: 'light', card_modifier: 'kp-card--story',
+        eyebrow: 'Saffron + lotus facial oil', heading: 'Kaircin: Saffron and Lotus, Every Night',
+        body: "Kairali's saffron-and-lotus Ayurvedic facial oil, made for the last five minutes of your day.", cta: 'Shop Kaircin',
+        commerce_product_handle: 'kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'story-kairoil', href: '/products/kairoil-best-ayurvedic-hair-oil-for-hair-fall-and-dandruff',
+        background: 'kp-in-home-r03-story-kairoil-02-bg.jpg', tone: 'light', card_modifier: 'kp-card--story',
+        eyebrow: '200 ml Ayurvedic hair oil', heading: 'Kairoil 200 ml: Your Weekly Hair-Oiling Ritual',
+        body: 'Massage Kairoil into the scalp and keep the Kairali head-oil ritual in your week, every week.', cta: 'Shop Kairoil',
+        commerce_product_handle: 'kairoil-best-ayurvedic-hair-oil-for-hair-fall-and-dandruff'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'story-kairheal', href: '/products/kairheal-ayurvedic-oil-for-bone-fracture-injury-sprain-and-pain',
+        background: 'kp-in-home-r03-story-kairheal-03-bg.jpg', tone: 'light', card_modifier: 'kp-card--story',
+        eyebrow: 'Ayurvedic external massage oil', heading: 'Kairheal: Ayurvedic Massage Oil for Overworked Days',
+        body: 'Make Kairheal part of a focused Ayurvedic external massage at home.', cta: 'Shop Kairheal',
+        commerce_product_handle: 'kairheal-ayurvedic-oil-for-bone-fracture-injury-sprain-and-pain'
+      %}
+
+      {% render 'kairali-premium-card',
+        id: 'story-kairkare', href: '/products/kairkare-ayurvedic-herbal-body-massage-oil',
+        background: 'kp-in-home-r03-story-kairkare-04-bg.jpg', tone: 'light', card_modifier: 'kp-card--story',
+        eyebrow: '200 ml Ayurvedic body oil', heading: 'Kairkare: Your Full-Body Massage Ritual',
+        body: 'Warm the 200 ml Kairkare body oil and make a full-body Ayurvedic massage your weekly reset.', cta: 'Shop Kairkare',
+        commerce_product_handle: 'kairkare-ayurvedic-herbal-body-massage-oil'
+      %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali product stories",
+  "settings": [],
+  "presets": [{ "name": "Kairali product stories" }]
+}
+{% endschema %}

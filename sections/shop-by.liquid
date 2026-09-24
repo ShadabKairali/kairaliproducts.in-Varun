@@ -1,0 +1,445 @@
+{%- liquid
+  assign d_cols = section.settings.desktop_items_per_row | plus: 0
+  assign m_cols = section.settings.mobile_items_per_row | plus: 0
+  assign m_rows = section.settings.mobile_rows | plus: 0
+-%}
+
+<div class="shop-by-ingredients-section" id="ShopByIngredients-{{ section.id }}">
+  <div id="shop-by-concern" class="shop-by-ingredients-heading {{ section.settings.heading_alignment }}">
+    <h2>{{ section.settings.section_heading }}</h2>
+  </div>
+
+  <div class="ingredients-carousel-wrapper">
+    <button class="carousel-button left" type="button" aria-label="Previous">&#10094;</button>
+
+    <div class="ingredients-carousel">
+      {% for block in section.blocks %}
+        <div class="ingredient-item" {{ block.shopify_attributes }}>
+          {% assign link_label = block.settings.image_title | default: "Shop by Concern" %}
+
+          <a href="{{ block.settings.link }}" aria-label="{{ link_label | escape }}">
+            <picture>
+              {%- if block.settings.mobile_image != blank -%}
+                <source media="(max-width: 768px)" srcset="{{ block.settings.mobile_image | image_url: width: 600 }}">
+              {%- endif -%}
+              <img
+                src="{{ block.settings.desktop_image | image_url: width: 600 }}"
+                alt="{{ block.settings.image_title | escape }}"
+                width="600" height="600"
+                loading="lazy">
+            </picture>
+          </a>
+
+          {% if block.settings.image_title != blank %}
+            <p class="ingredient-title">{{ block.settings.image_title }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="carousel-button right" type="button" aria-label="Next">&#10095;</button>
+  </div>
+</div>
+
+<style>
+#ShopByIngredients-{{ section.id }} {
+  --sbi-gap: 1rem;
+  --sbi-side: 2rem;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #f7f4ea;
+  border-top: 1px solid rgba(193, 136, 44, 0.28);
+}
+
+#ShopByIngredients-{{ section.id }} *,
+#ShopByIngredients-{{ section.id }} *::before,
+#ShopByIngredients-{{ section.id }} *::after {
+  box-sizing: border-box;
+}
+
+#ShopByIngredients-{{ section.id }} .shop-by-ingredients-heading {
+  margin-bottom: 1rem;
+  scroll-margin-top: 120px;
+}
+#ShopByIngredients-{{ section.id }} .shop-by-ingredients-heading h2 {
+  color: #006038;
+  font-family: var(--font-headline);
+  font-size: clamp(26px, 2.2vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+  text-wrap: balance;
+}
+#ShopByIngredients-{{ section.id }} .shop-by-ingredients-heading h2::after {
+  content: "EST. 1908";
+  display: block;
+  margin-top: 8px;
+  color: #c1882c;
+  font-family: var(--font-base);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+#ShopByIngredients-{{ section.id }} .shop-by-ingredients-heading.left   { text-align: left; }
+#ShopByIngredients-{{ section.id }} .shop-by-ingredients-heading.center { text-align: center; }
+#ShopByIngredients-{{ section.id }} .shop-by-ingredients-heading.right  { text-align: right; }
+
+#ShopByIngredients-{{ section.id }} .ingredients-carousel-wrapper {
+  position: relative;
+  padding: 0 var(--sbi-side);
+}
+
+#ShopByIngredients-{{ section.id }} .ingredients-carousel {
+  display: flex;
+  gap: var(--sbi-gap);
+  width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#ShopByIngredients-{{ section.id }} .ingredients-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Width = (container - all gaps) / columns, so nothing ever overflows */
+#ShopByIngredients-{{ section.id }} .ingredient-item {
+  flex: 0 0 calc((100% - ({{ d_cols | minus: 1 }} * var(--sbi-gap))) / {{ d_cols }});
+  min-width: 0;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+#ShopByIngredients-{{ section.id }} .ingredient-item a {
+  display: block;
+  text-decoration: none;
+}
+
+#ShopByIngredients-{{ section.id }} .ingredient-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;   /* keeps the circle a circle */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#ShopByIngredients-{{ section.id }} .ingredient-title {
+  font-family: var(--font-base);
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.35;
+  color: #2a2118;
+  margin: 0.75rem 0 0;
+  font-weight: 500;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+#ShopByIngredients-{{ section.id }} .carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.85);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  line-height: 1;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  z-index: 2;
+  transition: background-color 0.3s;
+}
+#ShopByIngredients-{{ section.id }} .carousel-button:hover {
+  background-color: #fff;
+}
+#ShopByIngredients-{{ section.id }} .carousel-button.left  { left: 0; }
+#ShopByIngredients-{{ section.id }} .carousel-button.right { right: 0; }
+
+@media (max-width: 768px) {
+  #ShopByIngredients-{{ section.id }} {
+    --sbi-side: 1.75rem;
+  }
+
+  #ShopByIngredients-{{ section.id }} .carousel-button {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  {% if m_rows > 1 %}
+  #ShopByIngredients-{{ section.id }} .ingredients-carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat({{ m_rows }}, auto);
+    grid-auto-columns: calc((100% - ({{ m_cols | minus: 1 }} * var(--sbi-gap))) / {{ m_cols }});
+  }
+  #ShopByIngredients-{{ section.id }} .ingredient-item {
+    width: 100%;
+  }
+  {% else %}
+  #ShopByIngredients-{{ section.id }} .ingredient-item {
+    flex: 0 0 calc((100% - ({{ m_cols | minus: 1 }} * var(--sbi-gap))) / {{ m_cols }});
+  }
+  {% endif %}
+
+  #ShopByIngredients-{{ section.id }} .ingredient-title {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  {% unless section.settings.show_arrows_mobile %}
+  #ShopByIngredients-{{ section.id }} .carousel-button {
+    display: none;
+  }
+  #ShopByIngredients-{{ section.id }} .ingredients-carousel-wrapper {
+    padding: 0;
+  }
+  {% endunless %}
+}
+
+/* Hide arrows when everything already fits on screen */
+#ShopByIngredients-{{ section.id }} .carousel-button[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #ShopByIngredients-{{ section.id }} .ingredients-carousel {
+    scroll-behavior: auto;
+  }
+}
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('ShopByIngredients-{{ section.id }}');
+    if (!root) return;
+
+    var track = root.querySelector('.ingredients-carousel');
+    if (!track) return;
+
+    var buttons = root.querySelectorAll('.carousel-button');
+    var autoplay = {% if section.settings.autoplay %}true{% else %}false{% endif %};
+    var delay = {{ section.settings.autoplay_speed | times: 1000 | round }};
+    var pauseOnHover = {% if section.settings.pause_on_hover %}true{% else %}false{% endif %};
+    var timer = null;
+    var paused = false;
+
+    // Width of one item plus the gap = one step
+    function step() {
+      var item = track.querySelector('.ingredient-item');
+      if (!item) return track.clientWidth;
+      var styles = window.getComputedStyle(track);
+      var gap = parseFloat(styles.columnGap || styles.gap || 0) || 0;
+      return Math.round(item.getBoundingClientRect().width + gap);
+    }
+
+    function maxScroll() {
+      return track.scrollWidth - track.clientWidth;
+    }
+
+    function go(dir) {
+      var end = maxScroll();
+      if (end <= 1) return;
+
+      var target = track.scrollLeft + dir * step();
+
+      // Loop around at either end
+      if (dir > 0 && track.scrollLeft >= end - 2) target = 0;
+      else if (dir < 0 && track.scrollLeft <= 2) target = end;
+
+      track.scrollTo({ left: Math.max(0, Math.min(target, end)), behavior: 'smooth' });
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        go(btn.classList.contains('left') ? -1 : 1);
+        restart();
+      });
+    });
+
+    // Hide arrows if there is nothing to scroll
+    function toggleArrows() {
+      var scrollable = maxScroll() > 1;
+      buttons.forEach(function (btn) { btn.hidden = !scrollable; });
+    }
+    toggleArrows();
+    window.addEventListener('resize', toggleArrows);
+
+    // Autoplay
+    function start() {
+      if (!autoplay || timer || paused) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(function () { go(1); }, delay);
+    }
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    function restart() {
+      stop();
+      start();
+    }
+
+    if (autoplay) {
+      if (pauseOnHover) {
+        root.addEventListener('mouseenter', function () { paused = true; stop(); });
+        root.addEventListener('mouseleave', function () { paused = false; start(); });
+      }
+      root.addEventListener('focusin', function () { paused = true; stop(); });
+      root.addEventListener('focusout', function () { paused = false; start(); });
+      track.addEventListener('touchstart', function () { paused = true; stop(); }, { passive: true });
+      track.addEventListener('touchend', function () {
+        paused = false;
+        setTimeout(start, delay);
+      }, { passive: true });
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) stop(); else start();
+      });
+      start();
+    }
+
+    // Theme editor: stop cleanly when the section is reloaded
+    document.addEventListener('shopify:section:unload', function (e) {
+      if (e.detail && e.detail.sectionId === '{{ section.id }}') stop();
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Shop by Ingredients",
+  "tag": "section",
+  "class": "shop-by-ingredients-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Shop by Ingredients"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_items_per_row",
+      "label": "Items per row (desktop)",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "mobile_items_per_row",
+      "label": "Items per row (mobile)",
+      "default": "2",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_rows",
+      "label": "Rows (mobile)",
+      "info": "Choose 1 to show all blocks in a single swipeable row.",
+      "default": "2",
+      "options": [
+        { "value": "1", "label": "1 row" },
+        { "value": "2", "label": "2 rows" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_mobile",
+      "label": "Show arrows on mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Autoplay"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-scroll the carousel",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Seconds between slides",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Target Link"
+        },
+        {
+          "type": "text",
+          "id": "image_title",
+          "label": "Image Title"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Shop by Ingredients",
+      "category": "Custom Sections",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,261 @@
+{% comment %}
+Sticky Header Country Switcher Section
+- Sticky/fixed like an announcement bar
+- Has close button
+- Remembers dismiss for X days
+- Uses metafields to preserve alternate paths per product/collection/page/article
+{% endcomment %}
+
+{%- assign alt_in_path  = '/' -%}
+{%- assign alt_com_path = '/' -%}
+{%- assign current_host = request.host | downcase -%}
+{%- assign show_automatic_country_switcher = true -%}
+{%- if current_host == 'kairaliproducts.in' or current_host == 'www.kairaliproducts.in' -%}
+  {%- assign show_automatic_country_switcher = false -%}
+{%- endif -%}
+
+{%- if template contains 'product' -%}
+  {%- if product.metafields.alt.com_path -%}
+    {% assign alt_com_path = product.metafields.alt.com_path %}
+  {% else %}
+    {% assign alt_com_path = '/' %}
+  {% endif -%}
+{%- elsif template contains 'collection' -%}
+  {%- if collection.metafields.alt.com_path -%}
+    {% assign alt_com_path = collection.metafields.alt.com_path %}
+  {% else %}
+    {% assign alt_com_path = '/' %}
+  {% endif -%}
+{%- elsif template contains 'page' -%}
+  {%- if page.metafields.alt.com_path -%}
+    {% assign alt_com_path = page.metafields.alt.com_path %}
+  {% else %}
+    {% assign alt_com_path = '/' %}
+  {% endif -%}
+{%- elsif template contains 'article' -%}
+  {%- if article.metafields.alt.com_path -%}
+    {% assign alt_com_path = article.metafields.alt.com_path %}
+  {% else %}
+    {% assign alt_com_path = '/' %}
+  {% endif -%}
+{%- endif -%}
+
+{%- unless show_automatic_country_switcher -%}
+  <nav class="kp-market-switcher-inline" aria-label="Change shopping region">
+    <span>Shopping in India (INR)</span>
+    <a href="https://www.kairaliproducts.com{{ alt_com_path }}">Shop internationally (USD)</a>
+  </nav>
+  <style>
+    .kp-market-switcher-inline {
+      align-items: center;
+      background: #fff;
+      color: #4d5c12;
+      display: flex;
+      font-size: 12px;
+      gap: 8px;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 12px;
+      text-align: center;
+    }
+    .kp-market-switcher-inline a {
+      align-items: center;
+      color: inherit;
+      display: inline-flex;
+      font-weight: 600;
+      min-height: 44px;
+      padding: 0 4px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .kp-market-switcher-inline a:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+  </style>
+{%- endunless -%}
+
+{%- if show_automatic_country_switcher -%}
+
+<style>
+
+
+.wt-cart__drawer {
+z-index: 99999 !important; /* higher than country bar */
+}
+
+#country-switcher-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: {{ section.settings.bg_color }};
+  color: {{ section.settings.text_color }};
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 6px 56px 6px 12px;
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 8px;
+  border-bottom: 1px solid #eee;
+}
+#country-switcher-bar select {
+  box-sizing: border-box;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.5rem;
+  font-size: 14px;
+  border: 1px solid #8E9D35;
+  border-radius: 4px;
+}
+#country-switcher-bar .close-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 40px;
+  line-height: 1;
+  color: {{ section.settings.text_color }};
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+#country-switcher-bar select:focus-visible,
+#country-switcher-bar .close-btn:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  #country-switcher-bar {
+    padding-left: 8px;
+    padding-right: 52px;
+    font-size: 12px;
+  }
+
+  #country-switcher-bar select {
+    font-size: 16px;
+  }
+
+  #country-switcher-bar .close-btn {
+    right: 4px;
+    font-size: 30px;
+  }
+
+}
+
+</style>
+
+<div id="country-switcher-bar" role="region" aria-label="Region selector" style="display:none;">
+  <span>{{ section.settings.heading }}</span>
+  <select aria-label="Select Region" onchange="if(this.value){window.location.href=this.value;}">
+    <option value="">Select Region</option>
+    <option value="https://kairaliproducts.in{{ alt_in_path }}" {% if request.host contains '.in' %}selected{% endif %}>
+      India (INR)
+    </option>
+    <option value="https://kairaliproducts.com{{ alt_com_path }}" {% if request.host contains '.com' %}selected{% endif %}>
+      International (USD)
+    </option>
+  </select>
+  <button class="close-btn" type="button" aria-label="Close region selector" onclick="dCB()">×</button>
+</div>
+
+<script>
+function gC(n){
+  const v=`; ${document.cookie}`;
+  const p=v.split(`; ${n}=`);
+  if(p.length===2) return p.pop().split(';').shift();
+}
+
+function getHeaderEl(){
+  return document.querySelector('header, .header-wrapper, .site-header, #shopify-section-header, [data-header]');
+}
+
+function positionHeader(px){
+  const header = getHeaderEl();
+  document.body.style.paddingTop = px + 'px';
+  if(header){
+    const pos = getComputedStyle(header).position;
+    if(pos === 'fixed' || pos === 'sticky'){
+      header.style.top = px + 'px';
+    }
+  }
+}
+
+function dCB(){
+  const bar = document.getElementById('country-switcher-bar');
+  const closeButton = bar.querySelector('.close-btn');
+  const restoreKeyboardFocus = document.activeElement === closeButton;
+  bar.style.display='none';
+  positionHeader(0);
+  const d=new Date();
+  d.setTime(d.getTime()+({{ section.settings.remember_days }}*864e5));
+  document.cookie="country_bar_dismissed=true; expires="+d.toUTCString()+"; path=/; SameSite=Lax";
+  if(restoreKeyboardFocus){
+    const nextControl = document.querySelector('header a[href], header button, main a[href], main button, main input, main select, main textarea');
+    if(nextControl) nextControl.focus();
+  }
+}
+document.addEventListener("DOMContentLoaded",function(){
+  const bar = document.getElementById("country-switcher-bar");
+  if(!gC("country_bar_dismissed")){
+    bar.style.display="flex";
+    positionHeader(bar.offsetHeight);
+  } else {
+    positionHeader(0);
+  }
+});
+</script>
+
+{%- endif -%}
+
+
+
+{% schema %}
+{
+  "name": "Sticky Country Switcher",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading text",
+      "default": "Choose your region:"
+    },
+    {
+      "type": "range",
+  "id": "remember_days",
+  "label": "Remember dismiss (days)",
+  "min": 1,
+  "max": 30,
+  "step": 1,
+  "default": 7
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Header Country Switcher",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}

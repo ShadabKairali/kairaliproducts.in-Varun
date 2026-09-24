@@ -1,0 +1,1254 @@
+{% if template == 'index' %}
+
+  {% assign background_rgb = section.settings['color-overlay'] | color_to_rgb %}
+  {% assign text_container_rgb = section.settings['text-container-color'] | color_to_rgb %}
+  {% assign text_rgb = section.settings['color-body-text'] | color_to_rgb %}
+
+  <!-- Swiper CDN (ensures autoplay works) -->
+  {{ 'swiper-bundle.min.css' | asset_url | preload_tag: as: 'style' }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+
+  <style>
+    section[id="shopify-section-{{ section.id }}"] {
+      {% if background_rgb != 'rgba(0, 0, 0, 0.0)' %}
+        --color-overlay-rgb: {{ background_rgb | remove: 'rgb(' | remove: ')' }};
+        --color-overlay-opacity: 1;
+      {% else %}
+        --color-overlay-opacity: 0;
+      {% endif %}
+
+      {% if text_container_rgb != 'rgba(0, 0, 0, 0.0)' %}
+        --text-container-color: {{ text_container_rgb | remove: 'rgb(' | remove: ')' }};
+        --text-container-opacity: {{ section.settings.color-overlay-opacity | divided_by: 100.0 }};
+      {% else %}
+        --text-container-opacity: 0;
+      {% endif %}
+
+      {% if text_rgb != 'rgba(0, 0, 0, 0.0)' %}
+        --color-custom-text: {{ section.settings.color-body-text }};
+      {% endif %}
+    }
+
+
+
+
+.page-header-image-banner,
+    .wt-image-banner,
+    .swipe-homepage-banner,
+    .swiper--homepage-banner,
+    .swiper-slide--homepage-banner {
+      width: 100vw;
+      max-width: 100% !important;
+      margin: 0 auto;
+      padding: 0;
+      position: relative;
+      top: 0;
+      aspect-ratio: 16 / 6.5;
+    }
+
+    .swiper-slide--homepage-banner {
+      
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    
+.swiper-slide--homepage-banner picture,
+    .swiper-slide--homepage-banner img {
+      width: 100vw;
+      max-width: 100vw;
+      height: auto;
+      object-fit: cover;
+      
+    }
+
+    .homepage-banner-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .slide-art-stage {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide-content {
+      position: absolute;
+      top: 50%;
+      left: clamp(28px, 7.5vw, 124px);
+      z-index: 2;
+      width: min(43vw, 590px);
+      max-width: 590px;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      transform: translateY(-50%);
+    }
+
+    .slide-content--position-right {
+      right: clamp(28px, 7.5vw, 124px);
+      left: auto;
+    }
+
+    .slide-content--dark { color: #17351f; }
+    .slide-content--light {
+      color: #f7f4ea;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.34);
+    }
+
+    .slide-content__eyebrow {
+      margin: 0 0 10px;
+      color: #a66b16;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .slide-content--light .slide-content__eyebrow { color: #d8aa58; }
+
+    .slide-content__heading {
+      max-width: 14ch;
+      margin: 0;
+      font-family: var(--font-headline, var(--font-heading-family));
+      font-size: clamp(34px, 3.25vw, 56px);
+      font-weight: 520;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+
+    .slide-content__lead {
+      max-width: 46ch;
+      margin: 15px 0 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .slide-content__offer {
+      display: flex;
+      min-height: 30px;
+      margin-top: 14px;
+      align-items: baseline;
+      gap: 10px;
+      line-height: 1.1;
+    }
+
+    .slide-content__price {
+      font-family: var(--font-headline, var(--font-heading-family));
+      font-size: clamp(22px, 1.8vw, 30px);
+      font-weight: 600;
+    }
+
+    .slide-content__compare-at {
+      font-size: 14px;
+      opacity: 0.68;
+      text-decoration: line-through;
+    }
+
+    .slide-content__badge {
+      color: #a66b16;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .slide-content--light .slide-content__badge { color: #d8aa58; }
+
+    .slide-content__cta {
+      display: inline-flex;
+      box-sizing: border-box;
+      width: max-content;
+      max-width: 100%;
+      min-height: 44px;
+      margin-top: 20px;
+      padding: 9px 16px;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      line-height: 1;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .homepage-banner-link:hover .slide-content__cta,
+    .homepage-banner-link:focus-visible .slide-content__cta {
+      border-color: #d7a23f;
+      background: #d7a23f;
+      color: #17351f;
+      text-shadow: none;
+    }
+
+    .homepage-banner-link:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: -5px;
+    }
+
+    .swiper-slide--heritage {
+      --hero-ivory: #f7f4ea;
+      --hero-ink: #2a2118;
+      --hero-bronze: #c1882c;
+      --hero-marigold: #eeb41e;
+      color: var(--hero-ivory);
+      background: #0a1a11;
+    }
+
+    .heritage-slide__background,
+    .heritage-slide__background img,
+    .heritage-slide__scrim {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .heritage-slide__background img {
+      object-fit: cover;
+    }
+
+    .heritage-slide__scrim {
+      z-index: 1;
+      background:
+        repeating-linear-gradient(0deg, rgba(247, 244, 234, 0.026) 0 1px, transparent 1px 5px),
+        linear-gradient(180deg, rgba(4, 12, 8, 0.7), rgba(4, 12, 8, 0.12)),
+        linear-gradient(90deg, rgba(4, 14, 9, 0.9) 0%, rgba(4, 14, 9, 0.78) 46%, rgba(4, 14, 9, 0.22) 68%, transparent 82%);
+    }
+
+    .heritage-slide__products {
+      position: absolute;
+      right: 2%;
+      bottom: 0;
+      z-index: auto;
+      width: min(50vw, 780px);
+      height: 92%;
+      pointer-events: none;
+    }
+
+    .heritage-slide__products::before {
+      content: "";
+      position: absolute;
+      left: 25%;
+      bottom: 7%;
+      z-index: 1;
+      width: 58%;
+      height: 72%;
+      background: radial-gradient(ellipse at center, rgba(246, 221, 160, 0.82) 0%, rgba(190, 137, 48, 0.42) 42%, transparent 73%);
+      filter: blur(14px);
+    }
+
+    .swiper--homepage-banner .heritage-slide__product {
+      position: absolute;
+      bottom: -2%;
+      width: 46%;
+      max-width: none;
+      height: auto;
+      object-fit: contain;
+      object-position: center bottom;
+      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.34));
+    }
+
+    .swiper--homepage-banner .heritage-slide__product--kairoil {
+      left: 0;
+      z-index: 2;
+      width: 45%;
+    }
+
+    .swiper--homepage-banner .heritage-slide__product--kaircin {
+      left: 27%;
+      z-index: 3;
+      width: 52%;
+      mix-blend-mode: normal;
+      filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.34));
+    }
+
+    .swiper--homepage-banner .heritage-slide__product--kairkare {
+      right: -2%;
+      z-index: 2;
+      width: 46%;
+    }
+
+    .heritage-slide__watermark {
+      position: absolute;
+      top: 12%;
+      right: -0.03em;
+      z-index: 2;
+      color: rgba(247, 244, 234, 0.14);
+      font-family: var(--font-headline);
+      font-size: clamp(130px, 22vw, 360px);
+      letter-spacing: -0.08em;
+      line-height: 0.72;
+      pointer-events: none;
+    }
+
+    .heritage-slide__content {
+      position: relative;
+      z-index: 4;
+      box-sizing: border-box;
+      width: min(52%, 760px);
+      margin-right: auto;
+      padding: clamp(44px, 5.2vw, 88px) 8vw clamp(38px, 4vw, 70px);
+      text-align: left;
+    }
+
+    .heritage-slide__eyebrow {
+      margin: 0 0 10px;
+      color: var(--hero-bronze);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .heritage-slide__ritual {
+      display: grid;
+      width: min(220px, 62vw);
+      margin-bottom: 16px;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 10px;
+      color: var(--hero-bronze);
+    }
+
+    .heritage-slide__ritual span { height: 1px; background: currentColor; }
+    .heritage-slide__ritual b {
+      width: 5px;
+      height: 5px;
+      background: currentColor;
+      transform: rotate(45deg);
+    }
+
+    .heritage-slide__heading {
+      max-width: 13ch;
+      margin: 0;
+      color: var(--hero-ivory);
+      font-family: var(--font-headline, var(--font-heading-family));
+      font-size: clamp(34px, 3.25vw, 56px);
+      font-weight: 520;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+
+    .heritage-slide__lead {
+      max-width: 52ch;
+      margin: 18px 0 0;
+      padding-left: 16px;
+      border-left: 3px solid var(--hero-bronze);
+      color: rgba(247, 244, 234, 0.9);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .heritage-slide__actions { display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 22px; }
+
+    .heritage-slide__button {
+      display: inline-flex;
+      box-sizing: border-box;
+      width: max-content;
+      max-width: 100%;
+      min-height: 44px;
+      padding: 9px 16px;
+      border: 1px solid var(--hero-ivory);
+      border-radius: 2px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      color: var(--hero-ivory);
+      font-size: 14px;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .heritage-slide__button--primary { border-color: var(--hero-marigold); background: var(--hero-marigold); color: var(--hero-ink); }
+    .heritage-slide__button:hover,
+    .heritage-slide__button:focus-visible { border-color: var(--hero-marigold); background: var(--hero-marigold); color: var(--hero-ink); }
+    .heritage-slide__button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+    .hh-swiper-button-next,
+    .hh-swiper-button-prev {
+      display: flex;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background: rgba(20, 37, 21, 0.72);
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+      position: absolute;
+      top: 50%;
+      z-index: 3;
+    }
+
+    .hh-swiper-pagination {
+      pointer-events: none;
+    }
+
+    .hh-swiper-button-next {
+      right: 16px;
+    }
+
+    .hh-swiper-button-prev {
+      left: 16px;
+    }
+
+    .hh-swiper-autoplay-toggle {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 3;
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      min-height: 44px;
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(20, 37, 21, 0.82);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0;
+      line-height: 1;
+      overflow: hidden;
+    }
+
+    .hh-swiper-autoplay-toggle::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      box-sizing: border-box;
+      color: currentColor;
+    }
+
+    .hh-swiper-autoplay-toggle[aria-pressed="true"]::before {
+      width: 12px;
+      height: 14px;
+      background: currentColor;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+      transform: translate(-38%, -50%);
+    }
+
+    .hh-swiper-autoplay-toggle[aria-pressed="false"]::before {
+      width: 10px;
+      height: 14px;
+      background: linear-gradient(to right, currentColor 0 30%, transparent 30% 70%, currentColor 70% 100%);
+      transform: translate(-50%, -50%);
+    }
+
+    .hh-swiper-button-next:focus-visible,
+    .hh-swiper-button-prev:focus-visible,
+    .hh-swiper-autoplay-toggle:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+
+  @media screen and (max-width: 767px) {
+
+    .swiper--homepage-banner,
+    .swiper-slide--homepage-banner {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;  
+      position: relative;
+    }
+
+       .swiper--homepage-banner,
+    .swiper-slide--homepage-banner {
+      width: 100%;
+      height: auto;
+
+    }
+    .slide-content {
+      top: 8%;
+      left: max(20px, env(safe-area-inset-left));
+      width: min(48%, 210px);
+      max-width: 210px;
+      transform: none;
+    }
+
+    .slide-content--position-right {
+      right: auto;
+      left: max(20px, env(safe-area-inset-left));
+    }
+
+    .slide-content--mobile-wide {
+      width: min(calc(100% - 44px), 390px);
+      max-width: 390px;
+    }
+
+    .slide-content__eyebrow { margin-bottom: 7px; font-size: 12px; }
+    .slide-content__heading { max-width: 16ch; font-size: clamp(25px, 6.7vw, 30px); line-height: 1.07; }
+    .slide-content__lead { max-width: 38ch; margin-top: 10px; font-size: 16px; line-height: 1.45; }
+    .slide-content__offer { min-height: 28px; margin-top: 10px; gap: 9px; }
+    .slide-content__price { font-size: 24px; }
+    .slide-content__compare-at { font-size: 14px; }
+    .slide-content__badge { font-size: 12px; }
+    .slide-content__cta { min-height: 44px; margin-top: 12px; padding: 10px 15px; font-size: 14px; }
+
+    .hh-swiper-button-next,
+    .hh-swiper-button-prev {
+      top: auto;
+      bottom: 14px;
+      display: flex;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      transform: none;
+    }
+
+    .hh-swiper-button-prev {
+      right: auto;
+      left: max(14px, env(safe-area-inset-left));
+    }
+
+    .hh-swiper-button-next {
+      right: auto;
+      left: max(66px, calc(env(safe-area-inset-left) + 66px));
+    }
+
+    .hh-swiper-autoplay-toggle {
+      right: max(14px, env(safe-area-inset-right));
+      top: 50%;
+      bottom: auto !important;
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      min-height: 44px;
+      padding: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      font-size: 0;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    .heritage-slide__scrim {
+      background: linear-gradient(180deg, rgba(3, 10, 7, 0.92) 0%, rgba(3, 10, 7, 0.76) 68%, rgba(3, 10, 7, 0.42) 100%);
+    }
+
+    .heritage-slide__products {
+      right: 0;
+      width: 100%;
+      height: 52%;
+    }
+
+    .heritage-slide__watermark { top: 11%; font-size: clamp(120px, 48vw, 190px); }
+    .heritage-slide__content { box-sizing: border-box; width: 100%; padding: 46px 22px 34px; }
+    .heritage-slide__eyebrow { font-size: 12px; }
+    .heritage-slide__ritual { margin-bottom: 12px; }
+    .heritage-slide__heading { max-width: 15ch; font-size: clamp(25px, 6.7vw, 30px); line-height: 1.07; }
+    .heritage-slide__lead { max-width: 32ch; margin-top: 12px; font-size: 16px; line-height: 1.45; }
+    .heritage-slide__actions { margin-top: 14px; }
+    .heritage-slide__button { min-height: 44px; padding: 10px 15px; font-size: 14px; }
+  }
+
+  @media screen and (max-width: 767px) and (min-height: 780px) {
+    .slide-content { top: 10.5%; }
+    .heritage-slide__content { padding-top: 52px; }
+  }
+
+  @media screen and (max-width: 430px) {
+    .page-header-image-banner,
+    .wt-image-banner,
+    .swipe-homepage-banner,
+    .swiper--homepage-banner,
+    .swiper-slide--homepage-banner {
+      height: auto;
+      aspect-ratio: auto;
+    }
+
+    .swiper--homepage-banner,
+    .swiper-slide--homepage-banner,
+    .homepage-banner-link {
+      height: clamp(660px, 165vw, 710px);
+      min-height: 660px;
+    }
+
+    .swiper-slide--homepage-banner,
+    .homepage-banner-link {
+      display: grid;
+      grid-template-rows: auto minmax(260px, 1fr);
+      align-items: stretch;
+    }
+
+    .slide-art-stage {
+      position: relative;
+      grid-row: 2;
+      min-height: 260px;
+      overflow: hidden;
+    }
+
+    .slide-art-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+
+    .slide-content,
+    .slide-content--position-right,
+    .slide-content--mobile-narrow,
+    .slide-content--mobile-wide {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      grid-row: 1;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: none;
+      padding: 22px 20px 20px;
+      border-bottom: 1px solid #c1882c;
+      transform: none;
+    }
+
+    .slide-content--dark {
+      color: #17351f;
+      background: #f4eedf;
+      text-shadow: none;
+    }
+
+    .slide-content--light {
+      color: #f7f4ea;
+      background: #0b2519;
+      text-shadow: none;
+    }
+
+    .slide-content__heading,
+    .slide-content__lead {
+      max-width: 100%;
+    }
+
+    .swiper-slide--heritage {
+      display: grid;
+      grid-template-rows: auto minmax(260px, 1fr);
+      align-items: stretch;
+    }
+
+    .heritage-slide__background,
+    .heritage-slide__scrim,
+    .heritage-slide__products {
+      position: relative;
+      inset: auto;
+      grid-row: 2;
+      grid-column: 1;
+      width: 100%;
+      min-height: 260px;
+      height: 100%;
+    }
+
+    .heritage-slide__background img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+
+    .heritage-slide__scrim {
+      background: linear-gradient(180deg, rgba(3, 10, 7, 0.08), rgba(3, 10, 7, 0.34));
+      pointer-events: none;
+    }
+
+    .heritage-slide__products {
+      overflow: hidden;
+    }
+
+    .swiper--homepage-banner .heritage-slide__product--kairoil {
+      left: -2%;
+      bottom: -3%;
+      width: 50%;
+    }
+
+    .swiper--homepage-banner .heritage-slide__product--kaircin {
+      left: 17%;
+      bottom: -4%;
+      width: 66%;
+    }
+
+    .swiper--homepage-banner .heritage-slide__product--kairkare {
+      right: -5%;
+      bottom: -4%;
+      width: 52%;
+    }
+
+    .heritage-slide__watermark {
+      display: none;
+    }
+
+    .heritage-slide__content {
+      position: relative;
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      max-width: none;
+      padding: 22px 20px 20px;
+      border-bottom: 1px solid var(--hero-bronze);
+      background: #07160f;
+    }
+
+    .heritage-slide__ritual {
+      display: none;
+    }
+
+    .heritage-slide__heading,
+    .heritage-slide__lead {
+      max-width: 100%;
+    }
+
+    .hh-swiper-autoplay-toggle {
+      top: auto;
+      right: max(76px, calc(env(safe-area-inset-right) + 76px)) !important;
+      bottom: 14px !important;
+      transform: none;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .heritage-slide__actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+
+  @media screen and (max-width: 359px) {
+    .hh-swiper-pagination {
+      display: none;
+    }
+  }
+
+  /* --- TABLET --- */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .swiper--homepage-banner,
+    .swiper-slide--homepage-banner {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2 / 1;
+    }
+
+    .slide-content__heading,
+    .heritage-slide__heading { font-size: clamp(30px, 4.2vw, 44px); }
+
+    .hh-swiper-button-next,
+    .hh-swiper-button-prev {
+      display: flex;
+    }
+
+    .hh-swiper-autoplay-toggle {
+      right: 14px !important;
+      bottom: 14px !important;
+      width: 44px;
+      min-width: 44px;
+      height: 44px;
+      min-height: 44px;
+      padding: 0;
+      border-radius: 50%;
+      overflow: hidden;
+      font-size: 0;
+      line-height: 1;
+    }
+
+  }
+
+
+    @media screen and (min-width: 769px) {
+      .swiper--homepage-banner,
+      .swiper-slide--homepage-banner {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .swiper--homepage-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+    @media screen and (min-width: 768px) {
+      section[id="shopify-section-{{ section.id }}"] [data-banner-block="slide_X9iTYH"] .slide-art-stage img {
+        object-position: center top;
+      }
+
+      section[id="shopify-section-{{ section.id }}"] [data-banner-block="slide_dj79GF"] .slide-art-stage img {
+        object-position: center 70%;
+      }
+    }
+
+    @media (min-width: 1200px) {
+     .swiper--homepage-banner {
+      aspect-ratio: 32 / 13;
+  }
+}
+
+  /* --- DESKTOP --- */
+  @media screen and (min-width: 1025px) {
+    .swiper--homepage-banner,
+    .swiper-slide--homepage-banner {
+      width: 100%;
+      height: auto;
+      
+
+    }
+
+    .slide-content--position-right {
+      right: clamp(170px, 15vw, 228px);
+    }
+
+    .hh-swiper-button-next,
+    .hh-swiper-button-prev {
+      display: block;
+      font-size: 24px;
+    }
+  }
+    
+    
+  </style>
+
+  <!-- Your JS file (optional if needed for other functions) -->
+  <script src="{{ 'page-header-image-banner.js' | asset_url }}" defer></script>
+
+  {% assign width_line = 'hero__wrapper--full' %}
+
+  <page-header-image-banner class="page-header-image-banner {% if section.settings.video_hosted %}page-header-image-banner--video{% endif %}">
+    <div
+      data-section-id="{{ section.id }}"
+      class="wt-image-banner wt-image-banner--header {{ width_line }} {% if settings.animations %}scroll-trigger animate--slide-in{% endif %} {% if settings.disabled_animations_on_mobile %}disabled-on-mobile{% endif %}"
+    >
+<div class="swipe-homepage-banner page-header-image-banner">
+        <div
+          id="HomepageBanner-{{ section.id }}"
+          class="swiper swiper--homepage-banner"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Homepage promotions"
+        >
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              <div
+                class="swiper-slide swiper-slide--homepage-banner{% if block.type == 'heritage' %} swiper-slide--heritage{% endif %}"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="{{ forloop.index }} of {{ forloop.length }}"
+                data-banner-block="{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+
+                {% if block.type == 'heritage' %}
+                  <picture class="heritage-slide__background" aria-hidden="true">
+                    <source media="(max-width: 767px)" srcset="{{ 'kairali-home-banner-01-heritage-assortment-mobile-r04_8b0e5c3f-ad6a-45f7-8a13-f8190ad2fb65.webp' | asset_url }}" width="1122" height="1402">
+                    <img src="{{ 'kairali-home-banner-01-heritage-assortment-desktop-r04_38f8ff6e-638b-4c7f-ac7f-c3e508acd91e.webp' | asset_url }}" alt="" width="1842" height="854" fetchpriority="high" loading="eager" decoding="async">
+                  </picture>
+                  <div class="heritage-slide__scrim" aria-hidden="true"></div>
+                  <div class="heritage-slide__watermark" aria-hidden="true">1908</div>
+                  <div class="heritage-slide__content">
+                    <p class="heritage-slide__eyebrow">{{ block.settings.eyebrow | escape }}</p>
+                    <span class="heritage-slide__ritual" aria-hidden="true"><span></span><b></b><span></span></span>
+                    <h1 class="heritage-slide__heading">{{ block.settings.heading | escape }}</h1>
+                    <p class="heritage-slide__lead">{{ block.settings.lead | escape }}</p>
+                    <div class="heritage-slide__actions">
+                      <a class="heritage-slide__button heritage-slide__button--primary" href="{{ block.settings.primary_link }}">{{ block.settings.primary_label | escape }}</a>
+                      <a class="heritage-slide__button" href="{{ block.settings.secondary_link }}">{{ block.settings.secondary_label | escape }}</a>
+                    </div>
+                  </div>
+                {% else %}
+                {% capture fallback_link_label %}Homepage banner slide {{ forloop.index }} of {{ forloop.length }}{% endcapture %}
+                {% assign link_label = block.settings.accessible_label | default: block.settings.heading | default: fallback_link_label %}
+                {% assign content_tone = block.settings.content_tone | default: 'light' %}
+                {% assign content_position = block.settings.content_position | default: 'left' %}
+                {% assign mobile_content_width = block.settings.mobile_content_width | default: 'narrow' %}
+                {% assign desktop_asset_width = block.settings.desktop_asset_width | default: 1672 %}
+                {% assign desktop_asset_height = block.settings.desktop_asset_height | default: 941 %}
+                {% assign mobile_asset_width = block.settings.mobile_asset_width | default: 1086 %}
+                {% assign mobile_asset_height = block.settings.mobile_asset_height | default: 1448 %}
+                {% assign display_price = block.settings.price %}
+                {% assign display_compare_at = block.settings.compare_at %}
+                {% assign display_badge = block.settings.offer_badge %}
+                {% assign commerce_product = block.settings.commerce_product %}
+                {% assign commerce_variant = commerce_product.selected_or_first_available_variant %}
+                {% if commerce_variant != blank %}
+                  {% capture display_price %}{{ commerce_variant.price | money }}{% endcapture %}
+                  {% if commerce_variant.compare_at_price > commerce_variant.price %}
+                    {% if block.settings.compare_at != blank or block.settings.offer_badge != blank %}
+                      {% capture display_compare_at %}{{ commerce_variant.compare_at_price | money }}{% endcapture %}
+                      {% assign saving_amount = commerce_variant.compare_at_price | minus: commerce_variant.price %}
+                      {% if block.settings.offer_badge contains '%' %}
+                        {% assign saving_percentage = saving_amount | times: 100.0 | divided_by: commerce_variant.compare_at_price | round %}
+                        {% capture display_badge %}{{ saving_percentage }}% OFF{% endcapture %}
+                      {% elsif block.settings.offer_badge contains 'SAVE' %}
+                        {% capture display_badge %}SAVE {{ saving_amount | money_without_trailing_zeros }}{% endcapture %}
+                      {% endif %}
+                    {% else %}
+                      {% assign display_compare_at = blank %}
+                      {% assign display_badge = blank %}
+                    {% endif %}
+                  {% else %}
+                    {% assign display_compare_at = blank %}
+                    {% assign display_badge = blank %}
+                  {% endif %}
+                {% endif %}
+                {% if block.settings.link %}
+                  <a class="homepage-banner-link" href="{{ block.settings.link }}" aria-label="{{ link_label }}">
+                {% endif %}
+<picture class="slide-art-stage">
+  {% if block.settings.mobile_asset_filename != blank %}
+    <source
+      media="(max-width: 767px)"
+      srcset="{{ block.settings.mobile_asset_filename | asset_url }}"
+      width="{{ mobile_asset_width }}"
+      height="{{ mobile_asset_height }}"
+    >
+  {% elsif block.settings.mobile_image %}
+    <source
+      media="(max-width: 767px)"
+      srcset="{{ block.settings.mobile_image | image_url: width: 480 }} 480w, {{ block.settings.mobile_image | image_url: width: 768 }} 768w, {{ block.settings.mobile_image | image_url: width: 1000 }} 1000w"
+      sizes="100vw"
+      width="{{ block.settings.mobile_image.width }}"
+      height="{{ block.settings.mobile_image.height }}"
+    >
+  {% endif %}
+  {% if block.settings.desktop_asset_filename != blank %}
+    <source
+      media="(min-width: 768px)"
+      srcset="{{ block.settings.desktop_asset_filename | asset_url }}"
+      width="{{ desktop_asset_width }}"
+      height="{{ desktop_asset_height }}"
+    >
+  {% else %}
+    <source
+      media="(min-width: 768px)"
+      srcset="{{ block.settings.desktop_image | image_url: width: 1200 }} 1200w, {{ block.settings.desktop_image | image_url: width: 1800 }} 1800w, {{ block.settings.desktop_image | image_url: width: 2400 }} 2400w"
+      sizes="100vw"
+      width="{{ block.settings.desktop_image.width }}"
+      height="{{ block.settings.desktop_image.height }}"
+    >
+  {% endif %}
+  
+  {% if block.settings.desktop_asset_filename != blank %}
+    <img
+      src="{{ block.settings.desktop_asset_filename | asset_url }}"
+      alt=""
+      width="{{ desktop_asset_width }}"
+      height="{{ desktop_asset_height }}"
+      loading="lazy"
+      decoding="async"
+    >
+  {% elsif forloop.first %}
+    <img 
+  src="{{ block.settings.desktop_image | image_url: width: 1800 }}"
+  alt=""
+  width="{{ block.settings.desktop_image.width }}"
+  height="{{ block.settings.desktop_image.height }}"
+  fetchpriority="high"
+  loading="eager">
+  {% else %}
+    <img 
+    src="{{ block.settings.desktop_image | image_url: width: 1800 }}"
+    alt=""
+    width="{{ block.settings.desktop_image.width }}"
+    height="{{ block.settings.desktop_image.height }}"
+    loading="lazy">
+  {% endif %}
+</picture>
+                  {% if block.settings.eyebrow != blank or block.settings.heading != blank or block.settings.lead != blank or block.settings.cta_label != blank %}
+                    <div class="slide-content slide-content--{{ content_tone }} slide-content--position-{{ content_position }} slide-content--mobile-{{ mobile_content_width }}">
+                      {% if block.settings.eyebrow != blank %}<p class="slide-content__eyebrow">{{ block.settings.eyebrow | escape }}</p>{% endif %}
+                      {% if block.settings.heading != blank %}<h2 class="slide-content__heading">{{ block.settings.heading | escape }}</h2>{% endif %}
+                      {% if block.settings.lead != blank %}<p class="slide-content__lead">{{ block.settings.lead | escape }}</p>{% endif %}
+                      {% if display_price != blank or display_compare_at != blank or display_badge != blank %}
+                        <div class="slide-content__offer" aria-label="{{ display_price | append: ' ' | append: display_compare_at | append: ' ' | append: display_badge | strip | escape }}">
+                          {% if display_price != blank %}<span class="slide-content__price">{{ display_price | escape }}</span>{% endif %}
+                          {% if display_compare_at != blank %}<span class="slide-content__compare-at">{{ display_compare_at | escape }}</span>{% endif %}
+                          {% if display_badge != blank %}<span class="slide-content__badge">{{ display_badge | escape }}</span>{% endif %}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.cta_label != blank %}<span class="slide-content__cta" aria-hidden="true">{{ block.settings.cta_label | escape }}</span>{% endif %}
+                    </div>
+                  {% endif %}
+                {% if block.settings.link %}
+                  </a>
+                {% endif %}
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <button class="hh-swiper-button-next" type="button" aria-label="Next homepage banner">
+            <span aria-hidden="true">&#8250;</span>
+          </button>
+          <button class="hh-swiper-button-prev" type="button" aria-label="Previous homepage banner">
+            <span aria-hidden="true">&#8249;</span>
+          </button>
+          <div class="hh-swiper-pagination"></div>
+          <button class="hh-swiper-autoplay-toggle" type="button" aria-pressed="false">
+            Pause banners
+          </button>
+        </div>
+      </div>
+    </div>
+  </page-header-image-banner>
+
+  <!-- ✅ Working Swiper Autoplay JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const banner = document.getElementById('HomepageBanner-{{ section.id }}');
+      if (!banner || banner.swiper) return;
+
+      const autoplayToggle = banner.querySelector('.hh-swiper-autoplay-toggle');
+      const swiper = new Swiper(banner, {
+        loop: true,
+        autoplay: false,
+        pagination: {
+          el: banner.querySelector('.hh-swiper-pagination'),
+          clickable: false,
+        },
+        navigation: {
+          nextEl: banner.querySelector('.hh-swiper-button-next'),
+          prevEl: banner.querySelector('.hh-swiper-button-prev'),
+        },
+      });
+
+      const setAutoplayState = (isPaused) => {
+        autoplayToggle.setAttribute('aria-pressed', String(isPaused));
+        autoplayToggle.textContent = isPaused ? 'Play banners' : 'Pause banners';
+      };
+
+      const syncSlideFocus = () => {
+        swiper.slides.forEach((slide) => {
+          const isActive = slide.classList.contains('swiper-slide-active');
+          slide.setAttribute('aria-hidden', String(!isActive));
+          slide.querySelectorAll('a, button, input, select, textarea, [tabindex]').forEach((control) => {
+            if (isActive) {
+              control.removeAttribute('tabindex');
+            } else {
+              control.setAttribute('tabindex', '-1');
+            }
+          });
+        });
+      };
+
+      const pagination = banner.querySelector('.hh-swiper-pagination');
+      if (pagination) {
+        pagination.setAttribute('aria-hidden', 'true');
+        pagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet) => {
+          bullet.removeAttribute('role');
+          bullet.removeAttribute('aria-label');
+          bullet.setAttribute('tabindex', '-1');
+        });
+      }
+
+      syncSlideFocus();
+      swiper.on('slideChangeTransitionEnd', syncSlideFocus);
+
+      setAutoplayState(true);
+
+      autoplayToggle.addEventListener('click', function () {
+        if (!swiper.autoplay) return;
+
+        if (swiper.autoplay.running) {
+          swiper.autoplay.stop();
+          setAutoplayState(true);
+        } else {
+          swiper.autoplay.start();
+          setAutoplayState(false);
+        }
+      });
+      });
+  </script>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Swipe Homepage Banner",
+  "tag": "section",
+  "class": "swipe-homepage-banner-section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "heritage",
+      "name": "1908 heritage slide",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Kairali Ayurvedic Group · Since 1908" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Ayurvedic care, carried forward since 1908" },
+        { "type": "textarea", "id": "lead", "label": "Lead", "default": "Explore Kairali formulations with clear pack information, current availability and practical guidance before you order." },
+        { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Explore products" },
+        { "type": "url", "id": "primary_link", "label": "Primary button link" },
+        { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "Shop by concern" },
+        { "type": "url", "id": "secondary_link", "label": "Secondary button link" }
+      ]
+    },
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image"
+        },
+        {
+          "type": "product",
+          "id": "commerce_product",
+          "label": "Product for live price"
+        },
+        {
+          "type": "text",
+          "id": "desktop_asset_filename",
+          "label": "Optimized desktop theme asset filename"
+        },
+        {
+          "type": "text",
+          "id": "mobile_asset_filename",
+          "label": "Optimized mobile theme asset filename"
+        },
+        {
+          "type": "number",
+          "id": "desktop_asset_width",
+          "label": "Desktop asset width",
+          "default": 1672
+        },
+        {
+          "type": "number",
+          "id": "desktop_asset_height",
+          "label": "Desktop asset height",
+          "default": 941
+        },
+        {
+          "type": "number",
+          "id": "mobile_asset_width",
+          "label": "Mobile asset width",
+          "default": 1086
+        },
+        {
+          "type": "number",
+          "id": "mobile_asset_height",
+          "label": "Mobile asset height",
+          "default": 1448
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Slide Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "lead",
+          "label": "Lead"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Current price"
+        },
+        {
+          "type": "text",
+          "id": "compare_at",
+          "label": "Compare-at price"
+        },
+        {
+          "type": "text",
+          "id": "offer_badge",
+          "label": "Offer badge"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA label"
+        },
+        {
+          "type": "select",
+          "id": "content_tone",
+          "label": "Overlay text tone",
+          "default": "light",
+          "options": [
+            { "value": "light", "label": "Light" },
+            { "value": "dark", "label": "Dark" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Desktop content position",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "mobile_content_width",
+          "label": "Mobile content width",
+          "default": "narrow",
+          "options": [
+            { "value": "narrow", "label": "Narrow" },
+            { "value": "wide", "label": "Wide" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "accessible_label",
+          "label": "Accessible image and link label",
+          "default": "Homepage promotion"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Slide Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Swipe Homepage Banner",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" },
+        { "type": "slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}

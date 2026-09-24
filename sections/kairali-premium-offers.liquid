@@ -1,0 +1,49 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="kp-home-section kp-home-section--offers"
+  aria-labelledby="KairaliPremiumOffers-{{ section.id }}"
+>
+  <header class="kp-section-intro">
+    <h2 id="KairaliPremiumOffers-{{ section.id }}" class="kp-section-title">AVAILABLE OFFERS</h2>
+  </header>
+
+  <div class="kp-grid kp-grid--offers">
+    {% render 'kairali-premium-card',
+      id: 'OFFER-01',
+      href: '/products/best-ayurvedic-anti-pigmentation-kit-for-men-and-women-de-tan-kit',
+      background: 'kp-in-home-r03-offer-01-bg.webp',
+      tone: 'light',
+      eyebrow: 'KAIRCIN + NALPAMARADI THAILAM',
+      heading: 'Your Ayurvedic Anti-Pigmentation Pair',
+      body: 'Pair Kaircin facial oil with Nalpamaradi Thailam in one focused two-oil face-care ritual.',
+      cta: 'Shop the Pair',
+      commerce_product_handle: 'best-ayurvedic-anti-pigmentation-kit-for-men-and-women-de-tan-kit',
+      card_modifier: 'kp-card--offer kp-card--offer-01'
+    %}
+
+    {% render 'kairali-premium-card',
+      id: 'OFFER-02',
+      href: '/products/kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin',
+      background: 'kp-in-home-r03-offer-02-bg.webp',
+      tone: 'light',
+      eyebrow: '25% OFF · KAIRCIN FACIAL OIL',
+      heading: 'Get 25% Off Kaircin Ayurvedic Facial Oil',
+      body: "Kairali's saffron-infused Kumkumadi facial oil, the nightly step in a Kairali face routine, at 25% off while the offer runs.",
+      cta: 'Shop Kaircin Now',
+      commerce_product_handle: 'kaircin-ayurvedic-kumkumadi-oil-facial-serum-for-youthful-glowing-skin',
+      card_modifier: 'kp-card--offer kp-card--offer-02'
+    %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali premium offers",
+  "presets": [
+    {
+      "name": "Kairali premium offers"
+    }
+  ]
+}
+{% endschema %}

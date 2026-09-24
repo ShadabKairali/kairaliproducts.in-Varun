@@ -1,0 +1,35 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section class="kp-home-section{% if section.settings.compact %} kp-home-section--compact{% endif %}{% if section.settings.tinted %} kp-home-section--tinted{% endif %}" aria-labelledby="KpHeading-{{ section.id }}">
+  <div class="kp-home-section__inner">
+    <header class="kp-section-intro{% if section.settings.alignment == 'left' %} kp-section-intro--left{% endif %}">
+      {% if section.settings.eyebrow != blank %}<p class="kp-eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+      <h2 id="KpHeading-{{ section.id }}" class="kp-section-title">{{ section.settings.heading | escape }}</h2>
+      {% if section.settings.body != blank %}<p class="kp-section-body">{{ section.settings.body | escape }}</p>{% endif %}
+    </header>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali premium heading",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Section heading" },
+    { "type": "textarea", "id": "body", "label": "Body" },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center",
+      "options": [
+        { "value": "center", "label": "Center" },
+        { "value": "left", "label": "Left" }
+      ]
+    },
+    { "type": "checkbox", "id": "compact", "label": "Compact spacing", "default": true },
+    { "type": "checkbox", "id": "tinted", "label": "Tinted background", "default": false }
+  ],
+  "presets": [{ "name": "Kairali premium heading" }]
+}
+{% endschema %}

@@ -1,0 +1,20 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section class="kp-home-section kp-legacy" aria-labelledby="KpLegacy-{{ section.id }}">
+  <div class="kp-home-section__inner">
+    <header class="kp-section-intro">
+      <p class="kp-eyebrow">Kairali's Kerala legacy</p>
+      <span class="kp-legacy__rule" aria-hidden="true"><span></span><b></b><span></span></span>
+      <h2 id="KpLegacy-{{ section.id }}" class="kp-section-title">Ayurveda, Carried Forward Since 1908</h2>
+      <p class="kp-section-body">Rooted in Kerala, Kairali now brings its Ayurvedic lineage to Indian homes through oils, formulations and herbal care available online.</p>
+    </header>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kairali legacy",
+  "settings": [],
+  "presets": [{ "name": "Kairali legacy" }]
+}
+{% endschema %}

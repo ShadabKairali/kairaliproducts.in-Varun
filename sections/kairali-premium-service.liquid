@@ -1,0 +1,52 @@
+{{ 'kairali-homepage-r03.css' | asset_url | stylesheet_tag }}
+
+<section class="kp-home-section kp-home-section--tinted" aria-labelledby="KpService-{{ section.id }}">
+  <div class="kp-home-section__inner">
+    <header class="kp-section-intro">
+      <p class="kp-eyebrow">Delivery • payment • returns • support</p>
+      <h2 id="KpService-{{ section.id }}" class="kp-section-title">Everything You Need to Order with Confidence</h2>
+      <p class="kp-section-body">Clear India shopping information before you reach checkout.</p>
+    </header>
+
+    <div class="kp-service-grid">
+      <article class="kp-service-item">
+        <span class="kp-service-item__kicker">Shipping</span>
+        <h3>Free standard shipping from ₹799</h3>
+        <p>Standard shipping is ₹99 below ₹799. Express shipping is ₹149.</p>
+      </article>
+      <article class="kp-service-item">
+        <span class="kp-service-item__kicker">Dispatch</span>
+        <h3>Usually dispatched in 24–48 hours</h3>
+        <p>Your order begins moving after it is processed and packed.</p>
+      </article>
+      <article class="kp-service-item">
+        <span class="kp-service-item__kicker">India delivery</span>
+        <h3>Typically 7–10 business days</h3>
+        <p>Delivery timing can vary by destination and courier conditions.</p>
+      </article>
+      <article class="kp-service-item">
+        <span class="kp-service-item__kicker">Payment</span>
+        <h3>COD and online payment where eligible</h3>
+        <p>The available payment options appear clearly at checkout.</p>
+      </article>
+      <article class="kp-service-item">
+        <span class="kp-service-item__kicker">Returns</span>
+        <h3>Eligible return requests within 7 days</h3>
+        <p>Product condition and policy terms apply.</p>
+      </article>
+      <article class="kp-service-item">
+        <span class="kp-service-item__kicker">Support</span>
+        <h3>Help Monday to Saturday</h3>
+        <p>Kairali support is available from 10 AM to 6 PM IST.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Shopping confidence",
+  "settings": [],
+  "presets": [{ "name": "Shopping confidence" }]
+}
+{% endschema %}

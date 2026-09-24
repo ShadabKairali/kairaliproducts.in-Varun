@@ -1,0 +1,239 @@
+{% schema %}
+{
+  "name": "Product Tabs (Metafield)",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "tab_main_title",
+      "label": "Main Title",
+      "default": "Product Information"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "tab_title",
+          "label": "Tab Title"
+        },
+        {
+          "type": "text",
+          "id": "metafield_namespace_key",
+          "label": "Metafield (namespace.key)",
+          "info": "e.g., custom.ingredients"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "presets": [
+    {
+      "name": "Product Tabs",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+<div class="product-tabs-container page-width">
+  {% if section.settings.tab_main_title != blank %}
+    <h2 class="tab-main-title">{{ section.settings.tab_main_title }}</h2>
+  {% endif %}
+
+<div class="tabs-nav">
+  {% assign index = 0 %}
+  {% for block in section.blocks %}
+    {% assign metafield_parts = block.settings.metafield_namespace_key | split: '.' %}
+    {% assign tab_metafield = product.metafields[metafield_parts[0]][metafield_parts[1]] %}
+
+    {% if block.settings.tab_title != blank and tab_metafield and tab_metafield.value != blank %}
+      {% assign index = index | plus: 1 %}
+      <button class="tab-button{% if index == 1 %} active{% endif %}" data-tab="tab-{{ index }}">
+        {{ block.settings.tab_title | upcase }}
+      </button>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="tabs-content">
+  {% assign index = 0 %}
+  {% for block in section.blocks %}
+    {% assign metafield_parts = block.settings.metafield_namespace_key | split: '.' %}
+    {% assign tab_metafield = product.metafields[metafield_parts[0]][metafield_parts[1]] %}
+
+    {% if tab_metafield and tab_metafield.value != blank %}
+      {% assign index = index | plus: 1 %}
+      <div class="tab-content{% if index == 1 %} active{% endif %}" id="tab-{{ index }}">
+        {{ tab_metafield.value }}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+</div>
+
+<style>
+.product-tabs-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 1rem;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.tab-main-title {
+  font-weight: 600;
+  color: #555;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.tabs-nav {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #c8c2bb;
+  color: #333;
+  border-width: 1px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  border-color: #6a7816;
+}
+
+.tab-button.active {
+  background-color: #6a7816;
+  color: #fff;
+}
+
+.tab-button:not(:last-child) {
+  margin-right: 8px;
+}
+
+.tab-button:hover {
+  background-color: #8e9e34;
+}
+  
+.tab-button.active:hover {
+  background-color: #6a7816;
+}
+
+.tab-button.active::after {
+  content: "";
+  position: relative;
+  bottom: -21px;
+  left: -38%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #6a7816 transparent transparent transparent;
+}
+
+
+.tab-content {
+  display: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  color: #333;
+  margin-top: 1.5rem;
+  margin-right: 19%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content ul {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.tab-content li {
+  margin-bottom: 0.5rem;
+}
+
+.tab-content strong {
+  font-weight: 600;
+}
+
+  .tab-content a {
+  color: blue;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+  .product-tabs-container {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  .tabs-nav {
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 0;
+  }
+
+  .tab-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 13.5px;
+  }
+
+  .tab-button.active {
+    background-color: #006b4f;
+    color: #fff;
+  }
+
+  .tab-main-title {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .tab-content {
+    font-size: 13.5px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .tab-button.active::after{
+    display: none;}
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        contents.forEach(c => {
+          c.classList.remove('active');
+          if (c.id === target) {
+            c.classList.add('active');
+          }
+        });
+      });
+    });
+  });
+</script>
